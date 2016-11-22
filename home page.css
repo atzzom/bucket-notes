@@ -1,0 +1,15 @@
+body {background-color: rgba(4,24,51,.95);}
+a {text-decoration: none;} /* this property removes the underline in the links */
+code {
+  display: block; /* the <code> element is an inline element, here we convert it to a block element in order to center it on the page. */
+  margin: auto; /* margin: auto; property renders the element horizontally centered regardless of the screen size. */
+  padding-top: 25%; /* Is necessary to set up the distance from the top of the screen to this element in such a way that doesn't depend on the screen size, in other words, in this case is set to 300 px but must be set up in such a way that regardless the screen it is diplayed it is always at the center of it. */
+  font-size: 24px;
+  color: green;
+  text-align: center; /* refers to the alignment of the text INSIDE the element. */}
+a:visited {color:green;} /* Whenever you visit a link, its color will change (usually to purple) this property will change back the color to green (the originally stablished color for the code element). */
+.subtitle {
+  color: grey;
+  text-align: center;
+  font-size: 12px;}
+p {color: rgba(4,24,51,1);} /* the color of the paragraphs will be as closed as possible to the background color in order to mimetize them, because they are comments that will be visible only by selecting the text. */
