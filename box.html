@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>line one - the box model</title>
+</head>
+<body>
+<h1>The Box Model</h1>
+
+<h3>The Display Property</h3>
+
+<p>The way how exactly an element is displayed (as block-level, inline-level element or something else) is controlled by the <code>display</code> property. Every element has a default value for this property, which, as all other property values can be overwritten, being the most common: <code>block</code>, <code>inline</code>, <code>inline-block</code>, and <code>none</code>. For example, if the <code>display</code> property for a <code>&#60;p&#62;</code> element is going to be changed from <code>inline</code> to a <code>block</code> level/type display, the CSS would be the following:<br>
+<code>p {<br>
+display: block;<br>
+}</code></p>
+
+<p>The <code>inline-block</code> value, allows an element to behave as a <code>block</code> level element (allowing it to contain other elements) whilst being displayed in line with other elements, and without begining on a new line by default, e.g.:<br>
+<code>p {<br>
+display: inline-block;<br>
+}</code></p>
+
+<h4>Demo: display inline-block</h4>
+
+<h5>HTML</h5>
+
+<p><code>&#60;p&#62;Paragraph one.&#60;/p&#62;<br>
+&#60;p&#62;Paragraph two.&#60;/p&#62;<br>
+&#60;p&#62;Paragraph three.&#60;/p&#62;</code></p>
+
+<h5>CSS</h5>
+
+<p><code>p {<br>
+display: inline-block;<br>
+}</code></p>
+
+<h5>Result</h5>
+
+<p>Paragraph one. Paragraph two. Paragraph three.</p>
+
+<p>Is important to make the distinction that inline-block elements will display an small gap/space between them, although sometimes annoying, this gap is completely normal and removable.</p>
+
+<p>Lastly, a <code>display: none;</code> value will completely hide the element and its nested elements, redering the page as if that element doesn't exist, e.g.:<br>
+<code>div {<br>
+display: none;<br>
+}</code></p>
+
+<h2>What is the Box Model?</h2>
+
+<p>The most important concept of the model is this:</p>
+
+<h3><b>Every element on a page is a rectangular box.</b></h3>
+
+<p><i>Even if it</i> looks <i>like a circle.</i></p>
+
+<p>Therefore, <b>every</b> element will have: <b>a width</b>, <b>a height</b>, <b>a padding</b>, <b>borders</b>, <b>and margins</b>.</p>
+
+<p>Each part of the model corresponds to a CSS property: <code>width</code>, <code>height</code>, <code>padding</code>, <code>border</code>, and <code>margin</code>, e.g.:<br>
+<code>div {<br>
+border: 6px solid #949599;<br>
+height: 100px;<br>
+margin: 20px;<br>
+padding: 20px;<br>
+width: 400px;<br>
+}</code></p>
+
+<p>Considering all the elements of the box model the total width can be determined using the following formula:<br>
+<code>margin-right + border-right + padding-right + <b>width</b> + padding-left + border-left + margin-left</code></p>
+
+<p>Anagously, the total height can be calculated as:<br>
+<code>margin-top + border-top + padding-top + <b>height</b> + padding-bottom + border-bottom + margin-bottom</code>.</p>
+
+<p>By default, <b>every</b> element has a width and height. These values may be just <code>0px</code>, but as long as it has a size, browsers will render it. Depending on how an element is displayed an its importance into the document layout, it may require specified <code>width</code> and <code>height</code> property values. In this case, the property values for non-inline elements may be specified.</p>
+
+<h3>Width</h3>
+
+<p>The <code>width</code> property is affected by the display property value, for instance, the block-level elements (<code>display: block;</code>) have a default width of <code>100%</code> consuming the entire horizonatal space available. Whilst inline-level elements must expand or contract to accommodate their content, thus the <code>width</code> and <code>height</code> properties are only relevant to <strong>non-inline</strong> elements (e.g. block elements).</p>
+
+<p><code>div {<br>
+width: 400px;<br>
+}</code></p>
+
+<h3>Height</h3>
+
+<p>By default the height of an element is set by its content unless stated otherwise. To set a specific height for a non-inline element, use the <code>height</code> property:<br>
+<code>div {<br>
+height: 100px;<br>
+}</code></p>
+
+<h4>The size of <b>inline-level</b> elements</h4>
+
+<p>Is necessary to take into account that <b>inline-level</b> elements will not accept any <code>height</code> or <code>width</code> values attached to them. On the other hand, <b>block</b> and <b>inline-block</b> elements will.</p>
+
+<h4>Margin & padding</h4>
+
+<p>Depending on the element, a browser may apply different padding and margin values in order to aid with the legibility and clarity. As seen previously, is possible to use CSS resets to start with a blank canvas and work from the ground up to specify our own values.</p>
+
+<h4>Margin</h4>
+
+<p>The main margin's purpose is to set the amount of space that surrounds an element, it specifies a <i>breathing</i> room to help place an element, keeping any other element at a safe distance, from this point of view is like a barrier to another elements, and is completely transparent in color. Example:<br>
+<code>div {<br>
+margin: 20px;<br>
+}</code></p>
+
+<p>The <i>oddity</i> with the <code>margin</code> property is taht <b>vertical</b> margins, <code>top</code> and <code>bottom</code>, are not accepted by <strong>inline-level</strong> elements. These vertical margins are, however, accepted by <strong>block-level</strong> and <strong>inline-block</strong> elements.</p>
+
+<h4>Padding</h4>
+
+<p>The <code>padding</code> property is very similar to the <code>margin</code> property with the difference that it falls inside an element's border, should an element have a border. The <code>padding</code> property <strong>is used to provide spacing directly within an elemnt</strong>. <i class="faq">What does this exaclty mean?</i> Here's an example:<br>
+<code>div {<br>
+padding: 20px;<br>
+}</code></p>
+
+<p>Unlike the <code>margin</code> property, the <code>padding</code> actually works in <strong>inline-level</strong> elements, could be blended into the upper and lower lines of the given element, but this vertical <code>padding</code> it will be displayed.</p>
+
+<h5>Inline-level elements: margins and padding</h5>
+
+<div>
+<p>To summarize:</p>
+
+<p>For <strong>blocks</strong> and <strong>inline-blocks</strong>, <b>all margins</b> and <b>paddings</b> work normally.</p>
+
+<p>The elements to take into account in this aspect are the <strong>inline</strong> elements, whose:<br>
+<strong>paddings:</strong> may blend with the upper and/or bottom lines of the given element, and work on <b>all four sides</b> and, its<br>
+<strong>margins:</strong> works <b>only horizontally</b> and are <b>transparent</b> in color.</p>
+</div>
+
+<h4>How to state/declare margins and paddings</h4>
+
+<p>When writting CSS, many of the property values can be stated/declared one after the other in a longhand way, in which for each parameter has its own property stated. The other alternative is abbreviate this property value declaration and state each value in an specific order avoiding state each parameter property explicitly (shorthand), however, not all properties have a shorthand notation/alternative, therefore is necessary to make sure the correct property+value structure is used.</p>
+
+<p>For the property at hand <code>margin</code> and <code>padding</code> they both come in longhand and shorthand form. For the <code>margin</code> a single value of this property is the shorthand declaration for all four sides of the same length. Example:<br>
+<code>div {<br>
+margin: 20px;<br>
+}</code></p>
+
+<p>Again, in the <code>margin</code> property, when only two values are stated, the first one belongs to the <code>top</code> and <code>bottom</code> margin values respectively. In the following example, a <code>10px top</code> and <code>bottom</code> margins are set up, and a <code>20px left</code> and <code>right</code> margin is being declared:<br>
+<code>div {<br>
+margin: 10px 20px;<br>
+}</code></p>
+
+<p>If specify unique values for each side is desired, is necessary state four values that scan the element's margin in a clockwise position from <code>top</code>, to <code>right</code>, to <code>bottom</code>, to <code>left</code>. In this example margins of <code>10px</code> at the <code>top</code>, <code>20px</code> at the <code>right</code>, <code>0px</code> at the <code>bottom</code>, and <code>15px</code> on the <code>left</code> of a <code>&#60;div&#62;</code> element are being placed:<br>
+<code>div {<br>
+margin: 10px 20px 0 15px;<br>
+}</code></p>
+
+<p>In the case of the <code>margin</code> and <code>padding</code> with longhand, it is possible to state the value for one side at a time using unique properties, they are followed by a dash and the side of the box to which the value is to be applied, for example: <code>padding-left</code>, <code>margin-top</code> etc, all of these accepting only one value.<br>
+<code>div {<br>
+margin-top: 10px;<br>
+padding-left: 6px;<br>
+}</code></p>
+
+<p>Longhand declarations help to keep the code clear in intentions, although when dealing with more values shorthand declarations becomes handy.</p>
+
+<!-- 16.11.21-lor:038-000 - 16.11.22 -->
+<!-- 16.11.22 -->
+
+<p>Nevertheless, it is strongly recommended to use longhand properties when declaring a single value for the <code>margin</code>, <code>padding</code> and other properties. For example, did we really want to set the <code>top</code>, <code>right</code>, and <code>left</code> sides of the element to a unique value, let's say <code>0px</code>? Or did we mean only to be the <code>bottom</code> margin?.</p>
+
+<h5>Margin & Padding Colors</h5>
+
+<p>Keep in mind that the <code>margin</code> and <code>padding</code> <b>do NOT</b> accept color values, as the are completely transparent <i class="faq">&mdash;the one in between, the border, it does?&mdash;</i>. This transparent nature means they will show their respective background colors. In the case of the <code><b>margin</b></code> will be the parent's element color. And in the case of the <code><b>padding</b></code> the color of the element itself (the background color of the element that <code>padding</code> is applied to).</p>
+
+<h3>Borders</h3>
+
+<p>Border is the space tha fall inbetween the <code>padding</code> and <code>margin</code> and provide an outline around that element. They comprehend three parameters: <code>width</code>, <code>style</code>, and <code>color</code>. Shortand values for these properties must be stated in this way. In longhand, these three values can be broken up into: <code>border-width</code>, <code>border-style</code>, <code>border-color</code> properties. These longhand properties are useful for changing, or overwriting a single border value.</p>
+
+<p>Also, borders can have different apperances. The most common styles values are but not limited to: <code>solid</code>, <code>double</code>, <code>dashed</code>, <code>dotted</code>, and <code>none</code>. Here is an example of a border that wraps around a <code>&#60;div&#62;</code> element (because there's no side indicated) with a <code>6px width</code>, in <code>solid style</code>, and <code>grey style</code>:<br>
+<code>div {<br>
+border: 6px solid #949599;<br>
+}<br></code></p>
+
+<!-- 16.11.22-lor:044-038 -->
+<!-- 16.11.23-lor:044-053 -->
+
+<h3>Individual border sides</h3>
+
+<p>As with the <code>margin</code> and <code>padding</code> properties, borders' properties can be handled on one side of an element at a time. Doing so, demands the definition of properties for each sides, namely: <code>border-top</code>, <code>border-right</code>, <code>border-bottom</code>, and <code>border-left</code>. The same as in <code>margin</code> and <code>padding</code> properties, the values for this properties are: <code>width</code>, <code>style</code>, and <code>color</code>. If we want, we can make a border appear only on the bottom of an element:</p>
+
+<p><code>div {<br>
+border-bottom: 6px solid #949599;<br>
+}</code></p>
+
+<p>Additionally, the styles for individual border sides may be controlled at an even finer level. For example, if we wish to change only the <code>width</code> of the bottom border we can use the following code:<br>
+<code>div {<br>
+border-bottom-width: 12px;<br>
+}</code></p>
+
+<p>The structure to state these properties is: <code>border-side-property</code>, where <code>side</code> refers to: <code>top</code>, <code>right</code>, <code>bottom</code>, or <code>left</code>; and <code>property</code> refers to: <code>width</code>, <code>style</code>, or <code>color</code>.</p>
+
+<h4>Border Radius</h4>
+
+<p>Within the border properties the one that allow round the corners of an element is the <code>border-radius</code>, including percentages and pixels, that identify the radius by which the corners of an element are to be rounded. If:<br>
+A single value is stated: all corners will be rounded equally.<br>
+Two values are stated: the <code>top-left</code>/<code>bottom-right</code> will be rounded in that order.<br>
+Four values will round the <code>top-left</code>, <code>top-right</code>, <code>bottom-right</code>, and <code>bottom-left</code> corners in that order.</p>
+
+<!-- 16.11.24-lor: 053-059 -->
+
+<p>The following is an example of a detailed use for the border radius of an element:<br>
+<code>div {<br>
+border-top-right-radius: 5px;<br>
+}</code></p>
+
+<h3>Box sizing</h3>
+
+<p>Previously, was discussed that the box sizing was an additive characteristic. For example, if the <code>width</code> of an element is set to <code>500px</code> with a <code>20px padding</code> and a <code>10px border</code>, the actual <code>width</code> of the element is <code>560px</code>. However, CSS3 introduced an additional way to support box-sizing into the box model, which allows change exactly how the box model works and how the element's size is calculated. This property allows three different primary values or configurations &mdash;<code>content-box</code>, <code>padding-box</code>, and <code>border-box</code>&mdash;each of which has a slightly different impact on how the box size is calculated.</p>
+
+<h4>Content box</h4>
+
+<p>This is the default value/parameter and is the one previously discussed. The model starts with the <code>height</code> and <code>width</code> adding from these any <code>padding</code>, <code>border</code>, or <code>margin</code>.</p>
+
+<code>div {<br>
+-webkit-box-sizing: content-box;<br>
+-moz-box-sizing: content-box;<br>
+box-sizing: content-box;<br>
+}<br>
+<i>-webkit, -moz, and -ms are vendor prefixes to help with backwards compatibility with older browsers.</i></code>
+
+<h4>Padding box</h4>
+
+<p>This property value alters the box model keeping constant the <code>width</code> and <code>height</code> of the element, and porportionally shrinking the content holded by it depending on the set padding size. Any stated value for the <code>margin</code> or <code>border</code> will be added to the element's total size. Coming back to the previous example, if an element has a <code>400px width</code>, a <code>20px padding</code>, and <code>10px border</code> the total size of the element will be <code>420px</code> (<code>padding</code> already included, 400px width + 10px left-border + 10px right-border)</p>
+
+<code>div {<br>
+box-sizing: padding-box;<br>
+}</code>
+
+<!-- 16.11.25 -->
+
+<h4>Border box</h4>
+
+<p>Lastly, the <code>border-box</code> value, includes any <code>padding</code>, and/or <code>border</code> into the element's <code>width</code> and <code>height</code>. For example, if an element has a <code>400px width</code> a <code>20px padding</code>, and a <code>10px border</code> the total <code>width</code> of the element will still be <code>400px</code>.<br>
+<code>div {<br>
+box-sizing: border-box;<br>
+}</code></p>
+
+<p>However, regardless of the box-model used, any <code>margin</code> included for the element must be added to get the final size of the element. Therefore, if in the previous example, a <code>30px margin</code> was used, the final <code>width</code> of the elements will be: <code>460px = margin-left: 30px + width: 400px + margin-right: 30px;</code>.</p>
+
+<h4>Picking a box size</h4>
+
+<p>Generally speaking, is <code>border-box</code> value is preferred, this makes our math much, much easier, if an element is set to be let's say <code>500px</code> wide is going to remain the same size regardless of what padding or border values are added to it.</p>
+
+<p>Additionally, it makes easier to use/mix different length units, let's say an element is <code>40%</code> wide, with a <code>padding: 20px;</code> and a <code>border: 10px;</code> these units can be mixed without any issue, and is possible to still guarantee that the actual <code>width</code> of the box will remain <code>40%</code>. As this property was introduced in CSS3, its only drawback is backwards compatibility with older browsers, although this problem is becoming less and less relevant as new browser versions start to include this features. Should we notice any rendering issue, it's worth looking into which browser those issures are occuring with.</p>
+
+<!-- end of lesson 4! -->
+
+<h1>Positioning Content</h1>
+
+<p>One of the most important features of CSS is the possibility to place content in almost any desired way, bringing structure to the document and making the content more digestible. There are different options to do this, each with its own application, allowing the creation of reusable layouts and uniquely positioning one&ndash;off elements.</p>
+
+<!-- 16.11.26 -->
+
+<h2>Positioning with floats</h2>
+
+<p>A very useful way to position element is with the <code>float</code> property, this feature, allow us to take an element, and remove it from the normal flow of the page, and position it next to its parent element (either in its left or right). All other elements on the page will then flow around the floated element. For example and <code>&#60;img&#62;</code> element floated to the side of a few paragraphs of text, will allow these paragraphs to wrap around the image as necessary.</p>
+
+<p>When the <code>float</code> property is used on multiple elements at the same time, it provides the ability to create a layout by floating elements directly to or opposite each other, as seen in multiple-column layouts. <i class="faq">What exaclty this means? examples of this?</i>. The <code>float</code> property accepts a few values, being the most popular <code>left</code> and <code>right</code><br>
+<code>img {<br>
+float: left;<br>
+}</code></p>
+
+<h3>Floats in practice <i class="review">add link to another page with solved example</i></h3>
+
+<p>In a common page layout with a header, two columns in the center, and a footer at the bottom, the elements would look like this:</p>
+
+<section class="code-example">
+  <header><code class="float-example">&#60;header&#62;</code></header>
+  <section><code class="float-example">&#60;section&#62;</code></section>
+  <aside><code class="float-example">&#60;aside&#62;</code></aside>
+  <footer><code class="float-example">&#60;footer&#62;</code></footer>
+</section>
+
+<!-- next day date -->
+</body>
+</html>
