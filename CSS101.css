@@ -1,0 +1,39 @@
+.color-white {color: white; background-color: rgba(132, 133, 150, 1);}
+.color-black {color: black;}
+.color-silver {color: silver;}
+.color-gray {color: gray;}
+.color-maroon {color: maroon;}
+.color-red {color: red;}
+.color-purple {color: purple;}
+.color-fuchsia {color: fuchsia;}
+.color-green {color: green;}
+.color-olive {color: olive;}
+.color-lime {color: lime;}
+.color-yellow {color: yellow;}
+.color-navy {color: navy;}
+.color-blue {color: blue;}
+.color-teal {color: teal;}
+.color-aqua {color: aqua;}
+
+.px01 {font-size: 01px;}
+.px05 {font-size: 05px;}
+.px10 {font-size: 10px; color: yellow;}
+.px15 {font-size: 15px;}
+.px20 {font-size: 20px;}
+.px25 {font-size: 25px;}
+.px30 {font-size: 30px;}
+.px35 {font-size: 35px;}
+.px40 {font-size: 40px;}
+.px45 {font-size: 45px;}
+.px50 {font-size: 50px; color: lime;}
+.px55 {font-size: 55px;}
+.px60 {font-size: 60px;}
+.px65 {font-size: 65px;}
+.px70 {font-size: 70px;}
+.px75 {font-size: 75px;}
+.px80 {font-size: 80px;}
+.px85 {font-size: 85px;}
+.px90 {font-size: 90px;}
+.px95 {font-size: 95px; color: teal;}
+
+.px2 {font-size: 200%; color: red;}

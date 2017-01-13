@@ -3,23 +3,28 @@
 <head>
   <meta charset="utf-8">
   <title>line one - CSS 101</title>
+  <link rel="stylesheet" type="text/css" href="CSS101.css">
 </head>
 <body id="top">
 
-<header><h1>CSS 101</h1></header>
+<header>
 
-<nav>
-  <h4>Table of contents</h4>
+  <h1>CSS 101</h1>
 
-  <a href="#CSS-101">Getting to know CSS</a><br>
-  <a href="#common-CSS">Understanding common CSS terms</a><br>
-  <a href="#working-selectors">Working with selectors</a><br>
-  <a href="#CSS-resets">Using CSS resets</a><br>
-  <a href="#specificity">Calculating specificity</a><br>
-  <a href="#combining">Combining selectors</a><br>
-  <a href="#multi-class">Layering styles with multiple classes</a><br>
-  <a href="#common-property">Common CSS property values</a>
-</nav>
+  <nav>
+    <h4>Table of contents</h4>
+
+    <a href="#CSS-101">Getting to know CSS</a><br>
+    <a href="#common-CSS">Understanding common CSS terms</a><br>
+    <a href="#working-selectors">Working with selectors</a><br>
+    <a href="#CSS-resets">Using CSS resets</a><br>
+    <a href="#specificity">Calculating specificity</a><br>
+    <a href="#combining">Combining selectors</a><br>
+    <a href="#multi-class">Layering styles with multiple classes</a><br>
+    <a href="#common-property">Common CSS property values</a>
+  </nav>
+
+</header>
 
 <h1 id="CSS-101">Getting to know CSS</h1>
 
@@ -281,6 +286,26 @@
         background: yellow;<br>
         }</code></p>
 
+        <p>Example:</p>
+        
+        <p>
+          <code class="color-white">white</code><br>
+          <code class="color-black">black</code><br>
+          <code class="color-silver">silver</code><br>
+          <code class="color-gray">grey</code><br>
+          <code class="color-maroon">maroon</code><br>
+          <code class="color-purple">purple</code><br>
+          <code class="color-fuchsia">fuchsia</code><br>
+          <code class="color-green">green</code><br>
+          <code class="color-olive">olive</code><br>
+          <code class="color-lime">lime</code><br>
+          <code class="color-yellow">yellow</code><br>
+          <code class="color-navy">navy</code><br>
+          <code class="color-blue">blue</code><br>
+          <code class="color-teal">teal</code><br>
+          <code class="color-aqua">aqua</code><br>
+        </p>
+
         <p>Obviously, although these color values are simple in nature, they offer a limited spectre of options, thus are not the most popular color value choice.</p>
 
       <h4>Hexadecimal colors</h4>
@@ -340,6 +365,31 @@
         font-size: 14px;<br>
         }</code></p>
 
+        <h5>Example</h5>
+
+          <p><i>Explain the size of each bar and what the color means</i></p>
+
+          <span class="px01">|</span>
+          <span class="px05">|</span>
+          <span class="px10">|</span>
+          <span class="px15">|</span>
+          <span class="px20">|</span>
+          <span class="px25">|</span>
+          <span class="px30">|</span>
+          <span class="px35">|</span>
+          <span class="px40">|</span>
+          <span class="px45">|</span>
+          <span class="px50">|</span>
+          <span class="px55">|</span>
+          <span class="px60">|</span>
+          <span class="px65">|</span>
+          <span class="px70">|</span>
+          <span class="px75">|</span>
+          <span class="px80">|</span>
+          <span class="px85">|</span>
+          <span class="px90">|</span>
+          <span class="px95">|</span>
+
       <h4>Relative lengths</h4>
 
         <p>Relative lengths are expressed in percentages, represented by the <code>%</code> notation, they rely on the length of another measurement, making them a little bit more complicated. For example, to set the <code>width</code> of an element to <code>50%</code>, is necessary to know the length of its parent element (the element it is nested within), and then identify <code>50%</code> of the parent element's width.<br>
@@ -348,6 +398,31 @@
         }</code></p>
 
         <p>The above CSS, in simple words means, set the width of the element with the class attribute of <code>col</code> to <code>50%</code>. That <code>50%</code> will be calculated relative to the width of the parent element. This percentages are extremely helpful for setting the height and width of elements and building out a web page's layout.</p>
+
+        <h6>Example</h6>
+
+          <p><i>Include explanation of size relative to parent element and what the color means.</i></p>
+
+          <span class="px01">|<span class="px2">|</span></span>
+          <span class="px05">|<span class="px2">|</span></span>
+          <span class="px10">|<span class="px2">|</span></span>
+          <span class="px15">|<span class="px2">|</span></span>
+          <span class="px20">|<span class="px2">|</span></span>
+          <span class="px25">|<span class="px2">|</span></span>
+          <span class="px30">|<span class="px2">|</span></span>
+          <span class="px35">|<span class="px2">|</span></span>
+          <span class="px40">|<span class="px2">|</span></span>
+          <span class="px45">|<span class="px2">|</span></span>
+          <span class="px50">|<span class="px2">|</span></span>
+          <span class="px55">|<span class="px2">|</span></span>
+          <span class="px60">|<span class="px2">|</span></span>
+          <span class="px65">|<span class="px2">|</span></span>
+          <span class="px70">|<span class="px2">|</span></span>
+          <span class="px75">|<span class="px2">|</span></span>
+          <span class="px80">|<span class="px2">|</span></span>
+          <span class="px85">|<span class="px2">|</span></span>
+          <span class="px90">|<span class="px2">|</span></span>
+          <span class="px95">|<span class="px2">|</span></span>
 
         <h5>Em</h5>
 
