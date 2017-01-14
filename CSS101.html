@@ -21,7 +21,9 @@
     <a href="#specificity">Calculating specificity</a><br>
     <a href="#combining">Combining selectors</a><br>
     <a href="#multi-class">Layering styles with multiple classes</a><br>
-    <a href="#common-property">Common CSS property values</a>
+    <a href="#common-property">Common CSS property values</a><br>
+    <a href="#color">Color</a><br>
+    <a href="#length">Length</a>
   </nav>
 
 </header>
@@ -267,7 +269,7 @@
 
   <p>As previously explained the CSS document is all about the apperance of our document. Between the parameters used for this are colors, length/sizes, among others, here, the first two are going to be explained.</p>
 
-    <h3>Colors</h3>
+    <h3 id="color">Color</h3>
 
       <p>All colors within CSS are defined on an sRGB (standard Red, Green, Blue) color space/standard. Colors within this space are formed by mixing red, green and blue, mirroring the way televisions and monitors generate all the different colors they display. Currently there are four ways to represent sRGB colors within CSS: keywords, hexadecimal notation, RGB and HSL values.</p>
 
@@ -354,7 +356,7 @@
 
         <p>Just as the <code>rgba()</code> function the <code>hsla()</code> function accepts/includes an alpha parameter that identify the degree of opacity. The shade of orange previously seen with a 50% opacity, would be represented as an HSLa color value of <code>hsla(24, 100%, 50%, .5)</code>.</p>
 
-    <h3>Lengths</h3>
+    <h3 id="length">Length</h3>
 
       <p>Similarly to colors, length values can be represented in a handful of ways, each of them serving a distinct purpose. But regardless of how is expressed, length values can refer to absolute or relative length, each of which uses different units of measurement.</p>
 
@@ -367,7 +369,7 @@
 
         <h5>Example</h5>
 
-          <p><i>Explain the size of each bar and what the color means</i></p>
+          <p>Here different size bars are shown, with <code>5px</code> increments, using <code>&#60;span&#62;</code> elements. notice that although the first bar size is set to <code>1px</code> the browser will only render fonts with a minimum of <code>10px</code>. The <code>yellow</code> bar is <code>10px</code> size, the <code>lime</code> bar is <code>50px</code> tall, while the <code>teal</code> bar has a <code>95px</code> height. The correponding HTML and CSS code is shown below:</p>
 
           <span class="px01">|</span>
           <span class="px05">|</span>
@@ -390,6 +392,56 @@
           <span class="px90">|</span>
           <span class="px95">|</span>
 
+          <span><br></span>
+
+          <code>
+            <b>HTML</b><br>
+            <br>
+            &#60;span class="px01"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px05"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px10"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px15"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px20"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px25"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px30"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px35"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px40"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px45"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px50"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px55"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px60"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px65"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px70"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px75"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px80"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px85"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px90"&#62;|&#60;/span&#62;<br>
+            &#60;span class="px95"&#62;|&#60;/span&#62;<br>
+            <br>
+            <b>CSS</b><br>
+            <br>
+            .px01 {font-size: 01px;}<br>
+            .px05 {font-size: 05px;}<br>
+            .px10 {font-size: 10px; color: yellow;}<br>
+            .px15 {font-size: 15px;}<br>
+            .px20 {font-size: 20px;}<br>
+            .px25 {font-size: 25px;}<br>
+            .px30 {font-size: 30px;}<br>
+            .px35 {font-size: 35px;}<br>
+            .px40 {font-size: 40px;}<br>
+            .px45 {font-size: 45px;}<br>
+            .px50 {font-size: 50px; color: lime;}<br>
+            .px55 {font-size: 55px;}<br>
+            .px60 {font-size: 60px;}<br>
+            .px65 {font-size: 65px;}<br>
+            .px70 {font-size: 70px;}<br>
+            .px75 {font-size: 75px;}<br>
+            .px80 {font-size: 80px;}<br>
+            .px85 {font-size: 85px;}<br>
+            .px90 {font-size: 90px;}<br>
+            .px95 {font-size: 95px; color: teal;}
+          </code>
+
       <h4>Relative lengths</h4>
 
         <p>Relative lengths are expressed in percentages, represented by the <code>%</code> notation, they rely on the length of another measurement, making them a little bit more complicated. For example, to set the <code>width</code> of an element to <code>50%</code>, is necessary to know the length of its parent element (the element it is nested within), and then identify <code>50%</code> of the parent element's width.<br>
@@ -401,28 +453,81 @@
 
         <h6>Example</h6>
 
-          <p><i>Include explanation of size relative to parent element and what the color means.</i></p>
+          <span class="px01">|<span class="px02">|</span></span>
+          <span class="px05">|<span class="px02">|</span></span>
+          <span class="px10">|<span class="px02">|</span></span>
+          <span class="px15">|<span class="px02">|</span></span>
+          <span class="px20">|<span class="px02">|</span></span>
+          <span class="px25">|<span class="px02">|</span></span>
+          <span class="px30">|<span class="px02">|</span></span>
+          <span class="px35">|<span class="px02">|</span></span>
+          <span class="px40">|<span class="px02">|</span></span>
+          <span class="px45">|<span class="px02">|</span></span>
+          <span class="px50">|<span class="px02">|</span></span>
+          <span class="px55">|<span class="px02">|</span></span>
+          <span class="px60">|<span class="px02">|</span></span>
+          <span class="px65">|<span class="px02">|</span></span>
+          <span class="px70">|<span class="px02">|</span></span>
+          <span class="px75">|<span class="px02">|</span></span>
+          <span class="px80">|<span class="px02">|</span></span>
+          <span class="px85">|<span class="px02">|</span></span>
+          <span class="px90">|<span class="px02">|</span></span>
+          <span class="px95">|<span class="px02">|</span></span>
 
-          <span class="px01">|<span class="px2">|</span></span>
-          <span class="px05">|<span class="px2">|</span></span>
-          <span class="px10">|<span class="px2">|</span></span>
-          <span class="px15">|<span class="px2">|</span></span>
-          <span class="px20">|<span class="px2">|</span></span>
-          <span class="px25">|<span class="px2">|</span></span>
-          <span class="px30">|<span class="px2">|</span></span>
-          <span class="px35">|<span class="px2">|</span></span>
-          <span class="px40">|<span class="px2">|</span></span>
-          <span class="px45">|<span class="px2">|</span></span>
-          <span class="px50">|<span class="px2">|</span></span>
-          <span class="px55">|<span class="px2">|</span></span>
-          <span class="px60">|<span class="px2">|</span></span>
-          <span class="px65">|<span class="px2">|</span></span>
-          <span class="px70">|<span class="px2">|</span></span>
-          <span class="px75">|<span class="px2">|</span></span>
-          <span class="px80">|<span class="px2">|</span></span>
-          <span class="px85">|<span class="px2">|</span></span>
-          <span class="px90">|<span class="px2">|</span></span>
-          <span class="px95">|<span class="px2">|</span></span>
+          <p>Here different size bars are shown, with <code>5px</code> increments, using <code>&#60;span&#62;</code> elements. notice that although the first bar size is set to <code>1px</code> the browser will only render fonts with a minimum of <code>10px</code>. The <code>yellow</code> bar is <code>10px</code> size, the <code>lime</code> bar is <code>50px</code> tall, while the <code>teal</code> bar has a <code>95px</code> height. Also, the <em>nested</em> <code><b>&#60;span&#62;</b></code> element has a <code>class="px02"</code> (boldfaced in the CSS section below) which in the CSS file is formatted to show a bar with twice the font size of its parent element and in red color. The correponding HTML and CSS code is shown below:</p>
+
+          <code>
+            <b>HTML</b><br>
+            <br>
+            &#60;span class="px01"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px05"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px10"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px15"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px20"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px25"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px30"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px35"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px40"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px45"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px50"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px55"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px60"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px65"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px70"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px75"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br> 
+            &#60;span class="px80"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px85"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px90"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            &#60;span class="px95"&#62;|&#60;span class="px02"&#62;|/span&#62;&#60;/span&#62;<br>
+            <br>
+          </code>
+
+          <code>
+            <b>CSS</b><br>
+            <br>
+            .px01 {font-size: 01px;}<br>
+            .px05 {font-size: 05px;}<br>
+            .px10 {font-size: 10px; color: yellow;}<br>
+            .px15 {font-size: 15px;}<br>
+            .px20 {font-size: 20px;}<br>
+            .px25 {font-size: 25px;}<br>
+            .px30 {font-size: 30px;}<br>
+            .px35 {font-size: 35px;}<br>
+            .px40 {font-size: 40px;}<br>
+            .px45 {font-size: 45px;}<br>
+            .px50 {font-size: 50px; color: lime;}<br>
+            .px55 {font-size: 55px;}<br>
+            .px60 {font-size: 60px;}<br>
+            .px65 {font-size: 65px;}<br>
+            .px70 {font-size: 70px;}<br>
+            .px75 {font-size: 75px;}<br>
+            .px80 {font-size: 80px;}<br>
+            .px85 {font-size: 85px;}<br>
+            .px90 {font-size: 90px;}<br>
+            .px95 {font-size: 95px; color: teal;}<br>
+            <br>
+            <b>.px02 {font-size: 200%; color: red;}</b>
+          </code>
 
         <h5>Em</h5>
 
@@ -433,6 +538,16 @@
           }</code></p>
 
           <p>Keep in mind that when a font size is not explicitly stated for an element, the <code>em</code> unit will be relative/take the value of the font size of the closest parent element with a stated font size.</p>
+
+          <p>The following example, shows the usage of an <code>em</code> unit, here, the <code>L</code> letter is enclosed into a <code>&#60;span&#62;</code> element classified as <code>class="em-example"</code> whose <code>font-size: 5em;</code>, i.e. <code>12px * 5em = 60px</code>. Notice that set the <code>font-size</code> in <code>em</code> units, allows change the font size of the paragrah element and the <code>L</code> letter will change its size proportionally.</p>
+
+          <p class="color-gray lorem"><span class="em-example">L</span><i>orem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae tellus id ipsum posuere tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In sagittis ipsum risus, vitae mollis enim vestibulum convallis. Vivamus nec dapibus tellus. Vestibulum tempor ante vitae dolor vestibulum, nec pulvinar diam ultrices. Aenean aliquam venenatis tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam lobortis, dui a venenatis mattis, purus orci vestibulum eros, ac vulputate tellus libero dignissim eros. Quisque nec blandit ante. In iaculis sagittis vestibulum.</i></p>
+
+<footer>
+  <h3>Summary</h3>
+
+  <h3>Additional resources & info</h3>
+</footer>
 
 <!-- end of lesson 3 -->
 

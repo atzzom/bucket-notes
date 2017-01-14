@@ -1,3 +1,6 @@
+body {font-size: 16px;}
+code {font-size: 14px; color: teal;}
+
 .color-white {color: white; background-color: rgba(132, 133, 150, 1);}
 .color-black {color: black;}
 .color-silver {color: silver;}
@@ -36,4 +39,8 @@
 .px90 {font-size: 90px;}
 .px95 {font-size: 95px; color: teal;}
 
-.px2 {font-size: 200%; color: red;}
+.px02 {font-size: 200%; color: red;}
+
+.em-example {font-size: 5em; color: black;}
+
+p.lorem {font-size: 14px;}
