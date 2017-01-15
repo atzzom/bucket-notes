@@ -23,12 +23,15 @@
     <a href="#multi-class">Layering styles with multiple classes</a><br>
     <a href="#common-property">Common CSS property values</a><br>
     <a href="#color">Color</a><br>
-    <a href="#length">Length</a>
+    <a href="#length">Length</a><br>
+    <a href="#summary">Summary</a><br>
+    <a href="#+info">Additional resources & info</a>
   </nav>
 
 </header>
-
-<h1 id="CSS-101">Getting to know CSS</h1>
+<br>
+<hr>
+<h2 id="CSS-101">Getting to know CSS</h2>
 
   <p>CSS is the language in charge of provide with format and styles to the structural HTML elements in the webpage, it stands for <b>C</b>ascade <b>S</b>tyle <b>S</b>heet, and <i>pours</i> the different format from the top to the bottom of the document. Therefore, styles can be overwritten as the style sheet progresses.</p>
 
@@ -54,9 +57,9 @@
         <p>Represent how a property is set, for example, when applying the <code>color</code> property to a text, is possible to set its value to <code>blue</code>. Values, fall after a colon <code>:</code> and a semi-colon <code>;</code> just right after the property name, like this:<br>
         <code>p {color: blue;}</code></p>
 
-<!--16.10.21....................................-->
+<hr><!-- 16.10.21 -->
 
-    <h3 id="working-selectors">Working with selectors</h3>
+    <h2 id="working-selectors">Working with selectors</h2>
 
       <p>The most common ways to select the different elements in a HTML document is with the <code>type</code>, <code>class</code>, and <code>ID</code> selectors, that target the aforementioned elements based on the nature, classification and/or identity of them. <i class=faq>Are there additional CSS selectors?</i></p>
 
@@ -106,7 +109,9 @@
 
         <p>In the above example, the <code>main.css</code> file is stored in the same location as the HTML file. The location in which this HTML file is located is known as the root directory.</p>
 
-      <h4 id="CSS-resets">Using CSS resets</h4>
+<hr>
+
+      <h2 id="CSS-resets">Using CSS resets</h2>
 
         <p>As every browser has by default its ow predefined styles (margins, headings, paragraphs, etc.) the way they represent the very same content maight be different, because of this, the use of CSS resets have become widely used. The concept behind a CSS reset is to remove any predefined style setting and start working with a blank canvas, to do so effectively, this reset needs to be placed first in the CSS file, in this way is going to be read first by the browser and applied any additional style over this common baseline. In fact, this concept has gone further to not only deleting any predefined style but apply a common style to work with, this requires a stronger understanding of CSS, as well as awareness of what you'd like your styles to be. Below is a sample of one common CSS reset:</p>
 
@@ -147,7 +152,7 @@
         border-spacing: 0;<br>
         }</code></p>
 
-        <p>See <a href="CSS101 reseted.html">this page</a> once a CSS reset is applied.</p>
+        <p>See <a href="CSS101%20reseted.html">this page</a> once a CSS reset is applied.</p>
 
   <p>As outlined previously, CSS works pouring the styles properties as the style sheet goes on, for example, at the begining of the casade (or at the begining of the CSS document) we define the paragraphs elements to have a blue background color, but later in the CSS document, the color is set up to green, then, the paragraphs are going to be rendered green, as they were applied later on and override their previous blue set up.</p>
 
@@ -168,9 +173,11 @@
   background: green;<br>
   }</code></p>
 
-  <a href="css example 1.html">example 1</a>
+  <a href="css%20example%201.html">example 1</a>
 
   <p>As mentioned previously, the styles of the cascade will be cascade from the top to the bottom of the style sheet, but not always will be this way. Those times occur when different types of selectors are used and the <strong>specificity</strong> of those selectors breaks the cascade.</p>
+
+<hr>
 
   <h2 id="specificity">Calculating specificity</h2>
 
@@ -237,6 +244,8 @@
 
       <p>Work out the specificity in the case of combined selector is pretty straighforward, for example, in the combined selector: <code>.hotdog p.mustard</code> it has one type selector (<code>0-0-1</code>), and two class selectors (<code>0-1-0</code>), therefore its specificity is <code>0-2-1</code> (two class and one type selector). Therefore we can deduce that the specificity of <code>.hotdog p.mustard</code> will be exactly the same as the one for: <code>p.mustard .hotdog</code>, or <code>.hotdog .mustard p</code>, or <code>p .hotdog.mustard</code>, etc, even though these combined selectors might deliver different results. These permutation in the specificity calculation translates to the fact that we can change the order of these selectors (<code>.hotdog p {}</code> and <code>.hotdog p.mustard</code>)  within our style sheet, placing the higher-weighted selector above the lower-weighted selector leading to the same result due to each selector's specificity weight. In general is desirable keep low specificity/precedence values as the higher the specificity the more likely the cascade is to break.</p>
 
+<hr>
+
   <h2 id="multi-class">Layering styles with multiple classes</h2>
 
     <p>One way to keep the specificity as low as possible is to construct the website as modular as possible, to achive this, we can take advantage of the fact that HTML elements can have more than one class attribute as long as they are separated with a space, for example, the following element is classified as <code>interactive</code>, <code>code</code>, and <code>hello-world</code>:<br>
@@ -264,6 +273,8 @@
 <!-- 16.11.20 -->
 
     <p>It is possible to see here that a modular set up is really useful to apply different styles without a lot of rules in the <code>.css</code> document, keeping the code lean and specificity weights low.</p>
+
+<hr>
 
   <h2 id="common-property">Common CSS property values</h2>
 
@@ -356,7 +367,7 @@
 
         <p>Just as the <code>rgba()</code> function the <code>hsla()</code> function accepts/includes an alpha parameter that identify the degree of opacity. The shade of orange previously seen with a 50% opacity, would be represented as an HSLa color value of <code>hsla(24, 100%, 50%, .5)</code>.</p>
 
-    <h3 id="length">Length</h3>
+    <h2 id="length">Length</h2>
 
       <p>Similarly to colors, length values can be represented in a handful of ways, each of them serving a distinct purpose. But regardless of how is expressed, length values can refer to absolute or relative length, each of which uses different units of measurement.</p>
 
@@ -543,10 +554,27 @@
 
           <p class="color-gray lorem"><span class="em-example">L</span><i>orem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae tellus id ipsum posuere tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In sagittis ipsum risus, vitae mollis enim vestibulum convallis. Vivamus nec dapibus tellus. Vestibulum tempor ante vitae dolor vestibulum, nec pulvinar diam ultrices. Aenean aliquam venenatis tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam lobortis, dui a venenatis mattis, purus orci vestibulum eros, ac vulputate tellus libero dignissim eros. Quisque nec blandit ante. In iaculis sagittis vestibulum.</i></p>
 
-<footer>
-  <h3>Summary</h3>
+<hr>
 
-  <h3>Additional resources & info</h3>
+<footer>
+  <h3 id="summary">Summary</h3>
+
+    <p>To briefly recap, within this lesson it has been discussed the following:</p>
+
+    <p>
+    - How the cascade applies styles from the top to the bottom of the document.<br>
+    - What specificity is, and how is related to the precedence of the different selectors.<br>
+    - How to combine selectors to target specific elements or groups of elements.<br>
+    - How to use multiple classes to layer on styles in order to get a more modular code.<br>
+    - Different ways to represent colors, such as, keywords, RGB, HSL, and their transparency equivalents RGBa, and HSLa respectively.<br>
+    - Similarly, the different lenght units, absolute as pixels, or relative such as, em and percentages.
+    </p>
+
+  <h3 id="+info">Additional resources & info</h3>
+
+    <p>- <a href="http://www.w3.org/TR/css3-color/">CSS color module</a> via W3C<br>
+    - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">CSS Length values</a> via Mozilla Developer Network.<br>
+    - <a href="https://kuler.adobe.com/create/color-wheel/">Adobe Kuler</a>.</p>
 </footer>
 
 <!-- end of lesson 3 -->
