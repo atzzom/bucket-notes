@@ -1,49 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
   <title>line one - the box model</title>
+  <link rel="stylesheet" type="text/css" href="box.css">
 </head>
-<body>
-<h1>The Box Model</h1>
 
-<h3>The Display Property</h3>
+<body id="top">
+<header>
+  <h1>&#8212; The Box Model &#8212;</h1>
 
-<p>The way how exactly an element is displayed (as block-level, inline-level element or something else) is controlled by the <code>display</code> property. Every element has a default value for this property, which, as all other property values can be overwritten, being the most common: <code>block</code>, <code>inline</code>, <code>inline-block</code>, and <code>none</code>. For example, if the <code>display</code> property for a <code>&#60;p&#62;</code> element is going to be changed from <code>inline</code> to a <code>block</code> level/type display, the CSS would be the following:<br>
-<code>p {<br>
-display: block;<br>
-}</code></p>
+  <a href="home.html">Home</a>
 
-<p>The <code>inline-block</code> value, allows an element to behave as a <code>block</code> level element (allowing it to contain other elements) whilst being displayed in line with other elements, and without begining on a new line by default, e.g.:<br>
-<code>p {<br>
-display: inline-block;<br>
-}</code></p>
+  <p>Table of contents</p>
 
-<h4>Demo: display inline-block</h4>
+  <nav>
+    <a href="#box">The box model</a><br>
+    <a href="#display">The display property</a><br>
+  </nav>
 
-<h5>HTML</h5>
+  <p><i class="faq">should the <code>&#60;body&#62;</code> element contain the <code>&#60;header&#62;</code> element?<br>
+  When validating the code with the <code>&#60;header&#62;</code> element <b>outside</b> the the <code>&#60;body&#62;</code> element, a warning is shown, as it is part of the flow of the document.</i></p>
+  <hr>
+</header>
 
-<p><code>&#60;p&#62;Paragraph one.&#60;/p&#62;<br>
-&#60;p&#62;Paragraph two.&#60;/p&#62;<br>
-&#60;p&#62;Paragraph three.&#60;/p&#62;</code></p>
+<h2 id="box">What is the Box Model?</h2>
 
-<h5>CSS</h5>
-
-<p><code>p {<br>
-display: inline-block;<br>
-}</code></p>
-
-<h5>Result</h5>
-
-<p>Paragraph one. Paragraph two. Paragraph three.</p>
-
-<p>Is important to make the distinction that inline-block elements will display an small gap/space between them, although sometimes annoying, this gap is completely normal and removable.</p>
-
-<p>Lastly, a <code>display: none;</code> value will completely hide the element and its nested elements, redering the page as if that element doesn't exist, e.g.:<br>
-<code>div {<br>
-display: none;<br>
-}</code></p>
-
-<h2>What is the Box Model?</h2>
+<section>
 
 <p>The most important concept of the model is this:</p>
 
@@ -53,6 +36,36 @@ display: none;<br>
 
 <p>Therefore, <b>every</b> element will have: <b>a width</b>, <b>a height</b>, <b>a padding</b>, <b>borders</b>, <b>and margins</b>.</p>
 
+<p><code>
+&#9484;-------------------------------------------------------&#9488;<br>
+|margin<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>&#9484;---------------------------------------------&#9488;<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|border<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>&#9484;-----------------------------------&#9488;<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|padding<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;</span>&#9484;----------------------------&#9488;<span>&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;</span>|width<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;</span>|height<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;</span>&#9492;----------------------------&#9496;<span>&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;</span>&#9492;-----------------------------------&#9496;<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;</span>&#9492;---------------------------------------------&#9496;<span>&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+|<span>&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;&#8287;</span>|<br>
+&#9492;-------------------------------------------------------&#9496;<br>
+</code>
+</p>
+
 <p>Each part of the model corresponds to a CSS property: <code>width</code>, <code>height</code>, <code>padding</code>, <code>border</code>, and <code>margin</code>, e.g.:<br>
 <code>div {<br>
 border: 6px solid #949599;<br>
@@ -61,6 +74,8 @@ margin: 20px;<br>
 padding: 20px;<br>
 width: 400px;<br>
 }</code></p>
+
+<div class="box-ex1">I'm a <code>&#60;div&#62;</code> (division) element, of <code>452px</code> wide and <code>152px</code> high.</div>
 
 <p>Considering all the elements of the box model the total width can be determined using the following formula:<br>
 <code>margin-right + border-right + padding-right + <b>width</b> + padding-left + border-left + margin-left</code></p>
@@ -240,6 +255,43 @@ box-sizing: border-box;<br>
 
 <p>Additionally, it makes easier to use/mix different length units, let's say an element is <code>40%</code> wide, with a <code>padding: 20px;</code> and a <code>border: 10px;</code> these units can be mixed without any issue, and is possible to still guarantee that the actual <code>width</code> of the box will remain <code>40%</code>. As this property was introduced in CSS3, its only drawback is backwards compatibility with older browsers, although this problem is becoming less and less relevant as new browser versions start to include this features. Should we notice any rendering issue, it's worth looking into which browser those issures are occuring with.</p>
 
+<h3 id="display">The Display Property</h3>
+
+<p>The way how exactly an element is displayed (as block-level, inline-level element or something else) is controlled by the <code>display</code> property. Every element has a default value for this property, which, as all other property values can be overwritten, being the most common: <code>block</code>, <code>inline</code>, <code>inline-block</code>, and <code>none</code>. For example, if the <code>display</code> property for a <code>&#60;p&#62;</code> element is going to be changed from <code>inline</code> to a <code>block</code> level/type display, the CSS would be the following:<br>
+<code>p {<br>
+display: block;<br>
+}</code></p>
+
+<p>The <code>inline-block</code> value, allows an element to behave as a <code>block</code> level element (allowing it to contain other elements) whilst being displayed in line with other elements, and without begining on a new line by default, e.g.:<br>
+<code>p {<br>
+display: inline-block;<br>
+}</code></p>
+
+<h4>Demo: display inline-block</h4>
+
+<h5>HTML</h5>
+
+<p><code>&#60;p&#62;Paragraph one.&#60;/p&#62;<br>
+&#60;p&#62;Paragraph two.&#60;/p&#62;<br>
+&#60;p&#62;Paragraph three.&#60;/p&#62;</code></p>
+
+<h5>CSS</h5>
+
+<p><code>p {<br>
+display: inline-block;<br>
+}</code></p>
+
+<h5>Result</h5>
+
+<p>Paragraph one. Paragraph two. Paragraph three.</p>
+
+<p>Is important to make the distinction that inline-block elements will display an small gap/space between them, although sometimes annoying, this gap is completely normal and removable.</p>
+
+<p>Lastly, a <code>display: none;</code> value will completely hide the element and its nested elements, redering the page as if that element doesn't exist, e.g.:<br>
+<code>div {<br>
+display: none;<br>
+}</code></p>
+
 <!-- end of lesson 4! -->
 
 <h1>Positioning Content</h1>
@@ -261,13 +313,19 @@ float: left;<br>
 
 <p>In a common page layout with a header, two columns in the center, and a footer at the bottom, the elements would look like this:</p>
 
-<section class="code-example">
+<div class="code-example">
   <header><code class="float-example">&#60;header&#62;</code></header>
-  <section><code class="float-example">&#60;section&#62;</code></section>
+  <div><code class="float-example">&#60;section&#62;</code></div>
   <aside><code class="float-example">&#60;aside&#62;</code></aside>
   <footer><code class="float-example">&#60;footer&#62;</code></footer>
-</section>
+</div>
 
 <!-- next day date -->
+
+<footer>
+  <h3>Summary</h3>
+  <h3>Additional info</h3>
+</footer>
+</section>
 </body>
 </html>
