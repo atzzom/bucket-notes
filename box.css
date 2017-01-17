@@ -47,9 +47,9 @@ Document style
 
 body {padding: 0px 10%}
 h1 {padding: 0px 20%}
-section {padding-left: 5%; padding-right: 5%;}
-/*h2, h3, h4, h5, h6 {padding: 0px;}*/
+article {padding-left: 5%; padding-right: 5%;}
 span {color: white;}
+.axiom {font-size: 1.5em; color: rgba(72,80,83,.65);}
 .box-ex1 {
   border: 6px solid #949599;
   height: 100px;
@@ -57,3 +57,5 @@ span {color: white;}
   padding: 20px;
   width: 400px;
 }
+article h4 {padding-left: 5%}
+article p {padding: 0px 5%;}
