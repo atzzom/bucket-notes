@@ -41,13 +41,18 @@ border-spacing: 0;
 
 /*
 ============================================
-Document style
+Document's style
 ============================================
 */
 
 body {padding: 0px 10%}
 h1 {padding: 0px 20%}
 article {padding-left: 5%; padding-right: 5%;}
+code {font-size: 1.1em;}
+aside {margin: 5px;
+  border: 5px solid teal;
+padding: 5px;}
+.color-teal {color: teal;}
 span {color: white;}
 .axiom {font-size: 1.5em; color: rgba(72,80,83,.65);}
 .box-ex1 {
@@ -57,5 +62,7 @@ span {color: white;}
   padding: 20px;
   width: 400px;
 }
-article h4 {padding-left: 5%}
-article p {padding: 0px 5%;}
+article p {padding-left: 5%;}
+article code {padding-left: 10%;}
+p code, div code, article code {padding: 0px;}
+.ex-display {padding-left: 10%;}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<h1>Positioning Content</h1>
+
+<p>One of the most important features of CSS is the possibility to place content in almost any desired way, bringing structure to the document and making the content more digestible. There are different options to do this, each with its own application, allowing the creation of reusable layouts and uniquely positioning one&ndash;off elements.</p>
+
+<!-- 16.11.26 -->
+
+<h2>Positioning with floats</h2>
+
+<p>A very useful way to position element is with the <code>float</code> property, this feature, allow us to take an element, and remove it from the normal flow of the page, and position it next to its parent element (either in its left or right). All other elements on the page will then flow around the floated element. For example and <code>&#60;img&#62;</code> element floated to the side of a few paragraphs of text, will allow these paragraphs to wrap around the image as necessary.</p>
+
+<p>When the <code>float</code> property is used on multiple elements at the same time, it provides the ability to create a layout by floating elements directly to or opposite each other, as seen in multiple-column layouts. <i class="faq">What exaclty this means? examples of this?</i>. The <code>float</code> property accepts a few values, being the most popular <code>left</code> and <code>right</code><br>
+<code>img {<br>
+float: left;<br>
+}</code></p>
+
+<h3>Floats in practice <i class="review">add link to another page with solved example</i></h3>
+
+<p>In a common page layout with a header, two columns in the center, and a footer at the bottom, the elements would look like this:</p>
+
+<div class="code-example">
+  <header><code class="float-example">&#60;header&#62;</code></header>
+  <div><code class="float-example">&#60;section&#62;</code></div>
+  <aside><code class="float-example">&#60;aside&#62;</code></aside>
+  <footer><code class="float-example">&#60;footer&#62;</code></footer>
+</div>
+
+<!-- next day date -->
+
+</body>
+</html>
