@@ -102,6 +102,73 @@
   <hr>
 </section>
 
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------- display -------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+<section>
+  <h2 id="display">The Display Property</h2>
+
+  <article>
+    <p>The way how exactly an element is displayed (as block-level, inline-level element or something else) is controlled by the <code>display</code> property. Every element has a default value for this property, which, as all other property values can be overwritten, being the most common: <code>block</code>, <code>inline</code>, <code>inline-block</code>, and <code>none</code>. For example, if the <code>display</code> property for a <code>&#60;p&#62;</code> element is going to be changed from <code>inline</code> to a <code>block</code> level/type display, the CSS would be the following:<br>
+    <code>p {<br>
+    display: block;<br>
+    }</code></p>
+
+    <p class="ex-display">HTML</p>
+
+    <p class="ex-display">CSS</p>
+
+    <code>
+      <p>&#60;p&#62;Paragraph 1.&#60;/p&#62;</p>
+      <p>&#60;p&#62;Paragraph 2.&#60;/p&#62;</p>
+      <p>&#60;p&#62;Paragraph 3.&#60;/p&#62;</p>
+    </code>
+
+    <p>Notice here that altought the content of all three paragraphs don't fulfill the entire width of the screen (or more precisely, parent element) the element (not the content) is displayed occupying the full width. And the next paragraph, i.e. (<code>&#60;p&#62;Paragraph 2.&#60;/p&#62;</code>) will be rendered inmediately below instead of next to the previous paragraph, even if there is empty space.</p>
+
+    <i class="faq">do all the HTML elements have these values for their <code>display</code> properties?</i>
+
+    <p>The <code>inline-block</code> value, allows an element to behave as a <code>block</code> level element (allowing it to contain other elements) whilst being displayed in line with other elements, and without begining on a new line by default, e.g.:<br>
+    <code>p {<br>
+    display: inline-block;<br>
+    }</code></p>
+
+      <p class="ex-display">Demo: display inline-block</p>
+
+      <p class="ex-display">HTML</p>
+
+    <code>
+      
+    </code>
+
+    <p class="ex-display">CSS</p>
+
+    <p><code>p {<br>
+    display: inline-block;<br>
+    }</code></p>
+
+    <p class="ex-display">Result</p>
+
+    <p class="ex-display-01">Paragraph 1.</p>
+    <p class="ex-display-01">Paragraph 2.</p>
+    <p class="ex-display-01">Paragraph 3.</p>
+
+    <p>As seen above, now the three paragraphs appear one next to another, it is important, however, clarify that the gap between them, is due exclusively to a CSS selector that targets the <code>&#60;p&#62;</code> elements nested into a <code>&#60;section&#62;</code> element, otherwise, this space would not be rendered, showing in that case the paragraphs like this:</p>
+
+    <p><code>Paragraph 1. Paragraph 2. Paragraph 3.</code></p>
+
+    <p>Is important to make the distinction that inline-block elements will display an small gap/space between them, although sometimes annoying, this gap is completely normal and removable.</p>
+
+    <p>Lastly, a <code>display: none;</code> value will completely hide the element and its nested elements, redering the page as if that element doesn't exist, e.g.:<br>
+    <code>div {<br>
+    display: none;<br>
+    }</code></p>
+
+  </article>
+  <hr>
+</section>
+
 <!-- --------------------------------------------------------------------------------------------------- -->
 <!-- ---------------------------------------------- Width ---------------------------------------------- -->
 <!-- --------------------------------------------------------------------------------------------------- -->
@@ -401,53 +468,6 @@
       
       <p>Additionally, it makes easier to use/mix different length units, let's say an element is <code>40%</code> wide, with a <code>padding: 20px;</code> and a <code>border: 10px;</code> these units can be mixed without any issue, and is possible to still guarantee that the actual <code>width</code> of the box will remain <code>40%</code>. As this property was introduced in CSS3, its only drawback is backwards compatibility with older browsers, although this problem is becoming less and less relevant as new browser versions start to include this features. Should we notice any rendering issue, it's worth looking into which browser those issures are occuring with.</p>
   
-  </article>
-  <hr>
-</section>
-
-<!-- ------------------------------------------------------------------------------------- -->
-<!-- -------------------------------------- display -------------------------------------- -->
-<!-- ------------------------------------------------------------------------------------- -->
-
-<section>
-  <h2 id="display">The Display Property</h2>
-
-  <article>
-    <p>The way how exactly an element is displayed (as block-level, inline-level element or something else) is controlled by the <code>display</code> property. Every element has a default value for this property, which, as all other property values can be overwritten, being the most common: <code>block</code>, <code>inline</code>, <code>inline-block</code>, and <code>none</code>. For example, if the <code>display</code> property for a <code>&#60;p&#62;</code> element is going to be changed from <code>inline</code> to a <code>block</code> level/type display, the CSS would be the following:<br>
-    <code>p {<br>
-    display: block;<br>
-    }</code></p>
-
-    <p>The <code>inline-block</code> value, allows an element to behave as a <code>block</code> level element (allowing it to contain other elements) whilst being displayed in line with other elements, and without begining on a new line by default, e.g.:<br>
-    <code>p {<br>
-    display: inline-block;<br>
-    }</code></p>
-
-    <p class="ex-display">Demo: display inline-block</p>
-
-    <p class="ex-display">HTML</p>
-
-    <p><code>&#60;p&#62;Paragraph one.&#60;/p&#62;<br>
-    &#60;p&#62;Paragraph two.&#60;/p&#62;<br>
-    &#60;p&#62;Paragraph three.&#60;/p&#62;</code></p>
-
-    <p class="ex-display">CSS</p>
-
-    <p><code>p {<br>
-    display: inline-block;<br>
-    }</code></p>
-
-    <p class="ex-display">Result</p>
-
-    <p>Paragraph one. Paragraph two. Paragraph three.</p>
-
-    <p>Is important to make the distinction that inline-block elements will display an small gap/space between them, although sometimes annoying, this gap is completely normal and removable.</p>
-
-    <p>Lastly, a <code>display: none;</code> value will completely hide the element and its nested elements, redering the page as if that element doesn't exist, e.g.:<br>
-    <code>div {<br>
-    display: none;<br>
-    }</code></p>
-
   </article>
   <hr>
 </section>

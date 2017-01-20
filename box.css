@@ -71,7 +71,7 @@ article p {padding-left: 5%;}
 article code {padding-left: 10%;}
 p code, div code, article code {padding: 0px;}
 .ex-display {padding-left: 10%;}
-
+.ex-display-01 {display: inline-block;}
 .ex-margin-00 {
   padding: 0px;
   border: 1px solid #949599;
