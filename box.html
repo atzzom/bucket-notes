@@ -309,7 +309,15 @@
 
           <p class="ex">Example:</p>
 
-            <div class="ex-border-01">This a <code>&#60;div&#62;</code> element with the <code>border</code> properties stated above.</div>
+            <div class="ex-border-01">This is a <code>&#60;div&#62;</code> element with the <code>border</code> properties stated above.</div>
+            <br>
+            <div class="ex-border-001">This <code>&#60;div&#62;</code> element is styled with the following values: <code>border: 6px double #949599</code>.</div>
+            <br>
+            <div class="ex-border-002"><code>border: 6px dashed #949599</code></div>
+            <br>
+            <div class="ex-border-003"><code>border: 6px dotted #949599</code></div>
+            <br>
+            <div class="ex-border-004"><code>border: 6px none #949599</code> here the <code>none</code> value makes the border to be there but not be rendered.</div>
 
           <!-- 16.11.22-lor:044-038 -->
           <!-- 16.11.23-lor:044-053 -->
@@ -345,17 +353,38 @@
 
             <h4>Border Radius</h4>
 
-              <p>Within the border properties the one that allow round the corners of an element is the <code>border-radius</code>, including percentages and pixels, that identify the radius by which the corners of an element are to be rounded. If:<br>
-              A single value is stated: all corners will be rounded equally.<br>
-              Two values are stated: the <code>top-left</code>/<code>bottom-right</code> will be rounded in that order.<br>
-              Four values will round the <code>top-left</code>, <code>top-right</code>, <code>bottom-right</code>, and <code>bottom-left</code> corners in that order.</p>
+              <p>Within the border properties the one that allow round the corners of an element is the <code>border-radius</code>, this property accepts percentages and pixels, that identify the radius by which the corners of an element are to be rounded.</p>
+
+              <p>If:<br>
+              - A single value is stated: all corners will be rounded equally.<br>
+              - Two values are stated: the <code>top-left</code> and the <code>bottom-right</code> will be rounded in that order.<br>
+              - Four values will round the <code>top-left</code>, <code>top-right</code>, <code>bottom-right</code>, and <code>bottom-left</code> corners in that order.</p>
 
               <!-- 16.11.24-lor: 053-059 -->
 
               <p>The following is an example of a detailed use for the border radius of an element:<br>
+
+                <p class="ex">HTML</p>
+
+              <code>&#60;div&#62;border-radius: 5px;</code>
+
+                <p class="ex"></p>
+
               <code>div {<br>
-              border-top-right-radius: 5px;<br>
+              border-radius: 5px;<br>
               }</code></p>
+
+              <div class="ex-b-radius-01"><br>
+              <code>border-radius: 5px;</code>
+              <br>Notice that the <code>border-<b>width</b>: 1px;</code> can actually be smaller than the <code>border-radius: 5px;</code></div>
+              <br>
+              <div class="ex-b-radius-02"><br>
+              <code>border-radius: 5px 10px;</code><br>
+              Notice also that in order to display the <code>border-radius</code> a stated <code>border: width style color</code> must be declared.</div>
+              <br>
+              <div class="ex-b-radius-03"><br>
+              <code>border-radius: 5px 20px 10px 30px;</code><br>
+              With this <code>bottom-left border-radius: 30px;</code> can be noticed that the border overlaps the text nearby, this <b>does not mean</b> the <code>border</code> overlaps the <code>padding</code> or content, is just the rendering of this radius not the border itself.</div>
 
               <hr>
 
