@@ -105,3 +105,6 @@ p.ex {padding-left: 10%; font-style: italic;}
 .ex-b-radius-01 {border: 10px double teal; border-radius: 10px;}
 .ex-b-radius-02 {border: 10px double teal; border-radius: 10px 30px;}
 .ex-b-radius-03 {border: 10px double teal; border-radius: 5px 20px 10px 30px;}
+
+.ex-pad-01 {border: 05px solid teal;}
+.ex-pad-02 {border: 05px solid teal; padding: 5px;}
