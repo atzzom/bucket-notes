@@ -15,8 +15,26 @@
   <p>Table of contents</p>
 
   <nav>
-    <a href="#box">The box model</a><br>
-    <a href="#display">The display property</a><br>
+    <p class="nav"><a href="#box">The box model</a></p>
+    <p class="nav"><a href="#display">The display property</a></p>
+    <div>
+    <p class="nav"><a href="#width">- Width</a></p>
+    <p class="nav"><a href="#height">- Height</a></p>
+    </div>
+    <p class="nav"><a href="#mb&p">Margins, borders & paddings</a></p>
+    <div>
+    <p class="nav"><a href="#margins">- Margins</a></p>
+    <p class="nav"><a href="#borders">- Borders</a></p>
+    <p class="nav"><a href="#paddings">- Paddings</a></p>
+    </div>
+    <p class="nav"><a href="#box-sizing">Box sizing</a></p>
+    <div>
+    <p class="nav"><a href="#content-box">- Content box</a></p>
+    <p class="nav"><a href="#padding-box">- Padding box</a></p>
+    <p class="nav"><a href="#border-box">- Border box</a></p>
+    </div>
+    <p class="nav"><a href="#summary">Summary</a></p>
+    <p class="nav"><a href="#+info">Additional info</a></p>
   </nav>
 
   <p><i class="faq">should the <code>&#60;body&#62;</code> element contain the <code>&#60;header&#62;</code> element?<br>
@@ -175,7 +193,7 @@
 
 <section>
 
-  <h3>Width</h3>
+  <h3 id="width">Width</h3>
 
     <article>
 
@@ -213,7 +231,7 @@
 
 <section>
 
-  <h3>Height</h3>
+  <h3 id="height">Height</h3>
 
     <article>
 
@@ -239,13 +257,13 @@
 
 <section>
   
-  <h2>Margins, borders & paddings</h2>
+  <h2 id="mb&p">Margins, borders & paddings</h2>
 
     <article>
 
       <p>Depending on the element, a browser may apply different padding and margin values in order to aid with the legibility and clarity. As seen previously, is possible to use CSS resets to start with a blank canvas and work from the ground up to specify our own values.</p>
 
-        <h3>Margins</h3>
+        <h3 id="margins">Margins</h3>
 
           <p>The main margin's purpose is to set the amount of space that surrounds an element, it specifies a <i>breathing</i> room to help place an element, keeping any other element at a safe distance, from this point of view is like a barrier to another elements, and is completely transparent in color. Example:<br>
 
@@ -298,7 +316,7 @@
 
 <!-- -------------------------- borders -------------------------- -->
 
-        <h3>Borders</h3>
+        <h3 id="borders">Borders</h3>
 
           <p>Border is the space that falls inbetween the <code>padding</code> and <code>margin</code> and provide an outline around that element. They comprehend three parameters: <code>width</code>, <code>style</code>, and <code>color</code>. Shortand values for these properties must be stated in this way. In longhand, these three values can be broken up into: <code>border-width</code>, <code>border-style</code>, <code>border-color</code> properties. These longhand properties are useful for changing, or overwriting a single border value.</p>
 
@@ -388,7 +406,7 @@
 
               <hr>
 
-        <h3>Paddings</h3>
+        <h3 id="paddings">Paddings</h3>
 
           <p>The <code>padding</code> property is very similar to the <code>margin</code> property with the difference that it falls inside an element's border, should an element have a border. The <code>padding</code> property <strong>is used to provide spacing directly within an element</strong>. <i class="faq">What does this exaclty mean?</i> Here's an example:<br>
           <code>div {<br>
@@ -401,7 +419,7 @@
 
             <p class="ex">Example: object <b>with</b> <code>padding</code>.</p>
 
-          <div class="ex-pad-02">This is the very same <code>&#60;div&#62;</code> element as the shown above, once a <code>padding</code> is applied to it, the text stops <i>touching</i> the element's border.</div>
+          <div class="ex-pad-02">This is the very same <code>&#60;div&#62;</code> element as the shown above, once a <code>padding</code> is applied to it, the text stops <i>touching</i> the element's border. As it can be seen here, <code>padding</code> works in inline-level elements, blending with the upper and lower lines, for example, this line, has a <code>padding: 10px;</code> yet, its line height is not affected by this parameter, instead, the <code>padding</code> overlaps with these lines upper and lower.</div>
 
           <p>Unlike the <code>margin</code> property, the <code>padding</code> actually works in <strong>inline-level</strong> elements, could be blended into the upper and lower lines of the given element, but this vertical <code>padding</code> it will be displayed.</p>
 
@@ -416,6 +434,8 @@
             <p>The elements to take into account in this aspect are the <strong>inline</strong> elements, whose:<br>
             <strong>paddings:</strong> may blend with the upper and/or bottom lines of the given element, and work on <b>all four sides</b> and, its<br>
             <strong>margins:</strong> works <b>only horizontally</b> and are <b>transparent</b> in color.</p>
+
+            <i class="faq">why inline-level elements don't have a <code>border</code>???</i>
           </i></div>
 
             <h4>How to state/declare margins and paddings</h4>
@@ -434,7 +454,7 @@
 
               <p>If specify unique values for each side is desired, is necessary state four values that scan the element's margin in a clockwise position from <code>top</code>, to <code>right</code>, to <code>bottom</code>, to <code>left</code>. In this example margins of <code>10px</code> at the <code>top</code>, <code>20px</code> at the <code>right</code>, <code>0px</code> at the <code>bottom</code>, and <code>15px</code> on the <code>left</code> of a <code>&#60;div&#62;</code> element are being placed:<br>
               <code>div {<br>
-              margin: 10px 20px 0 15px;<br>
+              margin: 10px 20px 0px 15px;<br>
               }</code></p>
 
               <p>In the case of the <code>margin</code> and <code>padding</code> with longhand, it is possible to state the value for one side at a time using unique properties, they are followed by a dash and the side of the box to which the value is to be applied, for example: <code>padding-left</code>, <code>margin-top</code> etc, all of these accepting only one value.<br>
@@ -452,7 +472,18 @@
 
             <h4>Margin & Padding Colors</h4>
 
-              <p>Keep in mind that the <code>margin</code> and <code>padding</code> <b>do NOT</b> accept color values, as the are completely transparent <i class="faq">&mdash;the one in between, the border, it does?&mdash;</i>. This transparent nature means they will show their respective background colors. In the case of the <code><b>margin</b></code> will be the parent's element color. And in the case of the <code><b>padding</b></code> the color of the element itself (the background color of the element that <code>padding</code> is applied to).</p>
+              <p>Keep in mind that the <code>margin</code> and <code>padding</code> <b>do NOT</b> accept color values, as the are completely transparent <i class="faq">&mdash;the one in between, the border, it does?&mdash; yes, it does</i>. This transparent nature means they will show their respective background colors. In the case of the <code><b>margin</b></code> will be the parent's element color. And in the case of the <code><b>padding</b></code> the color of the element itself (the background color of the element that <code>padding</code> is applied to).</p>
+
+              <div class="ex-pad-03">For example this <code>&#60;div&#62;</code> element has:<br>
+              <code>margin: 05px;</code> and its color is the same as the one for the <code>&#60;body&#62;</code> element.<br>
+              <code>border: 05px; border-color: teal;</code><br>
+              <code>padding: 05px;</code> and is going to show the background color for this element.<br>
+              <code> div .ex-pad-03 {background-color: silver;}</code><br>
+              <br>
+              <i class="faq">Why when inspected (w/ the developer tools) why the <code>&#60;div&#62;</code>'s <code>border</code> and not the <code>margin-bottom</code> is touching the <code>&#60;article&#62;</code> element?<br>
+              If that is the case, shouldn't the <code>margin-left</code> and <code>margin-right</code> of the <code>&#60;div&#62;</code> be touching the <code>&#60;article&#62;</code> as well instead of the <code>&#60;div&#62;
+              </code>'s <code>border</code>?</i>
+              </div>
 
     </article>
   <hr>
@@ -463,13 +494,13 @@
 <!-- ---------------------------------------------------------------------------------------- -->
 
 <section>
-  <h2>Box sizing</h2>
+  <h2 id="box-sizing">Box sizing</h2>
   
   <article>
     
     <p>Previously, was discussed that the box sizing was an additive characteristic. For example, if the <code>width</code> of an element is set to <code>500px</code> with a <code>20px padding</code> and a <code>10px border</code>, the actual <code>width</code> of the element is <code>560px</code>. However, CSS3 introduced an additional way to support box-sizing into the box model, which allows change exactly how the box model works and how the element's size is calculated. This property allows three different primary values or configurations &mdash;<code>content-box</code>, <code>padding-box</code>, and <code>border-box</code>&mdash;each of which has a slightly different impact on how the box size is calculated.</p>
     
-    <h3>Content box</h3>
+    <h3 id="content-box">Content box</h3>
     
       <p>This is the default value/parameter and is the one previously discussed. The model starts with the <code>height</code> and <code>width</code> adding from these any <code>padding</code>, <code>border</code>, or <code>margin</code>.</p>
       
@@ -480,7 +511,7 @@
       }
       <i>-webkit, -moz, and -ms are vendor prefixes to help with backwards compatibility with older browsers.</i></code>
 
-    <h3>Padding box</h3>
+    <h3 id="padding-box">Padding box</h3>
     
       <p>This property value alters the box model keeping constant the <code>width</code> and <code>height</code> of the element, and porportionally shrinking the content holded by it depending on the set padding size. Any stated value for the <code>margin</code> or <code>border</code> will be added to the element's total size. Coming back to the previous example, if an element has a <code>400px width</code>, a <code>20px padding</code>, and <code>10px border</code> the total size of the element will be <code>420px</code> (<code>padding</code> already included, 400px width + 10px left-border + 10px right-border)</p>
       
@@ -490,7 +521,7 @@
       
       <!-- 16.11.25 -->
     
-    <h3>Border box</h3>
+    <h3 id="border-box">Border box</h3>
       
       <p>Lastly, the <code>border-box</code> value, includes any <code>padding</code>, and/or <code>border</code> into the element's <code>width</code> and <code>height</code>. For example, if an element has a <code>400px width</code> a <code>20px padding</code>, and a <code>10px border</code> the total <code>width</code> of the element will still be <code>400px</code>.<br>
       <code>div {<br>
@@ -503,7 +534,7 @@
       
       <p>Generally speaking, is <code>border-box</code> value is preferred, this makes our math much, much easier, if an element is set to be let's say <code>500px</code> wide is going to remain the same size regardless of what padding or border values are added to it.</p>
       
-      <p>Additionally, it makes easier to use/mix different length units, let's say an element is <code>40%</code> wide, with a <code>padding: 20px;</code> and a <code>border: 10px;</code> these units can be mixed without any issue, and is possible to still guarantee that the actual <code>width</code> of the box will remain <code>40%</code>. As this property was introduced in CSS3, its only drawback is backwards compatibility with older browsers, although this problem is becoming less and less relevant as new browser versions start to include this features. Should we notice any rendering issue, it's worth looking into which browser those issures are occuring with.</p>
+      <p>Additionally, it makes easier to use/mix different length units, let's say an element is <code>40%</code> wide, with a <code>padding: 20px;</code> and a <code>border: 10px;</code> these units can be mixed without any issue, and is possible to still guarantee that the actual <code>width</code> of the box will remain <code>40%</code>. As this property was introduced in CSS3, its only drawback is backwards compatibility with older browsers, although this problem is becoming less and less relevant as new browser versions start to include this features. Should we notice any rendering issue, it's worth looking into which browser those issues are occuring with.</p>
   
   </article>
   <hr>
@@ -512,8 +543,15 @@
 <!-- end of lesson 4! -->
 
 <footer>
-  <h3>Summary</h3>
-  <h3>Additional info</h3>
+  <h3 id="summary">Summary</h3>
+    <p>The most important concepts are:<br>
+    - <strong>All</strong> the elements in a web page are a box.<br>
+    - This box has four main elements: <code>dimension</code>, <code>padding</code>, <code>border</code>, and <code>margin</code>. The way this box is represented and its size is determined by its <code>display</code> property (<code>content</code>, <code>padding</code>, or <code>border</code>-box, there's no <code>margin</code>-box).<br>
+    - Block-level elements have all three: <code>padding</code>, <code>border</code>, and <code>margin</code>; whilst inline-level elements don't have <code>border</code>.<br>
+    - The <code>border</code> can have color, but <code>padding</code> and <code>margin</code> are transparent, showing their respective element's background colors.</p>
+  <h3 id="+info">Additional info</h3>
+    <p>- <a href="http://www.quackit.com/html/codes/html_borders.cfm" target="blank">HTML borders</a> via Quackit.<br>
+    - <a href="http://css-tricks.com/the-css-box-model/" target="blank">CSS box model</a> via CSS-Tricks.</p>
 </footer>
 
 </body>
