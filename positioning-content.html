@@ -31,7 +31,7 @@
       float: left;<br>
       }</code></p>
 
-      <a href="ex-positioning-01" target="_blank" class="ex">Example</a>
+      <a href="ex-positioning-01.html" target="_blank" class="ex">Example</a>
 
         <h3>Floats in practice <i class="review">add link to another page with solved example</i></h3>
 
@@ -44,7 +44,18 @@
             <footer><code class="float-example">&#60;footer&#62;</code></footer>
           </div>
 
-<!-- next day date -->
+          <p>Here, as block-level elements the <code>&#60;section&#62;</code> and <code>&#60;aside&#62;</code> elements will be stacked in top of one another by default. However, in the cases when setting these elements side by side is necessary/desired, by floating these elements is possible position them as two columns sitting opposite one another. The CSS to do so look like this:</p>
+
+          <code>section {<br>
+          float: left;<br>
+          }<br>
+          aside {<br>
+          float: right;<br>
+          }</code>
+
+          <p>See <a href="ex-float-01-1.html" target="_blank">example</a> of how this page would look like.</p>
+
+          <p>When an element is floated, it will float all the way to the edge of its parent element; when no parent element is present, then, it will float all the way to the edge of the page.</p>
 
   </article>
 </section>

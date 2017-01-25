@@ -45,10 +45,15 @@ Document's style
 ============================================
 */
 
-body {padding: 0px 10%;}
-header, section, article, aside, footer {display: border-box; margin: 1%; /*background-color: green;*/ border-radius: 10px;}
-section {/*padding: 0px 10%;*/}
-article {background-color: blue;  margin-left: 5%; margin-right: 5%;}
-aside {background-color: red;}
-footer {background-color: yellow;}
-img {float: left;}
+code {
+  background: #2db34a;
+  border-radius: 6px;
+  color: #fff;
+  display: block;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  padding: 24px 15px;
+  text-align: center;
+}
+header, section, aside, footer {margin: 0 1.5% 24px 1.5%;}
+footer {margin-bottom: 0;}
+.hex2db34a {/*color: #2db34a;*/ color: #fff;}
