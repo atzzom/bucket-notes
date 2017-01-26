@@ -37,12 +37,18 @@
 
           <p>In a common page layout with a header, two columns in the center, and a footer at the bottom, the elements would look like this:</p>
 
-          <div class="code-example">
-            <header><code class="float-example">&#60;header&#62;</code></header>
-            <div><code class="float-example">&#60;section&#62;</code></div>
-            <aside><code class="float-example">&#60;aside&#62;</code></aside>
-            <footer><code class="float-example">&#60;footer&#62;</code></footer>
+          <div>
+            <header><code>&#60;header&#62;</code></header>
+            <div><code>&#60;section&#62;</code></div>
+            <aside><code>&#60;aside&#62;</code></aside>
+            <footer><code>&#60;footer&#62;</code></footer>
           </div>
+
+          <p>See the <a href="ex-float-00.html" target="_blank">page here</a>.</p>
+
+          <img src="ex-float-00.png">
+
+          <i class="faq">how to shrink images to fit the screen size?</i>
 
           <p>Here, as block-level elements the <code>&#60;section&#62;</code> and <code>&#60;aside&#62;</code> elements will be stacked in top of one another by default. However, in the cases when setting these elements side by side is necessary/desired, by floating these elements is possible position them as two columns sitting opposite one another. The CSS to do so look like this:</p>
 
@@ -53,14 +59,16 @@
           float: right;<br>
           }</code>
 
-          <p>See <a href="ex-float-01-1.html" target="_blank">example</a> of how this page would look like.</p>
+          <p>See an example of how this page would look like <a href="ex-float-01-1.html" target="_blank">here</a> and <a href="ex-float-01-2.html" target="_blank">here</a>.</p>
 
-          <p>When an element is floated, it will float all the way to the edge of its parent element; when no parent element is present, then, it will float all the way to the edge of the page.</p>
+          <p>When an element is floated, it will float all the way to the edge of its parent element; when no parent element is present, then, it will float all the way to the edge of the page. Floating an element will remove it from the normal flow of the page, and as seen in the previous examples, this causes the width to default the width of the content within it. This situation isn't always desirable, for example, when creating columns for a reusable layout that can have different contents. Fortunately this can be corrected setting up a fixed or proportional (percentage) width, and additionally, to avoid elements from touching one another, causing the content of one to sit directly next to the content of the other, we can use the <code>margin</code> property to create space between elements.</p>
 
   </article>
 </section>
 
 <!-- 16.11.26 -->
-
+<footer>
+  
+</footer>
 </body>
 </html>
