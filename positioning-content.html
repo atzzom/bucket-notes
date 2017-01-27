@@ -48,7 +48,7 @@
 
           <img src="ex-float-00.png">
 
-          <i class="faq">how to shrink images to fit the screen size?</i>
+          <i class="faq">how to shrink images to fit the screen size? Ans/ set <code>width: 100%;</code></i>
 
           <p>Here, as block-level elements the <code>&#60;section&#62;</code> and <code>&#60;aside&#62;</code> elements will be stacked in top of one another by default. However, in the cases when setting these elements side by side is necessary/desired, by floating these elements is possible position them as two columns sitting opposite one another. The CSS to do so look like this:</p>
 
@@ -62,6 +62,25 @@
           <p>See an example of how this page would look like <a href="ex-float-01-1.html" target="_blank">here</a> and <a href="ex-float-01-2.html" target="_blank">here</a>.</p>
 
           <p>When an element is floated, it will float all the way to the edge of its parent element; when no parent element is present, then, it will float all the way to the edge of the page. Floating an element will remove it from the normal flow of the page, and as seen in the previous examples, this causes the width to default the width of the content within it. This situation isn't always desirable, for example, when creating columns for a reusable layout that can have different contents. Fortunately this can be corrected setting up a fixed or proportional (percentage) width, and additionally, to avoid elements from touching one another, causing the content of one to sit directly next to the content of the other, we can use the <code>margin</code> property to create space between elements.</p>
+
+          <p>In this <a href="ex-float-01-3.html" target="_blank">example</a> a <code>margin</code> and a <code>width</code> are added to the columns of layout of the previous example to better shape the desired outcome.</p>
+
+          <code>
+            section {<br>
+            float: left;<br>
+            margin: 0 1.5%<br>
+            width: 63%;<br>
+            }<br>
+            aside {<br>
+            float: right;<br>
+            margin: 0 1.5%;<br>
+            width: 30%<br>
+            }
+          </code>
+
+          <p>Once this <code>margin</code> and <code>width</code> are applied the layout looks like this, notice that when inspecting the page, although the <code>footer</code> element still touches the <code>section</code> and <code>aside</code> elements, the last two don't touches one another any more. On the other hand, the values for the <code>margin</code> and <code>width</code> has been set up in such a way that add up to the 100%, filling out the entire width of its parente element (<code>body</code> in this case).</p>
+
+          <img src="ex-float-03.png">
 
   </article>
 </section>
