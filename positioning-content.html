@@ -90,6 +90,34 @@
 
           <p>See the page with the above code implemented <a href="ex-float-01-4.html" target="_blank">here</a>.</p>
 
+          <div class="comment-box">
+            <h4>Floating an element might change the value for its display property</h4>
+
+            <p>As floating an element removes it from the normal flow of the page, this property will also handle any time of floated element as a <code>block</code> element, hence, if an <code>inline</code> element is floated (i.e. ignoring any possible <code>height</code> or <code>width</code> value) it will now be treated as a block element, being possible to assign a width and height value.</p>
+          </div>
+
+          <h3>Building a three column layout with floats</h3>
+
+          <p>In the previous exercise two columns were displayed by floating one to the left and the other to the right. If more columns are desired, the approach to take will be slightly different; Say, for example, we'd like to have a row of three columns between our <code>&#60;header&#62;</code> and <code>&#60;footer&#62;</code> elements. If the <code>&#60;aside&#62;</code> element is dropped and three <code>&#60;section&#62;</code> elements are used, the HTML look like this:</p>
+
+          <code>
+            &#60;header&#62;...&#60;/header&#62;<br>
+            &#60;section&#62;...&#60;/section&#62;<br>
+            &#60;section&#62;...&#60;/section&#62;<br>
+            &#60;section&#62;...&#60;/section&#62;<br>
+            &#60;footer&#62;...&#60;/footer&#62;<br>
+          </code>
+
+          <p>In this case, instead of float one column to the left and the other to the right, all three <code>&#60;section&#62;</code> elements are floated to the left, in this case is necessary to adjust the width of the <code>&#60;section&#62;</code> elements to account for the additional columns and to get them to sit one next to the other.</p>
+
+          <code>
+            section {<br>
+            float: left;<br>
+            margin: 0 1.5%;<br>
+            width: 30%;<br>
+            }
+          </code>
+
   </article>
 </section>
 
