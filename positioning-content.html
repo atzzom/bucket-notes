@@ -193,19 +193,22 @@
           <p class="ex">CSS</p>
 
           <code>
-          /* selects any possible element <b>outside</b> the float's parent element. */
+          /* selects any possible element <b>outside</b> the float's parent element. */<br>
+          <br>
             .group:before,<br>
             .group:after {<br>
             content: "";<br>
             display: table;<br>
             }<br>
-
-          /* selects any possible element <b>within</b> the float's parent element. */
+            <br>
+            /* selects any possible element <b>within</b> the float's parent element. */<br>
+            <br>
             .group:after {<br>
             clear: both;<br>
             }<br>
-
-          /* selects any possible left/right float element that might appear above it.*/
+            <br>
+          /* selects any possible left/right float element that might appear above it.*/<br>
+          <br>
             .group {<br>
             clear: both;<br>
             *zoom: 1; /* trickery to get backwards compatibility with browsers*/<br>
@@ -222,7 +225,8 @@
             }
           </code>
 
-          <i class="faq">show live example of how the page would look like.</i>
+          <p>The page with this float container/code implementation will look like <a href="ex-float-01-7.html" target="_blank">this</a>.</p>
+          <i class="faq">insert screenshot</i>
 
   </article>
 </section>
