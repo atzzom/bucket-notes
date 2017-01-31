@@ -126,6 +126,104 @@
 
         <img src="ex-float-06.png">
 
+      <h3>Clearing & containing floats</h3>
+
+        <p>The <code>float</code> property was originally designed to wrap content around images, instead of positioning content as is also usually employed, this <i>"misuse"</i> rises some rendering issues, where elements that are next to a floated element or, are parent elements of a floated element won't be displayed properly, due to the fact that the floated element is taken out of the normal flow of the page.</p>
+
+        <p>Within these pitfalls, we might encounter that <code>margin</code> and <code>padding</code> properties aren't correctly interpreted, causing them to blend into the floated element; other properties can also be affected. Also, there are situations were unwanted content start to wrap around the floated element. The action of removing an element from the flow of the document, produce that all the elements around the floated element wrap and consume any available space around the floated element, which is often undesired.</p>
+
+        <p>In <a href="ex-float-01-3.html">this previous example</a>, once the <code>&#60;aside&#62;</code> and <code>&#60;section&#62;</code> elements where floated and also prior to assign any fixed/specific <code>width</code> value to them, as they were floating, the <code>&#60;footer&#62;</code> element wrapped around these two elements, sitting in the gutter left by them. To prevent this kind of situations, is necessary to <i>"contain"</i> or <i>"clear"</i> those floats for the document return to its normal flow.</p>
+
+        <h4>Clearing floats</h4>
+
+          <p>Clearing floats is done by the <code>clear</code> property, which accepts a few different values: the most common being: <code>left</code>, <code>right</code>, and <code>both</code>, e.g.:</p>
+
+          <code>div {<br>
+          clear: left;<br>
+          }</code>
+
+          <p>As their name suggests, the <code>left</code> value for the <code>float</code> property will clear left floats, while the <code>right</code> value will clear right floats. The most ideal and often used value is <code>both</code>.</p>
+
+          <p>In the example shown, adding a <code>clear: both</code> value to the footer, will clear the float. It is important that this <code>clear</code> property be applied to the element inmediately after the floated elements, not before, to return the page to its normal flow.</p>
+
+          <code>footer {<br>
+          clear: both;<br>
+          }</code>
+
+        <h4>Containing floats</h4>
+
+          <p>Another technique to return the document to its normal flow, is containing floats, this method requires the floated element to be contained into a parent element, that will act as the container. The CSS for this parent element, represented by the <code>group</code> class, is shown below. The results are almost identical to the ones achieved with <code>clear</code>; however, containing floats does help to guarantee that all of our styles will be rendered properly.</p>
+
+          <code>
+            .group:before,<br>
+            .group:after {<br>
+            content: "";<br>
+            display: table;<br>
+            }<br>
+            .group:after {<br>
+            clear: both;<br>
+            }<br>
+            .group {<br>
+            clear: both;<br>
+            *zoom: 1;<br>
+            }
+          </code>
+
+          <p>The previous code involves a lot of things, but what is basically doing is clearing any floated elements within the element with the class of <code>group</code> and returning the flow of the document back to normal.<br>
+          - More specifically the <code>:before</code> and <code>:after</code> pseudo-elements, are dynamically generated elements above and below the element that has the <code>group</code> class. Those elements do not include any content and are displayed as <code>table</code>-level elements, much like block-level elements.<br>
+          - The dynamically generated element after the element with the class of <code>group</code> is clearing the floats <strong>within</strong> the element with the class of <code>group</code>, much like the <code>clear</code> from before (notice the use of <code>clear: both</code> in this instance).<br>
+          - Lastly, the element with the class of <code>group</code> itself also clears any floats that may appear above it, in case a left or right float may exist. It also includes a little trickery to get older browsers to play nicely.<br>
+          <i class="faq">Look for more examples, and how exactly each part of this code works.</i></p>
+
+          <p>This is way more work than the <code>clear: both;</code> declaration, but it can produce more consistent and better results, proving to be quite useful.</p>
+
+          <p>Comming back to the two-column page layout from before, the <code>&#60;section&#62;</code> and <code>&#60;aside&#62;</code> elements could be wrapped into a parent element, that will contain the floats <b>within itself</b>. The code and page would look like this:</p>
+
+          <p class="ex">HTML</p>
+
+          <code>
+            &#60;header&#62;...&#60;/header&#62;<br>
+            &#60;div class="group"&#62;<br>
+            &#60;section&#62;...&#60;/section&#62;<br>
+            &#60;aside&#62;...&#60;/aside&#62;<br>
+            &#60;/div&#62;<br>
+            &#60;footer&#62;...&#60;/footer&#62;
+          </code>
+
+          <p class="ex">CSS</p>
+
+          <code>
+          /* selects any possible element <b>outside</b> the float's parent element. */
+            .group:before,<br>
+            .group:after {<br>
+            content: "";<br>
+            display: table;<br>
+            }<br>
+
+          /* selects any possible element <b>within</b> the float's parent element. */
+            .group:after {<br>
+            clear: both;<br>
+            }<br>
+
+          /* selects any possible left/right float element that might appear above it.*/
+            .group {<br>
+            clear: both;<br>
+            *zoom: 1; /* trickery to get backwards compatibility with browsers*/<br>
+            }<br>
+            section {<br>
+            float: left;<br>
+            margin: 0 1.5%;<br>
+            width: 63%<br>
+            }<br>
+            aside {<br>
+            float: right;<br>
+            margin: 0 1.5%<br>
+            width: 30%;<br>
+            }
+          </code>
+
+          <i class="faq">show live example of how the page would look like.</i>
+
   </article>
 </section>
 
