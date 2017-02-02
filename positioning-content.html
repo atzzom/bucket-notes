@@ -228,6 +228,40 @@
           <p>The page with this float container/code implementation will look like <a href="ex-float-01-7.html" target="_blank">this</a>.</p>
           <i class="faq">insert screenshot</i>
 
+          <p>This technique is known as <code>clearfix</code> and is usually found in websites under this name or as <code>cf</code>. Is necessary to keep track of the floated elements specially in pages with multiple rows of multiple columns to keep the normal flow of the page.</p>
+  </article>
+</section>
+
+<section>
+  <h2>Positioning with inline-block</h2>
+  <article>
+    <p>As seen previously, the <code>float</code> property will allow to position block elements next to each other creating in this way columns layouts and the like, also, as treated, is necessary to keep track of the clearing/containing of these floats, to avoid rendering issues.</p>
+
+    <p>Another method to position content apart from floats, is take advantage of the <code>display: inline-block;</code> property: value; This will allow place elements next to one another within a line while taking full advantage of all the properties of the box model (<code>width</code>, <code>height</code>, <code>padding</code>, <code>border</code>, <code>margin</code>) without the concern of clearing floats.</p>
+
+    <p>Create the three column layout seen previously could be done with exactly the same HTML:</p>
+
+    <code>
+      &#60;header&#62;...&#60;/header&#62;<br>
+      &#60;section&#62;...&#60;/section&#62;<br>
+      &#60;section&#62;...&#60;/section&#62;<br>
+      &#60;section&#62;...&#60;/section&#62;<br>
+      &#60;footer&#62;...&#60;/footer&#62;<br>
+    </code>
+
+    <p>The changes of this inline-block method occurs within the CSS for the <code>display</code> property, like this:</p>
+
+    <code>
+      section {<br>
+      display: inline-block;<br>
+      width: 30%;<br>
+      }
+    </code>
+
+    <p>This code implementation will create <a href="ex-inline-block-1-01.html">this</a> page.</p>
+
+    <i class="faq">insert screenshot</i>
+
   </article>
 </section>
 
