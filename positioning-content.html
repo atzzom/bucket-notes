@@ -258,9 +258,60 @@
       }
     </code>
 
-    <p>This code implementation will create <a href="ex-inline-block-1-01.html">this</a> page.</p>
+    <p>This code implementation will create <a href="ex-inline-block-1-01.html" target="_blank">this</a> page.</p>
 
-    <i class="faq">insert screenshot</i>
+    <img src="ex-inline-block-1-01.png">
+
+    <h3>Removing the spaces between inline-block elements</h3>
+
+        <p>There are different ways to remove the space between inline-block elements, each one with different complexities, advantages, and disadvantages. Here two of the easiest ways are going to be explained, both of which happen inside HTML.</p>
+
+        <h4>Method 1: one element right after the other</h4>
+
+        <p>The first solution is to begin a <code>&#60;section&#62;</code> element's opening immediately after the closing tag of the previous element, in this case: <code>&#60;/section&#62;</code>. For the layout used previously the HTML will look like this:</p>
+
+        <code>
+          &#60;header&#62;...&#60;/header&#62;<br>
+          <br>
+          &#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;&#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;&#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;<br>
+          <br>
+          &#60;footer&#62;...&#60;/footer&#62;<br>
+        </code>
+
+        <p>Writing the <strong>inline-block</strong> elements this way ensures that the space between inline-block elements withing HTML doesn't exist; consequently, the space will not appear when the page is rendered.</p>
+
+      <h4>Method 2: commenting out spaces</h4>
+
+        <p>In this methods, an HTML comment is opened directly after an inline-block element's closing tag and immediately closed prior the next element opening tag. Doing this <i>"comments out"</i> any possible space between elements. The resulting code would look like this:</p>
+
+        <code>
+          &#60;header&#62;...&#60;/header&#62;<br>
+          <br>
+          &#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;&#60;!--<br>
+          --&#62;&#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;&#60;!--<br>
+          --&#62;&#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;<br>
+          <br>
+          &#60;footer&#62;...&#60;/footer&#62;<br>
+        </code>
+
+        <p>Neither option is perfect, but helpful anyway.</p>
+
+      <h3>Creating reusable layouts</h3>
+
+      <p></p>
+
 
   </article>
 </section>
