@@ -308,9 +308,18 @@
 
         <p>Neither option is perfect, but helpful anyway.</p>
 
-      <h3>Creating reusable layouts</h3>
+      <h3>Uniquely positioning elements</h3>
 
-      <p></p>
+        <p>There are situations where the previous two methods to position elements, floats and inline-block elements won't do the trick to get the element in the desired position, for example, floats might get unwanted surrounding elements wrapped next to the floated elements; and on the other hand, unless a column layout is created, inline-block can be fairly awkward to work with. For these situations we can use the <code>position</code> property in connection with box offset properties.</p>
+
+        <p>The <code>position</code> property controls <i>how</i> an element is displayed, and if is going to be displayed at all. This property in conjunction with the box offset properties -<code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>-which identify exactly <i>where</i> an element will be positioned by moving elements in a number of different directions.</p>
+
+        <p>The <code>position</code>'s <code>static</code> default value for every element, means that it exists in the normal flow of the page without accept any box offset property. This value is commonly overwritten by a <code>relative</code> or <code>absolute</code> value.</p>
+
+        <h4><code>position: relative;</code></h4>
+
+          <p></p>
+
 
 
   </article>
