@@ -318,7 +318,31 @@
 
         <h4><code>position: relative;</code></h4>
 
-          <p></p>
+          <p>The <code>relative</code> value for the <code>position</code> property allows elements appear within the normal flow of the page while leaving room for an element as intended without allowing other elements to flow around it; however, it also allows an element's display position to be modified with the box offset properties. For instance:</p>
+
+          <p>HTML</p>
+
+          <code>
+            &#60;div&#62;...&#60;/div&#62;<br>
+            &#60;div class="offset"&#62;...&#60;/div&#62;<br>
+            &#60;div&#62;...&#60;/div&#62;<br>
+          </code>
+
+          <p>CSS</p>
+
+          <code>
+            div {<br>
+            height: 100px;<br>
+            width: 100px;<br>
+            }<br>
+            .offset {<br>
+            left: 20px;<br>
+            position: relative;<br>
+            top: 20px;<br>
+            }
+          </code>
+
+          <p>The previous code will produce the following <a href="ex-relative-1-01.html">result</a>.</p>
 
 
 
