@@ -45,20 +45,56 @@ Document's style
 ============================================
 */
 
-body {padding: 0px 10%;
-background-color: #f7f0de;}
-h1 {padding: 0px 20%}
-h2 {padding: 0px 10%;}
-.faq {background-color: yellow;}
-article {padding-left: 5%; padding-right: 5%;}
-code {font-size: 1.1em;}
-aside {margin: 5px;
+body {
+  padding: 0px 10%;
+  background-color: #f7f0de;
+}
+h1 {
+  padding: 0px 20%
+}
+h2 {
+  padding: 0px 10%;
+}
+.faq {
+  background-color: yellow;
+}
+article {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+code {
+  font-size: 1.1em;
+}
+aside {
+  margin: 5px;
   border: 5px solid teal;
   padding: 5px;
-  background-color: #f4e2bc;}
-.ex {padding-left: 5%;
-  font-style: italic;}
-img {width: 100%;}
-.comment-box {border: 1px solid silver;
-border-radius: 5px;
-padding: 1%;}
+  background-color: #f4e2bc;
+}
+.ex {
+  padding-left: 5%;
+  font-style: italic;
+}
+img {
+  width: 100%;
+}
+.comment-box {
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 1%;
+}
+.ex-float-section {
+  box-sizing: border-box;
+  float: left;
+  padding: 0 2%;
+  width: 66%;
+}
+h3 {
+  clear: both;
+}
+.ex-float-aside {
+  box-sizing: border-box;
+  float: right;
+  padding: 0 2%;
+  width: 34%;
+}

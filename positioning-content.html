@@ -15,6 +15,12 @@
     <a href="home.html">Home</a>
 
     <p>Table of contents</p>
+
+    <a href="#floats">Floats</a><br>
+    <a href="#inline-block">Inline-block</a><br>
+    <a href="#summary">Summary</a><br>
+    <a href="#+info">+ Info</a><br>
+
   </nav>
 </header>
 
@@ -22,7 +28,7 @@
   <p>One of the most important features of CSS is the possibility to place content in almost any desired way, bringing structure to the document and making the content more digestible. There are different options to do this, each with its own application, allowing the creation of reusable layouts and uniquely positioning one&ndash;off elements.</p>
 
   <article>
-    <h2>Positioning with floats</h2>
+    <h2 id="floats">Positioning with floats</h2>
 
       <p>A very useful way to position element is with the <code>float</code> property, this feature, allow us to take an element, and remove it from the normal flow of the page, and position it next to its parent element (either in its left or right). All other elements on the page will then flow around the floated element. For example and <code>&#60;img&#62;</code> element floated to the side of a few paragraphs of text, will allow these paragraphs to wrap around the image as necessary.</p>
 
@@ -90,11 +96,22 @@
 
           <p>See the page with the above code implemented <a href="ex-float-01-4.html" target="_blank">here</a>.</p>
 
+          <img src="ex-float-01-4.png">
+
           <div class="comment-box">
             <h4>Floating an element might change the value for its display property</h4>
 
-            <p>As floating an element removes it from the normal flow of the page, this property will also handle any time of floated element as a <code>block</code> element, hence, if an <code>inline</code> element is floated (i.e. ignoring any possible <code>height</code> or <code>width</code> value) it will now be treated as a block element, being possible to assign a width and height value.</p>
+            <section class="ex-float-section">
+              <p>As floating an element removes it from the normal flow of the page, this property will also handle any time of floated element as a <code>block</code> element, hence, if an <code>inline</code> element is floated (i.e. ignoring any possible <code>height</code> or <code>width</code> value)</p>
+            </section>
+
+            <section class="ex-float-aside">
+              <p>it will now be treated as a block element, being possible to assign a width and height value.</p>
+            </section>
+            <hr>
           </div>
+
+          <p><i class="faq">How to display the silver box <b>below</b> the two columns as well?</i> the key is to locate an element (in this case was an horizontal break (&#60;hr&#62;) <b>after</b> the float, so this will extend the container element way beyond the float is applied. Also, is necessary to take care that the element positioned beyond the float don't lay any empty space/gap that might be present between the floated elements.</p>
 
           <h3>Building a three column layout with floats</h3>
 
@@ -233,7 +250,7 @@
 </section>
 
 <section>
-  <h2>Positioning with inline-block</h2>
+  <h2 id="inline-block">Positioning with inline-block</h2>
   <article>
     <p>As seen previously, the <code>float</code> property will allow to position block elements next to each other creating in this way columns layouts and the like, also, as treated, is necessary to keep track of the clearing/containing of these floats, to avoid rendering issues.</p>
 
@@ -425,7 +442,7 @@
 
 <!-- 16.11.26 -->
 <footer>
-  <h2>Summary</h2>
+  <h2 id="summary">Summary</h2>
 
     <p>Mastering how to position content joining HTML & CSS in conjunction with the understanding of the box model is a huge step in the way to become a front-end developer. To review, within this lesson it has been covered:</p>
 
@@ -437,7 +454,7 @@
       &#8859; How to uniquely position content with relatively and absolutely positioned elements.
     </p>
 
-  <h2>+Info</h2>
+  <h2 id="+info">+Info</h2>
 
     <p>
       &#8859; <a href="http://www.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/">CSS float theory</a> via Smashing Magazine.<br>
