@@ -54,7 +54,76 @@
         
             <h4>Font family</h4>
             
-            <p>The <code>font-family</code> property is used to declare which font -as well as which fallback or substitue fonts- should be used to display text. The value of the <code>font-family</code> property contains multiple font names, all comma separated. The fist declared font (starting from the left), is the primary font choice.</p>
+            <p>The <code>font-family</code> property is used to declare which font -as well as which fallback or substitue fonts- should be used to display text. The value of the <code>font-family</code> property contains multiple font names, all comma separated. The fist declared font (starting from the left), is the primary font choice. If this font is unavailable, then, the alternative declared fonts will follow after it in order of preference from left to right.</p>
+            
+            <p>When declaring fonts, take into account that font names with more than one word must be declared wrapped in quotation marks. Additionally, the las font should be a keyword value, which will use the system default faont for the specidied type, most commonly either <code>sans-serif</code> or <code>serif</code>.</p>
+            
+            <p>The following is an example of the declaration of the <code>font-family</code> property.</p>
+            
+            <code>body {<br>
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
+            }</code>
+            
+            <p>According to the previously exposed, the font of choice will be <code>Helvetica Neue</code>, should this font will be unavailable/uninstalled, then the <code>Helvetica</code> font will follow, and so on until <code>sans-serif</code> provided the <code>Arial</code> font isn't available either.</p>
+            
+            <h4>Font size</h4>
+            
+            <p>The <code>font-size</code> property provides the ability to set the size of text using common length values, including pixels, em units, percentages, points, or <code>>font-size</code> keywords <i class=faq>which are those keywords for the font-size property?</i></p>
+            
+            <p>Here is a CSS example setting the <code>font-size</code> of the <code>&#60;body&#62;</code> element to <code>14px</code>.</p>
+            
+            <code>
+                body {<br>
+                font-size: 14px;<br>
+                }
+            </code>
+            
+            <h4>Font style</h4>
+            
+            <p>This property is commonly used to set text to italics, or to prevent text from being italicized. This property accepts, four keyword values, namely: <code>normal</code>, <code>italic</code>, <code>oblique</code>, and <code>inherit</code>. The following CSS sets all elements with a class of <code>special</code> to include a <code>font-style</code> of <code>italic</code>:</p>
+            
+            <code>
+                .special {<br>
+                font-style: italic;<br>
+                }
+            </code>
+            
+            <h4>Font variant</h4>
+            
+            <p>This property is used mostly in the rare cases the text needs to be displayed in small capitals, known also as small caps. The <code>font-variant</code> property accepts three values: <code>normal</code>, <code>small-caps</code>, and <code>inherit</code>. The following example shows all the elements with a class of firm to a <code>font-variant</code> of <code>small-caps</code>:</p>
+            
+            <code>
+                .firm {<br>
+                font-variant: small-caps;<br>
+                }
+            </code>
+            
+            <p><i>show practical examples of these properties.</i></p>
+            
+            <h4>Font weight</h4>
+            
+            <p>This property makes reference to the thickness of the typeface, is used to make the text bolder or lighter, this property accepts both, keyword and numerical values.</p>
+            
+            <p>Keyword values include <code>normal</code>, <code>bold</code>, <code>bolder</code>, <codee>lighter</codee>, and <code>inherit</code>. Of these keyword values, it is recommeded to primarily use <code>normal</code> and <code>bold</code> to change text from normal to bold an vice versa. Rather than using the keyword values <code>bolder</code> or <code>lighter</code>, it's better to use a numeric value for more specific control. Here is an example of the use of the <code>font-weight</code> property using keyword values:</p>
+            
+            <code>
+                .daring {<br>
+                font-weight: bold;<br>
+                }
+            </code>
+            
+            <p>On the other hand, when adjusting this property using numerical values, the <code>font-weight</code> property accepts the following weights: <code>100</code>, <code>200</code>, <code>300</code>, <code>400</code>, <code>500</code>, <code>600</code>, <code>700</code>, <code>800</code>, and <code>900</code>, being <code>100</code> the lightlest weight, and <code>900</code> the boldest/strongest weight.</p>
+            
+            <p>For reference, the keyword value of <code>normal</code> maps to <code>400</code> and the keyword <code>bold</code> maps to <code>700</code>; thus, any numeric value below <code>400</code> will be fairly thin, and any value above <code>700</code> will be fairly thick.</p>
+            
+            <p>In this example, changing the <code>font-weight</code> to <code>600</code> for any element with the class of <code>daring</code> now renders that text as semibold-not quite as thick as the <code>bold</code> keyword value from before:</p>
+            
+            <code>
+                .daring {<br>
+                font-weigth: 600;<br>
+                }
+            </code>
+            Is necessary to keep in mind that these set of values, applies only to the typefaces that accepts multiple weights, should a typeface 
     </section>
 
 </body>
