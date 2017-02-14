@@ -240,6 +240,43 @@
 
                 <p>Using negative length values for the horizontal and vertical offsets allows us to move shadows toward the left and the top.</p>
 
+<div class="box">
+
+                <h5>Box shadow</h5>
+
+                    <p>As previously seen, the <code>text-shadow</code> places a shadow <b>specifically</b> on the text of an element, nevertheless, it is also possible to cast shadows in other type of elements, by the use of the <code>box-shadow</code> property. This property works just like the <code>text-shadow</code> property, accepting values for horizontal and vertical offsets, a blur, and a color.</p>
+
+                    <p>The <code>box-shadow</code> property accepts an optional forth lenght value, before the <code>color</code> value, for the spread of the shadow. If this value is positive it will expand the shadow larger than the size of the element it's applied to, and in the cases of negative values the shadow will shrink to be smaller than the size of the element it's applied to. Lastly, this property also may include and optional <code>inset</code> value at the beginning of the value to place the shadow inside an element as opposed to outside the element. <i class="faq">show examples</i></p>
+
+</div>
+
+            <h4>Text transform</h4>
+
+                <p>Similar to the <code>font-variant</code> property, there is the <code>text-transform</code> property. While the <code>font-variant</code> property looks for an alternate variant of a typeface, this property (<code>text-transform</code>) will change the text without change the typeface, this property accepts five values: <code>none</code>, <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, and <code>inherit</code>.</p>
+
+                <p>The <code>capitalize</code> value will capitalize the first letter of each word, the <code>uppercase</code> value will capitalize every letter, and the <code>lowercase</code> will make every letter lowercase, whilst <code>none</code> will return any of these inherited values back to the original text style. <i class="faq">show examples</i></p>
+
+            <h4>Letter spacing</h4>
+
+                <p>With the <code>letter-spacing</code> it is possible to adjust the space(or tracking) between the letters on a page. A positive value will push apart letter from one another, while a negative value will pull letters closer together. The keyword value <code>none</code> will return the space between letters back to its normal size. The use of this property will help ensure that the rendering and tracking will be adecuate as the <code>font-size</code> is changed. It is, however, always a good idea to double-check our work. <i class="faq">show examples</i></p>
+
+            <h4>Word spacing</h4>
+
+                <p>In a similar fashion with the tracking, it is possible to adjust the space between words within an element using the <code>word-spacing</code> property. <i class="faq">show examples.</i></p>
+
+            <h4>Text properties all together</h4>
+
+                <p>The following is an example of various text-based properties used/applied together.</p>
+
+                <p class="subtitle">HTML</p>
+
+                <code>&#60;h2&#62;&#60;a href="#"&#62;I am a builder&#60;/a&#62;&#60;/h2&#62;<br>
+                    &#60;p class="byline"&#62;Posted by Shay Howe&#60;/p&#62;<br>
+                    &#60;p class="intro"&#62;Every day I see designers and developers working alonside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders. &#60;a href="#"&#62;Continue&#8230;&#60;/a&#60;&#60;/p&#62;
+                </code>
+
+                <p class="subtitle">CSS</p>
+
     </section>
 
 </body>
