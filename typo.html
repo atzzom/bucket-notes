@@ -318,6 +318,44 @@
 
     </section>
 
+    <h2>Web-safe fonts</h2>
+
+        <p>Regardless of the device, there are fonts pre-installed on every device: computer, smartphone, tablet, or other web-browsing-capable device, because of this, it is possible to freely use these fonts, without the concern of an improper rendering. These fonts set is known as "web-safe fonts", and they are listed below:</p>
+
+        <p>
+            - Arial<br>
+            - Garamond<br>
+            - Lucida Sans, Lucida Grande, Lucida<br>
+            - Tahoma<br>
+            - Trebuchet<br>
+            - Courier New, Courier<br>
+            - Georgia<br>
+            - Palatino Linotype<br>
+            - Times New Roman, Times<br>
+            - Verdana
+        </p>
+
+        <h2>Embedding web fonts</h2>
+
+        <p>Off course, it is also possible to use fonts additional to the web-safe fonts, indeed, it is possible to upload an specific font to a server in order to be rendered when the page is visited, this capability has opened unlimited options to choose from. Embedding a web font looks like the following CSS:</p>
+
+        <code>
+            @font-face {<br>
+            font-family: "Lobster";<br>
+            src: local("Lobster"), url("lobster.woff") format("woff");<br>
+            }<br>
+            body {<br>
+            font-family: "Lobster", "Comic Sans", cursive;<br>
+            }
+        </code>
+
+        <p>From the previous example, it can be observed that when embedding a web font it is necessary to:<br>
+        - Use the <code>@font-face</code> at-rule to identify the font's name, via the <code>font-family</code> property.<br>
+        - The font's source (the path to the font file containing the chosen font), via the <code>src</code> property.<br>
+        - From there is possible to use the font by including its name within any <code>font-family</code> property value.</p>
+
+        <p>Take into account that the ability to embed any font on a website is totally different to have legally right to do so. As artistic work, fonts have licenses in order to be used. Fortunately, the value of using new fonts on websites have been recognized. Companies like <a href="https://typekit.com/">Typekit</a> and <a href="http://fontdeck.com/">Fontdeck</a>, work off a subscription mode for licensing fonts, while others, like <a href="https://www.google.com/fonts">Google Fonts</a>, license fonts for free.</p>
+
 </body>
 
 
