@@ -363,7 +363,27 @@
 
         <h2>Citations & quotes</h2>
 
-        <p></p>
+        <p>Writing requires sometimes citing different sources or quotations. In HTML exists different markups to semantically cover this cases, specifically the <code>&#60;cite&#62;</code>, <code>&#60;q&#62;</code>, and <code>&#60;blockquote&#62;</code> elements. In order to know which of these elements use, the follow principles can be followed:</p>
+
+        <p>
+            <code>&#60;cite&#62;</code>: used to reference a resource, creative work, or author.<br>
+            <code>&#60;q&#62;</code>: used for short, <i>inline</i> quotations.<br>
+            <code>&#60;blockquote&#62;</code>: used for longer external quotations (paragraph-like quotations).
+        </p>
+
+        <h3>Citing a creative work</h3>
+
+        <p>In HTML this element is used specifically to cite a creative work, the <code>&#60;cite&#62;</code> element must include either the title of the work, the author's name, or a URL reference to the work. By default, content wrapped within the <code>&#60;cite&#62;</code> element will appear in italics. When relevant, is useful to include and additional reference/hyperlink to the original source of the citation.</p>
+
+        <p>Here the book <i>Steve Jobs</i>, by Walter Isaacson, is reference within the <code>&#60;cite&#62;</code> element. Inside the citation is also a hyperlink to the book.</p>
+
+        <code>&#60;p&#62;The book &#60;cite&#62;&#60;a href="http://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537"&#62;Steve Jobs&#60;/a&#62;&#60;/cite&#62; is truly inspirational.</code>
+
+        <h3>Dialogue & prose quotation</h3>
+
+        <p>For purposes of quote prose or dialogue inline, that is, <i>within</i> other text, the <code>&#60;q&#62;</code> element should be used, and shouldn't be used for any other purposes. By default, the browser will insert the proper quotation marks and will even change the quotation marks based on the language identified within the <code>lang</code> global attribute. For example:</p>
+
+        
     </section>
 
 </body>
