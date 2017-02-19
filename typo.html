@@ -383,7 +383,11 @@
 
         <p>For purposes of quote prose or dialogue inline, that is, <i>within</i> other text, the <code>&#60;q&#62;</code> element should be used, and shouldn't be used for any other purposes. By default, the browser will insert the proper quotation marks and will even change the quotation marks based on the language identified within the <code>lang</code> global attribute. For example:</p>
 
-        
+        <p>An additional attribute to quote text is use the <code>&#60;cite&#62;</code> attribute (not element), that acts as a citation reference to the quote in the form of a URL. As this attribute won't be displayed on the browser, it won't change the apperance of the element but will add semantic value for screen readers and other devices, it is also helpful to provide a hyperlink to this source next to the actual quotation, like in the following example:</p>
+
+        <code>
+            &#60;p&#62;&#60;a href="http://www.businessweek.com/magazine/content/06_06/b3970001.html"&#62;Steve Jobs&#60;/a&#62; once said, &#60;q cite="http://www.businessweek.com/magazine/content/06_06/b3970001.html"&#62;One home run is much better than two doubles.&#60;/q&#62;&#60;/p&#62;
+        </code>
     </section>
 
 </body>
