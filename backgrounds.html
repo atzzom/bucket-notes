@@ -10,10 +10,48 @@
 
 <body>
 
-<section>
-  <p>The HTML provides several options to custom the background of a page, either with color or with images. To do this, it is possible to use either the <code>background</code> or the <code>bakcground-color</code> properties. the former accepts color and images, but the latter is strictly used for solid colors, which can be specified using hexadecimals, RGB, RGBa, HSL, or HSLa values.</p>
+<section class="background-color">
 
-  <p></p>
+<h2>Background color</h2>
+
+  <p>The HTML provides several options to custom the background of a page, either with color or with images. To do this, it is possible to use either the <code>background</code> or the <code>bakcground-color</code> properties. the former accepts color and images, but the latter is strictly used for solid colors, which can be specified using hexadecimals, RGB, RGBa, HSL, or HSLa values. The following is an example of a <code>background-color</code> being set:</p>
+
+  <code>
+    div {<br>
+    background-color: #b2b2b2;<br>
+    }
+  </code>
+
+  <h3>Transparent colors & backwards compatibility</h3>
+
+    <p>Olders browsers not always support the use of transparent colors, for those cases, is useful to take advantage of the way CSS works, applying in a first-arrived, first-served basis, based on this, and thinking for those browsers, is useful to first declare a <code>background-color</code> using hexadecimal values, and later using a transparent <code>background-color</code> <b>within</b> the same rule set, the first hexadecimal value will provide a "save" background color, whilst, the second will provide a transparent background if supported. Like this:</p>
+
+    <code>
+      div {<br>
+      background-color: #b2b2b2;<br>
+      background-color: rgba(0, 0, 0, .3);<br>
+      }
+    </code>
+
+</section>
+
+<section class="background-image">
+
+<h2>Background image</h2>
+
+  <p>In addition to adding a <code>background-color</code> it is also possible to add an image as a background. For this purpose, the <code>background</code> or the <code>background-image</code> properties can be used outright. Regardless of the property used an image source must be specified using the familiar rules for hyperlinks, although this time instead of the <code>href=""</code> attribute an <code>url("")</code> attribute is used, which employs a quotation between parenthesis, note also that there's neither equal (<code>=</code>) nor colon (<code>:</code>) symbols preceding the parenthesis or the quotations. Is always necessary to keep an eye on the image source path/directories, to reference the desired imageAn example of a <code>background-image</code> property is shown below:</p>
+
+  <code>
+    div {<br>
+    background-image: url("alert.png");<br>
+    }
+  </code>
+
+  <p>Solely sourcing the image using an <code>url</code> value usually isn't enough, by default, the image will repeat itself from the top left corner of its parent element filling up the screen. To control this behavior the <code>background-repeat</code> and <code>background-position</code> properties can be used for this task.</p>
+
+  <h3><code>Background-repeat</code></h3>
+
+    <p></p>
 </section>
 
 </body>
