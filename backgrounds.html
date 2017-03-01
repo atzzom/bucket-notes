@@ -69,7 +69,55 @@
 
     <p>In the above example, the first value of this property, corresponds to the horizontal offset, and the second one to the vertical offset. If at the time this property is declared, if only one value is stated it will be assumed as the horizontal offset; the vertical offset will default <code>50%</code>. As the image is moved related to the top-left corner of its parent element, length values specifically will be in relation to that corner.</p>
 
-    <p>The <code>background-position</code> property accepts keywords, percentages, pixels, or any length measurement. Keywords (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>center</code>) and percentages are strongly related, for example, a keyword value of <code>left top</code> is identical to the <code>0 0</code> percentage; similarly, they keyword value <code>right bottom</code> is exactly the same as <code>100% 100%</code>.</p>
+    <p>The <code>background-position</code> property accepts keywords, percentages, pixels, or any length measurement. Keywords (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>center</code>) and percentages are strongly related, for example, a keyword value of <code>left top</code> is identical to the <code>0 0</code> percentage; similarly, they keyword value <code>right bottom</code> is exactly the same as <code>100% 100%</code>. Using pixels for position a background is also common, as they provide more precise control over where the background will be positioned.</p>
+
+    <img src="background-positioning.png">
+
+    <h3>Shorthand background image values</h3>
+
+      <p>All background properties: <code>background-color</code>, <code>background-image</code>, <code>background-position</code>, and <code>background-repeat</code>, can be summarized in a single shorthand <code>background</code> property, like this:</p>
+
+      <code>
+        div {<br>
+        background: color image position repeat;<br>
+        }
+      </code>
+
+      <code>
+        div {<br>
+        background: color image-properties;<br>
+        }
+      </code>
+
+      <code>
+        div {<br>
+        background: #b2b2b2 url("alert.png") 20px 10px no-repeat;<br>
+        }
+      </code>
+
+      <p>The following example shows the set up a background image using shorthand values. Notice that for the position property there are both absolute and relative values. The first value, <code>20px</code>, is the horizontal value, positioning the <code>background-image 20px</code> from the left of the element. The second value, <code>50%</code>, is the vertical value, which vertically centers the <code>background-image</code>. A few other properties and values are also included within the <code>notice-success</code> class rule set to further style the alert message.</p>
+
+      <p>HTML</p>
+
+      <code>
+        &#60;div class="notice-success"&#62;<br>
+        Woo hoo! Congratulations, you did it!<br>
+        &#60;/div&#62;
+      </code>
+
+      <p>CSS</p>
+
+      <code>
+        .notice-success {<br>
+        background: #67b11c url("tick.png") 20px 50% no-repeat;<br>
+        border: 2px solid #467813;<br>
+        border-radius: 5px;<br>
+        color: #fff;<br>
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
+        padding: 15px 20px 15px 50px;<br>
+        }
+      </code>
+
 </section>
 
 </body>
