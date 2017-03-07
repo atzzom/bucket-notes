@@ -133,7 +133,24 @@
 
       <h3>A side note on vendor prefixes</h3>
 
-        <p>The previous example shows the <code>linear-gradient()</code> function for the <code>background</code> property with prefixes for the different web-browsers, as the CSS3 introduced this option and have been progressively adopted, the need to specify these vendro prefixes has been reduced. However, in order to guarantee proper rendering is good option to include them.</p>
+        <p>The previous example shows the <code>linear-gradient()</code> function for the <code>background</code> property with prefixes for the different web-browsers, as the CSS3 introduced this option and have been progressively adopted, the need to specify these vendor prefixes has been reduced. However, in order to guarantee proper rendering is good option to include them. <i class="faq">show demo</i></p>
+
+      <p>The previous code snippet shows that this function accepts two colors, the first one will be the top color and the second one will be bottom color. Browsers handle the transition between both, but additionally, to provide a fallback option should the browser don't support that gradient backgrounds a solid background color needs to be specified.</p>
+
+      <h3>Changing the direction of a gradient background</h3>
+
+        <p>By default background gradients go from top to bottom, nevertheless, the gradient orientation can be changed by the use of keywords, for example the keyword value <code>to right</code> will cause the gradient to move from the left to the right of an element. These keyword values can also be combined, orienting the gradient diagonally, as the <code>to right bottom</code> keyword does. <i class="faq">show demo</i></p>
+
+        <code>
+          div {<br>
+          background: #466368;<br>
+          background: linear-gradient(to right bottom, #648880, #293f50);<br>
+          }
+        </code>
+
+        <p>When a diagonal gradient is used in a non-square element, this will identify the element's absolute center and from there frame the element into a square/rectangle, applying the gradient from one corner to the other. These corners the gradient moves towards are called "magic corners". Further information can be gotten at <a href="http://meyerweb.com/eric/thoughts/2012/04/26/lineargradient-keywords/">Linear Gradient Keywords</a><i class="faq">show examples</i></p>
+
+        <p>Besides keyword values, gradients can be also controlled by degree values from <code>0</code> through <code>360</code>, for example, a degree value of <code>315deg</code> will cause the gradient to move to the left top on an element; a <code>135deg</code> will move the gradient to the right bottom of an element.</p>
 
 </section>
 
