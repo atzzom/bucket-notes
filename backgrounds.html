@@ -152,6 +152,19 @@
 
         <p>Besides keyword values, gradients can be also controlled by degree values from <code>0</code> through <code>360</code>, for example, a degree value of <code>315deg</code> will cause the gradient to move to the left top on an element; a <code>135deg</code> will move the gradient to the right bottom of an element.</p>
 
+    <h2>Radial gradient background</h2>
+
+      <p>Just as linear gradients, radial gradients makes the transition between two different colors, being the first one the one in the center, and the second one the outer color. However, radial gradients, have additional parameters, with values for location, radius, size, and so forth. <i class="faq">show examples</i></p>
+
+      <code>
+        div {<br>
+        background: #466368;<br>
+        background: radial-gradient(#648880, #293f50);<br>
+        }
+      </code>
+
+      <p>The function will sit in the absolute center of the element, the browser will then create the transition between the two colors.</p>
+
 </section>
 
 </body>
