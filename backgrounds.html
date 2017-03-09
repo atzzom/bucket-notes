@@ -165,6 +165,42 @@
 
       <p>The function will sit in the absolute center of the element, the browser will then create the transition between the two colors.</p>
 
+      <h3>CSS3 gradient background generator</h3>
+
+<p>Gradients can be difficult to work with especially for beginers, this work can be simplified using CSS3 gradient generators, although they are not going to be explained here, their existence can leverage work.</p>
+
+<h2>Gradient color stops</h2>
+
+<p>Gradient backgrounds can transition from more than one color, when declaring the gradient, each transition color must be separated by a comma value, for instance: <i class="faq"></i></p>
+
+<code>
+  div {<br>
+  background: #648880;<br>
+  background: linear-gradient(to right, #f6f1d3, #648880, #293f50);<br>
+  }
+</code>
+
+<p>By default, the browser will position every color stop at an equal distance from the next, this however, can be modified locating that color along the gradient with a lenght value. On the other hand and unless otherwise specified, the first color will be positioned at <code>0%</code>, and the last clor stop will be positioned at <code>100%</code> e.g.:</p>
+
+<code>
+  div {<br>
+  background: #648880;<br>
+  background: linear-gradient(to right, #f6f1d3, #648880 85%, #293f50);<br>
+  }
+</code>
+
+<h2>Multiple background images</h2>
+
+<p>CSS3 introduced the option to add more than one background image by comma-separating multiple values within a <code>background</code> or <code>background-image</code> property. The background image value that comes first will be the foremost background image, and the background image that's listed last will be the rearmost background image. Any value between the fist and the last will reside withing the middle ground accordingly. <i class="faq">show example</i></p>
+
+<code>
+  div {<br>
+  background: url("foreground.png") 0 0 no-repeat, url("middle-ground.png") 0 0 no-repeat, url("background.png") 0 0 no-repeat;<br>
+    }
+</code>
+
+<p>The preceding code uses a shorthand value for the background property, chaining multiple background image values together, nevertheless, these shorthand values, could have been broken up into comma-separated values across the <code>background-image</code>, <code>background-position</code>, and <code>background-repeat</code> properties.</p>
+
 </section>
 
 </body>
