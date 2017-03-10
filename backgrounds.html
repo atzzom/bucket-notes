@@ -199,7 +199,35 @@
     }
 </code>
 
-<p>The preceding code uses a shorthand value for the background property, chaining multiple background image values together, nevertheless, these shorthand values, could have been broken up into comma-separated values across the <code>background-image</code>, <code>background-position</code>, and <code>background-repeat</code> properties.</p>
+<p>The preceding code uses a shorthand value for the background property, chaining multiple background image values together, nevertheless, these shorthand values, could have been broken up into comma-separated values across the <code>background-image</code>, <code>background-position</code>, and <code>background-repeat</code> properties. <i class="faq">include example</i></p>
+
+<h2>Additional background properties</h2>
+
+<p>CSS3 introduced new background properties: <code>background-size</code>, <code>background-clip</code>, and <code>background-origin</code>.</p>
+
+<p>As its name suggests, <code>background-size</code> allows make changes to the size of a background image, while the <code>background-clip</code> and <code>background-origin</code> properties allow us to control where a background image is cropped and where a background image is contained within the element (e.g. inside the border or inside the padding).</p>
+
+<h3>CSS background size</h3>
+
+<p>There are a few aspects to take into account when using the <code>background-size</code> property:<br>
+- It accepts length or percentage values.<br>
+- When using length values, they must be separated by a comma, being the first the background image's width, and the second one the background image's height.<br>
+- If a percentage value is used, this, will make reference to the container element, not to the actual size of the image being used as background. Consequently, setting a <code>background-size</code> property with a <code>100%</code> width will make the background image occupy the full width of the element. If a second value isn't identified after the width, the height value will be automatically set to preserve the aspect ratio of the background image.<br>
+- The <code>auto</code> value is useful to preserve the background image original ratio, it can be used either as the width or height. For instance, if the image's width is to be set to the 60% of the container element's width <b>while</b> preserving the image aspect ratio, the <code>auto</code> value can be used in the following way: <code>background-size: 60% auto;</code>, e.g.:</p>
+
+<code>
+  div {<br>
+  background: url("image.jpg") 0 0 no-repeat;<br>
+  background-size: 60% auto;<br>
+  border: 2px dashed #9799a7;<br>
+  height: 240px;<br>
+  width: 200px;<br>
+  }
+</code>
+
+<h3><code>background-image: cover</code> and <code>contain</code> keyword values</h3>
+
+<p></p>
 
 </section>
 
