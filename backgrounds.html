@@ -227,7 +227,11 @@
 
 <h3><code>background-image: cover</code> and <code>contain</code> keyword values</h3>
 
-<p></p>
+<p>The <code>cover</code> and <code>contain</code> keyword values, are used to adjust an image to an element. The <code>cover</code> keyword value will adjust the size to fill up the whole container element's dimensions while preserving the image's aspect ratio, is necessary to consider that depending on the dimensions of the container, the image couldn't be displayed completely into the element, that is, often part of the background image is cut off in order for the image to occupy the full available space of the element.</p>
+
+<p>On the other hand the <code>contain</code> keyword makes the image be fit completely into the element's width and height, meaning that often the background image won't fill out completely the container element.</p>
+
+<p>Both the <code>cover</code>  and <code>contain</code> keyword values will result in slightly disorted images, specially when the image is streched <b>beyond</b> their original size. Is necessary to keep an eye out for thisto achive the desire render.</p>
 
 </section>
 
