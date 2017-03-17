@@ -14,7 +14,7 @@
 
 <h2>Background color</h2>
 
-  <p>The HTML provides several options to custom the background of a page, either with color or with images. To do this, it is possible to use either the <code>background</code> or the <code>bakcground-color</code> properties. the former accepts color and images, but the latter is strictly used for solid colors, which can be specified using hexadecimals, RGB, RGBa, HSL, or HSLa values. The following is an example of a <code>background-color</code> being set:</p>
+  <p>The HTML provides several options to custom the background of a page, either with color or with images. To do this, it is possible to use either the <code>background</code> or the <code>background-color</code> properties. the former accepts color and images, but the latter is strictly used for solid colors, which can be specified using hexadecimals, RGB, RGBa, HSL, or HSLa values. The following is an example of a <code>background-color</code> being set:</p>
 
   <code>
     div {<br>
@@ -24,7 +24,7 @@
 
   <h3>Transparent colors & backwards compatibility</h3>
 
-    <p>Olders browsers not always support the use of transparent colors, for those cases, is useful to take advantage of the way CSS works, applying in a first-arrived, first-served basis, based on this, and thinking for those browsers, is useful to first declare a <code>background-color</code> using hexadecimal values, and later using a transparent <code>background-color</code> <b>within</b> the same rule set, the first hexadecimal value will provide a "save" background color, whilst, the second will provide a transparent background if supported. Like this:</p>
+    <p>Older browsers not always support the use of transparent colors, for those cases, is useful to take advantage of the way CSS works, applying in a first-arrived, first-served basis, based on this, and thinking for those browsers, is useful to first declare a <code>background-color</code> using hexadecimal values, and later using a transparent <code>background-color</code> <b>within</b> the same rule set, the first hexadecimal value will provide a "save" background color, whilst, the second will provide a transparent background if supported. Like this:</p>
 
     <code>
       div {<br>
@@ -231,7 +231,11 @@
 
 <p>On the other hand the <code>contain</code> keyword makes the image be fit completely into the element's width and height, meaning that often the background image won't fill out completely the container element.</p>
 
-<p>Both the <code>cover</code>  and <code>contain</code> keyword values will result in slightly disorted images, specially when the image is streched <b>beyond</b> their original size. Is necessary to keep an eye out for thisto achive the desire render.</p>
+<p>Both the <code>cover</code>  and <code>contain</code> keyword values will result in slightly disorted images, specially when the image is stretched <b>beyond</b> their original size. Is necessary to keep an eye out for this to achieve the desire render.</p>
+
+<h3>CSS3 background clip & background origin</h3>
+
+<p>The <code>background-clip</code> property specifies the area a background image will cover, and the <code>background-origin</code> property specifies where the <code>background-position</code> should originate. The introduction of these two new properties corresponds with the introduction of the three new keyword values: <code>border-box</code>, <code>padding-box</code>, and <code>content-box</code>. Each of these three values may be used for the <code>background-clip</code> and <code>background-origin</code> properties.</p>
 
 </section>
 
