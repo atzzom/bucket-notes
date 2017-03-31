@@ -37,20 +37,20 @@
     <div class="frame">
         <h3 id="type-vs-font">Typeface vs. font</h3>
 
-        <p>The terms "typeface" and "font" are often interchanged, causing confusion. Here is a breakdown of exactly what each term means.</p>
+        <p>The terms "typeface" amd "font" are often interchanged, causing confusion. Here is a breakdown of exactly what ech term means.</p>
 
         <p>A <em>typeface</em> is what we see. It is the artistic impression of how text looks, feels, and reads.</p>
 
         <p>A <em>font</em> is a file that contains a typeface. Using a font on a computer allows the computer to access the typeface.</p>
 
-        <p>One way to help clarify the difference between a typeface and a font is to compare them to a song and and MP3. A typeface is very similar to a song in that it is a work of art. It is created by an artist or artists and is open to public interpretation. A font, on the other hand, is very similar to an MP3 in that it is not the artistic impression itself, but only a method of delivering the artistic value.</p>
+        <p>One way to help clarify the difference between a typeface and a font is to compare them to a song and and MP3. A typeface is very similar to a song in that it is a work of art. It is created by an artist or artists and is open to public interpretation. A font, on hte other hand, is very similar to an MP3 in that it is not the artistic impression itself, but only a method of delivering the artistic value.</p>
     </div>
 
     <h2 id="color">Adding color to text</h2>
 
     <p>This, with the typeface, is one of the first decisions to be made when building a website, and is also one of the most powerful elements to set an unmistakable personality to the page, as they have the largest impact on the look and legibility of the page.</p>
 
-    <p>The <code>color</code> property sets and modifies the text color, allowing only one value, that can be expressed in different formats, as <code>rgb</code>, <code>rgba</code>, <code>HSL</code>, <code>HSLa</code>, and <code>hexadecimal</code> values. The latter are preferred as provide great control with little effort. As example, the following CSS will change the color of all the text within the <code>&#60;html&#62;</code> element on a page:</p>
+    <p>The <code>color</code> property sets and modifies the text color, allowing only one value, that can be expressed in different formats, as <code>rgb</code>, <code>rgba</code>, <code>HSL</code>, <code>HSLa</code>, and <code>hexadecimal</code> vlaues. The latter are preferred as provide great control with littel effort. As example, the following CSS will change the color of all the text within the <code>&#60;html&#62;</code> element on a page:</p>
 
     <code>
         html {<br>
@@ -58,21 +58,19 @@
         }
     </code>
 
-    <p><a href="typo-ex-color001.html" target="_blank">Example.</a></p>
-
     <h2 id="changing-font-properties">Changing font properties</h2>
 
-    <p>Within the available typography properties, they are classified in two categories: font-based properties and text-based properties. They are easily identifiable because most of these will be preface with either <code>font-*</code> or <code>text-*</code>.</p>
+    <p>Within the available typography properties, they are classified in two categories: font-based properties and tex-based properties. They are easily identifiable because most of these will be preface with either <code>font-*</code> or <code>text-*</code>.</p>
 
     <section id="font-based">
 
         <h3>Font-based properties</h3>
 
-            <h4>1.1 - Font family</h4>
+            <h4>Font family</h4>
 
-            <p>The <code>font-family</code> property is used to declare which font -as well as which fallback or substitute fonts- should be used to display text. The value of the <code>font-family</code> property contains multiple font names, all comma separated. The fist declared font (starting from the left), is the primary font choice. If this font is unavailable, then, the alternative declared fonts will follow after it in order of preference from left to right.</p>
+            <p>The <code>font-family</code> property is used to declare which font -as well as which fallback or substitue fonts- should be used to display text. The value of the <code>font-family</code> property contains multiple font names, all comma separated. The fist declared font (starting from the left), is the primary font choice. If this font is unavailable, then, the alternative declared fonts will follow after it in order of preference from left to right.</p>
 
-            <p>When declaring fonts, take into account that font names with more than one word must be declared wrapped in quotation marks. Additionally, the las font should be a keyword value, which will use the system default font for the specified type, most commonly either <code>sans-serif</code> or <code>serif</code>.</p>
+            <p>When declaring fonts, take into account that font names with more than one word must be declared wrapped in quotation marks. Additionally, the las font should be a keyword value, which will use the system default faont for the specidied type, most commonly either <code>sans-serif</code> or <code>serif</code>.</p>
 
             <p>The following is an example of the declaration of the <code>font-family</code> property.</p>
 
@@ -82,9 +80,9 @@
 
             <p>According to the previously exposed, the font of choice will be <code>Helvetica Neue</code>, should this font will be unavailable/uninstalled, then the <code>Helvetica</code> font will follow, and so on until <code>sans-serif</code> provided the <code>Arial</code> font isn't available either.</p>
 
-            <h4>1.2 - Font size</h4>
+            <h4>Font size</h4>
 
-            <p>The <code>font-size</code> property provides the ability to set the size of text using common length values, including pixels, em units, percentages, points, or <code>font-size</code> keywords <i class=faq>which are those keywords for the font-size property?</i></p>
+            <p>The <code>font-size</code> property provides the ability to set the size of text using common length values, including pixels, em units, percentages, points, or <code>>font-size</code> keywords <i class=faq>which are those keywords for the font-size property?</i></p>
             
             <p>Here is a CSS example setting the <code>font-size</code> of the <code>&#60;body&#62;</code> element to <code>14px</code>.</p>
             
@@ -94,7 +92,7 @@
                 }
             </code>
             
-            <h4>1.3 - Font style</h4>
+            <h4>Font style</h4>
             
             <p>This property is commonly used to set text to italics, or to prevent text from being italicized. This property accepts, four keyword values, namely: <code>normal</code>, <code>italic</code>, <code>oblique</code>, and <code>inherit</code>. The following CSS sets all elements with a class of <code>special</code> to include a <code>font-style</code> of <code>italic</code>:</p>
 
@@ -104,7 +102,7 @@
                 }
             </code>
 
-            <h4>1.4 - Font variant</h4>
+            <h4>Font variant</h4>
 
             <p>This property is used mostly in the rare cases the text needs to be displayed in small capitals, known also as small caps. The <code>font-variant</code> property accepts three values: <code>normal</code>, <code>small-caps</code>, and <code>inherit</code>. The following example shows all the elements with a class of firm to a <code>font-variant</code> of <code>small-caps</code>:</p>
 
@@ -116,11 +114,11 @@
             
             <p><i>show practical examples of these properties.</i></p>
             
-            <h4>1.5 - Font weight</h4>
+            <h4>Font weight</h4>
             
                 <p>This property makes reference to the thickness of the typeface, is used to make the text bolder or lighter, this property accepts both, keyword and numerical values.</p>
             
-                <p>Keyword values include <code>normal</code>, <code>bold</code>, <code>bolder</code>, <code>lighter</code>, and <code>inherit</code>. Of these keyword values, it is recommended to primarily use <code>normal</code> and <code>bold</code> to change text from normal to bold an vice versa. Rather than using the keyword values <code>bolder</code> or <code>lighter</code>, it's better to use a numeric value for more specific control. Here is an example of the use of the <code>font-weight</code> property using keyword values:</p>
+                <p>Keyword values include <code>normal</code>, <code>bold</code>, <code>bolder</code>, <codee>lighter</codee>, and <code>inherit</code>. Of these keyword values, it is recommeded to primarily use <code>normal</code> and <code>bold</code> to change text from normal to bold an vice versa. Rather than using the keyword values <code>bolder</code> or <code>lighter</code>, it's better to use a numeric value for more specific control. Here is an example of the use of the <code>font-weight</code> property using keyword values:</p>
 
                 <code>
                     .daring {<br>
@@ -147,7 +145,7 @@
                     <p>Before using a numeric value, we need to check and see whether the typefacewe are using comes in the weight we'd like to use. Attempting to use a weight that's not available for a given typeface will cause those styles to default to the closest value. For example, the Times New Roman typeface comes in two weights: <code>normal</code> (<code>400</code>), and <code>bold</code> (<code>700</code>). Attempting to use a weight of <code>900</code> will default the typeface to the closest related weight, <code>700</code> in this case.</p>
             </div>
 
-            <h3>1.6 - Line height</h3>
+            <h3>Line height</h3>
 
                 <p>Line height or leading, is the distance between two lines of text, is declared useing the <code>line-height</code> property. The <code>line-height</code> property accepts all general lenght values, like pixels, percentages, and em.</p>
 
@@ -222,29 +220,46 @@
 
     </section>
 
+<hr>
+<hr>
+<hr>
+
     <section>
-        
+
         <h2 id="text-properties">Text-based properties</h2>
 
             <p>Using the font-based properties (<code>family</code>, <code>size</code>, <code>weight</code>, <code>style</code>, <code>variant</code>, and <code>line-height</code>), is half the process. Additionally it is possible to decide how to align, decorate, indent, transform, and space text.</p>
 
-            <h4>2.1 - Text align</h4>
+            <h3>Text align</h4>
 
                 <p>The <code>text-align</code> is very useful improve the layout and legibility of a page. The <code>text-align</code> property has five values: <code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>, and <code>inherit</code>. All of these values are fairly straightforward; as expected, they align text to the left, right, or center, or they justify text. However, the <code>text-align</code> property should not be confused with the <code>float</code> property. The <code>text-align</code> values <code>left</code> and <code>right</code> will align the text <i>within</i> the element to the left or right, whereas the <code>float</code> values <code>left</code> and <code>right</code> will move the <i>entire</i> element. Sometime the <code>text-align</code> will produce the desired outcome, and other times the <code>float</code> property will.</p>
 
-                <p><i class="faq">show page with examples</i></p>
+                <div class="text-align">
 
-            <h4>2.2 - Text decoration</h4>
+                <h4 class="ex">Example</h4>
+
+                    <p class="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tortor turpis, pulvinar ut ultrices ut, pretium id enim. Aenean dignissim magna id neque tempor porttitor. Mauris quis felis urna. Donec quis turpis et quam iaculis porta et commodo magna. Vivamus arcu dui, sagittis sed interdum eget, faucibus vel purus. Quisque ornare velit consectetur ex vestibulum tempus. Proin in justo vitae erat euismod egestas. Maecenas convallis sollicitudin nisi id hendrerit. Ut placerat magna sed quam gravida interdum. Nullam dignissim finibus velit nec viverra.</p>
+
+                    <p class="right">Integer ullamcorper sit amet erat in congue. Maecenas quis pulvinar massa. Praesent lacus mauris, vulputate at auctor sed, aliquet nec lacus. Etiam pellentesque finibus purus, at egestas purus ullamcorper ac. Cras euismod eros vulputate magna elementum congue. Nunc nec auctor elit. Suspendisse sed enim quis tellus elementum rutrum at at tellus. Nullam tempor condimentum tempor. Etiam fringilla eu leo eget posuere. Donec ligula risus, tempor id fermentum et, posuere in urna. Curabitur gravida maximus commodo. Ut id est id felis mollis aliquet et viverra dolor. Quisque tempus ullamcorper dui, ut tempus metus tempor interdum. Vivamus nec nisl eu magna luctus placerat eget eu tellus. Aenean dapibus, odio pulvinar sollicitudin rhoncus, nunc dui lacinia tellus, et suscipit augue nulla at ligula.</p>
+
+                    <p class="center">Duis posuere aliquam elit ac pharetra. Phasellus ultrices nunc eget dictum ornare. Sed et ligula at lacus pretium elementum. Nunc sagittis ornare interdum. Donec in felis vel elit accumsan lobortis et quis quam. Vestibulum sed tempor magna, et imperdiet neque. Vivamus et justo tincidunt, hendrerit est id, consequat magna. Integer tortor nulla, pulvinar sed ipsum nec, scelerisque dictum elit. Donec tempor tortor a mollis consequat. Donec eget eros vel mauris fringilla ultrices in ut neque. Vestibulum arcu metus, congue nec accumsan sit amet, consequat sit amet diam. Phasellus iaculis laoreet faucibus.</p>
+
+                    <p class="justify">Nullam elementum porttitor fermentum. Pellentesque vel nunc et nisi condimentum pellentesque vel sit amet tellus. Ut nisl diam, pharetra non semper ut, varius sit amet arcu. Proin vel ex ut nulla egestas eleifend. Mauris quis posuere turpis, vel finibus orci. Pellentesque tempus nunc non tempus tempus. Fusce feugiat sapien vel turpis imperdiet porttitor. In et luctus turpis, a tempus nunc. Nulla urna orci, congue eget mi ac, pulvinar aliquet diam. Proin sodales placerat lectus, semper efficitur dui accumsan a. Pellentesque vel condimentum purus, eu iaculis ipsum. Vestibulum eu orci tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ligula neque, vestibulum ut imperdiet sit amet, congue non nisi. Aliquam ac sollicitudin eros. Nunc eleifend elementum nisl in aliquet. Nulla facilisi. Nunc risus mi, consequat eget est eu, tincidunt aliquam leo. Maecenas sodales porta est. Sed rutrum dolor sit amet euismod suscipit. Mauris feugiat facilisis tortor, quis pharetra ex tincidunt nec. Phasellus pellentesque auctor vulputate.</p>
+
+                    <p class="inherit">In ornare hendrerit orci vel volutpat. Aliquam non leo ut lorem porttitor consectetur sit amet a felis. Sed eget nulla id nibh facilisis scelerisque tempor in orci. Donec vel enim vulputate, tincidunt lorem aliquet, tincidunt felis. Aliquam non lacus ut erat gravida malesuada. Praesent ac fringilla neque. Suspendisse dapibus sollicitudin tempor. Donec eu rhoncus arcu. Sed at ex turpis. Nam blandit odio elit, sed commodo urna lacinia sed. Maecenas tempor ultrices urna a viverra. Vestibulum ut dapibus tortor. Aliquam consequat metus eget ante porta, eget auctor justo molestie. Proin magna ligula, tempor ut orci et, semper efficitur massa. Aenean id libero molestie, dapibus nibh in, maximus nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et volutpat sem. Morbi posuere, lorem eu suscipit iaculis, lorem augue vehicula velit, sit amet ornare nunc purus at urna. Praesent nec pretium massa. Nulla rhoncus, nisi vel bibendum placerat, ante est ultrices nisi, porta ultrices tortor turpis ut nulla.</p>
+                </div>
+
+            <h4>Text decoration</h4>
 
                 <p>This property accepts keyword values of: <code>none</code>, <code>underline</code>, <code>overline</code>, <code>line-through</code>, and <code>inherit</code>. Use of the <code>text-decoration</code> property vaies, but the most popular use ¡is to underline links, which is a default browser style. Is possible also to apply multiple text decoration values to an element at once by space-separating each keyword within the value.<br>
                 <i class="faq">show examples with each keyword value</i></p>
 
-            <h4>2.3 - Text Indent</h4>
+            <h4>Text Indent</h4>
 
                 <p>This property is commonly used in printed publications, as it name suggests, its used to indent the first line of text within an element. All common length values are availabe for this property, including pixels, points, percentages, and so on. Positive values will indent text inward, while negative values will indent text outward.<br>
                 <i class="faq">show example</i></p>
 
-            <h4>2.4 - Text shadow</h4>
+            <h4>Text shadow</h4>
 
                 <p>This property allow to add one or multiple shadows to a text. The property generally takes four values, all listed one ater the other from left to right. The first three values are lenghts, and the last value is a color.</p>
 
@@ -266,17 +281,17 @@
 
 </div>
 
-            <h4>2.5 - Text transform</h4>
+            <h4>Text transform</h4>
 
                 <p>Similar to the <code>font-variant</code> property, there is the <code>text-transform</code> property. While the <code>font-variant</code> property looks for an alternate variant of a typeface, this property (<code>text-transform</code>) will change the text without change the typeface, this property accepts five values: <code>none</code>, <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, and <code>inherit</code>.</p>
 
                 <p>The <code>capitalize</code> value will capitalize the first letter of each word, the <code>uppercase</code> value will capitalize every letter, and the <code>lowercase</code> will make every letter lowercase, whilst <code>none</code> will return any of these inherited values back to the original text style. <i class="faq">show examples</i></p>
 
-            <h4>2.6 - Letter spacing</h4>
+            <h4>Letter spacing</h4>
 
                 <p>With the <code>letter-spacing</code> it is possible to adjust the space(or tracking) between the letters on a page. A positive value will push apart letter from one another, while a negative value will pull letters closer together. The keyword value <code>none</code> will return the space between letters back to its normal size. The use of this property will help ensure that the rendering and tracking will be adecuate as the <code>font-size</code> is changed. It is, however, always a good idea to double-check our work. <i class="faq">show examples</i></p>
 
-            <h4>2.7 - Word spacing</h4>
+            <h4>Word spacing</h4>
 
                 <p>In a similar fashion with the tracking, it is possible to adjust the space between words within an element using the <code>word-spacing</code> property. <i class="faq">show examples.</i></p>
 

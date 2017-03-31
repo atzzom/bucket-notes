@@ -46,39 +46,8 @@ Document's style
 */
 
 body {
-  font: 200 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 0 10%;
+  padding: 0 5%;
 }
 h1 {
   text-align: center;
-}
-
-div .left {
-  text-align: left;
-}
-
-div .right {
-  text-align: right;
-}
-
-div .center {
-  text-align: center;
-}
-
-div .justify {
-  text-align: justify;
-}
-
-div .inherit {
-  text-align: inherit;
-}
-
-div {
-  border-color: silver;
-  border-width: 1px;
-  padding: 0% 5%;
-}
-
-.ex {
-  padding-left: 5%;
 }
