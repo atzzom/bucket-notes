@@ -2,466 +2,511 @@
 <html>
 
 <head>
-    <meta charset="uft-8">
-    <title>line one | Typography</title>
-    <link rel="stylesheet" href="typo.css" type="text/css"/>
+	<meta charset="uft-8">
+	<title>line one | Typography</title>
+	<link rel="stylesheet" href="typo.css" type="text/css"/>
 </head>
 
 <header>
-    <h1>Working with typography</h1>
+	<nav><p class="line-one-nav"><a class="line-one-nav" href="home.html">line one</a></p></nav>
 
-    <nav>
-        <h2>Table of contents.</h2>
+	<h1>Working with typography</h1>
 
-        <a href="#type-vs-font">Typeface vs. font</a><br>
-        <a href="#color">Adding color to text</a><br>
-        <a href="#changing-font-properties">Changing font properties</a><br>
-        <a href="#all-font">Font properties all together</a><br>
-        <a href="#text-properties">Text based properties</a><br>
-        <a href="#all-text">Text properties all together</a><br>
-        <a href="#web-safe">Web safe fonts</a><br>
-        <a href="#embed">Embeding web fonts</a><br>
-        <a href="#quoting">Citations & quotes</a><br>
-        <a href="#citing-creative-work">Citing a creative work</a><br>
-        <a href="#dialogue&prose">Dialogue and prose</a><br>
-        <a href="#externalQ">External quotation</a><br>
-        <a href="#externalC">External citation</a><br>
-        <a href="#summary">Summary</a>
-    </nav>
+	<nav>
+		<h2>Table of contents</h2>
+
+			<p>Font-based properties</p>
+
+			<a href="#type-vs-font">Typeface vs. font</a><br>
+			<a href="#color">Adding color to text</a><br>
+			<a href="#font-based">Font-based properties</a><br>
+			<a href="#all-font">Font properties all together</a><br>
+
+			<p>Text based properties</p>
+
+			<a href="#text-properties">Text based properties</a><br>
+			<a href="#all-text">Text properties all together</a><br>
+
+			<p>Web fonts</p>
+
+			<a href="#web-safe">Web safe fonts</a><br>
+			<a href="#embed">Embeding web fonts</a><br>
+
+			<p>Citing</p>
+
+			<a href="#quoting">Citations & quotes</a><br>
+			<a href="#citing-creative-work">Citing a creative work</a><br>
+			<a href="#dialogue&prose">Dialogue and prose</a><br>
+			<a href="#externalQ">External quotation</a><br>
+			<a href="#externalC">External citation</a><br><br>
+			<a href="#summary">Summary</a>
+	</nav>
 </header>
 
-
 <body>
-    <p>As browsers started to be able to embed fonts into computers, those, were not longer limited to only render the fonts installed by default. This, opened a vast amount of options to choose from when selecting a font, in order to make the most out of them, is mandatory know and be aware of the basic typography principles.</p>
 
-    <div class="frame">
-        <h3 id="type-vs-font">Typeface vs. font</h3>
+	<p>
+		As browsers started to be able to embed fonts into computers, those, were not longer limited to only render the fonts installed by default. This, opened a vast amount of options to choose from when selecting a font, in order to make the most out of them, is mandatory know and be aware of the basic typography principles.
+		</p>
 
-        <p>The terms "typeface" amd "font" are often interchanged, causing confusion. Here is a breakdown of exactly what ech term means.</p>
+	<!-- comment on typeface vs. font -->
+	<div class="frame">
 
-        <p>A <em>typeface</em> is what we see. It is the artistic impression of how text looks, feels, and reads.</p>
+		<h3 id="type-vs-font">Typeface vs. font</h3>
 
-        <p>A <em>font</em> is a file that contains a typeface. Using a font on a computer allows the computer to access the typeface.</p>
+			<p>The terms "typeface" amd "font" are often interchanged, causing confusion. Here is a breakdown of exactly what ech term means.</p>
 
-        <p>One way to help clarify the difference between a typeface and a font is to compare them to a song and and MP3. A typeface is very similar to a song in that it is a work of art. It is created by an artist or artists and is open to public interpretation. A font, on hte other hand, is very similar to an MP3 in that it is not the artistic impression itself, but only a method of delivering the artistic value.</p>
-    </div>
+			<p>A <em>typeface</em> is what we see. It is the artistic impression of how text looks, feels, and reads.</p>
 
-    <h2 id="color">Adding color to text</h2>
+			<p>A <em>font</em> is a file that contains a typeface. Using a font on a computer allows the computer to access the typeface.</p>
 
-    <p>This, with the typeface, is one of the first decisions to be made when building a website, and is also one of the most powerful elements to set an unmistakable personality to the page, as they have the largest impact on the look and legibility of the page.</p>
+			<p>One way to help clarify the difference between a typeface and a font is to compare them to a song and and MP3. A typeface is very similar to a song in that it is a work of art. It is created by an artist or artists and is open to public interpretation. A font, on hte other hand, is very similar to an MP3 in that it is not the artistic impression itself, but only a method of delivering the artistic value.</p>
+	</div>
 
-    <p>The <code>color</code> property sets and modifies the text color, allowing only one value, that can be expressed in different formats, as <code>rgb</code>, <code>rgba</code>, <code>HSL</code>, <code>HSLa</code>, and <code>hexadecimal</code> vlaues. The latter are preferred as provide great control with littel effort. As example, the following CSS will change the color of all the text within the <code>&#60;html&#62;</code> element on a page:</p>
+	<hr>
 
-    <code>
-        html {<br>
-        color: #555;<br>
-        }
-    </code>
+	<!-- beginning of level 01 indent: font-based properties -->
+	<div class="font-based level01">
 
-    <h2 id="changing-font-properties">Changing font properties</h2>
+		<h2 id="color">Adding color to text</h2>
 
-    <p>Within the available typography properties, they are classified in two categories: font-based properties and tex-based properties. They are easily identifiable because most of these will be preface with either <code>font-*</code> or <code>text-*</code>.</p>
+			<p>This, with the typeface, is one of the first decisions to be made when building a website, and is also one of the most powerful elements to set an unmistakable personality to the page, as they have the largest impact on the look and legibility of the page.</p>
 
-    <section id="font-based">
+			<p>The <code>color</code> property sets and modifies the text color, allowing only one value, that can be expressed in different formats, as <code>rgb</code>, <code>rgba</code>, <code>HSL</code>, <code>HSLa</code>, and <code>hexadecimal</code> vlaues. The latter are preferred as provide great control with littel effort. As example, the following CSS will change the color of all the text within the <code>&#60;html&#62;</code> element on a page:</p>
 
-        <h3>Font-based properties</h3>
+			<div class="code-example">
+				<code>
+					html {<br>
+					color: #555;<br>
+					}
+				</code>
+			</div>
 
-            <h4>Font family</h4>
+		<h2 id="font-based">Font-based properties</h2>
 
-            <p>The <code>font-family</code> property is used to declare which font -as well as which fallback or substitue fonts- should be used to display text. The value of the <code>font-family</code> property contains multiple font names, all comma separated. The fist declared font (starting from the left), is the primary font choice. If this font is unavailable, then, the alternative declared fonts will follow after it in order of preference from left to right.</p>
+			<p>Within the available typography properties, they are classified in two categories: font-based properties and tex-based properties. They are easily identifiable because most of these will be preface with either <code>font-*</code> or <code>text-*</code>.</p>
 
-            <p>When declaring fonts, take into account that font names with more than one word must be declared wrapped in quotation marks. Additionally, the las font should be a keyword value, which will use the system default faont for the specidied type, most commonly either <code>sans-serif</code> or <code>serif</code>.</p>
+		<!-- beginning of level 02 indent -->
+		<div class="level02">
 
-            <p>The following is an example of the declaration of the <code>font-family</code> property.</p>
+			<h3>Font family</h3>
 
-            <code>body {<br>
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
-            }</code>
+				<p>The <code>font-family</code> property is used to declare which font -as well as which fallback or substitue fonts- should be used to display text. The value of the <code>font-family</code> property contains multiple font names, all comma separated. The fist declared font (starting from the left), is the primary font choice. If this font is unavailable, then, the alternative declared fonts will follow after it in order of preference from left to right.</p>
 
-            <p>According to the previously exposed, the font of choice will be <code>Helvetica Neue</code>, should this font will be unavailable/uninstalled, then the <code>Helvetica</code> font will follow, and so on until <code>sans-serif</code> provided the <code>Arial</code> font isn't available either.</p>
+				<p>When declaring fonts, take into account that font names with more than one word must be declared wrapped in quotation marks. Additionally, the las font should be a keyword value, which will use the system default faont for the specidied type, most commonly either <code>sans-serif</code> or <code>serif</code>.</p>
 
-            <h4>Font size</h4>
+				<p>The following is an example of the declaration of the <code>font-family</code> property.</p>
 
-            <p>The <code>font-size</code> property provides the ability to set the size of text using common length values, including pixels, em units, percentages, points, or <code>>font-size</code> keywords <i class=faq>which are those keywords for the font-size property?</i></p>
-            
-            <p>Here is a CSS example setting the <code>font-size</code> of the <code>&#60;body&#62;</code> element to <code>14px</code>.</p>
-            
-            <code>
-                body {<br>
-                font-size: 14px;<br>
-                }
-            </code>
-            
-            <h4>Font style</h4>
-            
-            <p>This property is commonly used to set text to italics, or to prevent text from being italicized. This property accepts, four keyword values, namely: <code>normal</code>, <code>italic</code>, <code>oblique</code>, and <code>inherit</code>. The following CSS sets all elements with a class of <code>special</code> to include a <code>font-style</code> of <code>italic</code>:</p>
+				<div class="code-example">
+					<code>
+						body {<br>
+						font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
+						}
+					</code>
+				</div>
 
-            <code>
-                .special {<br>
-                font-style: italic;<br>
-                }
-            </code>
+				<p>According to the previously exposed, the font of choice will be <code>Helvetica Neue</code>, should this font will be unavailable/uninstalled, then the <code>Helvetica</code> font will follow, and so on until <code>sans-serif</code> provided the <code>Arial</code> font isn't available either.</p>
 
-            <h4>Font variant</h4>
+			<h3>Font size</h3>
 
-            <p>This property is used mostly in the rare cases the text needs to be displayed in small capitals, known also as small caps. The <code>font-variant</code> property accepts three values: <code>normal</code>, <code>small-caps</code>, and <code>inherit</code>. The following example shows all the elements with a class of firm to a <code>font-variant</code> of <code>small-caps</code>:</p>
+				<p>The <code>font-size</code> property provides the ability to set the size of text using common length values, including pixels, em units, percentages, points, or <code>>font-size</code> keywords <i class=faq>which are those keywords for the font-size property?</i></p>
 
-            <code>
-                .firm {<br>
-                font-variant: small-caps;<br>
-                }
-            </code>
-            
-            <p><i>show practical examples of these properties.</i></p>
-            
-            <h4>Font weight</h4>
-            
-                <p>This property makes reference to the thickness of the typeface, is used to make the text bolder or lighter, this property accepts both, keyword and numerical values.</p>
-            
-                <p>Keyword values include <code>normal</code>, <code>bold</code>, <code>bolder</code>, <codee>lighter</codee>, and <code>inherit</code>. Of these keyword values, it is recommeded to primarily use <code>normal</code> and <code>bold</code> to change text from normal to bold an vice versa. Rather than using the keyword values <code>bolder</code> or <code>lighter</code>, it's better to use a numeric value for more specific control. Here is an example of the use of the <code>font-weight</code> property using keyword values:</p>
-
-                <code>
-                    .daring {<br>
-                    font-weight: bold;<br>
-                    }
-                </code>
-
-                <p>On the other hand, when adjusting this property using numerical values, the <code>font-weight</code> property accepts the following weights: <code>100</code>, <code>200</code>, <code>300</code>, <code>400</code>, <code>500</code>, <code>600</code>, <code>700</code>, <code>800</code>, and <code>900</code>, being <code>100</code> the lightlest weight, and <code>900</code> the boldest/strongest weight.</p>
-
-                <p>For reference, the keyword value of <code>normal</code> maps to <code>400</code> and the keyword <code>bold</code> maps to <code>700</code>; thus, any numeric value below <code>400</code> will be fairly thin, and any value above <code>700</code> will be fairly thick.</p>
-
-                <p>In this example, changing the <code>font-weight</code> to <code>600</code> for any element with the class of <code>daring</code> now renders that text as semibold-not quite as thick as the <code>bold</code> keyword value from before:</p>
+				<p>Here is a CSS example setting the <code>font-size</code> of the <code>&#60;body&#62;</code> element to <code>14px</code>.</p>
 
-                <code>
-                    .daring {<br>
-                    font-weigth: 600;<br>
-                    }
-                </code>
-                
-            <div class="comment-box">
-                
-                <h4>Typeface weights</h4>
-                
-                    <p>Before using a numeric value, we need to check and see whether the typefacewe are using comes in the weight we'd like to use. Attempting to use a weight that's not available for a given typeface will cause those styles to default to the closest value. For example, the Times New Roman typeface comes in two weights: <code>normal</code> (<code>400</code>), and <code>bold</code> (<code>700</code>). Attempting to use a weight of <code>900</code> will default the typeface to the closest related weight, <code>700</code> in this case.</p>
-            </div>
-
-            <h3>Line height</h3>
-
-                <p>Line height or leading, is the distance between two lines of text, is declared useing the <code>line-height</code> property. The <code>line-height</code> property accepts all general lenght values, like pixels, percentages, and em.</p>
-
-                <p>The best practice for legibility is to set the <code>line-height</code> to around one and a half times the <code>font-size</code> property value. This could be quickly accomplished by setting the leading/<code>line-height</code> to <code>150%</code>, or just <code>1.5</code>. However, if we're working with a baseline grid, having a little more control over our <code>line-height</code> using pixels may be preferable.</p>
-
-                <p>The following CSS sets <code>22px</code> between lines of text:</p>
+				<div class="code-example">
+					<code>
+						body {<br>
+						font-size: 14px;<br>
+						}
+					</code>
+				</div>
 
-                <code>
-                    body {<br>
-                    line-height: 22px;<br>
-                    }
-                </code>
+			<h3>Font style</h3>
 
-                <p>A little trick to vertically center text can be done making equal the <code>height</code> with the <code>line-height</code>, this technique is commonly used with buttons, alert messages, and other single-line text blocks. </code><i class="faq">what's the difference between the <code>height</code> and the <code>font-size</code>?</i></p>
+				<p>This property is commonly used to set text to italics, or to prevent text from being italicized. This property accepts, four keyword values, namely: <code>normal</code>, <code>italic</code>, <code>oblique</code>, and <code>inherit</code>. The following CSS sets all elements with a class of <code>special</code> to include a <code>font-style</code> of <code>italic</code>:</p>
 
-            <h4>Shorthand font properties</h4>
+				<div class="code-example">
+					<code>
+						.special {<br>
+						font-style: italic;<br>
+						}
+					</code>
+				</div>
 
-                <p>As many other properties, the <code>font</code> property accepts shorthand declarations, needless to say, all of the stated properties must be font-based. The order to declare these properties is the following from left to right: <code>font-style</code>, <code>font-variant</code>, <code>font-weight</code>, <code>font-size</code>, <code>line-height</code>, and <code>font-family</code>. As a shorthand declaration, no commans must be present within each value, only with the exception of font names, as the <code>font-family</code> property value uses commas, otherwise, as usual, should a value have more than one word, it must be wrapped in quotation marks. Additionally, a forward slash, <code>/</code>, separator is needed between the <code>font-size</code> and <code>line-height</code>, like this: <code>font-size/line-height</code>, <code>18px/27px</code>.</p>
+			<h3>Font variant</h3>
 
-                <p>In shorthand declaration for the <code>font</code> property all values are optional but the <code>font-size</code> and <code>font-family</code>. That said, it is possible include only the <code>font-size</code> and <code>font-family</code> property values in the shrothand value if desired.</p>
+				<p>This property is used mostly in the rare cases the text needs to be displayed in small capitals, known also as small caps. The <code>font-variant</code> property accepts three values: <code>normal</code>, <code>small-caps</code>, and <code>inherit</code>. The following example shows all the elements with a class of firm to a <code>font-variant</code> of <code>small-caps</code>:</p>
 
-                <code>
-                    html {<br>
-                    font: italic small-caps bold 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
-                    }
-                </code>
+				<div class="code-example">
+					<code>
+						.firm {<br>
+						font-variant: small-caps;<br>
+						}
+					</code>
+				</div>
 
-    <h2 id="all-font">Font properties all together</h2>
+				<p><i>show practical examples of these properties.</i></p>
 
-        <p>The following examples show the use of the font-based properties together. The following HTML and CSS demosntrates the different possibilities when styling text.</p>
+			<h3>Font weight</h3>
 
-        <p>HTML</p>
+				<p>This property makes reference to the thickness of the typeface, is used to make the text bolder or lighter, this property accepts both, keyword and numerical values.</p>
 
-        <code>
-            &#60;h2&#62;&#60;a href="#"&#62;I Am a Builder&#60;/a&#62;&#60;h2&#62;<br>
-            &#60;p class="byline"&#62;Posted by Shay Howe&#60;/p&#62;<br>
-            &#60;p&#62;Every day I see designers and developers working alongside one another. They work intelligently in pursuit of buisness objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders. &#60;a href="#"&#62;Continue&#8230;&#60;/a&#62;&#60;/p&#62;
-        </code>
-        
-        <p>CSS</p>
-        
-        <code>
-            h2,<br>
-            p {<br>
-            color: #555;<br>
-            font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }<br>
-            a {<br>
-            color: #0087cc;<br>
-            }<br>
-            a:hover {<br>
-            color: #ff7b29;<br>
-            }<br>
-            h2 {<br>
-            font-size: 22px;<br>
-            font-weight: bold;<br>
-            margin-bottom: 6px;<br>
-            }<br>
-            .byline {<br>
-            color: ·9799a7;<br>
-            font-family: Georgia, Times, "Times New Roman", serif;<br>
-            font-style: italic;<br>
-            margin-bottom: 18px;<br>
-            }
-            </code>
-            
-        <p><i class=faq>insert link with example here.</i></p>
-            
-                <h4>CSS pseudo-classes</h4>
-                
-                    <p>The previous example shows the <code>:hover</code> CSS pseudo-class. For reference, pseudo-classes are keywords that may be added to the end of a selector to style an element when it's in a unique state. The <code>:hover</code> pseudo-class styles and element when a uses hovers over that element. When used with the <code>&#60;a&#62;</code> element, as shown above, all <code>&#60;a&#62;</code> elements will receive unique styles when they are hovered over. Now the <code>&#60;a&#62;</code> elements will chage color upon being hovered over.</p>
+				<p>Keyword values include <code>normal</code>, <code>bold</code>, <code>bolder</code>, <codee>lighter</codee>, and <code>inherit</code>. Of these keyword values, it is recommeded to primarily use <code>normal</code> and <code>bold</code> to change text from normal to bold an vice versa. Rather than using the keyword values <code>bolder</code> or <code>lighter</code>, it's better to use a numeric value for more specific control. Here is an example of the use of the <code>font-weight</code> property using keyword values:</p>
 
-    </section>
+				<div class="code-example">
+					<code>
+						.daring {<br>
+						font-weight: bold;<br>
+						}
+					</code>
+				</div>
 
-<hr>
-<hr>
-<hr>
+				<p>On the other hand, when adjusting this property using numerical values, the <code>font-weight</code> property accepts the following weights: <code>100</code>, <code>200</code>, <code>300</code>, <code>400</code>, <code>500</code>, <code>600</code>, <code>700</code>, <code>800</code>, and <code>900</code>, being <code>100</code> the lightlest weight, and <code>900</code> the boldest/strongest weight.</p>
 
-    <section>
+				<p>For reference, the keyword value of <code>normal</code> maps to <code>400</code> and the keyword <code>bold</code> maps to <code>700</code>; thus, any numeric value below <code>400</code> will be fairly thin, and any value above <code>700</code> will be fairly thick.</p>
 
-        <h2 id="text-properties">Text-based properties</h2>
+				<p>In this example, changing the <code>font-weight</code> to <code>600</code> for any element with the class of <code>daring</code> now renders that text as semibold-not quite as thick as the <code>bold</code> keyword value from before:</p>
 
-            <p>Using the font-based properties (<code>family</code>, <code>size</code>, <code>weight</code>, <code>style</code>, <code>variant</code>, and <code>line-height</code>), is half the process. Additionally it is possible to decide how to align, decorate, indent, transform, and space text.</p>
+				<div class="code-example">
+					<code>
+						.daring {<br>
+						font-weigth: 600;<br>
+						}
+					</code>
+				</div>
 
-            <h3>Text align</h4>
+				<!-- comment box on the weights of a typeface file -->
+				<div class="frame">
+					<h4>Typeface weights</h4>
 
-                <p>The <code>text-align</code> is very useful improve the layout and legibility of a page. The <code>text-align</code> property has five values: <code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>, and <code>inherit</code>. All of these values are fairly straightforward; as expected, they align text to the left, right, or center, or they justify text. However, the <code>text-align</code> property should not be confused with the <code>float</code> property. The <code>text-align</code> values <code>left</code> and <code>right</code> will align the text <i>within</i> the element to the left or right, whereas the <code>float</code> values <code>left</code> and <code>right</code> will move the <i>entire</i> element. Sometime the <code>text-align</code> will produce the desired outcome, and other times the <code>float</code> property will.</p>
+						<p>Before using a numeric value, we need to check and see whether the typefacewe are using comes in the weight we'd like to use. Attempting to use a weight that's not available for a given typeface will cause those styles to default to the closest value. For example, the Times New Roman typeface comes in two weights: <code>normal</code> (<code>400</code>), and <code>bold</code> (<code>700</code>). Attempting to use a weight of <code>900</code> will default the typeface to the closest related weight, <code>700</code> in this case.</p>
+				</div>
 
-                <div class="text-align">
+			<h3>Line height</h3>
 
-                <h4 class="ex">Example</h4>
+				<p>Line height or leading, is the distance between two lines of text, is declared useing the <code>line-height</code> property. The <code>line-height</code> property accepts all general lenght values, like pixels, percentages, and em.</p>
 
-                    <p class="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tortor turpis, pulvinar ut ultrices ut, pretium id enim. Aenean dignissim magna id neque tempor porttitor. Mauris quis felis urna. Donec quis turpis et quam iaculis porta et commodo magna. Vivamus arcu dui, sagittis sed interdum eget, faucibus vel purus. Quisque ornare velit consectetur ex vestibulum tempus. Proin in justo vitae erat euismod egestas. Maecenas convallis sollicitudin nisi id hendrerit. Ut placerat magna sed quam gravida interdum. Nullam dignissim finibus velit nec viverra.</p>
+				<p>The best practice for legibility is to set the <code>line-height</code> to around one and a half times the <code>font-size</code> property value. This could be quickly accomplished by setting the leading/<code>line-height</code> to <code>150%</code>, or just <code>1.5</code>. However, if we're working with a baseline grid, having a little more control over our <code>line-height</code> using pixels may be preferable.</p>
 
-                    <p class="right">Integer ullamcorper sit amet erat in congue. Maecenas quis pulvinar massa. Praesent lacus mauris, vulputate at auctor sed, aliquet nec lacus. Etiam pellentesque finibus purus, at egestas purus ullamcorper ac. Cras euismod eros vulputate magna elementum congue. Nunc nec auctor elit. Suspendisse sed enim quis tellus elementum rutrum at at tellus. Nullam tempor condimentum tempor. Etiam fringilla eu leo eget posuere. Donec ligula risus, tempor id fermentum et, posuere in urna. Curabitur gravida maximus commodo. Ut id est id felis mollis aliquet et viverra dolor. Quisque tempus ullamcorper dui, ut tempus metus tempor interdum. Vivamus nec nisl eu magna luctus placerat eget eu tellus. Aenean dapibus, odio pulvinar sollicitudin rhoncus, nunc dui lacinia tellus, et suscipit augue nulla at ligula.</p>
+				<p>The following CSS sets <code>22px</code> between lines of text:</p>
 
-                    <p class="center">Duis posuere aliquam elit ac pharetra. Phasellus ultrices nunc eget dictum ornare. Sed et ligula at lacus pretium elementum. Nunc sagittis ornare interdum. Donec in felis vel elit accumsan lobortis et quis quam. Vestibulum sed tempor magna, et imperdiet neque. Vivamus et justo tincidunt, hendrerit est id, consequat magna. Integer tortor nulla, pulvinar sed ipsum nec, scelerisque dictum elit. Donec tempor tortor a mollis consequat. Donec eget eros vel mauris fringilla ultrices in ut neque. Vestibulum arcu metus, congue nec accumsan sit amet, consequat sit amet diam. Phasellus iaculis laoreet faucibus.</p>
+				<div class="code-example">
+					<code>
+						body {<br>
+						line-height: 22px;<br>
+						}
+					</code>
+				</div>
 
-                    <p class="justify">Nullam elementum porttitor fermentum. Pellentesque vel nunc et nisi condimentum pellentesque vel sit amet tellus. Ut nisl diam, pharetra non semper ut, varius sit amet arcu. Proin vel ex ut nulla egestas eleifend. Mauris quis posuere turpis, vel finibus orci. Pellentesque tempus nunc non tempus tempus. Fusce feugiat sapien vel turpis imperdiet porttitor. In et luctus turpis, a tempus nunc. Nulla urna orci, congue eget mi ac, pulvinar aliquet diam. Proin sodales placerat lectus, semper efficitur dui accumsan a. Pellentesque vel condimentum purus, eu iaculis ipsum. Vestibulum eu orci tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ligula neque, vestibulum ut imperdiet sit amet, congue non nisi. Aliquam ac sollicitudin eros. Nunc eleifend elementum nisl in aliquet. Nulla facilisi. Nunc risus mi, consequat eget est eu, tincidunt aliquam leo. Maecenas sodales porta est. Sed rutrum dolor sit amet euismod suscipit. Mauris feugiat facilisis tortor, quis pharetra ex tincidunt nec. Phasellus pellentesque auctor vulputate.</p>
+				<p>A little trick to vertically center text can be done making equal the <code>height</code> with the <code>line-height</code>, this technique is commonly used with buttons, alert messages, and other single-line text blocks. </code><i class="faq">what's the difference between the <code>height</code> and the <code>font-size</code>?</i></p>
 
-                    <p class="inherit">In ornare hendrerit orci vel volutpat. Aliquam non leo ut lorem porttitor consectetur sit amet a felis. Sed eget nulla id nibh facilisis scelerisque tempor in orci. Donec vel enim vulputate, tincidunt lorem aliquet, tincidunt felis. Aliquam non lacus ut erat gravida malesuada. Praesent ac fringilla neque. Suspendisse dapibus sollicitudin tempor. Donec eu rhoncus arcu. Sed at ex turpis. Nam blandit odio elit, sed commodo urna lacinia sed. Maecenas tempor ultrices urna a viverra. Vestibulum ut dapibus tortor. Aliquam consequat metus eget ante porta, eget auctor justo molestie. Proin magna ligula, tempor ut orci et, semper efficitur massa. Aenean id libero molestie, dapibus nibh in, maximus nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et volutpat sem. Morbi posuere, lorem eu suscipit iaculis, lorem augue vehicula velit, sit amet ornare nunc purus at urna. Praesent nec pretium massa. Nulla rhoncus, nisi vel bibendum placerat, ante est ultrices nisi, porta ultrices tortor turpis ut nulla.</p>
-                </div>
+				<h4>Shorthand font properties</h4>
 
-            <h4>Text decoration</h4>
+					<p>As many other properties, the <code>font</code> property accepts shorthand declarations, needless to say, all of the stated properties must be font-based. The order to declare these properties is the following from left to right: <code>font-style</code>, <code>font-variant</code>, <code>font-weight</code>, <code>font-size</code>, <code>line-height</code>, and <code>font-family</code>. As a shorthand declaration, no commans must be present within each value, only with the exception of font names, as the <code>font-family</code> property value uses commas, otherwise, as usual, should a value have more than one word, it must be wrapped in quotation marks. Additionally, a forward slash, <code>/</code>, separator is needed between the <code>font-size</code> and <code>line-height</code>, like this: <code>font-size/line-height</code>, <code>18px/27px</code>.</p>
 
-                <p>This property accepts keyword values of: <code>none</code>, <code>underline</code>, <code>overline</code>, <code>line-through</code>, and <code>inherit</code>. Use of the <code>text-decoration</code> property vaies, but the most popular use ¡is to underline links, which is a default browser style. Is possible also to apply multiple text decoration values to an element at once by space-separating each keyword within the value.<br>
-                <i class="faq">show examples with each keyword value</i></p>
+					<p>In shorthand declaration for the <code>font</code> property all values are optional but the <code>font-size</code> and <code>font-family</code>. That said, it is possible include only the <code>font-size</code> and <code>font-family</code> property values in the shrothand value if desired.</p>
 
-            <h4>Text Indent</h4>
+					<div class="code-example">
+						<code>
+							html {<br>
+							font: italic small-caps bold 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
+							}
+						</code>
+					</div>
 
-                <p>This property is commonly used in printed publications, as it name suggests, its used to indent the first line of text within an element. All common length values are availabe for this property, including pixels, points, percentages, and so on. Positive values will indent text inward, while negative values will indent text outward.<br>
-                <i class="faq">show example</i></p>
+		</div> <!-- end of 2nd level indent -->
 
-            <h4>Text shadow</h4>
+		<h2 id="all-font">Font properties all together</h2>
 
-                <p>This property allow to add one or multiple shadows to a text. The property generally takes four values, all listed one ater the other from left to right. The first three values are lenghts, and the last value is a color.</p>
+			<p>The following examples show the use of the font-based properties together. The following HTML and CSS demonstrates the different possibilities when styling text.</p>
 
-                <p>Each of the following values represents in the following order:<br>
-                - 1st: horizontal shadow's offset.<br>
-                - 2nd: vertical shadow's offset.<br>
-                - 3rd: shadow's blur radius.<br>
-                - 4th: shadow's color.</p>
+			<h4>HTML</h4>
 
-                <p>Using negative length values for the horizontal and vertical offsets allows us to move shadows toward the left and the top.</p>
+			<div class="code-example">
+				<code>
+					&#60;h2&#62;&#60;a href="#"&#62;I Am a Builder&#60;/a&#62;&#60;h2&#62;<br>
+					&#60;p class="byline"&#62;Posted by Shay Howe&#60;/p&#62;<br>
+					&#60;p&#62;Every day I see designers and developers working alongside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders. &#60;a href="#"&#62;Continue&#8230;&#60;/a&#62;&#60;/p&#62;
+				</code>
+			</div>
 
-<div class="box">
+			<h4>CSS</h4>
 
-                <h5>Box shadow</h5>
+			<div class="code-example">
+				<code>
+					h2,<br>
+					p {<br>
+					color: #555;<br>
+					font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+					}<br>
+					a {<br>
+					color: #0087cc;<br>
+					}<br>
+					a:hover {<br>
+					color: #ff7b29;<br>
+					}<br>
+					h2 {<br>
+					font-size: 22px;<br>
+					font-weight: bold;<br>
+					margin-bottom: 6px;<br>
+					}<br>
+					.byline {<br>
+					color: ·9799a7;<br>
+					font-family: Georgia, Times, "Times New Roman", serif;<br>
+					font-style: italic;<br>
+					margin-bottom: 18px;<br>
+					}
+				</code>
+			</div>
 
-                    <p>As previously seen, the <code>text-shadow</code> places a shadow <b>specifically</b> on the text of an element, nevertheless, it is also possible to cast shadows in other type of elements, by the use of the <code>box-shadow</code> property. This property works just like the <code>text-shadow</code> property, accepting values for horizontal and vertical offsets, a blur, and a color.</p>
+			<p><i class=faq>insert link with example here.</i></p>
 
-                    <p>The <code>box-shadow</code> property accepts an optional forth lenght value, before the <code>color</code> value, for the spread of the shadow. If this value is positive it will expand the shadow larger than the size of the element it's applied to, and in the cases of negative values the shadow will shrink to be smaller than the size of the element it's applied to. Lastly, this property also may include and optional <code>inset</code> value at the beginning of the value to place the shadow inside an element as opposed to outside the element. <i class="faq">show examples</i></p>
-
-</div>
-
-            <h4>Text transform</h4>
-
-                <p>Similar to the <code>font-variant</code> property, there is the <code>text-transform</code> property. While the <code>font-variant</code> property looks for an alternate variant of a typeface, this property (<code>text-transform</code>) will change the text without change the typeface, this property accepts five values: <code>none</code>, <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, and <code>inherit</code>.</p>
-
-                <p>The <code>capitalize</code> value will capitalize the first letter of each word, the <code>uppercase</code> value will capitalize every letter, and the <code>lowercase</code> will make every letter lowercase, whilst <code>none</code> will return any of these inherited values back to the original text style. <i class="faq">show examples</i></p>
-
-            <h4>Letter spacing</h4>
+		<h3>CSS pseudo-classes</h3>
 
-                <p>With the <code>letter-spacing</code> it is possible to adjust the space(or tracking) between the letters on a page. A positive value will push apart letter from one another, while a negative value will pull letters closer together. The keyword value <code>none</code> will return the space between letters back to its normal size. The use of this property will help ensure that the rendering and tracking will be adecuate as the <code>font-size</code> is changed. It is, however, always a good idea to double-check our work. <i class="faq">show examples</i></p>
+		<div class="frame">
+			<p>
+				The previous example shows the <code>:hover</code> CSS pseudo-class. For reference, pseudo-classes are keywords that may be added to the end of a selector to style an element when it's in a unique state. The <code>:hover</code> pseudo-class styles and element when a uses hovers over that element. When used with the <code>&#60;a&#62;</code> element, as shown above, all <code>&#60;a&#62;</code> elements will receive unique styles when they are hovered over. Now the <code>&#60;a&#62;</code> elements will change color upon being hovered over.
+			</p>
+		</div>
+	</div> <!-- end of level 01 indent -->
 
-            <h4>Word spacing</h4>
+	<hr>
 
-                <p>In a similar fashion with the tracking, it is possible to adjust the space between words within an element using the <code>word-spacing</code> property. <i class="faq">show examples.</i></p>
+	<!-- beginning of level 01 indent: text-based properties -->
+	<div class="level01">
+		<h2 id="text-properties">Text-based properties</h2>
 
-            <h3 id="all-text">Text properties all together</h3>
+			<p>Using the font-based properties (<code>family</code>, <code>size</code>, <code>weight</code>, <code>style</code>, <code>variant</code>, and <code>line-height</code>), is half the process. Additionally it is possible to decide how to align, decorate, indent, transform, and space text.</p>
 
-                <p>The following is an example of various text-based properties used/applied together.</p>
+			<!-- beginning of level 02 indent: -->
+			<div class="level02">
 
-                <p class="subtitle">HTML</p>
+				<h3>Text align</h3>
 
-                <code>&#60;h2&#62;&#60;a href="#"&#62;I am a builder&#60;/a&#62;&#60;/h2&#62;<br>
-                    &#60;p class="byline"&#62;Posted by Shay Howe&#60;/p&#62;<br>
-                    &#60;p class="intro"&#62;Every day I see designers and developers working alonside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders. &#60;a href="#"&#62;Continue&#8230;&#60;/a&#60;&#60;/p&#62;
-                </code>
+					<p>The <code>text-align</code> is very useful improve the layout and legibility of a page. The <code>text-align</code> property has five values: <code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>, and <code>inherit</code>. All of these values are fairly straightforward; as expected, they align text to the left, right, or center, or they justify text. However, the <code>text-align</code> property should not be confused with the <code>float</code> property. The <code>text-align</code> values <code>left</code> and <code>right</code> will align the text <i>within</i> the element to the left or right, whereas the <code>float</code> values <code>left</code> and <code>right</code> will move the <i>entire</i> element. Sometime the <code>text-align</code> will produce the desired outcome, and other times the <code>float</code> property will.</p>
 
-                <p class="subtitle">CSS</p>
+				<h3>Text decoration</h3>
 
-                <code>
-                    h2,<br>
-                    p {<br>
-                    color: #555;<br>
-                    font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
-                    }<br>
-                    a {<br>
-                    color: #0087cc;<br>
-                    }<br>
-                    a:hover {<br>
-                    color: #ff7b29;<br>
-                    }<br>
-                    h2 {<br>
-                    font-size: 22px;<br>
-                    font-weight: bold;<br>
-                    letter-spacing: -.02em;<br>
-                    margin-bottom: 6px;<br>
-                    }<br>
-                    h2 a {<br>
-                    text-decoration: none;<br>
-                    text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);<br>
-                    }<br>
-                    .byline {<br>
-                    color: #9799a7;<br>
-                    font-family: Georgia, Times, "Times New Roman", serif;<br>
-                    font-style: italic;<br>
-                    margin-bottom: 18px;<br>
-                    }<br>
-                    .intro {<br>
-                    text-indent: 15px;<br>
-                    }<br>
-                    .intro a {<br>
-                    font-size: 11px;<br>
-                    font-weight: bold;<br>
-                    text-decoration: underline;<br>
-                    text-transform: uppercase;<br>
-                    }
-                </code>
+					<p>This property accepts keyword values of: <code>none</code>, <code>underline</code>, <code>overline</code>, <code>line-through</code>, and <code>inherit</code>. Use of the <code>text-decoration</code> property vaies, but the most popular use ¡is to underline links, which is a default browser style. Is possible also to apply multiple text decoration values to an element at once by space-separating each keyword within the value.<br>
+					<i class="faq">show examples with each keyword value</i></p>
 
-    </section>
+				<h3>Text Indent</h3>
 
-    <section>
-    <h2 id="web-safe">Web-safe fonts</h2>
+					<p>This property is commonly used in printed publications, as it name suggests, its used to indent the first line of text within an element. All common length values are availabe for this property, including pixels, points, percentages, and so on. Positive values will indent text inward, while negative values will indent text outward.<br>
+					<i class="faq">show example</i></p>
 
-        <p>Regardless of the device, there are fonts pre-installed on every device: computer, smartphone, tablet, or other web-browsing-capable device, because of this, it is possible to freely use these fonts, without the concern of an improper rendering. These fonts set is known as "web-safe fonts", and they are listed below:</p>
+				<h3>Text shadow</h3>
 
-        <p>
-            - Arial<br>
-            - Garamond<br>
-            - Lucida Sans, Lucida Grande, Lucida<br>
-            - Tahoma<br>
-            - Trebuchet<br>
-            - Courier New, Courier<br>
-            - Georgia<br>
-            - Palatino Linotype<br>
-            - Times New Roman, Times<br>
-            - Verdana
-        </p>
-
-        <h2 id="embed">Embedding web fonts</h2>
-
-        <p>Off course, it is also possible to use fonts additional to the web-safe fonts, indeed, it is possible to upload an specific font to a server in order to be rendered when the page is visited, this capability has opened unlimited options to choose from. Embedding a web font looks like the following CSS:</p>
-
-        <code>
-            @font-face {<br>
-            font-family: "Lobster";<br>
-            src: local("Lobster"), url("lobster.woff") format("woff");<br>
-            }<br>
-            body {<br>
-            font-family: "Lobster", "Comic Sans", cursive;<br>
-            }
-        </code>
-
-        <p>From the previous example, it can be observed that when embedding a web font it is necessary to:<br>
-        - Use the <code>@font-face</code> at-rule to identify the font's name, via the <code>font-family</code> property.<br>
-        - The font's source (the path to the font file containing the chosen font), via the <code>src</code> property.<br>
-        - From there is possible to use the font by including its name within any <code>font-family</code> property value.</p>
-
-        <p>Take into account that the ability to embed any font on a website is totally different to have legally right to do so. As artistic work, fonts have licenses in order to be used. Fortunately, the value of using new fonts on websites have been recognized. Companies like <a href="https://typekit.com/">Typekit</a> and <a href="http://fontdeck.com/">Fontdeck</a>, work off a subscription mode for licensing fonts, while others, like <a href="https://www.google.com/fonts">Google Fonts</a>, license fonts for free.</p>
-
-    </section>
-
-    <section>
-
-        <h2 id="quoting">Citations & quotes</h2>
-
-        <p>Writing requires sometimes citing different sources or quotations. In HTML exists different markups to semantically cover this cases, specifically the <code>&#60;cite&#62;</code>, <code>&#60;q&#62;</code>, and <code>&#60;blockquote&#62;</code> elements. In order to know which of these elements use, the follow principles can be followed:</p>
-
-        <p>
-            <code>&#60;cite&#62;</code>: used to reference a resource, creative work, or author.<br>
-            <code>&#60;q&#62;</code>: used for short, <i>inline</i> quotations.<br>
-            <code>&#60;blockquote&#62;</code>: used for longer external quotations (paragraph-like quotations).
-        </p>
-
-        <h3 id="#citing-creative-work">Citing a creative work</h3>
-
-        <p>In HTML this element is used specifically to cite a creative work, the <code>&#60;cite&#62;</code> element must include either the title of the work, the author's name, or a URL reference to the work. By default, content wrapped within the <code>&#60;cite&#62;</code> element will appear in italics. When relevant, is useful to include and additional reference/hyperlink to the original source of the citation.</p>
-
-        <p>Here the book <i>Steve Jobs</i>, by Walter Isaacson, is reference within the <code>&#60;cite&#62;</code> element. Inside the citation is also a hyperlink to the book.</p>
-
-        <code>&#60;p&#62;The book &#60;cite&#62;&#60;a href="http://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537"&#62;Steve Jobs&#60;/a&#62;&#60;/cite&#62; is truly inspirational.</code>
-
-        <h3 id="dialogue&prose">Dialogue & prose quotation</h3>
-
-        <p>For purposes of quote prose or dialogue inline, that is, <i>within</i> other text, the <code>&#60;q&#62;</code> element should be used, and shouldn't be used for any other purposes. By default, the browser will insert the proper quotation marks and will even change the quotation marks based on the language identified within the <code>lang</code> global attribute. For example:</p>
-
-        <p>An additional attribute to quote text is use the <code>&#60;cite&#62;</code> attribute (not element), that acts as a citation reference to the quote in the form of a URL. As this attribute won't be displayed on the browser, it won't change the apperance of the element but will add semantic value for screen readers and other devices, it is also helpful to provide a hyperlink to this source next to the actual quotation, like in the following example:</p>
-
-        <code>
-            &#60;p&#62;&#60;a href="http://www.businessweek.com/magazine/content/06_06/b3970001.html"&#62;Steve Jobs&#60;/a&#62; once said, &#60;q cite="http://www.businessweek.com/magazine/content/06_06/b3970001.html"&#62;One home run is much better than two doubles.&#60;/q&#62;&#60;/p&#62;
-        </code>
-
-        <h3 id="externalQ">External quotation</h3>
-
-        <p>When it comes to quote large portions of text, the type that fill out entire paragraphs, the element that holds the respective semantical meaning is the <code>&#60;blockquote&#62;</code>. This element is a block-level element that may have other block-level elements nested inside it, including headings and parapraphs. For example:</p>
-
-        <code>
-            &#60;blockquote&#62;<br>
-            &#60;p&#62;&#8220;In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa, But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product.&#8221;&#60;/p&#62;<br>
-            &#60;/blockquote&#62;<br>
-            <i class="faq">show examples.</i>
-        </code>
-
-        <h3 id="externalC">External citation</h3>
-
-        <p>Quotes used within the <code>&#60;blockquote&#62;</code> will oftern include both the <code>&#60;cite&#62;</code> element and the <code>cite</code> attribute. As discussed previously the former works to specify the original source of the quote, if relevant; the latter, to provide a citation reference to the quote. The following example will help make this difference more clear:</p>
-
-        <code>
-            &#60;blockquote cite="http://money.cnn.com/magazines/fortune/fortune_archive/2000/01/24/272277/index.html"&#62;<br>
-            &#60;p&#62;&#8220;In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa, But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product.&#8221;&#60;/p&#62;<br>
-            &#60;/blockquote&#62;<br>
-            &#60;p&#62;&#60;cite&#62;&#8212; Steve Jobs in &#60;a href="http://money.cnn.com/magazines/fortune/fortune_archive/2000/01/24/272277/index.html"&#62; Fortune Magazine&#60;/a&#62;&#60;/cite&#62;&#60;/p&#62;<br>
-            &#60;/blockquote&#62;
-            <i class="faq">show examples.</i>
-        </code>
-    </section>
-
+					<p>This property allow to add one or multiple shadows to a text. The property generally takes four values, all listed one ater the other from left to right. The first three values are lenghts, and the last value is a color.</p>
+
+					<p>Each of the following values represents in the following order:<br>
+					- 1st: horizontal shadow's offset.<br>
+					- 2nd: vertical shadow's offset.<br>
+					- 3rd: shadow's blur radius.<br>
+					- 4th: shadow's color.</p>
+
+					<p>Using negative length values for the horizontal and vertical offsets allows us to move shadows toward the left and the top.</p>
+
+					<!-- comment box on box shadow -->
+					<div class="frame">
+						<h4>Box shadow</h4>
+
+							<p>As previously seen, the <code>text-shadow</code> places a shadow <b>specifically</b> on the text of an element, nevertheless, it is also possible to cast shadows in other type of elements, by the use of the <code>box-shadow</code> property. This property works just like the <code>text-shadow</code> property, accepting values for horizontal and vertical offsets, a blur, and a color.</p>
+
+							<p>The <code>box-shadow</code> property accepts an optional forth lenght value, before the <code>color</code> value, for the spread of the shadow. If this value is positive it will expand the shadow larger than the size of the element it's applied to, and in the cases of negative values the shadow will shrink to be smaller than the size of the element it's applied to. Lastly, this property also may include and optional <code>inset</code> value at the beginning of the value to place the shadow inside an element as opposed to outside the element. <i class="faq">show examples</i></p>
+					</div> <!-- end of comment box on box shadow -->
+
+				<h3>Text transform</h3>
+
+					<p>Similar to the <code>font-variant</code> property, there is the <code>text-transform</code> property. While the <code>font-variant</code> property looks for an alternate variant of a typeface, this property (<code>text-transform</code>) will change the text without change the typeface, this property accepts five values: <code>none</code>, <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, and <code>inherit</code>.</p>
+
+					<p>The <code>capitalize</code> value will capitalize the first letter of each word, the <code>uppercase</code> value will capitalize every letter, and the <code>lowercase</code> will make every letter lowercase, whilst <code>none</code> will return any of these inherited values back to the original text style. <i class="faq">show examples</i></p>
+
+				<h3>Letter spacing</h3>
+
+					<p>With the <code>letter-spacing</code> it is possible to adjust the space(or tracking) between the letters on a page. A positive value will push apart letter from one another, while a negative value will pull letters closer together. The keyword value <code>none</code> will return the space between letters back to its normal size. The use of this property will help ensure that the rendering and tracking will be adecuate as the <code>font-size</code> is changed. It is, however, always a good idea to double-check our work. <i class="faq">show examples</i></p>
+
+				<h3>Word spacing</h3>
+
+					<p>In a similar fashion with the tracking, it is possible to adjust the space between words within an element using the <code>word-spacing</code> property. <i class="faq">show examples.</i></p>
+			</div> <!-- end of level 02 indent -->
+
+		<h2 id="all-text">Text properties all together</h2>
+
+			<p>The following is an example of various text-based properties used/applied together.</p>
+
+			<h4>HTML</h4>
+
+			<div class="code-example">
+				<code>
+					&#60;h2&#62;&#60;a href="#"&#62;I am a builder&#60;/a&#62;&#60;/h2&#62;<br>
+					&#60;p class="byline"&#62;Posted by Shay Howe&#60;/p&#62;<br>
+					&#60;p class="intro"&#62;Every day I see designers and developers working alonside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders. &#60;a href="#"&#62;Continue&#8230;&#60;/a&#60;&#60;/p&#62;
+				</code>
+			</div> <!-- end of code example -->
+
+			<h4>CSS</h4>
+
+			<div class="code-example">
+				<code>
+          h2,<br>
+          p {<br>
+          color: #555;<br>
+          font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
+          }<br>
+          a {<br>
+          color: #0087cc;<br>
+          }<br>
+          a:hover {<br>
+          color: #ff7b29;<br>
+          }<br>
+          h2 {<br>
+          font-size: 22px;<br>
+          font-weight: bold;<br>
+          letter-spacing: -.02em;<br>
+          margin-bottom: 6px;<br>
+          }<br>
+          h2 a {<br>
+          text-decoration: none;<br>
+          text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);<br>
+          }<br>
+          .byline {<br>
+          color: #9799a7;<br>
+          font-family: Georgia, Times, "Times New Roman", serif;<br>
+          font-style: italic;<br>
+          margin-bottom: 18px;<br>
+          }<br>
+          .intro {<br>
+          text-indent: 15px;<br>
+          }<br>
+          .intro a {<br>
+          font-size: 11px;<br>
+          font-weight: bold;<br>
+          text-decoration: underline;<br>
+          text-transform: uppercase;<br>
+          }
+      	</code>
+			</div> <!-- end of code example -->
+		<h2 id="web-safe">Web-safe fonts</h2>
+
+			<p>Regardless of the device, there are fonts pre-installed on every device: computer, smartphone, tablet, or other web-browsing-capable device, because of this, it is possible to freely use these fonts, without the concern of an improper rendering. These fonts set is known as "web-safe fonts", and they are listed below:</p>
+
+      <p>
+        - Arial<br>
+        - Garamond<br>
+        - Lucida Sans, Lucida Grande, Lucida<br>
+        - Tahoma<br>
+        - Trebuchet<br>
+        - Courier New, Courier<br>
+        - Georgia<br>
+        - Palatino Linotype<br>
+        - Times New Roman, Times<br>
+        - Verdana
+      </p>
+
+    <h2 id="embed">Embedding web fonts</h2>
+
+      <p>Off course, it is also possible to use fonts additional to the web-safe fonts, indeed, it is possible to upload an specific font to a server in order to be rendered when the page is visited, this capability has opened unlimited options to choose from. Embedding a web font looks like the following CSS:</p>
+
+      <div class="code-example">
+	      <code>
+	          @font-face {<br>
+	          font-family: "Lobster";<br>
+	          src: local("Lobster"), url("lobster.woff") format("woff");<br>
+	          }<br>
+	          body {<br>
+	          font-family: "Lobster", "Comic Sans", cursive;<br>
+	          }
+	      </code>
+      </div> <!-- end of code example -->
+
+      <p>From the previous example, it can be observed that when embedding a web font it is necessary to:<br>
+      - Use the <code>@font-face</code> at-rule to identify the font's name, via the <code>font-family</code> property.<br>
+      - The font's source (the path to the font file containing the chosen font), via the <code>src</code> property.<br>
+      - From there is possible to use the font by including its name within any <code>font-family</code> property value.</p>
+
+      <p>Take into account that the ability to embed any font on a website is totally different to have legally right to do so. As artistic work, fonts have licenses in order to be used. Fortunately, the value of using new fonts on websites have been recognized. Companies like <a href="https://typekit.com/">Typekit</a> and <a href="http://fontdeck.com/">Fontdeck</a>, work off a subscription mode for licensing fonts, while others, like <a href="https://www.google.com/fonts">Google Fonts</a>, license fonts for free.</p>
+
+    <h2 id="quoting">Citations & quotes</h2>
+
+      <p>Writing requires sometimes citing different sources or quotations. In HTML exists different markups to semantically cover this cases, specifically the <code>&#60;cite&#62;</code>, <code>&#60;q&#62;</code>, and <code>&#60;blockquote&#62;</code> elements. In order to know which of these elements use, the follow principles can be followed:</p>
+
+      <p>
+          <code>&#60;cite&#62;</code>: used to reference a resource, creative work, or author.<br>
+          <code>&#60;q&#62;</code>: used for short, <i>inline</i> quotations.<br>
+          <code>&#60;blockquote&#62;</code>: used for longer external quotations (paragraph-like quotations).
+      </p>
+
+      <!-- beginning of level 02 indent: citations -->
+      <div class="level02">
+      	<h3 id="#citing-creative-work">Citing a creative work</h3>
+
+	        <p>In HTML this element is used specifically to cite a creative work, the <code>&#60;cite&#62;</code> element must include either the title of the work, the author's name, or a URL reference to the work. By default, content wrapped within the <code>&#60;cite&#62;</code> element will appear in italics. When relevant, is useful to include and additional reference/hyperlink to the original source of the citation.</p>
+
+	        <p>Here the book <i>Steve Jobs</i>, by Walter Isaacson, is reference within the <code>&#60;cite&#62;</code> element. Inside the citation is also a hyperlink to the book.</p>
+
+	        <div class="code-example">
+	        	<code>
+	        		&#60;p&#62;The book &#60;cite&#62;&#60;a href="http://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537"&#62;Steve Jobs&#60;/a&#62;&#60;/cite&#62; is truly inspirational.
+	        	</code>
+	        </div>
+
+	      <h3 id="dialogue&prose">Dialogue & prose quotation</h3>
+
+	        <p>For purposes of quote prose or dialogue inline, that is, <i>within</i> other text, the <code>&#60;q&#62;</code> element should be used, and shouldn't be used for any other purposes. By default, the browser will insert the proper quotation marks and will even change the quotation marks based on the language identified within the <code>lang</code> global attribute. For example:</p>
+
+	        <p>An additional attribute to quote text is use the <code>&#60;cite&#62;</code> attribute (not element), that acts as a citation reference to the quote in the form of a URL. As this attribute won't be displayed on the browser, it won't change the apperance of the element but will add semantic value for screen readers and other devices, it is also helpful to provide a hyperlink to this source next to the actual quotation, like in the following example:</p>
+
+	        <div class="code-example">
+	        	<code>
+	            &#60;p&#62;&#60;a href="http://www.businessweek.com/magazine/content/06_06/b3970001.html"&#62;Steve Jobs&#60;/a&#62; once said, &#60;q cite="http://www.businessweek.com/magazine/content/06_06/b3970001.html"&#62;One home run is much better than two doubles.&#60;/q&#62;&#60;/p&#62;
+	        	</code>
+	        </div>
+
+	      <h3 id="externalQ">External quotation</h3>
+
+	        <p>When it comes to quote large portions of text, the type that fill out entire paragraphs, the element that holds the respective semantical meaning is the <code>&#60;blockquote&#62;</code>. This element is a block-level element that may have other block-level elements nested inside it, including headings and parapraphs. For example:</p>
+
+	        <div class="code-example">
+		        <code>
+		            &#60;blockquote&#62;<br>
+		            &#60;p&#62;&#8220;In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa, But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product.&#8221;&#60;/p&#62;<br>
+		            &#60;/blockquote&#62;<br>
+		            <i class="faq">show examples.</i>
+		        </code>
+		      </div>
+
+	      <h3 id="externalC">External citation</h3>
+
+	        <p>Quotes used within the <code>&#60;blockquote&#62;</code> will oftern include both the <code>&#60;cite&#62;</code> element and the <code>cite</code> attribute. As discussed previously the former works to specify the original source of the quote, if relevant; the latter, to provide a citation reference to the quote. The following example will help make this difference more clear:</p>
+
+	        <div class="code-example">
+		        <code>
+	            &#60;blockquote cite="http://money.cnn.com/magazines/fortune/fortune_archive/2000/01/24/272277/index.html"&#62;<br>
+	            &#60;p&#62;&#8220;In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa, But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product.&#8221;&#60;/p&#62;<br>
+	            &#60;/blockquote&#62;<br>
+	            &#60;p&#62;&#60;cite&#62;&#8212; Steve Jobs in &#60;a href="http://money.cnn.com/magazines/fortune/fortune_archive/2000/01/24/272277/index.html"&#62; Fortune Magazine&#60;/a&#62;&#60;/cite&#62;&#60;/p&#62;<br>
+	            &#60;/blockquote&#62;
+	            <i class="faq">show examples.</i>
+		        </code>
+		      </div>
+      </div> <!-- end of level 02 indent -->
+	</div> <!-- end of level 01 indent -->
 </body>
-
 
 <footer>
 
-<h2 id="summary">Summary</h2>
+	<h2 id="summary">Summary</h2>
 
-    <p>Certainly, selecting a typeface will give an identity to the page, there are several methods to do so (local, embbeded, adding color, leading/line-space, spacing, among others), modifying the legibility and general flow for the user. Some of the properties saw were:</p>
+	<p>Certainly, selecting a typeface will give an identity to the page, there are several methods to do so (local, embbeded, adding color, leading/line-space, spacing, among others), modifying the legibility and general flow for the user. Some of the properties saw were:</p>
 
-    <p>
-        - Text color.<br>
-        - <code>font-based</code> properties: <code>font-family</code>, <code>font-family</code>, <code>font-size</code>, <code>font-style</code>, <code>font-weight</code>, and more.<br>
-        - <code>text-based</code> properties: <code>text-align</code>, <code>text-decoration</code>, <code>text-indent</code>, <code>text-shadow</code>, among others.<br>
-        - Font embedding.<br>
-        - How to properly mark up citations and quotations.
-    </p>
-
+	<p>
+		- Text color.<br>
+		- <code>font-based</code> properties: <code>font-family</code>, <code>font-family</code>, <code>font-size</code>, <code>font-style</code>, <code>font-weight</code>, and more.<br>
+		- <code>text-based</code> properties: <code>text-align</code>, <code>text-decoration</code>, <code>text-indent</code>, <code>text-shadow</code>, among others.<br>
+		- Font embedding.<br>
+		- How to properly mark up citations and quotations.
+	</p>
 </footer>
 
 </html>

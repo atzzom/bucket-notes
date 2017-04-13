@@ -46,12 +46,101 @@ Document's style
 */
 
 body {
+  background-color: rgba(6, 32, 42, 0.9); /* dark green */
+  color: rgba(150, 154, 152, 1); /* silver */
   font: 200 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 0 10%;
+  text-align: justify;
 }
+
+/* styles for the link to the home page */
+    .line-one-nav {
+      color: rgb(235, 75, 66); /* red */
+      text-align: center;
+    }
+    /* header a.line-one-nav {
+      color: rgb(235, 75, 66); red
+      text-align: center;
+    }*/
+
+a {
+  color: rgba(27, 135, 204, 1); /* blue */
+}
+a:hover {
+  color: #ff7b29; /* orange */
+}
+
+/* Headers */
+
 h1 {
+  color: rgba(235, 75, 66, 1);
   text-align: center;
+  padding-top: 50px;
 }
+
+h2 {
+  padding-left: 5%;
+  padding-top: 70px;
+}
+
+h3 {
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+h2, h3 {
+  color: rgba(235, 75, 66, .65);
+}
+
+h4, h5, h6 {
+  color: rgba(49, 131, 103, 1); /* green */
+  font-style: italic;
+  padding-left: 5%;
+}
+
+hr {
+  margin-top: 70px;
+}
+
+.code-example {
+  text-align: left;
+}
+
+footer {
+  padding-bottom: 10%;
+}
+/*
+============================================
+Document's frames
+============================================
+*/
+
+.frame {
+  border-color: silver;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 0% 2%;
+}
+
+/*
+============================================
+Document's indents
+============================================
+*/
+
+.code-example {
+  background-color: rgba(6, 32, 42, 0.06);
+  padding-left: 5%;
+}
+
+
+
+
+
+
+
+
 
 div .left {
   text-align: left;
@@ -73,12 +162,21 @@ div .inherit {
   text-align: inherit;
 }
 
-div {
-  border-color: silver;
-  border-width: 1px;
-  padding: 0% 5%;
+
+
+.level01 {
+  padding-left: 5%;
+}
+
+.level02 {
+  padding-left: 10%;
 }
 
 .ex {
   padding-left: 5%;
 }
+
+.code-example {
+  padding: 0 10%;
+}
+
