@@ -56,6 +56,7 @@ body {
 /* styles for the link to the home page */
     .line-one-nav {
       color: rgb(235, 75, 66); /* red */
+      display: block;
       text-align: center;
     }
     /* header a.line-one-nav {
@@ -70,6 +71,13 @@ a:hover {
   color: #ff7b29; /* orange */
 }
 
+/* style for the back to top link */
+.b2t {
+  color: rgba(6, 32, 42, 0.4);
+  float: right;
+  font: 100 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /* Headers */
 
 h1 {
@@ -81,6 +89,7 @@ h1 {
 h2 {
   padding-left: 5%;
   padding-top: 70px;
+  text-align: left;
 }
 
 h3 {
@@ -98,6 +107,29 @@ h4, h5, h6 {
   padding-left: 5%;
 }
 
+/* websafe font samples */
+.font {
+  padding: 0%;
+  margin: 0%;
+}
+
+.Arial {font-family: Arial;}
+.Courier {font-family: Courier;}
+.Courier-New {font-family: Courier-New;}
+.Garamond {font-family: Garamond;}
+.Georgia {font-family: Georgia;}
+.Lucida {font-family: Lucida;}
+.Lucida-Grande {font-family: Lucida-Grande;}
+.Lucida-Sans {font-family: Lucida-Sans;}
+.Palatino-Linotype {font-family: Palatino-Linotype;}
+.Tahoma {font-family: Tahoma;}
+.Trebuchet {font-family: Trebuchet;}
+.Times-New-Roman {font-family: "Times-New-Roman";}
+.Times {font-family: Times;}
+.Verdana {font-family: Verdana;}
+
+/* miscellaneous */
+
 hr {
   margin-top: 70px;
 }
@@ -109,6 +141,11 @@ hr {
 footer {
   padding-bottom: 10%;
 }
+
+nav {
+  float: left;
+}
+
 /*
 ============================================
 Document's frames
@@ -120,7 +157,14 @@ Document's frames
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
+  left: 0px;
   padding: 0% 2%;
+  position: absolute;
+  width: 15%;
+}
+
+.ten-percent {
+  width: 10%;
 }
 
 /*
@@ -134,35 +178,12 @@ Document's indents
   padding-left: 5%;
 }
 
-
-
-
-
-
-
-
-
-div .left {
+.block {
+  background-color: rgba(6, 32, 42, 0.06);
+  display: block;
+  padding-left: 10%;
   text-align: left;
 }
-
-div .right {
-  text-align: right;
-}
-
-div .center {
-  text-align: center;
-}
-
-div .justify {
-  text-align: justify;
-}
-
-div .inherit {
-  text-align: inherit;
-}
-
-
 
 .level01 {
   padding-left: 5%;
