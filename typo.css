@@ -78,10 +78,16 @@ a:hover {
   font: 100 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* FAQ */
+.faq {
+  background-color: yellow;
+  color: rgba(6, 32, 42, 0.9); /* dark green */
+}
+
 /* Headers */
 
 h1 {
-  color: rgba(235, 75, 66, 1);
+  color: rgba(235, 75, 66, 1); /* red */
   text-align: center;
   padding-top: 50px;
 }
@@ -98,7 +104,7 @@ h3 {
 }
 
 h2, h3 {
-  color: rgba(235, 75, 66, .65);
+  color: rgba(235, 75, 66, .65); /* red */
 }
 
 h4, h5, h6 {
@@ -157,10 +163,10 @@ Document's frames
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
-  left: 0px;
+  left: 0px; /* this "left" property locates the box in the left of its parent element (because we are using an absolute positioning, in this case the left of the <html> element) */
   padding: 0% 2%;
-  position: absolute;
-  width: 15%;
+  position: absolute; /* property used to take the box out of the document's flow and send it to the left of its parent element */
+  width: 15%; /* 15% of its parent element, so it doesn't overlap the content next to it */
 }
 
 .ten-percent {
@@ -169,14 +175,46 @@ Document's frames
 
 /*
 ============================================
-Document's indents
+Document's examples
 ============================================
 */
 
-.code-example {
-  background-color: rgba(6, 32, 42, 0.06);
+/* the styles here are going to be layered with each of the specific examples*/
+.example {
+  color: rgba(255, 255, 255, 0.8); /* the font is white to help highlight the examples from the rest of the content */
+  border-color: rgba(49, 131, 103, 1); /* green */
+  border-radius: 5px;
+  border-style: dotted;
+  border-width: 2px;
+  font-weight: 100;
+  padding: 0% 12%;
+}
+
+.ex-color-01 {color: #555; /* gray */}
+
+.ex-font-family-01 {font-family: Garamond, Georgia, Lucida, serif;}
+
+/* font-size examples */
+.ex-font-size-01 {font-size: 14px;}
+.ex-font-size-02 {font-size: 150%;}
+.ex-font-size-03 {font-size: 0.8em;}
+.ex-font-size-04 {font-size: 20pt;}
+
+/* font-style examples */
+.ex-font-style-01 {font-style: italic;}
+.ex-font-style-02 {font-style: normal;}
+.ex-font-style-03 {font-style: oblique;}
+.ex-font-style-04 { /* this selector is used to illustrate how the oblique and initial properties work related to their parent element. */
+  font-style: oblique;
   padding-left: 5%;
 }
+div.ex-font-style-04 p {font-style: inherit;}
+div.ex-font-style-04 .ex-font-style-05 {font-style: initial;}
+/*
+============================================
+Document's indents
+============================================
+*/
 
 .block {
   background-color: rgba(6, 32, 42, 0.06);
