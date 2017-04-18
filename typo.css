@@ -210,6 +210,19 @@ Document's examples
 }
 div.ex-font-style-04 p {font-style: inherit;}
 div.ex-font-style-04 .ex-font-style-05 {font-style: initial;}
+
+.ex-font-variant-01 {font-variant: small-caps;}
+
+.ex-font-weight-typeface {font-family: "Avenir Next";} /* This property is used to experiment with different typefaces looking for one defined for all font-weights. */
+.ex-font-weight-01 {font-weight: 100;}
+.ex-font-weight-02 {font-weight: 200;}
+.ex-font-weight-03 {font-weight: 300;}
+.ex-font-weight-04 {font-weight: 400;}
+.ex-font-weight-05 {font-weight: 500;}
+.ex-font-weight-06 {font-weight: 600;}
+.ex-font-weight-07 {font-weight: 700;}
+.ex-font-weight-08 {font-weight: 800;}
+.ex-font-weight-09 {font-weight: 900;}
 /*
 ============================================
 Document's indents
