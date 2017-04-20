@@ -223,6 +223,65 @@ div.ex-font-style-04 .ex-font-style-05 {font-style: initial;}
 .ex-font-weight-07 {font-weight: 700;}
 .ex-font-weight-08 {font-weight: 800;}
 .ex-font-weight-09 {font-weight: 900;}
+
+.ex-line-height-01 {line-height: 05px;}
+.ex-line-height-02 {line-height: 10px;}
+.ex-line-height-03 {line-height: 15px;}
+.ex-line-height-04 {line-height: 050%;}
+.ex-line-height-05 {line-height: 100%;}
+.ex-line-height-06 {line-height: 150%;}
+.ex-line-height-07 {line-height: 200%;}
+.ex-line-height-08 {line-height: 00.5;}
+.ex-line-height-09 {line-height: 0001;}
+.ex-line-height-10 {line-height: 01.5;}
+.ex-line-height-11 {line-height: 0002;}
+.ex-line-height-12 { /* This code shows a trick to vertically center text, here the font-size and line-height are the same. */
+  font-size: 16px;
+  line-height: 16px;
+}
+
+/* Shay Howe's example using several font-based properties */
+div.all-font h2 {
+  color: #555;
+  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+div.all-font p {
+  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+div.all-font a {
+  color: #0087cc;
+}
+div.all-font a:hover {
+  color: #ff7b29;
+}
+div.all-font h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.byline {
+  color: #9799a7;
+  font-family: Georgia, Times, "Times-New-Roman", serif;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+/* Text-align examples */
+.ex-text-align-01 {text-align: left;}
+.ex-text-align-02 {text-align: right;}
+.ex-text-align-03 {text-align: center;}
+.ex-text-align-04 {text-align: justify;}
+.ex-text-align-05 {text-align: inherit;}
+
+/* Text-decoration examples */
+
+.ex-text-deco-01 {text-decoration: none;}
+.ex-text-deco-02 {text-decoration: underline;}
+.ex-text-deco-03 {text-decoration: overline;}
+.ex-text-deco-04 {text-decoration: line-through;}
+.ex-text-deco-05 {text-decoration: inherit;}
+
+
 /*
 ============================================
 Document's indents
