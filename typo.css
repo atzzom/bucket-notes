@@ -281,6 +281,15 @@ div.all-font h2 {
 .ex-text-deco-04 {text-decoration: line-through;}
 .ex-text-deco-05 {text-decoration: inherit;}
 
+/* Text-indent examples */
+
+.ex-text-indent-01 {text-indent: +25px;}
+.ex-text-indent-02 {text-indent: -25px;}
+.ex-text-indent-03 {text-indent: +10%;}
+.ex-text-indent-04 {text-indent: -10%;}
+.ex-text-indent-05 {text-indent: +5em;}
+.ex-text-indent-06 {text-indent: -5em;}
+
 
 /*
 ============================================
