@@ -274,7 +274,6 @@ div.all-font h2 {
 .ex-text-align-05 {text-align: inherit;}
 
 /* Text-decoration examples */
-
 .ex-text-deco-01 {text-decoration: none;}
 .ex-text-deco-02 {text-decoration: underline;}
 .ex-text-deco-03 {text-decoration: overline;}
@@ -282,7 +281,6 @@ div.all-font h2 {
 .ex-text-deco-05 {text-decoration: inherit;}
 
 /* Text-indent examples */
-
 .ex-text-indent-01 {text-indent: +25px;}
 .ex-text-indent-02 {text-indent: -25px;}
 .ex-text-indent-03 {text-indent: +10%;}
@@ -290,6 +288,107 @@ div.all-font h2 {
 .ex-text-indent-05 {text-indent: +5em;}
 .ex-text-indent-06 {text-indent: -5em;}
 
+/* Text shadow examples */
+div.text-shadow div {
+  border-color: rgba(27, 135, 204, 1);
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 40px;
+  padding: 1%;
+}
+
+.ex-text-shadow-01 {
+  box-shadow: +30px +0px +50px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: +5px +0px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-02 {
+  box-shadow: +0px +10px +0px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: +0px +5px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-03 {
+  box-shadow: +5px -5px +10px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: +5px -6px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-04 {
+  box-shadow: +5px +6px +3px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: +5px +6px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-05 {
+  box-shadow: -5px +6px +3px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: -5px +6px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-06 {
+  box-shadow: -5px -6px +3px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: -5px -6px +3px rgba(27, 135, 204, 1); /* blue */
+}
+
+/* Text transform examples */
+.ex-text-transform-01 {text-transform: none;}
+.ex-text-transform-02 {text-transform: capitalize;}
+.ex-text-transform-03 {text-transform: uppercase;}
+.ex-text-transform-04 {text-transform: inherit;}
+
+/* Letter spacing examples */
+.ex-letter-space-01 {letter-spacing: none;}
+.ex-letter-space-02 {letter-spacing: -2px;}
+.ex-letter-space-03 {letter-spacing: +0px;}
+.ex-letter-space-04 {letter-spacing: +2px;}
+.ex-letter-space-05 {letter-spacing: +5px;}
+.ex-letter-space-06 {letter-spacing: -0.1em;}
+.ex-letter-space-07 {letter-spacing: 0em;}
+.ex-letter-space-08 {letter-spacing: +0.1em;}
+.ex-letter-space-09 {letter-spacing: +0.5em}
+.ex-letter-space-10 {letter-spacing: 1em;}
+
+
+/* Word spacing examples */
+.ex-word-space-01 {word-spacing: none;}
+.ex-word-space-02 {word-spacing: -10px;}
+.ex-word-space-03 {word-spacing: -05px;}
+.ex-word-space-04 {word-spacing: -01px;}
+.ex-word-space-05 {word-spacing: +01px;}
+.ex-word-space-06 {word-spacing: +05px;}
+.ex-word-space-07 {word-spacing: +10px;}
+.ex-word-space-08 {word-spacing: -0.50em;}
+.ex-word-space-09 {word-spacing: -0.25em;}
+.ex-word-space-10 {word-spacing: +0.25em;}
+.ex-word-space-11 {word-spacing: +0.50em;}
+
+/* Shay Howe's example using several text properties */
+div.all-text h2 p {
+  color: #555;
+  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+div.all-text a {
+  color: #0087cc; /* blue */
+}
+div.all-text a:hover {
+  color: #ff7b29; /* orange */
+}
+div.all-text h2 {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+div.all-text h2 {
+  text-decoration: none;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
+}
+.all-text-byline {
+  color: #9799a7;
+  font-family: Georgia, times, "Times-New-Roman", serif;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.intro {text-indent: 15px;}
+div.all-text .intro a {
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
 
 /*
 ============================================

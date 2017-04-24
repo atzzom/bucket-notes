@@ -31,6 +31,13 @@
 			<p>Text based properties</p>
 
 			<a href="#text-properties">Text based properties</a><br>
+				<a href="#text-align">&mdash; Text-align</a><br>
+				<a href="#text-deco">&mdash; Text-decoration</a><br>
+				<a href="#text-indent">&mdash; Text-indent</a><br>
+				<a href="#text-shadow">&mdash; Text-shadow</a><br>
+				<a href="#text-transform">&mdash; Text-transform</a><br>
+				<a href="#letter-space">&mdash; Letter spacing</a><br>
+				<a href="#word-space">&mdash; Word spacing</a><br>
 			<a href="#all-text">Text properties all together</a><br>
 
 			<p>Web fonts</p>
@@ -418,7 +425,7 @@
 			<!-- beginning of level 02 indent: -->
 			<div class="level02">
 
-				<h3>Text align<a class="b2t" href="#top">back to top</a></h3>
+				<h3 id="text-align">Text align<a class="b2t" href="#top">back to top</a></h3>
 
 					<p>The <code>text-align</code> is very useful improve the layout and legibility of a page. The <code>text-align</code> property has five values: <code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>, and <code>inherit</code>. All of these values are fairly straightforward; as expected, they align text to the left, right, or center, or they justify text. However, the <code>text-align</code> property should not be confused with the <code>float</code> property. The <code>text-align</code> values <code>left</code> and <code>right</code> will align the text <i>within</i> the element to the left or right, whereas the <code>float</code> values <code>left</code> and <code>right</code> will move the <i>entire</i> element. Sometime the <code>text-align</code> will produce the desired outcome, and other times the <code>float</code> property will.</p>
 
@@ -439,7 +446,7 @@
 						Phasellus et justo vel metus tempus maximus nec vel ante. Mauris ut elit id nulla mollis lacinia. Nam sodales laoreet arcu, a elementum quam rutrum non. Aenean vel massa porttitor, bibendum risus a, bibendum lorem. Morbi pharetra lacus nec faucibus semper. In consectetur ac elit ut accumsan. Etiam fermentum risus mollis ex commodo imperdiet. Suspendisse in elementum enim. Nulla nibh dolor, sagittis eu justo a, volutpat dictum elit. Sed mollis blandit magna non aliquam. Integer eu pellentesque urna. Proin quis urna vitae nisi euismod vestibulum. Nullam vitae metus volutpat, feugiat massa eu, bibendum arcu. Donec laoreet, lacus sed scelerisque rutrum, arcu est dignissim mauris, eu convallis mi leo maximus elit.</p>
 					</div>
 
-				<h3>Text decoration<a class="b2t" href="#top">back to top</a></h3>
+				<h3 id="text-deco">Text decoration<a class="b2t" href="#top">back to top</a></h3>
 
 					<p>This property accepts keyword values of: <code>none</code>, <code>underline</code>, <code>overline</code>, <code>line-through</code>, and <code>inherit</code>. Use of the <code>text-decoration</code> property varies, but the most popular use is to underline links, which is a default browser style. Is possible also to apply multiple text decoration values to an element at once by space-separating each keyword within the value.</p>
 
@@ -470,7 +477,7 @@
 						</p>
 					</div>
 
-				<h3>Text Indent<a class="b2t" href="#top">back to top</a></h3>
+				<h3 id="text-indent">Text Indent<a class="b2t" href="#top">back to top</a></h3>
 
 					<p>This property is commonly used in printed publications, as it name suggests, its used to indent the first line of text within an element. All common length values are available for this property, including pixels, points, percentages, and so on. Positive values will indent text inward, while negative values will indent text outward.</p>
 
@@ -500,7 +507,7 @@
 						<code>text-indent: -5em;</code></p>
 					</div>
 
-				<h3>Text shadow<a class="b2t" href="#top">back to top</a></h3>
+				<h3 id="text-shadow">Text and box shadow<a class="b2t" href="#top">back to top</a></h3>
 
 					<!-- comment box on box shadow -->
 					<aside class="frame">
@@ -508,7 +515,7 @@
 
 							<p>As previously seen, the <code>text-shadow</code> places a shadow <b>specifically</b> on the text of an element, nevertheless, it is also possible to cast shadows in other type of elements, by the use of the <code>box-shadow</code> property. This property works just like the <code>text-shadow</code> property, accepting values for horizontal and vertical offsets, a blur, and a color.</p>
 
-							<p>The <code>box-shadow</code> property accepts an optional forth length value, before the <code>color</code> value, for the spread of the shadow. If this value is positive it will expand the shadow larger than the size of the element it's applied to, and in the cases of negative values the shadow will shrink to be smaller than the size of the element it's applied to. Lastly, this property also may include and optional <code>inset</code> value at the beginning of the value to place the shadow inside an element as opposed to outside the element. <i class="faq">show examples</i></p>
+							<p>The <code>box-shadow</code> property accepts an optional forth length value, before the <code>color</code> value, for the spread of the shadow. If this value is positive it will expand the shadow larger than the size of the element it's applied to, and in the cases of negative values the shadow will shrink to be smaller than the size of the element it's applied to. Lastly, this property also may include and optional <code>inset</code> value at the beginning of the value to place the shadow inside an element as opposed to outside the element.</p>
 					</aside> <!-- end of comment box on box shadow -->
 
 					<p>This property allow to add one or multiple shadows to a text. The property generally takes four values, all listed one after the other from left to right. The first three values are lengths, and the last value is a color.</p>
@@ -521,19 +528,146 @@
 
 					<p>Using negative length values for the horizontal and vertical offsets allows us to move shadows toward the left and the top.</p>
 
-				<h3>Text transform<a class="b2t" href="#top">back to top</a></h3>
+					<div class="example text-shadow"> <!-- beginning of text and box shadow examples -->
 
-					<p>Similar to the <code>font-variant</code> property, there is the <code>text-transform</code> property. While the <code>font-variant</code> property looks for an alternate variant of a typeface, this property (<code>text-transform</code>) will change the text without change the typeface, this property accepts five values: <code>none</code>, <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, and <code>inherit</code>.</p>
+						<div class="ex-text-shadow-01">
+							<h4>Horizontal text and box shadow</h4>
+								<p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+								<code>text-shadow: +5px +0px +3px rgba(27, 135, 204, 1);</code><br>
+								<code>box-shadow: +30px +0px 50px rgba(27, 135, 204, 1);</code></p>
+						</div>
 
-					<p>The <code>capitalize</code> value will capitalize the first letter of each word, the <code>uppercase</code> value will capitalize every letter, and the <code>lowercase</code> will make every letter lowercase, whilst <code>none</code> will return any of these inherited values back to the original text style. <i class="faq">show examples</i></p>
+						<div class="ex-text-shadow-02">
+							<h4>Vertical text and box shadow</h4>
+								<p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+								<code>text-shadow: +0px +5px +3px rgba(27, 135, 204, 1);</code><br>
+								<code>box-shadow: +10px +0px +0px rgba(27, 135, 204, 1);</code></p>
+						</div>
 
-				<h3>Letter spacing<a class="b2t" href="#top">back to top</a></h3>
+						<div class="ex-text-shadow-03">
+							<h4>Top right corner text and box shadow</h4>
+								<p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+								<code>text-shadow: +5px -6px +3px rgba(27, 135, 204, 1);</code><br>
+								<code>box-shadow: +5px -5px +10px rgba(27, 135, 204, 1);</code></p>
+						</div>
 
-					<p>With the <code>letter-spacing</code> it is possible to adjust the space(or tracking) between the letters on a page. A positive value will push apart letter from one another, while a negative value will pull letters closer together. The keyword value <code>none</code> will return the space between letters back to its normal size. The use of this property will help ensure that the rendering and tracking will be adequate as the <code>font-size</code> is changed. It is, however, always a good idea to double-check our work. <i class="faq">show examples</i></p>
+						<div class="ex-text-shadow-04">
+							<h4>Bottom right corner text and box shadow</h4>
+								<p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+								<code>text-shadow: +5px +6px +3px rgba(27, 135, 204, 1);</code><br>
+								<code>box-shadow: +5px +6px +3px rgba(27, 135, 204, 1);</code></p>
+						</div>
 
-				<h3>Word spacing<a class="b2t" href="#top">back to top</a></h3>
+						<div class="ex-text-shadow-05">
+							<h4>Bottom left corner text and box  shadow</h4>
+								<p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+								<code>text-shadow: -5px +6px +3px rgba(27, 135, 204, 1);</code><br>
+								<code>box-shadow: -5px +6px +3px rgba(27, 135, 204, 1);</code></p>
+						</div>
 
-					<p>In a similar fashion with the tracking, it is possible to adjust the space between words within an element using the <code>word-spacing</code> property. <i class="faq">show examples.</i></p>
+						<div class="ex-text-shadow-06">
+							<h4>Top left corner text and box shadow</h4>
+								<p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+								<code>text-shadow: -5px -6px +3px rgba(27, 135, 204, 1);</code><br>
+								<code>box-shadow: -5px -6px +3px rgba(27, 135, 204, 1);</code></p>
+						</div>
+					</div> <!-- end of text and box shadow examples -->
+
+				<h3 id="text-transform">Text transform<a class="b2t" href="#top">back to top</a></h3>
+
+					<p>Similar to the <code>font-variant</code> property, there is the <code>text-transform</code> property. While the <code>font-variant</code> property looks for an <strong>alternate</strong> variant of a typeface, this property (<code>text-transform</code>) will change the text <strong>without change the typeface</strong>, this property accepts five values: <code>none</code>, <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, and <code>inherit</code>.</p>
+
+					<p>The <code>capitalize</code> value will capitalize the first letter of each word, the <code>uppercase</code> value will capitalize every letter, and the <code>lowercase</code> will make every letter lowercase, whilst <code>none</code> will return any of these inherited values back to the original text style.</p>
+
+					<div class="example">
+						<p class="ex-text-transform-01">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+						<code>text-transform: none;</code></p>
+
+						<p class="ex-text-transform-02">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+						<code>text-transform: capitalize;</code></p>
+
+						<p class="ex-text-transform-03">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+						<code>text-transform: uppercase;</code></p>
+
+						<p class="ex-text-transform-04">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+						<code>text-transform: inherit;</code></p>
+					</div>
+
+				<h3 id="letter-space">Letter spacing<a class="b2t" href="#top">back to top</a></h3>
+
+					<p>With the <code>letter-spacing</code> it is possible to adjust the space (or tracking) between the letters on a page. A positive value will push apart letter from one another, while a negative value will pull letters closer together. The keyword value <code>none</code> will return the space between letters back to its normal size. The use of this property will help ensure that the rendering and tracking will be adequate as the <code>font-size</code> is changed. It is, however, always a good idea to double-check our work.</p>
+
+						<div class="example">
+
+							<code>letter-spacing: none;</code><br>
+							<p class="ex-letter-space-01">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+							<code>letter-spacing: -2px;</code><br>
+							<p class="ex-letter-space-02">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+							<code>letter-spacing: +0px;</code><br>
+							<p class="ex-letter-space-03">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+							<code>letter-spacing: +2px;</code><br>
+							<p class="ex-letter-space-04">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+							<code>letter-spacing: +5px;</code><br>
+							<p class="ex-letter-space-05">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+							<code>letter-spacing: -0.1em</code><br>
+							<p class="ex-letter-space-06">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+							<code>letter-spacing: 0em;</code><br>
+							<p class="ex-letter-space-07">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+							<code>letter-spacing: +0.1em;</code><br>
+							<p class="ex-letter-space-08">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+							<code>letter-spacing: +0.5em;</code><br>
+							<p class="ex-letter-space-09">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+							<code>letter-spacing: 1em;</code><br>
+							<p class="ex-letter-space-10">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+					</div> <!-- end of letter-spacing examples -->
+
+				<h3 id="word-space">Word spacing<a class="b2t" href="#top">back to top</a></h3>
+
+					<p>In a similar fashion with the tracking, it is possible to adjust the space between words within an element using the <code>word-spacing</code> property. Instead to modify the space between characters, this property only changes the space between words.</p>
+
+					<div class="example">
+						<code>word-spacing: none;</code><br>
+						<p class="ex-word-space-01">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: -10px;</code><br>
+						<p class="ex-word-space-02">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: -05px;</code><br>
+						<p class="ex-word-space-03">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: -01px;</code><br>
+						<p class="ex-word-space-04">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: +01px;</code><br>
+						<p class="ex-word-space-05">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: +05px;</code><br>
+						<p class="ex-word-space-06">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: +10px;</code><br>
+						<p class="ex-word-space-07">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: -0.50em;</code><br>
+						<p class="ex-word-space-08">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: -0.25em;</code><br>
+						<p class="ex-word-space-09">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: +0.25em;</code><br>
+						<p class="ex-word-space-10">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+						<code>word-spacing: +0.50em;</code><br>
+						<p class="ex-word-space-11">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+					</div>
 			</div> <!-- end of level 02 indent -->
 
 		<h2 id="all-text">Text properties all together<a class="b2t" href="#top">back to top</a></h2>
@@ -545,7 +679,7 @@
 				<code class="block">
 					&#60;h2&#62;&#60;a href="#"&#62;I am a builder&#60;/a&#62;&#60;/h2&#62;<br>
 					&#60;p class="byline"&#62;Posted by Shay Howe&#60;/p&#62;<br>
-					&#60;p class="intro"&#62;Every day I see designers and developers working alongside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders. &#60;a href="#"&#62;Continue&#8230;&#60;/a&#60;&#60;/p&#62;
+					&#60;p class="intro"&#62;Every day I see designers and developers working alongside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders.&#60;a href="#"&#62;Continue&#8230;&#60;/a&#62;&#60;/p&#62;
 				</code> <!-- end of code example -->
 
 			<h4>CSS</h4>
@@ -588,6 +722,14 @@
           text-transform: uppercase;<br>
           }
       	</code> <!-- end of code example -->
+
+      	<div class="example all-text">
+      		<h2><a href="#">I am a builder</a></h2>
+
+      		<p class="all-text-byline">Posted by Shay Howe</p>
+
+      		<p class="intro">Every day I see designers and developers working alongside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. The are builders.<a href="#">Continue...</a></p>
+      	</div>
 
 		<h2 id="web-safe">Web-safe fonts<a class="b2t" href="#top">back to top</a></h2>
 
