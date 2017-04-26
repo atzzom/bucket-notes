@@ -390,6 +390,26 @@ div.all-text .intro a {
   text-transform: uppercase;
 }
 
+/* web-safe fonts examples */
+
+.ex-web-safe-arial {font-family: arial;}
+.ex-web-safe-courier {font-family: courier;}
+.ex-web-safe-courier-new {font-family: "courier new";}
+.ex-web-safe-garamond {font-family: garamond;}
+.ex-web-safe-georgia {font-family: georgia;}
+.ex-web-safe-lucida {font-family: lucida;}
+.ex-web-safe-lucida-grande {font-family: "Lucida Grande";}
+.ex-web-safe-lucida-sans {font-family: "Lucida Sans";}
+.ex-web-safe-palatino {font-family: "Palatino Linotype";}
+.ex-web-safe-tahoma {font-family: tahoma;}
+.ex-web-safe-trebuchet {font-family: trebuchet;}
+.ex-web-safe-times-new-roman {font-family: "Times New Roman";}
+.ex-web-safe-verdana {font-family: verdana;}
+
+/* web-font embedding examples */
+
+.ex-embed-01 {font-family: 'Heebo', sans-serif;}
+
 /*
 ============================================
 Document's indents
