@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="uft-8">
+	<meta charset="utf-8">
 	<title>line one | Typography</title>
 	<link rel="stylesheet" href="typo.css" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Heebo:100" rel="stylesheet">
@@ -221,7 +221,7 @@
 
 				<p>This property makes reference to the thickness of the typeface, is used to make the text bolder or lighter, this property accepts both, keyword and numerical values.</p>
 
-				<p>Keyword values include <code>normal</code>, <code>bold</code>, <code>bolder</code>, <codee>lighter</codee>, and <code>inherit</code>. Of these keyword values, it is recommended to primarily use <code>normal</code> and <code>bold</code> to change text from normal to bold an vice versa. Rather than using the keyword values <code>bolder</code> or <code>lighter</code>, it's better to use a numeric value for more specific control. Here is an example of the use of the <code>font-weight</code> property using keyword values:</p>
+				<p>Keyword values include <code>normal</code>, <code>bold</code>, <code>bolder</code>, <code>lighter</code>, and <code>inherit</code>. Of these keyword values, it is recommended to primarily use <code>normal</code> and <code>bold</code> to change text from normal to bold an vice versa. Rather than using the keyword values <code>bolder</code> or <code>lighter</code>, it's better to use a numeric value for more specific control. Here is an example of the use of the <code>font-weight</code> property using keyword values:</p>
 
 					<code class="block">
 						.daring {<br>
@@ -749,7 +749,6 @@
       <p class="font Trebuchet">11- Trebuchet</p>
       <p class="font Times-New-Roman">12- Times New Roman</p>
       <p class="font Verdana">13- Verdana</p>
-      </p>
 
       <div class="example"> <!-- web safe fonts examples -->
       	<code>font-family: arial;</code>
@@ -815,7 +814,7 @@
 
       <div class="example"> <!-- web-font embedding examples -->
       	<code>HTML:<br>
-      	&#60;link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet"&#62;<br>
+      	&#60;link href="https://fonts.googleapis.com/css?family=Heebo:100" rel="stylesheet"&#62;<br>
       	CSS: font-family: 'Heebo', sans-serif;</code>
       	<p class="ex-embed-01">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
       </div>
@@ -839,8 +838,12 @@
 	        <p>Here the book <i>Steve Jobs</i>, by Walter Isaacson, is reference within the <code>&#60;cite&#62;</code> element. Inside the citation is also a hyperlink to the book.</p>
 
 	        	<code class="block">
-	        		&#60;p&#62;The book &#60;cite&#62;&#60;a href="http://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537"&#62;Steve Jobs&#60;/a&#62;&#60;/cite&#62; is truly inspirational.
+	        		&#60;p&#62;The book &#60;cite&#62;&#60;a href="http://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537"&#62;Steve Jobs&#60;/a&#62;&#60;/cite&#62; is truly inspirational.&#60;/p&#62;
 	        	</code>
+
+	        <div class="example">
+	        	<p>The book <cite><a href="http://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537">Steve Jobs</a></cite> is truly inspirational.</p>
+	        </div>
 
 	      <h3 id="dialogue&prose">Dialogue & prose quotation<a class="b2t" href="#top">back to top</a></h3>
 
@@ -858,10 +861,15 @@
 
 		        <code class="block">
 		            &#60;blockquote&#62;<br>
-		            &#60;p&#62;&#8220;In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa, But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product.&#8221;&#60;/p&#62;<br>
-		            &#60;/blockquote&#62;<br>
-		            <i class="faq">show examples.</i>
+		            &#60;p&#62;&#8220;In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa. But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product.&#8221;&#60;/p&#62;<br>
+		            &#60;/blockquote&#62;
 		        </code>
+
+		        <div class="example">
+		        	<blockquote>
+		        		<p>In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa. But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product</p>
+		        	</blockquote>
+		        </div>
 
 	      <h3 id="externalC">External citation<a class="b2t" href="#top">back to top</a></h3>
 
@@ -877,7 +885,6 @@
 		        </code>
       </div> <!-- end of level 02 indent -->
 	</div> <!-- end of level 01 indent -->
-</body>
 
 <footer>
 
@@ -893,5 +900,6 @@
 		- How to properly mark up citations and quotations.
 	</p>
 </footer>
+</body>
 
 </html>
