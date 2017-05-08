@@ -25,62 +25,76 @@
 
   <p>The HTML provides several options to custom the background of a page, either with color or with images. To do this, it is possible to use either the <code>background</code> or the <code>background-color</code> properties. the former accepts color and images, but the latter is strictly used for solid colors, which can be specified using hexadecimals, RGB, RGBa, HSL, or HSLa values. The following is an example of a <code>background-color</code> being set:</p>
 
-  <code>
+  <code class="block">
     div {<br>
     background-color: #b2b2b2;<br>
     }
   </code>
 
+  <div class="example ex-background-color-01">
+    <p>This is a &#60;div&#62; element with <code>background-color: #b2b2b2;</code></p>
+  </div>
+
   <h3>Transparent colors & backwards compatibility</h3>
 
     <p>Older browsers not always support the use of transparent colors, for those cases, is useful to take advantage of the way CSS works, applying in a first-arrived, first-served basis, based on this, and thinking for those browsers, is useful to first declare a <code>background-color</code> using hexadecimal values, and later using a transparent <code>background-color</code> <b>within</b> the same rule set, the first hexadecimal value will provide a "save" background color, whilst, the second will provide a transparent background if supported. Like this:</p>
 
-    <code>
+    <code class="block">
       div {<br>
       background-color: #b2b2b2;<br>
       background-color: rgba(0, 0, 0, .3);<br>
       }
     </code>
 
+    <div class="example ex-background-color-02">
+      <p>This is a &#60;div&#62; element with <code>background-color: rgba(0, 0, 0, .3);</code></p>
+    </div>
+
 </section>
 
-<section class="background-image">
+  <section class="background-image">
 
-<h2>Background image</h2>
+  <h2>Background image</h2>
 
-  <p>In addition to adding a <code>background-color</code> it is also possible to add an image as a background. For this purpose, the <code>background</code> or the <code>background-image</code> properties can be used outright. Regardless of the property used an image source must be specified using the familiar rules for hyperlinks, although this time instead of the <code>href=""</code> attribute an <code>url("")</code> attribute is used, which employs a quotation between parenthesis, note also that there's neither equal (<code>=</code>) nor colon (<code>:</code>) symbols preceding the parenthesis or the quotations. Is always necessary to keep an eye on the image source path/directories, to reference the desired imageAn example of a <code>background-image</code> property is shown below:</p>
+    <p>In addition to adding a <code>background-color</code> it is also possible to add an image as a background. For this purpose, the <code>background</code> or the <code>background-image</code> properties can be used outright. Regardless of the property used an image source must be specified using the familiar rules for hyperlinks, although this time instead of the <code>href=""</code> attribute an <code>url("")</code> attribute is used, which employs a quotation between parenthesis, note also that there's neither equal (<code>=</code>) nor colon (<code>:</code>) symbols preceding the parenthesis or the quotations. Is always necessary to keep an eye on the image source path/directories, to reference the desired image. An example of a <code>background-image</code> property is shown below:</p>
 
-  <code>
-    div {<br>
-    background-image: url("alert.png");<br>
-    }
-  </code>
-
-  <p>Solely sourcing the image using an <code>url</code> value usually isn't enough, by default, the image will repeat itself from the top left corner of its parent element filling up the screen. To control this behavior the <code>background-repeat</code> and <code>background-position</code> properties can be used for this task.</p>
-
-  <h3><code>Background-repeat</code></h3>
-
-    <p>This property controls if an image is repeated as a background, and if it does, how it is done, for example, the direction of the repeat can be changed from its default left-to-right, or if it will repeated horizontally or vertically.</p>
-
-    <p>This property accepts four different values: <code>repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>, and <code>no-repeat</code>, being the default <code>repeat</code>. The <code>repeat-x</code> value, will repeat the image horizontally only; the <code>repeat-y</code> will do it in a vertical fashion; lastly, <code>no-repeat</code> tells the browser to display the image just once.</p>
-
-  <h3>Background position</h3>
-
-    <p>By default, images are placed at the top left corner of an element, by using the <code>background-position</code> property it is possible to control exactly where the background image is placed relative to that corner.</p>
-
-    <code>
+    <code class="block">
       div {<br>
       background-image: url("alert.png");<br>
-      background-position: 20px 10px;<br>
-      background-repeat: no-repeat;<br>
       }
     </code>
 
-    <p>In the above example, the first value of this property, corresponds to the horizontal offset, and the second one to the vertical offset. If at the time this property is declared, if only one value is stated it will be assumed as the horizontal offset; the vertical offset will default <code>50%</code>. As the image is moved related to the top-left corner of its parent element, length values specifically will be in relation to that corner.</p>
+    <div class="ex-background-image-01"></div>
 
-    <p>The <code>background-position</code> property accepts keywords, percentages, pixels, or any length measurement. Keywords (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>center</code>) and percentages are strongly related, for example, a keyword value of <code>left top</code> is identical to the <code>0 0</code> percentage; similarly, they keyword value <code>right bottom</code> is exactly the same as <code>100% 100%</code>. Using pixels for position a background is also common, as they provide more precise control over where the background will be positioned.</p>
+    <p>Solely sourcing the image using an <code>url</code> value usually isn't enough, by default, the image will repeat itself from the top left corner of its parent element filling up the screen. To control this behavior the <code>background-repeat</code> and <code>background-position</code> properties can be used for this task.</p>
 
-    <img src="background-positioning.png">
+    <h3><code>Background-repeat</code></h3>
+
+      <p>This property controls if an image is repeated as a background, and if it does, how it is done, for example, the direction of the repeat can be changed from its default left-to-right, or if it will repeated horizontally or vertically.</p>
+
+      <p>This property accepts four different values: <code>repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>, and <code>no-repeat</code>, being the default <code>repeat</code>. The <code>repeat-x</code> value, will repeat the image horizontally only; the <code>repeat-y</code> will do it in a vertical fashion; lastly, <code>no-repeat</code> tells the browser to display the image just once.</p>
+
+      <div class="ex-background-repeat-01"><code>background-repeat: repeat-x;</code></div>
+      <div class="ex-background-repeat-02"><code>background-repeat: repeat-y;</code></div>
+      <div class="ex-background-repeat-03"><code>background-repeat: repeat;</code></div>
+
+    <h3>Background position</h3>
+
+      <p>By default, images are placed at the top left corner of an element, by using the <code>background-position</code> property it is possible to control exactly where the background image is placed relative to that corner.</p>
+
+      <code class="block">
+        div {<br>
+        background-image: url("alert.png");<br>
+        background-position: 20px 10px;<br>
+        background-repeat: no-repeat;<br>
+        }
+      </code>
+
+      <p>In the above example, the first value of this property, corresponds to the horizontal offset, and the second one to the vertical offset. If at the time this property is declared, if only one value is stated it will be assumed as the horizontal offset; the vertical offset will default <code>50%</code>. As the image is moved related to the top-left corner of its parent element, length values specifically will be in relation to that corner.</p>
+
+      <p>The <code>background-position</code> property accepts keywords, percentages, pixels, or any length measurement. Keywords (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>center</code>) and percentages are strongly related, for example, a keyword value of <code>left top</code> is identical to the <code>0 0</code> percentage; similarly, they keyword value <code>right bottom</code> is exactly the same as <code>100% 100%</code>. Using pixels for position a background is also common, as they provide more precise control over where the background will be positioned.</p>
+
+      <img src="background-positioning.png">
 
     <h3>Shorthand background image values</h3>
 
@@ -144,7 +158,7 @@
 
         <p>The previous example shows the <code>linear-gradient()</code> function for the <code>background</code> property with prefixes for the different web-browsers, as the CSS3 introduced this option and have been progressively adopted, the need to specify these vendor prefixes has been reduced. However, in order to guarantee proper rendering is good option to include them. <i class="faq">show demo</i></p>
 
-      <p>The previous code snippet shows that this function accepts two colors, the first one will be the top color and the second one will be bottom color. Browsers handle the transition between both, but additionally, to provide a fallback option should the browser don't support that gradient backgrounds a solid background color needs to be specified.</p>
+        <p>The previous code snippet shows that this function accepts two colors, the first one will be the top color and the second one will be bottom color. Browsers handle the transition between both, but additionally, to provide a fallback option should the browser don't support that gradient backgrounds a solid background color needs to be specified.</p>
 
       <h3>Changing the direction of a gradient background</h3>
 

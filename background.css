@@ -46,8 +46,195 @@ Document's style
 */
 
 body {
-  padding: 0 5%;
+  background-color: rgba(6, 32, 42, 0.9); /* dark green */
+  color: rgba(150, 154, 152, 1); /* silver */
+  font: 200 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 10%;
+  text-align: justify;
 }
-h1 {
+
+/* styles for the link to the home page */
+.line-one-nav {
+  color: rgb(235, 75, 66); /* red */
+  display: block;
   text-align: center;
 }
+/* header a.line-one-nav {
+color: rgb(235, 75, 66); red
+text-align: center;
+}*/
+
+a {
+  color: rgba(27, 135, 204, 1); /* blue */
+}
+a:hover {
+  color: #ff7b29; /* orange */
+}
+
+/* style for the back to top link */
+.b2t {
+  color: rgba(6, 32, 42, 0.4);
+  float: right;
+  font: 100 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* FAQ */
+.faq {
+  background-color: yellow;
+  color: rgba(6, 32, 42, 0.9); /* dark green */
+}
+
+/* Headers */
+
+h1 {
+  color: rgba(235, 75, 66, 1); /* red */
+  text-align: center;
+  padding-top: 50px;
+}
+
+h2 {
+  padding-left: 5%;
+  padding-top: 70px;
+  text-align: left;
+}
+
+h3 {
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+h2, h3 {
+  color: rgba(235, 75, 66, .65); /* red */
+}
+
+h4, h5, h6 {
+  color: rgba(49, 131, 103, 1); /* green */
+  font-style: italic;
+  padding-left: 5%;
+}
+
+/* miscellaneous */
+
+hr {
+  margin-top: 70px;
+}
+
+.code-example {
+  text-align: left;
+}
+
+footer {
+  padding-bottom: 10%;
+}
+
+nav {
+  float: left;
+}
+
+/*
+============================================
+Document's frames
+============================================
+*/
+
+.frame {
+  border-color: silver;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  left: 0px; /* this "left" property locates the box in the left of its parent element (because we are using an absolute positioning, in this case the left of the <html> element) */
+  padding: 0% 2%;
+  position: absolute; /* property used to take the box out of the document's flow and send it to the left of its parent element */
+  width: 15%; /* 15% of its parent element, so it doesn't overlap the content next to it */
+}
+
+/*
+============================================
+Document's examples
+============================================
+*/
+
+/* the styles here are going to be layered with each of the specific examples*/
+.example {
+  color: rgba(255, 255, 255, 0.8); /* the font is white to help highlight the examples from the rest of the content */
+  border-color: rgba(49, 131, 103, 1); /* green */
+  border-radius: 5px;
+  border-style: dotted;
+  border-width: 2px;
+  box-sizing: border-box;
+  font-weight: 100;
+  padding: 0% 12%;
+}
+
+.ex-background-color-01 {
+  background-color: #b2b2b2;
+  color: black;
+  height: 100px;
+  width: 100%;
+}
+
+.ex-background-color-02 {
+  background-color: #b2b2b2;
+  background-color: rgba(0, 0, 0, .3);
+  height: 100px;
+  width: 100%;
+}
+
+.ex-background-image-01 {
+  background-image: url("file:///Users/ptr/Pictures/Varias/Jack%20London%20-%20quotes.png");
+  height: 600px;
+  width: 100%;
+}
+
+.ex-background-repeat-01 {
+  background-image: url("file:///Users/ptr/Pictures/Varias/gif%20-%20error%20404.gif"),
+  url("http://33.media.tumblr.com/e7cfe0074ae5fd4bd2f47735e9f53206/tumblr_mkwpqrtiJN1rsdpaso1_500.gif");
+  background-repeat: repeat-x;
+  height: 500px;
+  width: 100%;
+}
+
+.ex-background-repeat-02 {
+  background-image: url("file:///Users/ptr/Pictures/Varias/gif%20-%20fail.gif"),
+  url("http://24.media.tumblr.com/640a98d35b2bbf16fc9f04ebde2aff2c/tumblr_mmlyxonTNP1rsdpaso1_500.gif");
+  background-repeat: repeat-y;
+  height: 800px;
+  width: 500px;
+}
+
+.ex-background-repeat-03 {
+  background-image: url("file:///Users/ptr/Pictures/Varias/gif%20-%20if%20you're%20happy%20and%20you%20know%20it.gif"),
+  url("http://49.media.tumblr.com/d4139d5ada46496f214c869cc84b6c12/tumblr_na2ysnMKBG1tfad7zo6_1280.gif");
+  background-repeat: repeat;
+  height: 1500px;
+  width: 100%;
+}
+/*
+============================================
+Document's indents
+============================================
+*/
+
+.block {
+  background-color: rgba(6, 32, 42, 0.06);
+  display: block;
+  padding-left: 10%;
+  text-align: left;
+}
+
+.level01 {
+  padding-left: 5%;
+}
+
+.level02 {
+  padding-left: 10%;
+}
+
+.ex {
+  padding-left: 5%;
+}
+
+.code-example {
+  padding: 0 10%;
+}
+
