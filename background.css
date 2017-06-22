@@ -133,6 +133,25 @@ div.box {
   height: 700px;
 }
 
+.ex-background-15 {
+  background: teal url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-01.jpg") 0 0 no-repeat;
+  background-size: auto 500px;
+  border: 2px dashed #9799a7;
+}
+
+.ex-background-16 {
+  background-color: teal;
+  background-image: url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-01.jpg");
+  background-size: cover;
+}
+
+.ex-background-17 {
+  background-color: teal;
+  background-image: url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-01.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .ex-gradient-01 {
   background: linear-gradient(gold, teal);
   background-color: teal;

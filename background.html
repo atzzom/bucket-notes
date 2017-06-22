@@ -279,6 +279,44 @@
 
     <div class="ex-background-14"></div>
 
+  <h2>Additional background properties</h2>
+
+    <p>Along with gradient backgrounds and multiple background images, CSS3 also introduced thre new CSS properties: <code>background&ndash;size</code>, <code>background&ndash;clip</code>, and <code>background&ndash;origin</code>. Let's take a look to each of them.</p>
+
+    <h3>CSS3 background size</h3>
+
+      <p>This property controls the size of the background image. This property accepts both length and keyword values. In the case of the length values, the size is specified as wide and height separated by a space; it is important to note that percentage value will be taken in reference to the element's size, not the background image original size. Consequently, setting a <code>background&ndash;size</code> property with a <code>100%</code> width will make the background image occupy the full width of the element. If a second value is omitted, then the resulting height will be such that preserves the image's aspect ratio. On the other handthe keyword value <code>auto</code> may also be used in either the height or the width of the image to preserve its aspect ratio.</p>
+
+      <code>
+        div {<br>
+        background: url("desert.jpg") 0 0 no&ndash;repeat;<br>
+        background&ndash;size: auto 500px;<br>
+        border: 2px dashed #9799a7;<br>
+        }
+      </code>
+
+      <p>The image below correspond to the fist background image showed in the page, now with its size ajusted to fit the <code>&#60;div&#62;</code> element.</p>
+
+      <div class="ex-background-15"></div>
+
+      <h4>Background size with keyword values</h4>
+
+        <p>Availabe in the <code>background&ndash;size</code> property there are the <code>cover</code> and <code>contain</code> keyword values. The <code>cover</code> keyword value indicates that the background image will be resized to entirely cover an <i>element's</i> width and height, while keeping the aspect ratio of the image, yet the image will stretch or shrink as necessary to cover the entire element. Often when using the <code>cover</code> keyword value, part of the background image is cut off in order for the image to occupy the full available space of the element.</p>
+
+        <code>
+          div {<br>
+          background&ndash;color: teal<br>
+          background&ndash;image: url("desert.jpg");<br>
+          background&ndash;size: cover;<br>
+          }
+        </code>
+
+        <div class="ex-background-16"></div>
+
+        <p>The <code>contain</code> keyword value, specifies the image to be entirely shown into the element's size while preserving its aspect ratio. In contrast with the <code>cover</code> keyword value, the <code>contain</code> keyword value will always show the full background image; however, oftentimes it will not occupy the full available space of the element. Both the <code>cover</code> and <code>contain</code> keyword values may result in slightly disorted background images, particularly when the images are stretched beyond their original dimensions.</p>
+
+        <div class="ex-background-17"></div>
+
 </body>
 
 <footer></footer>
