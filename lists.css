@@ -1,0 +1,115 @@
+html {
+	padding: 10%;
+}
+
+code {
+	font-size: 1.1em;
+}
+
+.faq {
+  background-color: yellow;
+}
+
+.navigation ul {
+  /* This rule set will specify the style of ALL elements in the unordered list. */
+  font: bold 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 50;
+  text-transform: uppercase;
+}
+
+.navigation li {
+  /* This rule allow each item into the unordered list to keep its block behaviour whislt the inline will let them be one in front of each other. */
+  display: inline-block;
+}
+
+.navigation a {
+  /* This styles will only affect the anchor (links) elements that are classified as "navigation". */
+  background: #395870; /* Background color just in case the gradient cannot be displayed. */
+  background: linear-gradient(#49708f, #293f50);
+  border-right: 1px solid rgba(0, 0, 0, .3);
+  color: #fff; /* White. */
+  padding: 12px 20px;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  background: #314b60;
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .3);
+}
+
+.navigation li:first-child a {
+  /* The pseudo-element will affect only the first item of the parent element. */
+  border-radius: 4px 0 0 4px;
+}
+
+.navigation li:last-child a {
+  /* The pseudo-element will affect only the last item of the parent element. */
+  border-right: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.column-01 {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.column-02 {
+  display: block;
+  float: right;
+  width: 50%;
+}
+
+.ex-lists-01 {
+  list-style-type: square;
+  margin-left: 40px;
+}
+
+/*
+List style type values
+- The following classes are used to format and exemplify the different marker types.
+*/
+
+dt {
+  font-weight: bold;
+}
+.ex-lists-style-none {
+  list-style-type: none;
+}
+.ex-lists-style-disc {
+  list-style-type: disc;
+}
+.ex-lists-style-circle {
+  list-style-type: circle;
+}
+.ex-lists-style-square {
+  list-style-type: square;
+}
+.ex-lists-style-decimal {
+  list-style-type: decimal;
+}
+.ex-lists-style-decimal-leading {
+  list-style-type: decimal-leading-zero;
+}
+.ex-lists-style-lower-roman {
+  list-style-type: lower-roman;
+}
+.ex-lists-style-upper-roman {
+  list-style-type: upper-roman;
+}
+.ex-lists-style-lower-greek {
+  list-style-type: lower-greek;
+}
+.ex-lists-style-lower-alpha {
+  list-style-type: lower-alpha;
+}
+.ex-lists-style-upper-alpha {
+  list-style-type: upper-alpha;
+}
+.ex-lists-style-armenian {
+  list-style-type: armenian;
+}
+.ex-lists-style-georgian {
+  list-style-type: georgian;
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>line one | lists</title>
+	<link rel="stylesheet" type="text/css" href="lists.css">
+</head>
+
+<header>
+	<h1>Lists</h1>
+
+	<nav>
+		<h2>Table of contents</h2>
+	</nav>
+</header>
+
+<body>
+<h2>Intro</h2>
+
+	<p>There are three types of HTML lists, namely, unordered lists, ordered lists, and description lists. As any HTML element its use depends mostly&mdash;if not exclusively&mdash;on its semantics or content meaning. Additionally, on the side of the CSS, lists can be styled in different ways. For example, the most common modified parameters in a list, include the indentation and the marker, this one can be squared, rounded, numeric, alphabetical, custom, or perhaps nonexistent. Also, besides the standard vertical list disposition, it is possible to arrange them horizontally.</p>
+
+<h2>Unordered lists</h2>
+
+	<p>An unordered list, comprehends a collection of related items whose order does not matter. Creating an unordered list in HTML is accomplished using the unordered list <b>block-level</b> element, <code>&#60;ul&#62;</code>. Each item within an unordered list is individually marked up using the list item element: <code>&#60;li&#62;</code>.</p>
+
+	<p>The default's browser behaviour is to add some left <code>padding</code> and a vertical <code>margin</code> to the <code>&#60;ul&#62;</code> element and precede (again, in the case of unordered lists) each <code>&#60;li&#62;</code> element with a solid dot. This solid dot is called the list item marker, and it can be changed using CSS.</p>
+
+	<code>
+		&#60;ul&#62;<br>
+		&#60;li&#62;Orange&#60;/li&#62;<br>
+		&#60;li&#62;Green&#60;/li&#62;<br>
+		&#60;li&#62;Blue&#60;/li&#62;<br>
+		&#60;/ul&#62;
+	</code>
+
+	<ul>
+		<li>Orange</li>
+		<li>Green</li>
+		<li>Blue</li>
+	</ul>
+
+	<nav class="navigation">
+		<ul>
+			<li><a href="#">Profile</a></li><!-- -->
+			<li><a href="#">Settings</a></li><!-- -->
+			<li><a href="#">Notifications</a></li><!-- -->
+			<li><a href="#">Logout</a></li>
+		</ul>
+	</nav>
+
+<h2>Ordered lists</h2>
+
+	<p>This type of lists works pretty much the same as unordered list; individual list items are created in the same manner. The <b>block-level</b> element that denotes them is <code>&#60;ol&#62;</code>. Because order matters in here, instead of using a dot as the default list item marker, an ordered list uses numbers.</p>
+
+	<code>
+		&#60;ol&#62;<br>
+		&#60;li&#62;Head north on N Halsted St&#60;/li&#62;<br>
+		&#60;li&#62;Turn right on W Diversey Pkwy&#60;/li&#62;<br>
+		&#60;li&#62;Turn left on N Orchard St&#60;/li&#62;<br>
+		&#60;/ol&#62;
+	</code>
+
+	<ol>
+		<li>Head north on N Halsted St</li>
+		<li>Turn right on W Diversey Pkwy</li>
+		<li>Turn left on N Orchard St</li>
+	</ol>
+
+	<p>Ordered lists also have unique attibutes available to them including <code>start</code> and <code>reversed</code>.</p>
+
+	<h3>Start attribute</h3>
+
+		<p>This attribute defines the number from which a list should begin, as expected, its default value is <code>1</code>. However, there may be cases where a list should start at a different number, in this case, the attribute is added to the <code>&#60;ol&#62;</code> tag in the form of an integer number, regardless of the numbering system selected, such as roman numerals.</p>
+
+		<code>
+			&#60;ol start="30"&#62;<br>
+			&#60;li&#62;Head north on N Halsted St&#60;/li&#62;<br>
+			&#60;li&#62;Turn right on W Diversey Pkwy&#60;/li&#62;<br>
+			&#60;li&#62;Turn left on N Orchard St&#60;/li&#62;<br>
+			&#60;/ol&#62;
+		</code>
+
+		<ol start="30">
+			<li>Head north on N Halsted St</li>
+			<li>Turn right on W Diversey Pkwy</li>
+			<li>Turn left on N Orchard St</li>
+		</ol>
+
+	<h3>Reversed attribute</h3>
+
+		<p>This attribute is used whenever a list in reverse order is desired&mdash;as long as we are working with an ordered list&mdash;this, is a Boolean attribute, and as such it doesn't accept any value. It is either true or false, being the latter the default value, whenever appear in the <code>&#60;ol&#62;</code> tag, this value becomes true.</p>
+
+		<code>
+			&#60;ol reversed&#62;<br>
+			&#60;li&#62;Head north on N Halsted St&#60;/li&#62;<br>
+			&#60;li&#62;Turn right on W Diversey Pkwy&#60;/li&#62;<br>
+			&#60;li&#62;Turn left on N Orchard St&#60;/li&#62;<br>
+			&#60;/ol&#62;
+		</code>
+
+		<ol reversed>
+			<li>Head north on N Halsted St</li>
+			<li>Turn right on W Diversey Pkwy</li>
+			<li>Turn left on N Orchard St</li>
+		</ol>
+
+		<p>Notice from the previous example that the <code>reversed</code> attribute will reverse the <b>numbering</b> order, <b>not</b> the content order.</p>
+
+	<h3>Value attribute</h3>
+
+		<p>This attribute will make the numbering of a <code>&#60;li&#62;</code> element jump to the number or value selected in this attribute, any subsequent <code>&#60;li&#62;</code> will be numbered upwards from it.</p>
+
+		<code>
+			&#60;ol&#62;<br>
+			&#60;li&#62;Head north on N Halsted St&#60;/li&#62;<br>
+			&#60;li value="9"&#62;Turn right on W Diversey Pkwy&#60;/li&#62;<br>
+			&#60;li&#62;Turn left on N Orchard St&#60;/li&#62;<br>
+			&#60;/ol&#62;
+		</code>
+
+		<ol>
+			<li>Head north on N Halsted St</li>
+			<li value="9">Turn right on W Diversey Pkwy</li>
+			<li>Turn left on N Orchard St</li>
+		</ol>
+
+<h2>Description lists</h2>
+
+	<p>Another type of lists no so commonly used is the description list, this type of lists are rather useful for creating glossaries and in a more general way, outline multiple terms and their descriptions. When doing so, the <b>block-level</b> element <code>&#60;dl&#62;</code> is used, and instead of using a <code>&#60;li&#62;</code> element to mark up list items, the description list requires of two <b>block-level</b> elements: the description term element, <code>&#60;dt&#62;</code>, and the description element, <code>&#60;dd&#62;</code>.</p>
+
+	<p>Besides the possibility to contain several description terms, <code>&#60;dt&#62;</code>, a description list may have several terms per description, i.e. a <code>&#60;dt&#62;</code> with multiple <code>&#60;dd&#62;</code>. Conversely, a single term may have several descriptions, that is, a <code>&#60;dd&#62;</code> have or be associated with multiple <code>&#60;dt&#62;</code> (think of a thesaurus). The order of these items, <code>&#60;dt&#62;</code> and <code>&#60;dd&#62;</code> is specially important in description list, here, the <code>&#60;dt&#62;</code> must come first than the <code>&#60;dd&#62;</code>.</p>
+
+	<code>
+		&#60;dl&#62;<br>
+		&#60;dt&#62;study&#60;/dt&#62;<br>
+		&#60;dd&#62;The devotion of time and attention to acquiring knowledge on an academic subject, especially by means of books.&#60;/dd&#62;<br>
+		&#60;dt&#62;design&#60;/dt&#62;<br>
+		&#60;dd&#62;A plan or drawing produced to show the look and function or workings of a building, garment, or other object before it is built or made &#60;/dd&#62;<br>
+		&#60;dd&#62;Purpose, planning, or intention that exists or is thought to exist behind an action, fact, or material objects.&#60;/dd&#62;<br>
+		&#60;dt&#62;business&#60;/dt&#62;<br>
+		&#60;dt&#62;work&#60;/dt&#62;<br>
+		&#60;dd&#62;A person's regular occupation, profession, or trade&#60;/dd&#62;<br>
+		&#60;/dl&#62;
+	</code>
+
+	<dl>
+		<dt>study</dt>
+		<dd>The devotion of time and attention to acquiring knowledge on an academic subject, especially by means of books.</dd>
+		<dt>design</dt>
+		<dd>A plan or drawing produced to show the look and function or workings of a building, garment, or other object before it is built or made.</dd>
+		<dd>Purpose, planning, or intention that exists or is thought to exists behind an action, fact, or material objects.</dd>
+		<dt>business</dt>
+		<dt>work</dt>
+		<dd>A person's regular occupation, profession, or trade.</dd>
+	</dl>
+
+<h2>Nested lists</h2>
+
+	<p>A powerful and useful feature of HTML lists is their capacity of being nested. Nevertheless, there are a few considerations to be taken into account when working with nested lists:</p>
+
+	<ol>
+		<li>The ability to indefinitely nest lists doesn't provide free rein to do so, they should be nested as long as they preserve their <b>semantic</b> value.</li>
+		<li>It is <strong>only</strong> possible to nest a list&mdash;ordered or unordered&mdash;inside a <code>&#60;li&#62;</code> tag. Or in other words, the <strong>only</strong> child element of any <code>&#60;ol&#62;</code> or <code>&#60;ul&#62;</code> will be a list item, <code>&#60;li&#62;</code>.</li>
+		<li>Any list item, <code>&#60;li&#62;</code>, that contains a nested list, must entirely hold the proper opening and closing tag of the nested list, prior to close the parent list item with the <code>&#60;/li&#62;</code> tag. That is to say, once the nested list is complete and closed, the parent list item can be wrapped and continue with the original list.</li>
+	</ol>
+
+	<code>
+		&#60;ol&#62;<br>
+		&#60;li&#62;Walk the dog&#60;/li&#62;<br>
+		&#60;li&#62;Fold laundry&#60;/li&#62;<br>
+		&#60;li&#62;<br>
+		Go to the grocery and buy:<br>
+		&#60;ul&#62;<br>
+		&#60;li&#62;Milk&#60;/li&#62;<br>
+		&#60;li&#62;Bread&#60;/li&#62;<br>
+		&#60;li&#62;Cheese&#60;/li&#62;<br>
+		&#60;/ul&#62;<br>
+		&#60;/li&#62;<br>
+		&#60;li&#62;Mow the lawn&#60;/li&#62;<br>
+		&#60;li&#62;Make dinner&#60;/li&#62;<br>
+		&#60;/ol&#62;
+	</code>
+
+	<ol>
+		<li>Walk the dog</li>
+		<li>Fold laundry</li>
+		<li>
+			Go to the grocery and buy:
+			<ul>
+				<li>Milk</li>
+				<li>Bread</li>
+				<li>Cheese</li>
+			</ul>
+		</li>
+		<li>Mow the lawn</li>
+		<li>Make dinner</li>
+	</ol>
+
+<h2>List item styling</h2>
+
+	<h3>List style type property</h3>
+
+		<p>The <code>list&ndash;style&ndash;type</code> property is used to modify an item marker. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">available values</a> range from square and decimal numbers all the way to Armenian numbering, and the style may be placed on either the <code>&#60;ul&#62;</code>, <code>&#60;ol&#62;</code>, or <code>&#60;li&#62;</code> elements. With this in mind, it is possible to mix numeric markers into unordered list and nonnumeric markers on an ordered list. <i class="faq">Take a look which are the other types of markers detailed in the link.</i></p>
+
+		<section>
+
+			<div class="column-01">
+
+				<p>HTML</p>
+
+				<code>
+				<ul>
+					<li>Orange</li>
+					<li>Green</li>
+					<li>Blue</li>
+				</ul>
+			</code>
+
+			</div>
+
+			<div class="column-02">
+
+			<p>CSS</p>
+
+			<code>
+				ul {<br>
+				list&ndash;style&ndash;type: square;<br>
+				margin&ndash;left: 40px;<br>
+				}
+			</code>
+
+			</div>
+
+		</section>
+
+		<hr>
+		<p><i class="faq"><b>FIX THIS FLOAT AND CONTAIN IT!!!</b></i></p>
+
+		<ul class="ex-lists-01">
+			<li>Orange</li>
+			<li>Green</li>
+			<li>Blue</li>
+		</ul>
+
+	<h3>List style type values</h3>
+
+		<p>As previously mentioned, the <code>list&ndash;style&ndash;type</code> property comes with a handful of different values. The following list outlines these values as wel as their corresponding content.</p>
+
+		<p><i class="faq">Can an <code>&#60;ol&#62;</code> or <code>&#60;ul&#62;</code> be the first child element of a description list, <code>&#60;dl&#62;</code>?</i><br>
+		According the the below sample code, it can. But also, according the very same code, it is not possible to format a list if this one it is a description list.</p>
+
+		<dl>
+			<ol>
+				<li>
+					<dt><code>none</code></dt>
+						<dd class="ex-lists-style-none">No list item.</dd>
+				</li>
+				<li>
+					<dt><code>disc</code></dt>
+						<dd class="ex-lists-style-disc">A filled circle.</dd>
+				</li>
+				<li>
+					<dt><code>circle</code></dt>
+						<dd class="ex-lists-style-circle">A hollow circle.</dd>
+				</li>
+				<li>
+					<dt><code>square</code></dt>
+						<dd class="ex-lists-style-square">A filled square.</dd>
+				</li>
+				<li>
+					<dt><code>decimal</code></dt>
+						<dd class="ex-lists-style-decimal">Decimal numbers.</dd>
+				</li>
+				<li>
+					<dt><code>decimal&ndash;leading&ndash;zero</code></dt>
+						<dd class="ex-lists-style-decimal-leading">Decimal numbers padded by initial zeros.</dd>
+				</li>
+				<li>
+					<dt><code>lower&ndash;roman</code></dt>
+						<dd class="ex-lists-style-lower-roman">Lowercase roman numerals.</dd>
+				</li>
+				<li>
+					<dt><code>upper&ndash;roman</code></dt>
+						<dd class="ex-lists-style-upper-roman">Uppercase roman numerals.</dd>
+				</li>
+				<li>
+					<dt><code>lower&ndash;greek</code></dt>
+						<dd class="ex-lists-style-lower-greek">Lowercase classical Greek.</dd>
+				</li>
+				<li>
+					<dt><code>lower&ndash;alpha / lower&ndash;latin</code></dt>
+						<dd class="ex-lists-style-lower-alpha">Lowercase ASCII letters.</dd>
+				</li>
+				<li>
+					<dt><code>upper&ndash;alpha / upper&ndash;latin</code></dt>
+						<dd class="ex-lists-style-upper-alpha">Uppercase ASCII letters.</dd>
+				</li>
+				<li>
+					<dt><code>armenian</code></dt>
+						<dd class="ex-lists-style-armenian">Traditional American numbering.</dd>
+				</li>
+				<li>
+					<dt><code>georgian</code></dt>
+						<dd class="ex-lists-style-georgian">Traditional Georgian numbering.</dd>
+				</li>
+			</ol>
+		</dl>
+
+</body>
+
+<footer>
+	
+</footer>
+
+</html>
