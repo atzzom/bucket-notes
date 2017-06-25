@@ -89,8 +89,9 @@ nav {
 .block {
   /* The block class is added to the code element in order to differenciate it in a subtle manner from the rest of the page elements. */
   background-color: rgba(6, 32, 42, 0.06);
-  display: block;
-  padding-left: 10%;
+  display: inline-block; /* This inline-block value must be added allowing this element behave as a inline element and preventing the code element to "underlap" (instead of overlap) the table of contents (nav element). Without it, it will occupy the whole body's element width being displayed under the table of contents. */
+  margin: 1% 0;
+  padding: 1% 0 1% 10%;
   text-align: left;
 }
 
@@ -123,19 +124,44 @@ h4, h5, h6 {
   padding-left: 5%;
 }
 
+/*
+============================================
+Document's indents
+============================================
+*/
+
 /* Miscellaneous */
 
 div { /* Divisions elements are used here to display sample background images. */
+  border-color: rgba(27, 135, 204, 1); /* Blue */
+  border-style: dashed;
+  border-width: 2px;
   height: 500px;
   width: 100%;
 }
 
-code {
-  font-size: 1.1em;
+div.body02 {
+  /* As by div elements are set to be 500px high, is necessary to override this behaviour for the div classified as body02, otherwise, and additional 500px empty space will be displayed, that's why the height: auto; is added so this specific element is adjusted to its content. */
+  border: none;
+  height: auto;
+  padding-left: 5%;
+  width: auto;
 }
 
-div.box {
+div.body03 {
+  /* As by div elements are set to be 500px high, is necessary to override this behaviour for the div classified as body02, otherwise, and additional 500px empty space will be displayed, that's why the height: auto; is added so this specific element is adjusted to its content. */
+  border: none;
+  height: auto;
+  padding-left: 5%; /* This 5% left padding will be added to the one already applied by the 2nd indentation level, for a total of 10% left padding, this effect is only achieved if the div.body03 is a nested element of the div.body02 elements otherwise, this 5% won't be noticeable, just matching the left padding of body02 elements. */
+  width: auto; /* Previously, the width was set to be 100%, resulting in being displayed outside the margin/alignment that other elements had, this 100% made reference to length the parent's element width; now with the width: auto; value it adjust itself to do not surpass the width of its parent element. */
+}
+
+div.box{
   height: 100px; /* This will allow to modify all the div elements classified as box with specific properties. */
+}
+
+code {
+  font-size: 1.1em;
 }
 
 .sample-img { /* As a single image could be used to illustrate more than one example, whichever element has this classification will display the selected image here. */
@@ -149,16 +175,18 @@ Document's background examples
 */
 
 .ex-background-01 {
-  background-color: #b2b2b2;
+  background-color: #b2b2b2; /* Grey */
+  color: black;
+  display: inline-block; /* This inline-block value must be added to allow the div element to behave as an inline element, preventing also the div element to "underlap" (instead of overlap) the table of contents (nav element). Without it, it will occupy the whole body's element width being displayed under the table of contents. */
 }
 
 .ex-background-02 {
   background-color: #b2b2b2;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .1); /* Black */
 }
 
 .ex-background-03 {
-  background-image: url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-01.jpg");
+  background-image: url("///Users/ptr/Folder/web-development/line%20one/ausangate.jpg");
   background-repeat: no-repeat;
 }
 
