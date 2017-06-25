@@ -19,7 +19,7 @@ code {
 }
 
 .navigation li {
-  /* This rule allow each item into the unordered list to keep its block behaviour whislt the inline will let them be one in front of each other. */
+  /* This rule allow each item into the unordered list to keep its block behaviour whilst the inline will let them be one in front of each other. */
   display: inline-block;
 }
 

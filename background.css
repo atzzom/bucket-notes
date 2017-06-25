@@ -46,16 +46,84 @@ Document's style
 */
 
 html {
-  padding: 10%;
+  background-color: rgba(6, 32, 42, 0.9); /* Dark green. */
+  color: rgba(150, 154, 152, 1); /* Silver. */
+  font: 200 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 10%;
+  text-align: justify;
 }
 
-h1 {
-  text-align: center;
+/* Styles for the link to the home page */
+    .line-one-home {
+      color: rgb(235, 75, 66); /* Red */
+      display: block; /* This value will prevent other elements interfere with the link into the same line the home link is. */
+      text-align: center;
+    }
+
+a {
+  color: rgba(27, 135, 204, 1); /* Blue */
+}
+a:hover {
+  color: #ff7b29; /* Orange */
+}
+
+/* Style for the back to top link. */
+.b2t {
+  color: rgba(6, 32, 42, 0.4); /* Almost the same as the background color so is barely perceptible. */
+  float: right;
+  font: 100 15px/18px "Helvetica  Neue", Helvetica, Arial, sans-serif;
 }
 
 .faq { /* Elements hightlighted to indicate questions to be solved. */
   background-color: yellow;
+  color: rgba(6, 32, 42, 0.9); /* Dark green */
 }
+
+nav {
+  /* This rule set will make the table of contents float to the left of the page. */
+  float: left;
+  margin-bottom: 1%;
+  padding-right: 1%;
+}
+
+.block {
+  /* The block class is added to the code element in order to differenciate it in a subtle manner from the rest of the page elements. */
+  background-color: rgba(6, 32, 42, 0.06);
+  display: block;
+  padding-left: 10%;
+  text-align: left;
+}
+
+/* Headers */
+
+h1 {
+  color: rgba(235, 75, 66, 1); /* Red */
+  text-align: center;
+  padding-top: 50px;
+}
+
+h2 {
+  padding-left: 5%;
+  padding-top: 70px;
+  text-align: left;
+}
+
+h3 {
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+h2, h3 {
+  color: rgba(235, 75, 66, .65); /* The same red color as the h1 element but slightly lighter. */
+}
+
+h4, h5, h6 {
+  color: rgba(49, 131, 103, 1); /* green */
+  font-style: italic;
+  padding-left: 5%;
+}
+
+/* Miscellaneous */
 
 div { /* Divisions elements are used here to display sample background images. */
   height: 500px;
@@ -73,6 +141,12 @@ div.box {
 .sample-img { /* As a single image could be used to illustrate more than one example, whichever element has this classification will display the selected image here. */
   background-image: url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-02.jpg"); /* RAF airplane image */
 }
+
+/*
+============================================
+Document's background examples
+============================================
+*/
 
 .ex-background-01 {
   background-color: #b2b2b2;
@@ -151,6 +225,12 @@ div.box {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+/*
+============================================
+Document's gradient examples
+============================================
+*/
 
 .ex-gradient-01 {
   background: linear-gradient(gold, teal);

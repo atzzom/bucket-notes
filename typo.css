@@ -54,15 +54,11 @@ body {
 }
 
 /* styles for the link to the home page */
-    .line-one-nav {
+    .line-one-home {
       color: rgb(235, 75, 66); /* red */
-      display: block;
+      display: block; /* This value will prevent other elements interfere with the link into the same line the home link is. */
       text-align: center;
     }
-    /* header a.line-one-nav {
-      color: rgb(235, 75, 66); red
-      text-align: center;
-    }*/
 
 a {
   color: rgba(27, 135, 204, 1); /* blue */
@@ -73,13 +69,13 @@ a:hover {
 
 /* style for the back to top link */
 .b2t {
-  color: rgba(6, 32, 42, 0.4);
+  color: rgba(6, 32, 42, 0.4); /* Almost the same as the background color so is barely perceptible. */
   float: right;
   font: 100 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* FAQ */
-.faq {
+.faq { /* Elements hightlighted to indicate questions to be solved. */
   background-color: yellow;
   color: rgba(6, 32, 42, 0.9); /* dark green */
 }
@@ -87,7 +83,7 @@ a:hover {
 /* Headers */
 
 h1 {
-  color: rgba(235, 75, 66, 1); /* red */
+  color: rgba(235, 75, 66, 1); /* Red */
   text-align: center;
   padding-top: 50px;
 }
@@ -104,7 +100,7 @@ h3 {
 }
 
 h2, h3 {
-  color: rgba(235, 75, 66, .65); /* red */
+  color: rgba(235, 75, 66, .65); /* The same red color as the h1 element but slightly lighter. */
 }
 
 h4, h5, h6 {
@@ -169,8 +165,13 @@ Document's frames
   width: 15%; /* 15% of its parent element, so it doesn't overlap the content next to it */
 }
 
-.ten-percent {
+/* .ten-percent {
   width: 10%;
+} */
+
+.frame h3 {
+  /* Aligns the title (h3) of any element classified as frame, i.e. is displayed aside/next to the main content, specially useful when the title occupies more than one line, in this way isn't shown as justified text. */
+  text-align: left;
 }
 
 /*
@@ -179,10 +180,10 @@ Document's examples
 ============================================
 */
 
-/* the styles here are going to be layered with each of the specific examples*/
+/* The styles here are going to be layered with each of the specific examples. */
 .example {
-  color: rgba(255, 255, 255, 0.8); /* the font is white to help highlight the examples from the rest of the content */
-  border-color: rgba(49, 131, 103, 1); /* green */
+  color: rgba(255, 255, 255, 0.8); /* The font is white to help highlight the examples from the rest of the content. */
+  border-color: rgba(49, 131, 103, 1); /* Green */
   border-radius: 5px;
   border-style: dotted;
   border-width: 2px;
@@ -190,7 +191,7 @@ Document's examples
   padding: 0% 12%;
 }
 
-.ex-color-01 {color: #555; /* gray */}
+.ex-color-01 {color: #555; /* Gray */}
 
 .ex-font-family-01 {font-family: Garamond, Georgia, Lucida, serif;}
 
@@ -235,12 +236,13 @@ div.ex-font-style-04 .ex-font-style-05 {font-style: initial;}
 .ex-line-height-09 {line-height: 0001;}
 .ex-line-height-10 {line-height: 01.5;}
 .ex-line-height-11 {line-height: 0002;}
-.ex-line-height-12 { /* This code shows a trick to vertically center text, here the font-size and line-height are the same. */
+.ex-line-height-12 {
+  /* This code shows a trick to vertically center text, here the font-size and line-height are the same. */
   font-size: 16px;
   line-height: 16px;
 }
 
-/* Shay Howe's example using several font-based properties */
+/* Styles used for the Shay Howe's example where several font-based properties are used. */
 div.all-font h2 {
   color: #555;
   font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -341,7 +343,6 @@ div.text-shadow div {
 .ex-letter-space-09 {letter-spacing: +0.5em}
 .ex-letter-space-10 {letter-spacing: 1em;}
 
-
 /* Word spacing examples */
 .ex-word-space-01 {word-spacing: none;}
 .ex-word-space-02 {word-spacing: -10px;}
@@ -355,7 +356,7 @@ div.text-shadow div {
 .ex-word-space-10 {word-spacing: +0.25em;}
 .ex-word-space-11 {word-spacing: +0.50em;}
 
-/* Shay Howe's example using several text properties */
+/* Styles used for Shay Howe's example where several text properties are used. */
 div.all-text h2 p {
   color: #555;
   font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -390,7 +391,7 @@ div.all-text .intro a {
   text-transform: uppercase;
 }
 
-/* web-safe fonts examples */
+/* Web-safe fonts examples. */
 
 .ex-web-safe-arial {font-family: arial;}
 .ex-web-safe-courier {font-family: courier;}
@@ -417,6 +418,7 @@ Document's indents
 */
 
 .block {
+  /* The block class is added to the code element in order to differenciate it in a subtle manner from the rest of the page elements. */
   background-color: rgba(6, 32, 42, 0.06);
   display: block;
   padding-left: 10%;
@@ -438,4 +440,3 @@ Document's indents
 .code-example {
   padding: 0 10%;
 }
-
