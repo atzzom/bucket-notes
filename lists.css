@@ -52,18 +52,31 @@ code {
 .column-01 {
   display: block;
   float: left;
+  padding-bottom: 15px;
   width: 50%;
 }
 
 .column-02 {
   display: block;
   float: right;
+  padding-bottom: 15px;
   width: 50%;
 }
 
 .ex-lists-01 {
+  clear: both; /* Is necessary add this clear: both; in order to contain the float of introduced in the above element to this example. */
   list-style-type: square;
   margin-left: 40px;
+  padding-top: 22px;
+}
+
+.ex-lists-02 li {
+  background-image: url("///Users/ptr/Folder/web-development/line%20one/ex-lists-02-airplane-icon.png") no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+  clear: both;
+  list-style-type: none;
+  padding-left: 20px;
 }
 
 /*
