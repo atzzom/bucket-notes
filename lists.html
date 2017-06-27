@@ -161,43 +161,47 @@
 		<li>Any list item, <code>&#60;li&#62;</code>, that contains a nested list, must entirely hold the proper opening and closing tag of the nested list, prior to close the parent list item with the <code>&#60;/li&#62;</code> tag. That is to say, once the nested list is complete and closed, the parent list item can be wrapped and continue with the original list.</li>
 	</ol>
 
-	<code>
-		&#60;ol&#62;<br>
-		&emsp;&#60;li&#62;Walk the dog&#60;/li&#62;<br>
-		&emsp;&#60;li&#62;Fold laundry&#60;/li&#62;<br>
-		&emsp;&#60;li&#62;<br>
-		&emsp;Go to the grocery and buy:<br>
-		&emsp;&#60;ul&#62;<br>
-		&emsp;&emsp;&#60;li&#62;Milk&#60;/li&#62;<br>
-		&emsp;&emsp;&#60;li&#62;Bread&#60;/li&#62;<br>
-		&emsp;&emsp;&#60;li&#62;Cheese&#60;/li&#62;<br>
-		&emsp;&#60;/ul&#62;<br>
-		&emsp;&#60;/li&#62;<br>
-		&emsp;&#60;li&#62;Mow the lawn&#60;/li&#62;<br>
-		&emsp;&#60;li&#62;Make dinner&#60;/li&#62;<br>
-		&#60;/ol&#62;
-	</code>
+	<div class="column-01">
+		<code>
+			&#60;ol&#62;<br>
+			&emsp;&#60;li&#62;Walk the dog&#60;/li&#62;<br>
+			&emsp;&#60;li&#62;Fold laundry&#60;/li&#62;<br>
+			&emsp;&#60;li&#62;<br>
+			&emsp;Go to the grocery and buy:<br>
+			&emsp;&#60;ul&#62;<br>
+			&emsp;&emsp;&#60;li&#62;Milk&#60;/li&#62;<br>
+			&emsp;&emsp;&#60;li&#62;Bread&#60;/li&#62;<br>
+			&emsp;&emsp;&#60;li&#62;Cheese&#60;/li&#62;<br>
+			&emsp;&#60;/ul&#62;<br>
+			&emsp;&#60;/li&#62;<br>
+			&emsp;&#60;li&#62;Mow the lawn&#60;/li&#62;<br>
+			&emsp;&#60;li&#62;Make dinner&#60;/li&#62;<br>
+			&#60;/ol&#62;
+		</code>
+	</div>
 
-	<ol>
-		<li>Walk the dog</li>
-		<li>Fold laundry</li>
-		<li>
-			Go to the grocery and buy:
-			<ul>
-				<li>Milk</li>
-				<li>Bread</li>
-				<li>Cheese</li>
-			</ul>
-		</li>
-		<li>Mow the lawn</li>
-		<li>Make dinner</li>
-	</ol>
+	<div class="column-02">
+		<ol>
+			<li>Walk the dog</li>
+			<li>Fold laundry</li>
+			<li>
+				Go to the grocery and buy:
+				<ul>
+					<li>Milk</li>
+					<li>Bread</li>
+					<li>Cheese</li>
+				</ul>
+			</li>
+			<li>Mow the lawn</li>
+			<li>Make dinner</li>
+		</ol>
+	</div>
 
 <h2>List item styling</h2>
 
 	<h3>List style type property</h3>
 
-		<p>The <code>list&ndash;style&ndash;type</code> property is used to modify an item marker. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">available values</a> range from square and decimal numbers all the way to Armenian numbering, and the style may be placed on either the <code>&#60;ul&#62;</code>, <code>&#60;ol&#62;</code>, or <code>&#60;li&#62;</code> elements. With this in mind, it is possible to mix numeric markers into unordered list and nonnumeric markers on an ordered list. <i class="faq">Take a look which are the other types of markers detailed in the link.</i></p>
+		<p>The <code>list&ndash;style&ndash;type</code> property is used to modify an item marker. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">available values</a> range from square and decimal numbers all the way to Armenian numbering, and the style may be placed on either the <code>&#60;ul&#62;</code>, <code>&#60;ol&#62;</code>, or <code>&#60;li&#62;</code> elements. With this in mind, it is possible to mix numeric markers into unordered list and non&ndash;numeric markers on an ordered list. <i class="faq">Take a look which are the other types of markers detailed in the link.</i></p>
 
 			<div class="column-01">
 
@@ -232,66 +236,68 @@
 			<li>Blue</li>
 		</ul>
 
+		<p><i class="faq">Arrange this example in a three column layout.</i></p>
+
 	<h3>List style type values</h3>
 
 		<p>As previously mentioned, the <code>list&ndash;style&ndash;type</code> property comes with a handful of different values. The following list outlines these values as wel as their corresponding content.</p>
 
 		<p><i class="faq">Can an <code>&#60;ol&#62;</code> or <code>&#60;ul&#62;</code> be the first child element of a description list, <code>&#60;dl&#62;</code>?</i><br>
-		According the the below sample code, it can. But also, according the very same code, it is not possible to format a list if this one it is a description list.</p>
+		According the the below sample code, it can. But also, according the very same code, it is not possible to format the <code>&lt;dt&gt;</code> or the <code>&lt;dd&gt;</code> items in a description list.</p>
 
 		<dl>
 			<ol>
-				<li>
+				<li class="ex-lists-style-none">
 					<dt><code>none</code></dt>
-						<dd class="ex-lists-style-none">No list item.</dd>
+						<dd>No list item.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-disc">
 					<dt><code>disc</code></dt>
-						<dd class="ex-lists-style-disc">A filled circle.</dd>
+						<dd>A filled circle.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-circle">
 					<dt><code>circle</code></dt>
-						<dd class="ex-lists-style-circle">A hollow circle.</dd>
+						<dd>A hollow circle.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-square">
 					<dt><code>square</code></dt>
-						<dd class="ex-lists-style-square">A filled square.</dd>
+						<dd>A filled square.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-decimal">
 					<dt><code>decimal</code></dt>
-						<dd class="ex-lists-style-decimal">Decimal numbers.</dd>
+						<dd>Decimal numbers.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-decimal-leading">
 					<dt><code>decimal&ndash;leading&ndash;zero</code></dt>
-						<dd class="ex-lists-style-decimal-leading">Decimal numbers padded by initial zeros.</dd>
+						<dd>Decimal numbers padded by initial zeros.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-lower-roman">
 					<dt><code>lower&ndash;roman</code></dt>
-						<dd class="ex-lists-style-lower-roman">Lowercase roman numerals.</dd>
+						<dd>Lowercase roman numerals.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-upper-roman">
 					<dt><code>upper&ndash;roman</code></dt>
-						<dd class="ex-lists-style-upper-roman">Uppercase roman numerals.</dd>
+						<dd>Uppercase roman numerals.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-lower-greek">
 					<dt><code>lower&ndash;greek</code></dt>
-						<dd class="ex-lists-style-lower-greek">Lowercase classical Greek.</dd>
+						<dd>Lowercase classical Greek.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-lower-alpha">
 					<dt><code>lower&ndash;alpha / lower&ndash;latin</code></dt>
-						<dd class="ex-lists-style-lower-alpha">Lowercase ASCII letters.</dd>
+						<dd>Lowercase ASCII letters.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-upper-alpha">
 					<dt><code>upper&ndash;alpha / upper&ndash;latin</code></dt>
-						<dd class="ex-lists-style-upper-alpha">Uppercase ASCII letters.</dd>
+						<dd>Uppercase ASCII letters.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-armenian">
 					<dt><code>armenian</code></dt>
-						<dd class="ex-lists-style-armenian">Traditional American numbering.</dd>
+						<dd>Traditional American numbering.</dd>
 				</li>
-				<li>
+				<li class="ex-lists-style-georgian">
 					<dt><code>georgian</code></dt>
-						<dd class="ex-lists-style-georgian">Traditional Georgian numbering.</dd>
+						<dd>Traditional Georgian numbering.</dd>
 				</li>
 			</ol>
 		</dl>
@@ -305,19 +311,23 @@
 
 			<code>
 				&#60;ul&#62;<br>
-				&emsp;&#60;li&#62;Orange&#60;/li&#62;
-				&emsp;&#60;li&#62;Green&#60;/li&#62;
-				&emsp;&#60;li&#62;Blue&#60;/li&#62;
+				&emsp;&#60;li&#62;Orange&#60;/li&#62;<br>
+				&emsp;&#60;li&#62;Green&#60;/li&#62;<br>
+				&emsp;&#60;li&#62;Blue&#60;/li&#62;<br>
 				&#60;/ul&#62;
 			</code>
 		</div>
 
 		<div class="column-02">
-			li {<br>
-			&emsp;background: url("arrow.png") 0 50% no&ndash;repeat;<br>
-			&emsp;list&ndash;style&ndash;type: none;<br>
-			&emsp;padding&ndash;left: 12px;<br>
-			}
+			<p>CSS</p>
+
+			<code>
+				li {<br>
+				&emsp;background: url("arrow.png") 0 50% no&ndash;repeat;<br>
+				&emsp;list&ndash;style&ndash;type: none;<br>
+				&emsp;padding&ndash;left: 12px;<br>
+				}
+			</code>
 		</div>
 
 		<ul class="ex-lists-02">
@@ -326,9 +336,217 @@
 			<li>Blue</li>
 		</ul>
 
-		<p><i class="faq">Find out why the selected icon isn't showing up.</i></p>
+		<p><i class="faq">Find out why the selected background icon isn't showing up.</i></p>
 
-</body>
+	<h3>List style position property</h3>
+
+		<p>As seen, list's markers are to be placed on the left of the <code>&lt;li&gt;</code> element by default. This list style positioned is described as <code>outside</code>, meaning all the content will be rendered directly to the right of the marker. However, using CSS properties, namely the <code>list&ndash;style&ndash;position</code> this position can be modified with one of the available keyword values: <code>outside</code>, <code>inside</code>, or <code>inherit</code>.</p>
+
+		<dl>
+			<dt><code>outside</code></dt>
+				<dd>Places the list marker on the <i>outside</i> (<i>left</i>) of the content, without allowing any content wrapping below the marker once the line breaks.</dd>
+			<dt><code>inside</code></dt>
+				<dd>Places the list marker in line with the first line of the <code>&lt;li&gt;</code> element, although allows content wrapping around the marker, it is rarely seen or used.</dd>
+			<dt><code>inherit</code></dt>
+				<dd>When the <code>inherit</code> value is used, the <code>list&ndash;style&ndash;position</code> property will adopt the value of its parent element.</dd>
+		</dl>
+
+		<div class="column-01">
+			<p>HTML</p>
+
+			<code>
+				&lt;ul&gt;<br>
+				&emsp;&lt;li&gt;Cupcakes...&lt;/li&gt;<br>
+				&emsp;&lt;li&gt;Sprinkles...&lt;/li&gt;<br>
+				&lt;/ul&gt;
+			</code>
+		</div>
+
+		<div class="column-02">
+			<p>CSS</p>
+
+			<code>
+				ul {<br>
+				&emsp;list&ndash;style&ndash;position: inside;<br>
+				}
+			</code>
+		</div>
+
+		<ul class="ex-lists-03">
+			<li>Cupcakes...</li>
+			<li>Sprinkles...</li>
+		</ul>
+
+		<ul class="ex-lists-04">
+			<li>Cupcakes...</li>
+			<li>Sprinkles...</li>
+		</ul>
+
+		<p>The above examples illustrate the difference between the <code>inside</code> (upper example) and the <code>outside</code> (lower example) value for the <code>list&ndash;style&ndash;position</code> property.</p>
+
+	<h3>Shorthand list style property</h3>
+
+		<p>Both, the <code>list&ndash;style&ndash;type</code> and the <code>list-style-position</code> properties, can be combined into a single one shorthand <code>list-style</code> property value. This property allows the use of one or all list style property values at a time. The order used should be <code>list-style-type</code> followed by <code>list-style-position</code>.</p>
+
+		<code>
+			ul {<br>
+			&emsp;list-style: circle inside;<br>
+			}<br>
+			ol {<br>
+			&emsp;list-style: lower-roman;<br>
+			}
+		</code>
+
+<h2>Horizontally displaying list</h2>
+
+	<p>Whenever a horizontal list is desired, e.g. to build a navigational list, or to put some list items in a row, it is possible use one of three ways to do achieve this result, namely:</p>
+
+	<ol>
+		<li>Setting up the <code>display</code> property <b>of the <code>
+		&lt;li&gt;</code> elements</b> to an <code>inline</code> value.</li>
+		<li>Setting this same property to an <code>inline-block</code> value instead.</li>
+		<li>Floating the &lt;li&gt; elements.</li>
+	</ol>
+
+	<h3>Displaying list</h3>
+
+		<p>The quickest/easiest way to display a list horizontally is setting the <code>display</code> property value to an <code>inline</code> or <code>inline-block</code> values, more often than not, the latter value is preferred because allow to modify vertical margins and other spacing to the <code>&lt;li&gt;</code> elements that just the <code>inline</code> property value does not.</p>
+
+		<p><strong>Keep in mind that when changing the <code>display</code> property value to <code>inline</code> or <code>inline-block</code>, the list item marker, be it a bullet, number, or other style, is going to be removed.</strong></p>
+
+		<div class="column-01">
+			<p>HTML</p>
+
+			<code>
+				&lt;ul&gt;<br>
+					&emsp;&lt;li&gt;Orange&lt;/li&gt;<br>
+					&emsp;&lt;li&gt;Green&lt;/li&gt;<br>
+					&emsp;&lt;li&gt;Blue&lt;/li&gt;<br>
+				&lt;/ul&gt;
+			</code>
+		</div>
+
+		<div class="column-02">
+
+			<p>CSS</p>
+
+			<code>
+				li {<br>
+				&emsp;display: inline-block;<br>
+				&emsp;margin: 0 10px;<br>
+				}
+			</code>
+		</div>
+
+<hr>
+
+		<p><i class="faq">Remove this <code>&lt;hr&gt;</code> element as it looks like the example below belongs to a different section, and correct the float so the example isn't placed just below the CSS code section sample.</i></p>
+
+		<ul class="ex-lists-05">
+			<li>Orange</li>
+			<li>Green</li>
+			<li>Blue</li>
+		</ul>
+
+	<h3>Floating list</h3>
+
+		<p>This is the additional technique to display a horizontal list, and is specially useful when the list marker is required. A floating list can be obtained applying the <code>float: left</code> property to the <code>&lt;li&gt;</code> elements. Doing so, will align all the <code>&lt;li&gt;</code> elements directly next to each other without any space between them. As the list is floated, the list item marker is displayed by default, and chances are that actually sit on top of the <code>&lt;li&gt;</code> element next to. To prevent the list item marker from being displayed on top of other <code>&lt;li&gt;</code> element, a horizontal <code>margin</code> or <code>padding</code> should be added.</p>
+
+		<div class="column-01">
+			<p>HTML</p>
+
+			<code>
+				&lt;ul&gt;<br>
+					&lt;li&gt;Orange&lt;/li&gt;<br>
+					&lt;li&gt;Green&lt;/li&gt;<br>
+					&lt;li&gt;Blue&lt;/li&gt;<br>
+				&lt;/ul&gt;
+			</code>
+		</div>
+
+		<div class="column-02">
+			<p>CSS</p>
+
+			<code>
+				li {<br>
+				float: left;<br>
+				margin: 20px;<br>
+				}
+			</code>
+		</div>
+
+<hr>
+
+		<ul class="ex-lists-06">
+			<li>Orange</li>
+			<li>Green</li>
+			<li>Blue</li>
+		</ul>
+
+	<h3 id="lists-nav">Navigational list example</h3>
+
+		<p>It is common to develop, and find, navigation menus using unordered lists. These lists are commonly laid out as horizontal lists, using either of the two techniques previously mentioned. Here is an example of a horizontal navigation menu marked up using an urordered list with <code>&lt;li&gt;</code> elements displayed as <code>inline-block</code> elements.</p>
+
+		<div class="column-01">
+			<h6>HTML</h6>
+
+			<code>
+				&lt;nav class="navigation"&gt;<br>
+					&emsp;&lt;ul&gt;<br>
+						&emsp;&emsp;&lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;&lt;!--<br>
+						&emsp;&emsp;--&gt;&lt;li&gt;&lt;a href="#"&gt;Settings&lt;/a&gt;&lt;/li&gt;&lt;!--<br>
+						&emsp;&emsp;--&gt;&lt;li&gt;&lt;a href="#"&gt;Notifications&lt;/a&gt;&lt;/li&gt;&lt;!--<br>
+						&emsp;&emsp;--&gt;&lt;li&gt;&lt;a href="#"&gt;Logout&lt;/a&gt;&lt;/li&gt;<br>
+					&emsp;&lt;/ul&gt;<br>
+				&lt;/nav&gt;
+			</code>
+		</div>
+
+		<div class="column-02">
+			<h6>CSS</h6>
+
+			<code>
+				.navigation ul {<br>
+				&emsp;font: bold 11px "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
+				&emsp;margin: 0;<br>
+				&emsp;padding: 0;<br>
+				&emsp;text-transform: uppercase;<br>
+				}<br>
+				.navigation li {<br>
+				&emsp;display: inline-block;<br>
+				}<br>
+				.navigation a {<br>
+				&emsp;background: #395870;<br>
+				&emsp;background: linear-gradient(#49708f, #293f50);<br>
+				&emsp;border-right: 1px solid rgba(0, 0, 0, .3);<br>
+				&emsp;color: #fff;<br>
+				&emsp;padding: 12px 20px;<br>
+				&emsp;text-decoration: none;<br>
+				}<br>
+				.navigation a:hover {<br>
+				&emsp;background: #314b60;<br>
+				&emsp;box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .3);<br>
+				}<br>
+				.navigation li:first-child a {<br>
+				&emsp;border-radius: 4px 0 0 4px;<br>
+				}<br>
+				.navigation li:last-child a {<br>
+				&emsp;border-right: 0;<br>
+				&emsp;border-radius: 0 4px 4px 0;<br>
+				}
+			</code>
+		</div>
+
+		<nav class="ex-lists-07">
+			<ul>
+				<li><a href="#">Profile</a></li><!--
+				--><li><a href="#">Settings</a></li><!--
+				--><li><a href="#">Notifications</a></li><!--
+				--><li><a href="#">Logout</a></li>
+			</ul>
+		</nav>
+
+</body> <!-- 17.06.25 - 16:13 - 17:06, 22:11-->
 
 <footer>
 	
