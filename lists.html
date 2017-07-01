@@ -77,7 +77,7 @@
 				<article class="column-1o3">
 					<h6>Result</h6>
 
-						<ul>
+						<ul class="ex-lists-01">
 							<li>Orange</li>
 							<li>Green</li>
 							<li>Blue</li>
@@ -141,7 +141,7 @@
 				<article class="column-1o3">
 					<h6>Result</h6>
 
-						<ol>
+						<ol class="ex-lists-02">
 							<li>Head north on N Halsted St</li>
 							<li>Turn right on W Diversey Pkwy</li>
 							<li>Turn left on N Orchard St</li>
@@ -189,7 +189,7 @@
 						<article class="column-1o3">
 							<h6>Result</h6>
 
-							<ol start="30" class="ex-lists-00">
+							<ol start="30" class="ex-lists-03">
 								<li>Head north on N Halsted St</li>
 								<li>Turn right on W Diversey Pkwy</li>
 								<li>Turn left on N Orchard St</li>
@@ -234,7 +234,7 @@
 						<article class="column-1o3">
 							<h6>Result</h6>
 
-							<ol reversed start="30" class="ex-lists-00">
+							<ol reversed start="30" class="ex-lists-04">
 								<li>Head north on N Halsted St</li>
 								<li>Turn right on W Diversey Pkwy</li>
 								<li>Turn left on N Orchard St</li>
@@ -279,7 +279,7 @@
 						<section class="column-1o3">
 							<h6>Result</h6>
 
-							<ol reversed class="ex-lists-000">
+							<ol reversed class="ex-lists-05">
 								<li>Head north on N Halsted St</li>
 								<li value="9">Turn right on W Diversey Pkwy</li>
 								<li>Turn left on N Orchard St</li>
@@ -321,7 +321,7 @@
 
 			<h6>Result</h6>
 
-				<dl>
+				<dl class="ex-lists-06">
 					<dt>study</dt>
 						<dd>The devotion of time and attention to acquiring knowledge on an academic subject, especially by means of books.</dd>
 					<dt>design</dt>
@@ -383,7 +383,7 @@
 					</code>
 				</section>
 
-				<section class="column-1o3 ex-lists-0000">
+				<section class="column-1o3 ex-lists-07">
 					<h6>Result</h6>
 
 						<ol>
@@ -443,7 +443,7 @@
 							<section class="column-1o3">
 								<h6>Result</h6>
 
-								<ul class="ex-lists-01">
+								<ul class="ex-lists-08">
 									<li>Orange</li>
 									<li>Green</li>
 									<li>Blue</li>
@@ -556,7 +556,7 @@
 							<section class="column-1o3">
 								<h6>Result</h6>
 
-									<ul class="ex-lists-02">
+									<ul class="ex-lists-09">
 										<li>Orange</li>
 										<li>Green</li>
 										<li>Blue</li>
@@ -606,15 +606,21 @@
 							</section>
 
 							<section class="column-1o3">
-								<ul class="ex-lists-03">
-									<li>Cupcakes...</li>
-									<li>Sprinkles...</li>
-								</ul>
+								<h6>Result</h6>
 
-								<ul class="ex-lists-04">
-									<li>Cupcakes...</li>
-									<li>Sprinkles...</li>
-								</ul>
+									<p>Marker position: <code>inside</code>.</p>
+
+									<ul class="ex-lists-10">
+										<li>Cupcakes...</li>
+										<li>Sprinkles...</li>
+									</ul>
+
+									<p>Marker position: <code>outside</code>.</p>
+
+									<ul class="ex-lists-11">
+										<li>Cupcakes...</li>
+										<li>Sprinkles...</li>
+									</ul>
 							</section>
 
 							<hr>
@@ -626,18 +632,66 @@
 
 						<p>Both, the <code>list&ndash;style&ndash;type</code> and the <code>list-style-position</code> properties, can be combined into a single one shorthand <code>list-style</code> property value. This property allows the use of one or all list style property values at a time. The order used should be <code>list-style-type</code> followed by <code>list-style-position</code>.</p>
 
-						<h6>CSS</h6>
+						<div class="float-container">
+							<section class="column-1o3">
+								<h6>HTML</h6>
 
-							<code>
-								<ol>
-									<li>ul {</li>
-									<li>&emsp;list-style: circle inside;</li>
-									<li>}</li>
-									<li>ol {</li>
-									<li>&emsp;list-style: lower-roman;</li>
-									<li>}</li>
-								</ol>
-							</code>
+									<code>
+										<ol>
+											<li>&lt;ol&gt;</li>
+											<li>&emsp;&lt;li&gt;Walk the dog&lt;/li&gt;</li>
+											<li>&emsp;&lt;li&gt;Fold laundry&lt;/li&gt;</li>
+											<li>&emsp;&lt;li&gt;<br>
+												&emsp;Go to the grocery and buy:</li>
+											<li>&emsp;&emsp;&lt;ul&gt;</li>
+											<li>&emsp;&emsp;&emsp;&lt;li&gt;Milk&lt;/li&gt;</li>
+											<li>&emsp;&emsp;&emsp;&lt;li&gt;Bread&lt;/li&gt;</li>
+											<li>&emsp;&emsp;&emsp;&lt;li&gt;Cheese&lt;/li&gt;</li>
+											<li>&emsp;&emsp;&lt;/ul&gt;</li>
+											<li>&emsp;&lt;/li&gt;</li>
+											<li>&emsp;&lt;li&gt;Mow the lawn&lt;/li&gt;</li>
+											<li>&emsp;&lt;li&gt;Make dinner&lt;/li&gt;</li>
+											<li>&lt;/ol&gt;</li>
+										</ol>
+									</code>
+							</section>
+
+							<section class="column-1o3">
+								<h6>CSS</h6>
+
+									<code>
+										<ol>
+											<li>ul {</li>
+											<li>&emsp;list-style: circle inside;</li>
+											<li>}</li>
+											<li>ol {</li>
+											<li>&emsp;list-style: lower-roman;</li>
+											<li>}</li>
+										</ol>
+									</code>
+							</section>
+
+							<section class="column-1o3">
+								<h6>Result</h6>
+
+									<ol class="ex-lists-12">
+										<li>Walk the dog</li>
+										<li>Fold laundry</li>
+										<li>
+											Go to the grocery and buy:
+											<ul>
+												<li>Milk</li>
+												<li>Bread</li>
+												<li>Cheese</li>
+											</ul>
+										</li>
+										<li>Mow the lawn</li>
+										<li>Make dinner</li>
+									</ol>
+							</section>
+
+							<hr>
+						</div>
 			</section> <!-- End of level 2 indentation. -->
 
 		<h2 id="lists-horiz">Horizontally displaying list<a href="#top" class="b2t">back to top</a></h2>
@@ -689,7 +743,7 @@
 						<section class="column-1o3">
 							<h6>Result</h6>
 
-								<ul class="ex-lists-05">
+								<ul class="ex-lists-13">
 									<li>Orange</li>
 									<li>Green</li>
 									<li>Blue</li>
@@ -710,9 +764,9 @@
 								<code>
 									<ol>
 										<li>&lt;ul&gt;</li>
-										<li>&lt;li&gt;Orange&lt;/li&gt;</li>
-										<li>&lt;li&gt;Green&lt;/li&gt;</li>
-										<li>&lt;li&gt;Blue&lt;/li&gt;</li>
+										<li>&emsp;&lt;li&gt;Orange&lt;/li&gt;</li>
+										<li>&emsp;&lt;li&gt;Green&lt;/li&gt;</li>
+										<li>&emsp;&lt;li&gt;Blue&lt;/li&gt;</li>
 										<li>&lt;/ul&gt;</li>
 									</ol>
 								</code>
@@ -724,8 +778,9 @@
 							<code>
 								<ol>
 									<li>li {</li>
-									<li>float: left;</li>
-									<li>margin: 20px;</li>
+									<li>&emsp;float: left;</li>
+									<li>&emsp;margin: 5px;</li>
+									<li>&emsp;margin-right: 20px;</li>
 									<li>}</li>
 								</ol>
 							</code>
@@ -734,7 +789,7 @@
 						<section class="column-1o3">
 							<h6>Result</h6>
 
-								<ul class="ex-lists-06">
+								<ul class="ex-lists-14">
 									<li>Orange</li>
 									<li>Green</li>
 									<li>Blue</li>
@@ -805,7 +860,7 @@
 					<div>
 						<h6>Result</h6>
 
-						<nav class="ex-lists-07">
+						<nav class="ex-lists-15">
 							<ul>
 								<li><a href="#">Profile</a></li><!--
 								--><li><a href="#">Settings</a></li><!--
@@ -818,9 +873,19 @@
 			</section>
 
 		<footer>
+
 			<h2 id="summary">Summary<a href="#top" class="b2t">back to top</a></h2>
 
-				<p></p>
+				<p>Within the topics seen here, are:</p>
+
+				<ol>
+					<li>How to include an ordered or unordered list, their behavior, and main differences.</li>
+					<li>How to reverse, add values, or declare the where to start an <b>ordered list</b><code> &lt;ol&gt;</code>.</li>
+					<li>Modify the list item <code>&lt;li&gt;</code> marker for ordered or unordered lists, either using numbers, bullets, or images.</li>
+					<li>Create horizontal&mdash;and navigational&mdash;lists weather floating or displaying them as <code>inline-block</code> elements.</li>
+					<li>Create and use properly description lists <code>&lt;dl&gt;</code></li>
+					<li>Take into account the rules when nesting lists.</li>
+				</ol>
 		</footer>
 	</body>
 </html>
