@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>line one | 9. media</title>
+    <link rel="stylesheet" type="text/css" href="9%20-%20media.css">
+  </head>
+  <body>
+    <header>
+      <a href="home.html" class="line-one-home">line one</a>
+
+      <h1>
+        Media<br>
+        <hr>
+      </h1>
+
+      <nav>
+        <h2>Table of contents</h2>
+
+          <ul>
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#img">Images</a></li>
+              <ul>
+                <li><a href="#img-formats">Supported image formats</a></li>
+                <li><a href="#img-size">Sizing images</a></li>
+                <li><a href="#img-position">Positioning images</a></li>
+                <li><a href="#img-position-inline">&mdash;Inline images positioning</a></li>
+                <li><a href="#img-position-block">&mdash;Block images positioning</a></li>
+                <li><a href="#img-position-flush">&mdash;Flush images positioning</a></li>
+                <li><a href="#img-vs-back">When to use &lt;img&gt; vs background</a></li>
+              </ul>
+            <li><a href="#summary">Summary</a></li>
+          </ul>
+      </nav>
+    </header>
+
+    <h2 id="intro">Intro<a href="#top" class="b2t">back to top</a></h2>
+
+      <p>Text has always been a fundamental part of HTML, as time has passed, additional type of content like images, audio, video, and even other web page snippets, have been introduced to convey content in a more powerful way. Here is going to be explained how to add and use this media elements in the construction of a web site.</p>
+
+    <section id="img">
+      <h2>Images<a href="#top" class="b2t">back to top</a></h2>
+
+        <p>Adding images can be done in a pretty straightforward way by means of the <code>&lt;img&gt;</code> <b>inline</b> element. The <code>&lt;img&gt;</code> element is a self&ndash;containing, or empty, element; meaning that it doesn't wrap any other content, therefore it doesn't have a closing tag, in other words, there's no such a thing as <code>&lt;/img&gt;</code> tag. For this element display the intended image is necessary to specify the path to it, which can be done using the <code>src</code> attribute, this is basically an <code>url</code>, typically relative to the server where the image or website is hosted. On the other hand, should the image be unavailable for any reason, an <code>alt</code> attribute (alternative text) describing and/or including keywords of the image must be added to the tag; this attribute is used for search engines and assistive technologies to help convey the purpose of it.</p>
+
+        <div class="exempli">
+          <h5>Example</h5>
+
+            <h6>HTML</h6>
+
+              <code>
+                <ol>
+                  <li>&lt;img src="https://images.com/wolf.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                </ol>
+              </code>
+
+            <h6>Result</h6>
+
+              <img src="///Users/ptr/Folder/web-development/line%20one/ex-media-01-wolf-at-heart.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera." class="ex-img-01">
+        </div>
+
+        <aside id="img-formats">
+          <h3>Supported image formats<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>Browsers may or may not support different types of images formats. By large, the most commonly supported formats online are <code>jpg</code>, <code>png</code> and <code>gif</code> formats. The <code>jpg</code> format is more suited for situations where the quality of a high color count image needs to be preserved whilst keeping a decent file size, such in a photograph on a website. On the other hand, <code>png</code> format is better for images with transparencies or low color counts, such in an icon or a background pattern.</p>
+        </aside>
+
+        <section class="body-02" id="img-size">
+          <h3>Sizing images<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>It is common to encounter situations in which is necessary to adjust the size of an image, this could be to fit an element's size, adjust it to the nearby content, or some other reason. Not only adjusting the size of an image can be of aesthetic value, it also could translate in faster loading times, telling the browser how large the image should be even before the page loads. There a few different ways to size an image:</p>
+
+            <ol>
+              <li>Specifying a value for the CSS property <code>height</code> but not <code>width</code> (preserves aspect ratio).</li>
+              <li>Specifying a value for the CSS property <code>width</code> but not <code>height</code> (preserves aspect ratio).</li>
+              <li>Specifying a value for both, <code>width</code> and <code>height</code> CSS properties (might or might not destroy aspect ratio).</li>
+            </ol>
+
+            <div class="exempli">
+              <h5>Example</h5>
+
+                <ol>
+                  <li>Specifying a value for the CSS property <code>height</code> but not <code>width</code> (preserves aspect ratio).</li>
+                </ol>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;img src="https://images.com/wolf.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                    </ol>
+                  </code>
+
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>img {</li>
+                      <li>&emsp;height: 400px;</li>
+                      <li>}</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <img src="///Users/ptr/Folder/web-development/line%20one/ex-media-01-wolf-at-heart.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera." class="ex-img-02">
+
+                <ol start="2">
+                  <li>Specifying a value for the CSS property <code>width</code> but not <code>height</code> (preserves aspect ratio).</li>
+                </ol>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;img src="https://images.com/wolf.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                    </ol>
+                  </code>
+
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>img {</li>
+                      <li>&emsp;width: 400px;</li>
+                      <li>}</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <img src="///Users/ptr/Folder/web-development/line%20one/ex-media-01-wolf-at-heart.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera." class="ex-img-03">
+
+                <ol start="3">
+                  <li>Specifying a value for both, <code>width</code> and <code>height</code> CSS properties (might or might not destroy aspect ratio).</li>
+                </ol>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;img src="https://images.com/wolf.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                    </ol>
+                  </code>
+
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>img {</li>
+                      <li>&emsp;height: 400px;</li>
+                      <li>&emsp;width: 400px;</li>
+                      <li>}</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <img src="///Users/ptr/Folder/web-development/line%20one/ex-media-01-wolf-at-heart.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera." class="ex-img-04">
+            </div>
+        </section>
+
+        <section class="body-02" id="img-position">
+          <h3>Positioning images<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>The following are available ways to position images:</p>
+
+            <ol>
+              <li>As inline-level elements, which is its default value.</li>
+              <li>Floating them.</li>
+              <li>Using the CSS <code>display</code> property.</li>
+              <li>Modifying the <code>padding</code>, <code>border</code>, and <code>margin</code> box model properties.</li>
+            </ol>
+
+            <article class="body-03" id="img-position-inline">
+              <h4>1. Inline images positioning<a href="#top" class="b2t">back to top</a></h4>
+
+                <p>As by default the <code>&lt;img&gt;</code> element is an inline element, hence, if added and no CSS property is specified the image would be displayed within the same line as the content that surrounds it. Additionally, the height of the line in which an image appears will be changed to match the height of the image, which can create large vertical gaps within that line. However, leaving images untouched in their default positioning isn't too common. More often than not, images are displayed as block&ndash;level elements or are floated flush to one side.</p>
+
+                <div class="exempli">
+                  <blockquote class="ex-img-05">
+                    <p>&#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike,<img src="///Users/ptr/Folder/web-development/line%20one/ex-img-05-wolf-01.jpg" alt="A grey wolf howling in a sunny day with rocky mountains behind him.">it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&#8221;</p>
+
+                    <p><cite>The Call of the Wild &mdash; Jack London</cite></p>
+                  </blockquote>
+                </div>
+            </article>
+
+            <article class="body-03" id="img-position-block">
+              <h4>2. Block images positioning<a href="#top" class="b2t">back to top</a></h4>
+
+                <p>This technique assigns the <code>block: display;</code> property to the image, making the image be displayed in its own line surrounded by text above and below it.</p>
+
+                <div class="exempli">
+                  <h5>Example</h5>
+
+                    <h6>HTML</h6>
+
+                      <code>
+                        <ol>
+                          <li>&lt;blockquote&gt;</li>
+                          <li>&emsp;&lt;p&gt;&amp;#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike, it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&amp;#8221;&lt;img src="https://images.com/wolf-howling" alt="A gray wolf howling in a sunny day with rocky mountains behind him."&gt;&lt;/p&gt;</li>
+                          <li></li>
+                          <li>&emsp;&lt;p&gt;&lt;cite&gt;The Call of the Wild &amp;mdash; Jack London&lt;/cite&gt;&lt;/p&gt;</li>
+                          <li>&lt;/blockquote&gt;</li>
+                        </ol>
+                      </code>
+
+                    <h6>CSS</h6>
+
+                      <code>
+                        <ol>
+                          <li>img {</li>
+                          <li>&emsp;display: block;</li>
+                          <li>&emsp;height: 50%;</li>
+                          <li>}</li>
+                        </ol>
+                      </code>
+
+                    <h6>Result</h6>
+
+                      <blockquote>
+                        <p>&#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike,<img src="///Users/ptr/Folder/web-development/line%20one/ex-img-05-wolf-01.jpg" alt="A gray wolf howling in a sunny day with rocky mountains behind him." class="ex-img-06">it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&#8221;</p>
+
+                        <p><cite>The Call of the Wild &mdash; Jack London</cite></p>
+                      </blockquote>
+                </div>
+            </article>
+
+            <article class="body-03" id="img-position-flush">
+              <h4>3. Flush images positioning<a href="#top" class="b2t">back to top</a></h4>
+
+                <p>The previous two techniques, <code>inline</code>, and <code>block</code> positioning will introduce the image <i>at a point</i> in the element. However, if is necessary to position the image either to the left or right, while at the same time allowing surrounding content <i>adapt</i> and wrap around the image as required, a <code>float</code> must be used, taking advantage of course, that this is the original purpose of this property.</p>
+
+                <p>Floating an image is the first step, if no <code>margin</code>, <code>border</code>, or <code>padding</code> is added, the text will align directly against it.</p>
+
+                <div class="exempli">
+                  <h5>Example</h5>
+
+                    <h6>HTML</h6>
+
+                      <code>
+                        <ol>
+                          <li>&lt;blockquote&gt;</li>
+                          <li>&emsp;&lt;p&gt;&amp;#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike, it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&amp;#8221;&lt;img src="https://images.com/wolf-howling" alt="A gray wolf howling in a sunny day with rocky mountains behind him."&gt;&lt;/p&gt;</li>
+                          <li></li>
+                          <li>&emsp;&lt;p&gt;&lt;cite&gt;The Call of the Wild &amp;mdash; Jack London&lt;/cite&gt;&lt;/p&gt;</li>
+                          <li>&lt;/blockquote&gt;</li>
+                        </ol>
+                      </code>
+
+                    <h6>CSS</h6>
+
+                      <code>
+                        <ol>
+                          <li>img {</li>
+                          <li>&emsp;background: #eaeaed; /* White */</li>
+                          <li>&emsp;border: 1px solid #9799a7; /* Silver */</li>
+                          <li>&emsp;float: right;</li>
+                          <li>&emsp;margin: 8px 0 0 20px;</li>
+                          <li>&emsp;padding: 4px;</li>
+                          <li>}</li>
+                        </ol>
+                      </code>
+
+                    <h6>Result</h6>
+
+                      <blockquote>
+                        <p>&#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike,<img src="///Users/ptr/Folder/web-development/line%20one/ex-img-05-wolf-01.jpg" alt="A gray wolf howling in a sunny day with rocky mountains behind him." class="ex-img-07">it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&#8221;</p>
+
+                        <p><cite>The Call of the Wild &mdash; Jack London</cite></p>
+                      </blockquote>
+                </div>
+            </article>
+
+            <aside id="img-vs-back">
+              <h3>When to use <code>&lt;img&gt;</code> vs <code>background</code><a href="#top" class="b2t">back to top</a></h3>
+
+                <p>As anything in HTML the usage of an element comes down to its <i>semantic</i> value. In the case of the <code>&lt;img&gt;</code> element, this is suited when the contained image is <b>relevant</b> to the content of the document.</p>
+
+                <p>On the other hand, the <code>background</code> property is the preferred option when the image being used is part of the design or user interface of the page. As such, it is not directly relevant to the content of the page.</p>
+            </aside>
+        </section>
+    </section>
+    <footer>
+      <h2 id="summary">Summary<a href="#top" class="b2t">back to top</a></h2>
+    </footer>
+  </body>
+</html>

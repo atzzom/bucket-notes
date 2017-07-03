@@ -1,0 +1,191 @@
+  /* CSS reset
+    /* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+    License: none (public domain) */
+
+    What are those elements used for? which is their meaning?
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+    body {
+    line-height: 1;
+    }
+    ol, ul {
+    list-style: none;
+    }
+    blockquote, q {
+    quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+    content: '';
+    content: none;
+    }
+    table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+
+  /* Document's structure */
+
+    html {
+      background-color: rgba(6, 32, 42, 0.9); /* dark green */
+      color: rgba(150, 154, 152, 1); /* silver */
+      font: 200 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      padding: 0 10%;
+      text-align: justify;
+    }
+
+    footer {
+      margin-bottom: 10%;
+    }
+
+    nav {
+      float: left;
+      padding-right: 1%;
+    }
+
+    hr {
+      /* This element is going to be used to clear floats and separate sections. */
+      clear: both;
+      }
+
+    a {color: rgba(27, 135, 204, 1); /* blue */}
+    a:hover {color: #ff7b29; /* orange */}
+
+    /* style for the back to top link */
+    .b2t {
+      color: rgba(6, 32, 42, 0.4); /* Almost the same as the background color so is barely perceptible. */
+      float: right;
+      font: 100 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+  /* Headers */
+
+    h1 {
+      color: rgba(235, 75, 66, 1); /* Red */
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h2 {
+      padding-left: 5%;
+      padding-top: 70px;
+      text-align: left;
+    }
+
+    h3 {
+      padding-left: 5%;
+      padding-top: 2%;
+    }
+
+    h2, h3 {
+      color: rgba(235, 75, 66, .65); /* The same red color as the h1 element but slightly lighter. */
+    }
+
+    h4, h5, h6 {
+      color: rgba(49, 131, 103, 1); /* green */
+      font-style: italic;
+      padding-left: 5%;
+    }
+
+    h6 {
+      text-transform: uppercase;
+    }
+
+  /* Indents */
+
+    .body-02 {padding-left: 05%;}
+    .body-03 {padding-left: 05%;}
+    .exempli {padding-left: 10%;}
+
+  /* Frames */
+
+  /* Floats */
+
+    .float-container:before,
+    .float-container:after {
+      content: "";
+      display: table;
+    }
+    .float:after {
+      clear: both;
+    }
+    .float-container {
+      clear: both;
+      display: block;
+      zoom: 1;
+    }
+
+    .column-1o3 {
+      box-sizing: border-box;
+      float: left;
+      margin: 0 1.5%;
+      width: 30%;
+    }
+
+    .column-1o3 ul {list-style-type: disc;}
+    .column-1o3 li {text-align: left;}
+
+  /* Lists */
+
+    ol {
+      list-style-type: decimal;
+    }
+
+  /* Miscellaneous */
+
+    /* styles for the link to the home page */
+    .line-one-home {
+      color: rgb(235, 75, 66); /* red */
+      display: block; /* This value will prevent other elements interfere with the link into the same line the home link is. */
+      text-align: center;
+    }
+
+    /* This rule set will color red the horizontal bar. */
+    hr {color: rgba(235, 75, 66, 1); /* Red */}
+
+    /* FAQ */
+      .faq { /* Elements hightlighted to indicate questions to be solved. */
+        background-color: yellow;
+        color: rgba(6, 32, 42, 0.9); /* dark green */
+      }
+
+    /* This rule set will allow the code samples be aligned to the left instead of justified (as the rest of the text), just as they would appear in a text editor. */
+    .exempli code {text-align: left;}
+
+  /* Examples */
+
+    .ex-img-02 {height: 400px;}
+    .ex-img-03 {width: 400px;}
+    .ex-img-04 {
+      height: 400px;
+      width: 400px;
+    }
+    blockquote {
+      border-left: 2px solid silver;
+      font: 200 15px/18px Georgia, serif;
+      padding-left: 12px;
+      text-align: right;
+    }
+    blockquote img {width: 50%;}
+    .ex-img-06 {
+      display: block;
+      width: 50%;
+    }
+    .ex-img-07 {
+      background: #eaeaed; /* White */
+      border: 1px solid #9799a7; /* Silver */
+      float: right;
+      margin: 8px 0 0 20px;
+      padding: 4px;
+    }
