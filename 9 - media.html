@@ -36,6 +36,21 @@
 
     <h2 id="intro">Intro<a href="#top" class="b2t">back to top</a></h2>
 
+      <div class="faq">
+        <p>Prior to continue with the following topic asses this document with the following checklist:</p>
+
+        <ol>
+          <li>Check spelling and grammar, looking for overall legibility, form, and meaning.</li>
+          <li>Replace proper symbols by their respective encoding, e.g. apostrophes, ampersands, dashes, etc.</li>
+          <li>Include <b>relevant and real</b> examples, aiming as much as possible to be hosted globally (on internet) rather than locally, so they work everywhere/anywhere.</li>
+          <li>Check content indentation, format and frames when applicable.</li>
+          <li>Check code, both HTML and CSS indentation, overall presentation, use of the appropriate sectioning, and semantical markup elements.</li>
+          <li>Add descriptive and relevant comment to GitHub repository.</li>
+          <li>Whenever possible, download beforehand relevant material that allows off-line study.</li>
+          <li>Solve and outline any question that aroused from learning and making the document.</li>
+        </ol>
+      </div>
+
       <p>Text has always been a fundamental part of HTML, as time has passed, additional type of content like images, audio, video, and even other web page snippets, have been introduced to convey content in a more powerful way. Here is going to be explained how to add and use this media elements in the construction of a web site.</p>
 
     <section id="img">
@@ -282,8 +297,244 @@
             </aside>
         </section>
     </section>
+
+    <section id="audio">
+      <h2>Audio</h2>
+
+        <p>Audio can be easily added to a document via the HTML <code>&lt;audio&gt;</code> element, unlike the <code>&lt;img&gt;</code> element, though, audio requires both opening and closing tags, accepting the following attributes:</p>
+
+        <article id="audio-att">
+          <ol>
+            <li><code>&lt;src&gt;</code>, specify the source URL to the audio to be played.</li>
+            <li><code>controls</code> a Boolean attribute which has a value of true when present in the element, should it be added, it will display the browser's default audio controls, i.e. play, pause, seek, and volume. Otherwise, the element won't be visible in the document.</li>
+            <li><code>loop</code> Boolean attribute that will cause an audio file to repeat continually from beginning to end.</li>
+            <li> 
+              <code>preload</code> helps identify what, if any, information about the audio file should be loaded before the clip is played. It accepts three values:
+              <ul>
+                <li><code>none</code>, no information about the audio file is going to be preloaded.</li>
+                <li><code>auto</code>, will preload all information about an audio file.</li>
+                <li><code>metadata</code>, will preload any available metadata information about and audio file, such as the clip's length, but not all the information; sits in between the <code>none</code> and <code>auto</code> values.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <p>If the <code>preload</code> attribute isn't present, all information about the audio file will be loaded as if the <code>auto</code> value was specified. For this reason, when an audio file is not essential to a page, is good practice to add the <code>preload</code> attribute with either a <code>none</code> or <code>metadata</code> value to help conserve bandwidth and allow pages to load faster.</p>
+
+          <div class="exempli">
+            <h5>Example</h5>
+
+              <h6>HTML</h6>
+
+                <code>
+                  <ol>
+                    <li>&lt;audio src="podcast.mp3" controls&gt;&lt;/audio&gt;</li>
+                  </ol>
+                </code>
+
+              <h6>CSS</h6>
+
+                <code>
+                  <ol>
+                    <li>/* No CSS property is specified for this example. */</li>
+                  </ol>
+                </code>
+
+              <h6>Result</h6>
+
+                <audio src="http://traffic.libsyn.com/impossibleradio/Gym_Jones.mp3" controls preload="metadata"></audio>
+          </div>
+        </article>
+
+        <article id="audio-fallback">
+          <h3>Audio fallback</h3>
+
+            <p>When using audio&mdash;and overall media&mdash;is necessary to keep in mind that not all browsers support all audio formats, considering this case, more than one source must be provided for an audio file, i.e. an audio fallback. To add a fallback the <code>src</code> attribute is deleted, and instead the <code>&lt;source&gt;</code> <b>element</b> is added <b>inside</b> the <code>&lt;audio&gt;</code> element.</p>
+
+            <p>Adding the <code>type</code> attribute inside the <code>&lt;source&gt;</code> element, helps the browser quickly identify the available audio types, the most common are: <code>mp3</code>, <code>wav</code>, and <code>ogg</code>. When a browser recognizes an audio file format it will load that file and ignore all the others.</p>
+
+            <p>Because it was introduced in HTML5, some browsers may not support the <code>&lt;audio&gt;</code> element. For those cases, a download link might be provided after any <code>&lt;source&gt;</code> elements within the <code>&lt;audio&gt;</code> element.</p>
+
+            <div class="exempli">
+              <h5>Example</h5>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;audio controls&gt;</li>
+                        <li>&emsp;&lt;source src="http://impossibleradio.libsyn.com/rss" type="audio/mpeg"&gt;</li>
+                        <li>&emsp;&lt;source src="http://d2aw5xe2jldque.cloudfront.net/podcast/darren_burgess.mp4" type="audio/mpeg"&gt;</li>
+                        <li>&emsp;&lt;source src=""http://traffic.libsyn.com/impossibleradio/S1E6_-_Building_a_Bulletproof_Mind_with_Bobby_Maximus.mp3" type="audio/mpeg"&gt;</li>
+                        <li>&lt;/audio&gt;</li>
+                      <li>&lt;a href="song.mp3" download&gt;Download&lt;/a&gt;</li>
+                    </ol>
+                  </code>
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>/* No CSS property is specified for this example. */</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <audio controls>
+                    <source src="http://traffic.libsyn.com/impossibleradio/S1E6_-_Building_a_Bulletproof_Mind_with_Bobby_Maximus.mp3" type="audio/mpeg">
+                    <source src="song.wav" type="audio/wav">
+                    <source src="song.ogg" type="audio/ogg">
+                  </audio>
+                  <br>
+                  <a href="http://traffic.libsyn.com/impossibleradio/S1E6_-_Building_a_Bulletproof_Mind_with_Bobby_Maximus.mp3">Download - Building a bulletproof mind with Bobby Maximus</a>
+            </div>
+        </article>
+    </section>
+
+    <section id="video">
+      <h2>Video</h2>
+
+        <p>The <code>&lt;video&gt;</code> element is used to add a video to a web page, their attributes: <code>src</code>, <code>controls</code>, <code>autoplay</code>, <code>loop</code>, <code>preload</code>, <code>&lt;source&gt;</code> etc. behaves exactly as the <code>&lt;audio&gt;</code> element, with the only exception that if the Boolean attribute <code>controls</code> isn't specified the video is going to still be displayed; and an additional attribute, namely, <code>poster</code>. However, unless the <code>autoplay</code> Boolean attribute is applied, the visualization of the video might be restricted. If there is a good reason to not allow users to start, stop, or replay the video the <code>controls</code> attribute should be omitted.</p>
+
+        <p>As an additional consideration, given that will videos take up space, is highly recommended to specify their dimensions <code>height</code> and <code>width</code> via CSS. This helps ensure that video isn't larger than necessary, rending it faster and within the document's layout. In regards of the fallback options, that could be used in place of a plain text fallback is to use a <a href="https://youtube.com">YouTube</a> or <a href="https://vimeo.com">Vimeo</a> embedded video. These video hosting websites allow to upload videos, providing a standard video player, and enable to use embed videos onto a pages using an inline frame.</p>
+
+        <article class="att-poster">
+          <h3>Poster attribute</h3>
+
+            <p>This <b>video</b> attribute allows add an image via an URL to be shown before the video is played, the selected <code>poster</code> image might be or might be not a snippet or video thumbnail.</p>
+        </article>
+
+        <div class="exempli">
+          <h5>Example</h5>
+
+            <h6>HTML</h6>
+
+              <code>
+                <ol>
+                  <li>&lt;video controls poster="earth-video-screenshot.jpg"&gt;&lt;/video&gt;</li>
+                    <li>&emsp;&lt;source src="earth.ogv" type="video/ogg"&gt;</li>
+                    <li>&emsp;&lt;source src="earth.mp4" type="video/mp4"&gt;</li>
+                    <li>&emsp;&lt;a href="earth.mp4" download&gt;Download&gt;/a&lt;</li>
+                  <li>&lt;/video&gt;</li>
+                </ol>
+              </code>
+
+            <h6>CSS</h6>
+
+              <code>
+                <ol>
+                  <li>video {</li>
+                    <li>&emsp;height: 600px;</li>
+                    <li>&emsp;width: 1000px;</li>
+                  <li>}</li>
+                </ol>
+              </code>
+
+            <h6>Result</h6>
+
+              <video src="earth.ogv" controls></video>
+              <p class="faq">Find a video to display (YouTube URL?)</p>
+        </div>
+
+        <aside class="frame" id="audio-&-video-additionals">
+          <h3>Customizing audio &amp; video controls</h3>
+
+            <p>Because of design purposes, the browser's default controls might need to be changed, which is possible using JavaScript. Additionally, if a customized player uses the <code>&lt;img&gt;</code> element as a control the value of the <code>alt</code> attribute <b>should</b> explicitly state that the image is a control and requires the proper interaction to work. <i class="faq">Notify Shay Howe about the typo, say thanks.</i></p>
+
+          <h3>HTML5 audio &amp; video files formats</h3>
+
+            <p>The support for the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> changes from browser to browser, as do the file formats required with these elements. Each browser has its own preferred audio and video file formats. When required, tools to convert audio and/or video to a specific format can be used.</p>
+        </aside>
+    </section>
+
+    <section id="iframe">
+      <h2>Inline frames</h2>
+
+        <p>HTML allows embed the content of another, external page into the current document. This is done using and inline frame: <code>&lt;iframe&gt;</code> element. It accepts the URL of another HTML page within the <code>src</code> attribute value; displaying the content from the embedded HTML page. The <code>src</code> attribute value may be a URL relative to the page the <code>&lt;iframe&gt;</code> element appears on, or an absolute URL for an entirely external page.</p>
+
+        <p>The default values for this element include an inset <code>border</code>, <code>width</code> and <code>height</code>, which can be modified using HTML with the <code>frameborder</code>, <code>width</code>, <code>height</code> attributes; or via CSS with the <code>border</code>, <code>width</code>, and <code>height</code> properties. Is necessary to take into account that as external resources:</p>
+
+        <ol>
+          <li>Pages referenced within the <code>src</code> attribute of an <code>&lt;iframe&gt;</code> element play their own rules, as they do not inherit any style or behaviors from the page they are referenced on</li>
+          <li>Other way around behavior it is also true, that is, the pages referenced on the <code>&lt;iframe&gt;</code> won't inherit any of the styles of the current document.</li>
+          <li>Additionally, links within the page referenced inside the <code>&lt;iframe&gt;</code> element will open inside that frame, leaving the page that contains the <code>&lt;iframe&gt;</code> element unchanged.</li>
+          <li>In other words, an <code>&lt;iframe&gt;</code> can be thought as a mini&ndash;browser, or window to visualize other web pages.</li>
+        </ol>
+    </section>
+
+    <section id="figcaption">
+      <h2>Semantically identifying figures &amp; captions</h2>
+
+        <p>When there is present more than one item of self&ndash;contained content, specially media, such as <b>multiple</b> images, videos, diagrams, code blocks, audio clips, illustrations, diagrams, among others, all of those can be wrapped into a <code>&lt;figure&gt;</code> and/or <code>&lt;figcaption&gt;</code> element; these elements were created to semantically mark up self&ndash;contained content or media, commonly with a caption. Before HTML5 this was frequently done using an ordered list. While an ordered list worked, the markup was not semantically correct.</p>
+
+        <article class="fig">
+          <h3>Figure</h3>
+
+            <p>This element is a <b>block&ndash;level</b> element, as mentioned above, is used to identify and wrap self&ndash;contained content, often in the form of media. It may surround:</p>
+
+            <ol>
+              <li>Images</li>
+              <li>Audio clips</li>
+              <li>Videos</li>
+              <li>Blocks of code</li>
+              <li>Diagrams</li>
+              <li>Illustrations</li>
+              <li>Other <b>self&ndash;contained</b> media.</li>
+            </ol>
+
+            <p>More than one (media) item of self&ndash;contained content, such as multiple images or videos, may be contained within the <code>&lt;figure&gt;</code> element at a time, in such a way that if this element is moved from the main portion of a page to another location, it should not disrupt the content or legibility of the page.</p>
+
+            <div class="exempli">
+              <h5>Example</h5>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;figure&gt;</li>
+                        <li>&emsp;&lt;img src="https://images.com/wolf.jpg" alt="A light gray wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                      <li>&lt;/figure&gt;</li>
+                    </ol>
+                  </code>
+
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>/* No CSS properties were specified for this example. */</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <figure>
+                    <img src="///Users/ptr/Folder/web-development/line%20one/ex-media-01-wolf-at-heart.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera.">
+                  </figure>
+                  <p class="faq">Build an example with an image hosted online, not locally.<br>
+                  Change apostrophes by their proper encoding as well apply the encoding for relevant symbols.</p>
+            </div>
+        </article>
+
+        <article class="figcaption">
+          <h3>Figure caption</h3>
+
+            <p>Semantically can be very useful to add a legend or description of the content grouped in the <code>&lt;figure&gt;</code> element, to do this the <code>&lt;figcaption&gt;</code> element should be used, although not all <code>&lt;figure&gt;</code> element must have a <code>&lt;figcaption&lt;</code> element, if its addition leads to a relevant description of all the items grouped into the <code>&lt;figure&gt;</code> element, then is appropriate to use it. As it described <b>all</b> the grouped items, this element should be used only once, and could be located anywhere within the <code>&lt;figure&gt;</code> element (top, bottom, middle, etc.)</p>
+
+            <p>Additionally, the <code>&lt;figcaption&gt;</code> element may replace an <code>&lt;img&gt;</code> element's <code>alt</code> attribute if the content of the <code>&lt;figcaption&gt;</code> element provides a useful description of the visual content of the image. <i class="faq">Include a relevant example of the use of the figure and figcaption below.</i></p>
+        </article>
+    </section>
+
     <footer>
       <h2 id="summary">Summary<a href="#top" class="b2t">back to top</a></h2>
+
+        <p>Within the way to add media to a web document there are:</p>
+
+        <ol>
+          <li>Adding images and their description by means of the <code>&lt;img&gt;</code> element and <code>alt</code> attribute respectively.</li>
+          <li>Inset audio specifying its source with either relative or absolute URL's, or providing the specific file in order to guarantee browser compatibility.</li>
+          <li>Identify and manipulate the different <code>audio</code>, and <code>video</code> attributes and their keywords with the purpose of present information/metadata of the resource and/or for a faster preload.</li>
+          <li>Embedding external web page content using the <code>&lt;iframe&gt;</code> element.</li>
+          <li>Introduce semantic meaning and value to grouped media and reference it with the <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements respectively.</li>
+        </ol>
     </footer>
   </body>
 </html>
