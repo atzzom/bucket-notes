@@ -138,12 +138,26 @@
 
   /* Lists */
 
-    ol {
-      list-style-type: decimal;
+    ol {list-style-type: decimal;}
+    ul {list-style-type: disc;}
+    nav ul {list-style-type: none;}
+
+  /* Media */
+
+    /* This rule set target the images that are grouped in the <figure> element. */
+    figure img {
+      display: block;
+      margin: 1% auto;
     }
 
-    ul {
-      list-style-type: disc;
+    figcaption {
+      font-size: 13px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    video {
+      background-color: rgba(100, 58, 23, 1);
     }
 
   /* Miscellaneous */
