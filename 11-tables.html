@@ -1,11 +1,853 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>line one | 11 - tables</title>
-	<link rel="stylesheet" type="text/css" href="11-tables.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>line one | 11 - tables</title>
+    <link rel="stylesheet" type="text/css" href="11-tables.css">
+  </head>
+  <body>
+    <header>
+      <a href="home.html" class="line-one-home">line one</a>
 
-</body>
+      <h1>Tables</h1>
+
+      <hr>
+
+      <nav>
+        <h2>Table of contents</h2>
+
+          <a href="#intro">Intro</a>
+          <a href="#summary">Summary</a>
+      </nav>
+    </header>
+
+    <h2 id="intro">HTML &mdash; Building a table's structure</h2>
+
+      <p>As expected tables are introduced when is necessary the display of structured data, however, the situation doesn't always been like that, in the first days of HTML, tables were also used to position content and as an aid to the styling of pages; the situation came with its tradeoffs, because that was not the table's purpose.</p>
+
+      <p>Now, tables are devoted to its intended design, leaving the CSS properties the styling and positioning tasks. How a table should be built in HTML largely depends on the contained data, legibility criterion, and the desired layout.</p>
+
+      <p>To semantically mark up the columns and rows a table must have, the minimum HTML elements to be used are: <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code> (table row), and <code>&lt;td&gt;</code> (table data). Together, with additional elements such as <code>&lt;th&gt;</code> (table header), <code>&lt;tfooter&gt;</code> among others will result in a solid layout.</p>
+
+      <h3>Table</h3>
+
+        <p>The <code>&lt;table&gt;</code> element is used to semantically mark up the beginning of a tabular arrangement, acting as the parent element of all table elements.</p>
+
+      <h3>Table row</h3>
+
+        <p>This element determines the content in a table row. A table can have numerous rows&mdash;<code>&lt;tr&gt;</code> elements&mdash; to fit the information to display.</p>
+
+      <h3>Table data</h3>
+
+        <p>Only once the table element with the table row element are defined, data cells can be added using the <code>&lt;td&gt;</code> element. Listing multiple <code>&lt;td&gt;</code> elements one after the other within a table row will create a column layout.</p>
+
+        <div class="exempli">
+          <span>Example</span>
+
+            <h6>HTML</h6>
+
+              <ol class="sample-code">
+                <li>&lt;table&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;The Lord of the Rings by John Ronald Reuel Tolkien&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;Gates of Fire by Steven Pressfield&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;2&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$ ($ &#215; 2)&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;Introducing HTML5 by Bruce Lawson &#38; Remy Sharp&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;Out of Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$22,23&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;White Fang by Jack London&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                <li>&lt;/table&gt;</li>
+              </ol>
+
+            <h6>Result</h6>
+
+              <table>
+                <tr>
+                  <td>The Lord of the Rings by John Ronald Reuel Tolkien</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$</td>
+                </tr>
+                <tr>
+                  <td>Gates of Fire by Steven Pressfield</td>
+                  <td>In Stock</td>
+                  <td>2</td>
+                  <td>$ ($ &#215; 2)</td>
+                </tr>
+                <tr>
+                  <td>Introducing HTML5 by Bruce Lawson &#38; Remy Sharp</td>
+                  <td>Out of Stock</td>
+                  <td>1</td>
+                  <td>$22.23</td>
+                </tr>
+                <tr>
+                  <td>White Fang by Jack London</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$</td>
+                </tr>
+              </table>
+        </div>
+
+      <h3>Table header</h3>
+
+        <p>This element is represented with the <code>&lt;th&gt;</code> tag, is works as a <i>semantic highlighter</i> for a cell, giving it higher hierarchy in comparison to a regular <code>&lt;td&gt;</code>. It is possible to specify whether a <code>&lt;th&gt;</code> applies to a row or to a column with the <code>scope</code> attribute, which can take the values: <code>col</code>, <code>row</code>, <code>colgroup</code>, and <code>rowgroup</code>; for example, the <code>&lt;td scope="col"&gt;Title&gt;/td&gt;</code> indicates that this header applies for all the cells directly below it&mdash;or in the same column&mdash;whereas in a students' grade list, the element <code>&lt;th scope="row"&gt;Name&lt;/th&gt;</code> indicates that every cell within the row relates directly to that table header. Additionally, depending on the browser, table headers may receive some default styling, usually bold and centered.</p>
+
+        <p>Using the <code>&lt;th&gt;</code> element, along with the scope attribute, tremendously helps screen readers and assistive technologies make sense of a table. Therefore, they are also benefical to those browsing a web page using those technologies.</p>
+
+        <div class="exempli">
+          <span>Example</span>
+
+            <h6>HTML</h6>
+
+              <ol class="sample-code">
+                <li>&lt;table&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;th scope="col"&gt;Title&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;th scope="col"&gt;Availability&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;th scope="col"&gt;Qty&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;th scope="col"&gt;Price&lt;/th&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;th&gt;The Lord of the Rings by John Ronald Reuel Tolkien&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;th&gt;In Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;th&gt;1&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;th&gt;$&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;Gates of Fire by Steven Pressfield&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;2&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$ ($ &#215; 2)&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;Introducing HTML5 by Bruce Lawson &#38; Remy Sharp&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;Out of Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$22,23&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;White Fang by Jack London&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                <li>&lt;/table&gt;</li>
+              </ol>
+
+            <h6>CSS</h6>
+
+              <ol class="sample-code">
+                <li>th {</li>
+                  <li>&emsp;font&ndash;weight: bold;</li>
+                <li>}</li>
+              </ol>
+
+            <h6>Result</h6>
+
+              <table>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Availability</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">Price</th>
+                </tr>
+                <tr>
+                  <td>The Lord of the Rings by John Ronald Reuel Tolkien</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$</td>
+                </tr>
+                <tr>
+                  <td>Gates of Fire by Steven Pressfield</td>
+                  <td>In Stock</td>
+                  <td>2</td>
+                  <td>$ ($ &#215; 2)</td>
+                </tr>
+                <tr>
+                  <td>Introducing HTML5 by Bruce Lawson &#38; Remy Sharp</td>
+                  <td>Out of Stock</td>
+                  <td>1</td>
+                  <td>$22.23</td>
+                </tr>
+                <tr>
+                  <td>White Fang by Jack London</td>
+                  <td>In Stock</td>
+                  <td>1</td>
+                  <td>$</td>
+                </tr>
+              </table>
+        </div>
+
+        <aside>
+          <h3>Headers attribute</h3>
+
+            <p>While the <code>scope</code> attribute attains only to the <code>&lt;th&gt;</code> element, the <code>headers</code> attribute can associate a cell, either be a <code>&lt;td&gt;</code> or <code>&lt;th&gt;</code> needs to be associated with another header, this attribute comes into play. Its value, will in this case match the <code>id</code> attribute of the <code>&lt;th&gt;</code> element that cell pertains to.</p>
+
+            <p class="faq">insert example</p>
+        </aside>
+
+        <p>In general, the key to get an appropriate layout is to leverage the CSS with a solid HTML structure. When working with tables is exactly the same, and in the path to pave a structure with adequate semantical value additional elements are available, like: borders, spacing, <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&gt;tfoot&gt;</code>.</p>
+
+      <h3>Table caption</h3>
+
+        <p>Just as in the form's case, the <code>&lt;caption&gt;</code> element provides a description/caption for a table, that will help users identify what the table pertains. And again, just as in case of forms, this element must be placed immediately after the <code>&lt;table&gt;</code> initialization.</p>
+
+        <div class="exempli">
+          <span>Example</span>
+
+            <h6>HTML</h6>
+
+              <ol class="code-sample">
+                <li>&lt;table&gt;</li>
+                  <li>&emsp;&lt;caption&gt;Reading list&lt;/caption&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;th scope="col"&gt;Title&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;th scope="col"&gt;Availability&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;th scope="col"&gt;Qty&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;th scope="col"&gt;Price&lt;/th&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;th&gt;The Lord of the Rings by John Ronald Reuel Tolkien&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;th&gt;In Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;th&gt;1&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;th&gt;$&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;Gates of Fire by Steven Pressfield&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;2&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$ ($ &#215; 2)&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;Introducing HTML5 by Bruce Lawson &#38; Remy Sharp&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;Out of Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$22,23&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;White Fang by Jack London&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$&lt;/td&gt;</li>
+                  <li>&emsp;&lt;/tr&gt;</li>
+                <li>&lt;/table&gt;</li>
+              </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="sample-code">
+              <li>th {</li>
+                <li>&emsp;font&ndash;weight: bold;</li>
+              <li>}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <table>
+              <caption>Reading List</caption>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Availability</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Price</th>
+              </tr>
+              <tr>
+                <td>The Lord of the Rings by John Ronald Reuel Tolkien</td>
+                <td>In Stock</td>
+                <td>1</td>
+                <td>$</td>
+              </tr>
+              <tr>
+                <td>Gates of Fire by Steven Pressfield</td>
+                <td>In Stock</td>
+                <td>2</td>
+                <td>$ ($ &#215; 2)</td>
+              </tr>
+              <tr>
+                <td>Introducing HTML5 by Bruce Lawson &#38; Remy Sharp</td>
+                <td>Out of Stock</td>
+                <td>1</td>
+                <td>$22.23</td>
+              </tr>
+              <tr>
+                <td>White Fang by Jack London</td>
+                <td>In Stock</td>
+                <td>1</td>
+                <td>$</td>
+              </tr>
+            </table>
+              </ol>
+        </div>
+
+      <h3>Table: head, body, &amp; foot</h3>
+
+        <p>Mocking the structure of a web page, tables also count with a head: <code>&lt;thead&gt;</code>, body: <code>&lt;tbody&gt;</code>, and footer: <code>&lt;tfoot&gt;</code> that help to structurally organize tables.</p>
+
+        <p>The <code>&lt;thead&gt;</code> element must come immediately after any <code>&lt;caption&gt;</code> element, its purpose is to (semantically) mark up the heading rows of the table.</p>
+
+        <p>Prior to the introduction of the HTML5, the element that must come immediately after the <code>&lt;thead&gt;</code> was the <code>&lt;tbody&gt;</code>, but now the new standard has provided leeway here, allowing the use of the <code>&lt;tfoot&gt;</code> element after the <code>&lt;thead&gt;</code> <span class="faq">maybe because of tables with only header and footer?</span>. The only consideration is guarantee, neither of them (the <code>&lt;tbody&gt;</code> nor the <code>&lt;tfoot&gt;</code>) is parent element of the other. The <code>&lt;tbody&gt;</code> element should contain the primary data within a table, while the <code>&lt;tfoot&gt;</code> element semantically contains data that outlines the contents of a table.</p>
+
+        <div class="exempli">
+          <span>Example</span>
+
+            <h6>HTML</h6>
+
+              <ol class="code-sample">
+                <li>&lt;table&gt;</li>
+
+                  <li>&emsp;&lt;caption&gt;Reading list&lt;/caption&gt;</li>
+
+                  <li>&emsp;&lt;thead&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Title&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Availability&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Qty&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Price&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/thead&gt;</li>
+
+                  <li>&emsp;&lt;tbody&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;The Lord of the Rings by John Ronald Reuel Tolkien&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;$&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Gates of Fire by Steven Pressfield&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;2&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$ ($ &#215; 2)&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Introducing HTML5 by Bruce Lawson &#38; Remy Sharp&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Out of Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$22,23&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;White Fang by Jack London&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/tbody&gt;</li>
+
+                  <li>&emsp;&lt;tfoot&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Subtotal&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$135.36&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Tax&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$13.54&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Total&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$148.90&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/tfoot&gt;</li>
+                <li>&lt;/table&gt;</li>
+              </ol>
+
+            <h6>CSS</h6>
+
+              <ol class="code-sample">
+                <li>th {</li>
+                  <li>&emsp;font&ndash;weight: bold;</li>
+                <li>}</li>
+              </ol>
+
+            <h6>Result</h6>
+
+              <table>
+                <caption>Reading List</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Availability</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>The Lord of the Rings by John Ronald Reuel Tolkien</td>
+                    <td>In Stock</td>
+                    <td>1</td>
+                    <td>$</td>
+                  </tr>
+                  <tr>
+                    <td>Gates of Fire by Steven Pressfield</td>
+                    <td>In Stock</td>
+                    <td>2</td>
+                    <td>$ ($ &#215; 2)</td>
+                  </tr>
+                  <tr>
+                    <td>Introducing HTML5 by Bruce Lawson &#38; Remy Sharp</td>
+                    <td>Out of Stock</td>
+                    <td>1</td>
+                    <td>$22.23</td>
+                  </tr>
+                  <tr>
+                    <td>White Fang by Jack London</td>
+                    <td>In Stock</td>
+                    <td>1</td>
+                    <td>$</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td>Subtotal</td>
+                    <td></td>
+                    <td></td>
+                    <td>$135.36</td>
+                  </tr>
+                  <tr>
+                    <td>Tax</td>
+                    <td></td>
+                    <td></td>
+                    <td>$13.54</td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>$148.90</td>
+                  </tr>
+                </tfoot>
+              </table>
+        </div>
+
+      <h3>Combining cells</h3>
+
+        <p>There are situations where is necessary to merge two or more cells, perhaps they contain the same information, are empty, or the table design demands it. For such situations, when a horizontal merging/span is required the <code>colspan</code> attribute is used (the attribute name makes reference to the fact it affects cells in more than one column), and when a vertical merge is necessary the <code>rowspan</code> attribute is added. By default the value for both attributes is <code>1</code>.</p>
+
+        <div class="exempli">
+          <span>Example</span>
+
+            <h6>HTML</h6>
+
+              <ol class="code-sample">
+                <li>&lt;table&gt;</li>
+
+                  <li>&emsp;&lt;caption&gt;Reading list&lt;/caption&gt;</li>
+
+                  <li>&emsp;&lt;thead&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col" colspan="2"&gt;Title&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Availability&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Qty&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Price&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/thead&gt;</li>
+
+                  <li>&emsp;&lt;tbody&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;The Lord of the Rings by John Ronald Reuel Tolkien&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;$&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Gates of Fire by Steven Pressfield&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;2&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$ ($ &#215; 2)&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Introducing HTML5 by Bruce Lawson &#38; Remy Sharp&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Out of Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$22,23&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;White Fang by Jack London&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/tbody&gt;</li>
+
+                  <li>&emsp;&lt;tfoot&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td colspan="3"&gt;Subtotal&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$135.36&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td colspan="3"&gt;Tax&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$13.54&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td colspan="3"&gt;Total&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$148.90&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/tfoot&gt;</li>
+                <li>&lt;/table&gt;</li>
+              </ol>
+
+            <h6>CSS</h6>
+
+              <ol class="code-sample">
+                <li>th {</li>
+                  <li>&emsp;font&ndash;weight: bold;</li>
+                <li>}</li>
+              </ol>
+
+            <h6>Result</h6>
+
+              <table>
+                <caption>Reading List</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2">Title</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>The Lord of the Rings by John Ronald Reuel Tolkien</td>
+                    <td>In Stock</td>
+                    <td>1</td>
+                    <td>$</td>
+                  </tr>
+                  <tr>
+                    <td>Gates of Fire by Steven Pressfield</td>
+                    <td>In Stock</td>
+                    <td>2</td>
+                    <td>$ ($ &#215; 2)</td>
+                  </tr>
+                  <tr>
+                    <td>Introducing HTML5 by Bruce Lawson &#38; Remy Sharp</td>
+                    <td>Out of Stock</td>
+                    <td>1</td>
+                    <td>$22.23</td>
+                  </tr>
+                  <tr>
+                    <td>White Fang by Jack London</td>
+                    <td>In Stock</td>
+                    <td>1</td>
+                    <td>$</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3">Subtotal</td>
+                    <td>$135.36</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">Tax</td>
+                    <td>$13.54</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">Total</td>
+                    <td>$148.90</td>
+                  </tr>
+                </tfoot>
+              </table>
+        </div>
+
+    <h2>CSS &mdash; Table styling</h2>
+
+      <p>So far, the elements that provide structure to a table have been outlined, but although the information is organized, specially when dealing with large amounts of data (columns and/or rows) becomes increasingly important the legibility of it. This purpose (overall legibility, and overall design) is achieved modifying CSS parameters, explained below.</p>
+
+      <h3>Table borders &mdash; border collapse</h3>
+
+        <p>Each of the different table elements has borders that start to stack up , with the border of one element sitting next to that of another element. For example, if we put a <code>2</code>&ndash;pixel border around each table cell, there would be a <code>4</code>&ndash;pixel border around every cell in the table.</p>
+
+        <p>To define the border model of a table the <code>border&ndash;collapse</code> property is used, with the available <code>collapse</code>, <code>separate</code>, and <code>inherit</code>. By default, the <code>border&ndash;collapse</code> property value is <code>separate</code>, meaning that all of the different borders will stack up next to one another, as described above. The <code>collapse</code> property, on the other hand, condenses the borders into one, choosing the table cell as the primary border.</p>
+
+        <div class="exempli">
+          <span>Example</span>
+
+            <h6>HTML</h6>
+
+              <ol class="code-sample">
+                <li>&lt;table&gt;</li>
+
+                  <li>&emsp;&lt;caption&gt;Reading list&lt;/caption&gt;</li>
+
+                  <li>&emsp;&lt;thead&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col" colspan="2"&gt;Title&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Qty&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Price&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/thead&gt;</li>
+
+                  <li>&emsp;&lt;tbody&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;The Lord of the Rings by John Ronald Reuel Tolkien&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;$&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Gates of Fire by Steven Pressfield&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;2&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$ ($ &#215; 2)&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Introducing HTML5 by Bruce Lawson &#38; Remy Sharp&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Out of Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$22,23&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;White Fang by Jack London&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/tbody&gt;</li>
+
+                  <li>&emsp;&lt;tfoot&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td colspan="3"&gt;Subtotal&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$135.36&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td colspan="3"&gt;Tax&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$13.54&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td colspan="3"&gt;Total&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$148.90&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/tfoot&gt;</li>
+                <li>&lt;/table&gt;</li>
+              </ol>
+
+            <h6>CSS</h6>
+
+              <ol class="sample-code">
+                <li>table {</li>
+                  <li>&emsp;border&ndash;collapse: collapse;</li>
+                <li>}</li>
+                <li>th,</li>
+                <li>td {</li>
+                  <li>&emsp;border: 1px solid #cecfd5;</li>
+                  <li>&emsp;padding: 10px 15px;</li>
+                <li>}</li>
+              </ol>
+
+            <h6>Result</h6>
+
+              <table class="ex-tables-01">
+                <caption>Reading List</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2">Title</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>The Lord of the Rings by John Ronald Reuel Tolkien</td>
+                    <td>In Stock</td>
+                    <td>1</td>
+                    <td>$</td>
+                  </tr>
+                  <tr>
+                    <td>Gates of Fire by Steven Pressfield</td>
+                    <td>In Stock</td>
+                    <td>2</td>
+                    <td>$ ($ &#215; 2)</td>
+                  </tr>
+                  <tr>
+                    <td>Introducing HTML5 by Bruce Lawson &#38; Remy Sharp</td>
+                    <td>Out of Stock</td>
+                    <td>1</td>
+                    <td>$22.23</td>
+                  </tr>
+                  <tr>
+                    <td>White Fang by Jack London</td>
+                    <td>In Stock</td>
+                    <td>1</td>
+                    <td>$</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3">Subtotal</td>
+                    <td>$135.36</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">Tax</td>
+                    <td>$13.54</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">Total</td>
+                    <td>$148.90</td>
+                  </tr>
+                </tfoot>
+              </table>
+        </div>
+
+      <h3>Table borders &mdash; border spacing</h3>
+
+        <p>As the <code>border&ndash;collapse</code> property with the <code>separate</code> value allows borders to be stacked up against one another, the <code>border&ndash;spacing</code> property can determine how much space, if any, appears between the border.</p>
+
+        <p>For example, a table with a <code>1</code>&ndash;pixel border around the entire table and a <code>1</code>&ndash;pixel border around each cell will have a <code>2</code>&ndash;pixel border all around every cell because the borders stack up next to one another. Adding in a <code>border&ndash;spacing</code> value of <code>4</code> pixels separates the borders by <code>4</code> pixels.</p>
+
+        <div class="exempli">
+          <span>Example</span>
+
+            <h6>HTML</h6>
+
+              <ol class="code-sample">
+                <li>&lt;table&gt;</li>
+
+                  <li>&emsp;&lt;caption&gt;Reading list&lt;/caption&gt;</li>
+
+                  <li>&emsp;&lt;thead&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col" colspan="2"&gt;Title&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Qty&lt;/th&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th scope="col"&gt;Price&lt;/th&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/thead&gt;</li>
+
+                  <li>&emsp;&lt;tbody&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;The Lord of the Rings by John Ronald Reuel Tolkien&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;th&gt;$&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Gates of Fire by Steven Pressfield&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;2&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$ ($ &#215; 2)&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Introducing HTML5 by Bruce Lawson &#38; Remy Sharp&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;Out of Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$22,23&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;White Fang by Jack London&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;1&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/tbody&gt;</li>
+
+                  <li>&emsp;&lt;tfoot&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td colspan="3"&gt;Subtotal&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$135.36&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td colspan="3"&gt;Tax&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$13.54&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                    <li>&emsp;&emsp;&lt;tr&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td colspan="3"&gt;Total&lt;/td&gt;</li>
+                      <li>&emsp;&emsp;&emsp;&lt;td&gt;$148.90&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;/tr&gt;</li>
+                  <li>&emsp;&lt;/tfoot&gt;</li>
+                <li>&lt;/table&gt;</li>
+              </ol>
+
+            <h6>CSS</h6>
+
+              <ol class="sample-code">
+                <li>table {</li>
+                  <li>&emsp;border&ndash;collapse: collapse;</li>
+                <li>}</li>
+                <li>th,</li>
+                <li>td {</li>
+                  <li>&emsp;border: 1px solid #cecfd5;</li>
+                  <li>&emsp;padding: 10px 15px;</li>
+                <li>}</li>
+              </ol>
+
+            <h6>Result</h6>
+
+              <table class="ex-tables-02">
+                <caption>Reading List</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2">Title</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>The Lord of the Rings by John Ronald Reuel Tolkien</td>
+                    <td>In Stock</td>
+                    <td>1</td>
+                    <td>$</td>
+                  </tr>
+                  <tr>
+                    <td>Gates of Fire by Steven Pressfield</td>
+                    <td>In Stock</td>
+                    <td>2</td>
+                    <td>$ ($ &#215; 2)</td>
+                  </tr>
+                  <tr>
+                    <td>Introducing HTML5 by Bruce Lawson &#38; Remy Sharp</td>
+                    <td>Out of Stock</td>
+                    <td>1</td>
+                    <td>$22.23</td>
+                  </tr>
+                  <tr>
+                    <td>White Fang by Jack London</td>
+                    <td>In Stock</td>
+                    <td>1</td>
+                    <td>$</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3">Subtotal</td>
+                    <td>$135.36</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">Tax</td>
+                    <td>$13.54</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">Total</td>
+                    <td>$148.90</td>
+                  </tr>
+                </tfoot>
+              </table>
+        </div>
+
+    <footer>
+      
+      <h2 id="summary">Summary</h2>
+    </footer>
+  </body>
 </html>
