@@ -21,6 +21,20 @@
       </nav>
     </header>
 
+      <ol>
+        <li>Check spelling and grammar, looking for overall legibility, form, and meaning.</li>
+        <li>Check that the information and prices shown in the examples are realistic.</li>
+        <li>Table of contents links and names.</li>
+        <li>Replace proper symbols by their respective encoding, e.g. apostrophes, ampersands, dashes, etc.</li>
+        <li>- Include <b>relevant and real</b> examples, aiming as much as possible to be hosted globally (on internet) rather than locally, so they work everywhere/anywhere (iframes).</li>
+        <li>- Check content indentation, format and frames when applicable (asides).</li>
+        <li>Check code, both HTML and CSS indentation, overall presentation, use of the appropriate sectioning, and semantical markup elements.</li>
+        <li>Add descriptive and relevant comment to GitHub repository.</li>
+        <li>Whenever possible, download beforehand relevant material that allows off&ndash;line study.</li>
+        <li>- Solve and outline any question that aroused from learning and making the document.</li>
+        <li>- Validate HTML and CSS code, looking for errors.</li>
+      </ol>
+
     <h2 id="intro">HTML &mdash; Building a table's structure</h2>
 
       <p>As expected tables are introduced when is necessary display structured data, however, the situation doesn't always been like that, in the first days of HTML, tables were also used to position content and as an aid to the styling of pages; the situation came with its tradeoffs, because this was not the table's purpose. Now, tables are devoted to its intended design, leaving to the CSS properties the styling and positioning tasks.</p>
@@ -29,11 +43,11 @@
 
       <h3>Table</h3>
 
-        <p>The <code>&lt;table&gt;</code> element is used to semantically initialize or mark up the beginning of a tabular arrangement, acting as the parent element of all table elements.</p>
+        <p>The <code>&lt;table&gt;</code> element is used to semantically initialize or mark up the beginning of a tabular arrangement, acting as the parent element of all table elements (see example below).</p>
 
       <h3>Table row</h3>
 
-        <p>This element determines the content in a table row. A table can have numerous rows&mdash;<code>&lt;tr&gt;</code> elements&mdash; to fit the information to display.</p>
+        <p>This element determines the content in a table row. A table can have numerous rows&mdash;<code>&lt;tr&gt;</code> elements&mdash; to fit the information to display (see example below).</p>
 
       <h3>Table data</h3>
 
@@ -44,7 +58,7 @@
 
             <h6>HTML</h6>
 
-              <ol class="sample-code">
+              <ol class="code-sample">
                 <li>&lt;table&gt;</li>
                   <li>&emsp;&lt;tr&gt;</li>
                     <li>&emsp;&emsp;&lt;td&gt;The Lord of the Rings by John Ronald Reuel Tolkien&lt;/td&gt;</li>
@@ -105,16 +119,14 @@
 
       <h3>Table header</h3>
 
-        <p>This element is represented with the <code>&lt;th&gt;</code> tag, is works as a <i>semantic highlighter</i> for a cell, giving it higher hierarchy in comparison to a regular <code>&lt;td&gt;</code>. It is possible to specify whether a <code>&lt;th&gt;</code> applies to a row or to a column with the <code>scope</code> attribute, which can take the values: <code>col</code>, <code>row</code>, <code>colgroup</code>, and <code>rowgroup</code>; for example, the <code>&lt;td scope="col"&gt;Title&gt;/td&gt;</code> indicates that this header applies for all the cells directly below it&mdash;or in the same column&mdash;whereas in a students' grade list, the element <code>&lt;th scope="row"&gt;Name&lt;/th&gt;</code> indicates that every cell within the row relates directly to that table header. Additionally, depending on the browser, table headers may receive some default styling, usually bold and centered.</p>
-
-        <p>Using the <code>&lt;th&gt;</code> element, along with the scope attribute, tremendously helps screen readers and assistive technologies make sense of a table. Therefore, they are also benefical to those browsing a web page using those technologies.</p>
+        <p>This element is represented with the <code>&lt;th&gt;</code> tag, working as a <i>semantic highlighter</i> for a cell, giving it higher hierarchy in comparison to a regular <code>&lt;td&gt;</code>. It is possible to specify whether a <code>&lt;th&gt;</code> applies to a row or to a column with the <code>scope</code> attribute, which can take the values: <code>col</code>, <code>row</code>, <code>colgroup</code>, and <code>rowgroup</code>; for example, the <code>&lt;td scope="col"&gt;Title&lt;/td&gt;</code> indicates that this header applies for all the cells directly below it&mdash;or in the same column&mdash;whereas in a students' grade list, the element <code>&lt;th scope="row"&gt;Name&lt;/th&gt;</code> indicates that every cell within the row relates directly to that table header. Additionally, depending on the browser, table headers may receive some default styling, usually bold and centered. <i class="faq">Look for the meaning of teh <code>colgroup</code> and <code>rowgroup</code> showing examples.</i> Additionally, using the <code>&lt;th&gt;</code> element, along with the scope attribute, tremendously helps screen readers and assistive technologies make sense of a table. Therefore, they are also benefical to those browsing a web page using those technologies.</p>
 
         <div class="exempli">
-          <span>Example</span>
+          <span class="faq">Example (format this "header" properly to match the styles in other pages of the website.)</span>
 
             <h6>HTML</h6>
 
-              <ol class="sample-code">
+              <ol class="code-sample">
                 <li>&lt;table&gt;</li>
                   <li>&emsp;&lt;tr&gt;</li>
                     <li>&emsp;&emsp;&lt;th scope="col"&gt;Title&lt;/th&gt;</li>
@@ -132,7 +144,7 @@
                     <li>&emsp;&emsp;&lt;td&gt;Gates of Fire by Steven Pressfield&lt;/td&gt;</li>
                     <li>&emsp;&emsp;&lt;td&gt;In Stock&lt;/td&gt;</li>
                     <li>&emsp;&emsp;&lt;td&gt;2&lt;/td&gt;</li>
-                    <li>&emsp;&emsp;&lt;td&gt;$ ($ &#215; 2)&lt;/td&gt;</li>
+                    <li>&emsp;&emsp;&lt;td&gt;$ ($26.49 &#215; 2)&lt;/td&gt;</li>
                   <li>&emsp;&lt;/tr&gt;</li>
                   <li>&emsp;&lt;tr&gt;</li>
                     <li>&emsp;&emsp;&lt;td&gt;Introducing HTML5 by Bruce Lawson &#38; Remy Sharp&lt;/td&gt;</li>
@@ -151,7 +163,7 @@
 
             <h6>CSS</h6>
 
-              <ol class="sample-code">
+              <ol class="code-sample">
                 <li>th {</li>
                   <li>&emsp;font&ndash;weight: bold;</li>
                 <li>}</li>
@@ -196,16 +208,16 @@
         <aside>
           <h3>Headers attribute</h3>
 
-            <p>While the <code>scope</code> attribute attains only to the <code>&lt;th&gt;</code> element, the <code>headers</code> attribute can associate a cell, either be a <code>&lt;td&gt;</code> or <code>&lt;th&gt;</code> needs to be associated with another header, this attribute comes into play. Its value, will in this case match the <code>id</code> attribute of the <code>&lt;th&gt;</code> element that cell pertains to.</p>
+            <p>While the <code>scope</code> attribute attains only to the <code>&lt;th&gt;</code> element, the <code>headers</code> attribute can associate a cell, either be a <code>&lt;td&gt;</code> or <code>&lt;th&gt;</code> when this needs to be associated with another header, this attribute comes into play. Its value, will in this case match the <code>id</code> attribute of the <code>&lt;th&gt;</code> element that cell pertains to.</p>
 
             <p class="faq">insert example</p>
         </aside>
 
-        <p>In general, the key to get an appropriate layout is to leverage the CSS with a solid HTML structure. When working with tables is exactly the same, and in the path to pave a structure with adequate semantical value additional elements are available, like: borders, spacing, <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&gt;tfoot&gt;</code>.</p>
+        <p>In general, the key to get an appropriate layout is to leverage the CSS with a solid HTML structure. When working with tables is exactly the same, and in the path to pave a structure of semantical value additional elements are available, like: borders, spacing, <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code> among others.</p>
 
       <h3>Table caption</h3>
 
-        <p>Just as in the form's case, the <code>&lt;caption&gt;</code> element provides a description/caption for a table, that will help users identify what the table pertains. And again, just as in case of forms, this element must be placed immediately after the <code>&lt;table&gt;</code> initialization.</p>
+        <p>Just as in the form's case, the <code>&lt;caption&gt;</code> element provides a description/caption for a table, that will help users identify what the table pertains to. And again, just as in case of forms, this element must be placed immediately after the <code>&lt;table&gt;</code> initialization.</p>
 
         <div class="exempli">
           <span>Example</span>
@@ -250,7 +262,7 @@
 
           <h6>CSS</h6>
 
-            <ol class="sample-code">
+            <ol class="code-sample">
               <li>th {</li>
                 <li>&emsp;font&ndash;weight: bold;</li>
               <li>}</li>
@@ -570,13 +582,13 @@
 
     <h2>CSS &mdash; Table styling</h2>
 
-      <p>So far, the elements that provide structure to a table have been outlined, but although the information is organized, specially when dealing with large amounts of data (columns and/or rows) becomes increasingly important the legibility of it. This purpose (overall legibility, and overall design) is achieved modifying CSS parameters, explained below.</p>
+      <p>So far, the elements that provide structure to a table have been outlined, but although the information is organized, specially when dealing with large amounts of data (columns and/or rows) becomes increasingly important the legibility of it. This purpose (overall legibility, and overall design) is achieved modifying CSS parameters explained below.</p>
 
       <h3>Table borders &mdash; border collapse</h3>
 
-        <p>Each of the different table elements has borders that start to stack up , with the border of one element sitting next to that of another element. For example, if we put a <code>2</code>&ndash;pixel border around each table cell, there would be a <code>4</code>&ndash;pixel border around every cell in the table.</p>
+        <p>Each of the different table elements has borders that start to stack up , with the border of one element sitting next to that of another element. For example, if a <code>2</code>&ndash;pixel border around each table cell is specified, in the final render there will be a <code>4</code>&ndash;pixel border around every cell of the table.</p>
 
-        <p>To define the border model of a table the <code>border&ndash;collapse</code> property is used, with the available <code>collapse</code>, <code>separate</code>, and <code>inherit</code>. By default, the <code>border&ndash;collapse</code> property value is <code>separate</code>, meaning that all of the different borders will stack up next to one another, as described above. The <code>collapse</code> property, on the other hand, condenses the borders into one, choosing the table cell as the primary border.</p>
+        <p>To define the border model of a table the <code>border&ndash;collapse</code> property is used, with the available <code>collapse</code>, <code>separate</code>, and <code>inherit</code> attributes. By default, the <code>border&ndash;collapse</code> property value is <code>separate</code>, meaning that all of the different borders will stack up next to one another, as described above. The <code>collapse</code> property, on the other hand, condenses the borders into one, choosing the table cell as the primary border.</p>
 
         <div class="exempli">
           <span>Example</span>
@@ -642,7 +654,7 @@
 
             <h6>CSS</h6>
 
-              <ol class="sample-code">
+              <ol class="code-sample">
                 <li>table {</li>
                   <li>&emsp;border&ndash;collapse: collapse;</li>
                 <li>}</li>
@@ -709,9 +721,7 @@
 
       <h3>Table borders &mdash; border spacing</h3>
 
-        <p>As the <code>border&ndash;collapse</code> property with the <code>separate</code> value allows borders to be stacked up against one another, the <code>border&ndash;spacing</code> property can determine how much space, if any, appears between the border.</p>
-
-        <p>For example, a table with a <code>1</code>&ndash;pixel border around the entire table and a <code>1</code>&ndash;pixel border around each cell will have a <code>2</code>&ndash;pixel border all around every cell because the borders stack up next to one another. Adding in a <code>border&ndash;spacing</code> value of <code>4</code> pixels separates the borders by <code>4</code> pixels.</p>
+        <p>As the <code>border&ndash;collapse</code> property with the <code>separate</code> value allows borders to be stacked up against one another, the <code>border&ndash;spacing</code> property can determine how much space, if any, appears between the border. For example, a table with a <code>1</code>&ndash;pixel border around the entire table and a <code>1</code>&ndash;pixel border around each cell will have a <code>2</code>&ndash;pixel border all around every cell because the borders stack up next to one another. Similarly, adding in a <code>border&ndash;spacing</code> value of <code>4</code> pixels separates the borders by <code>4</code> pixels.</p>
 
         <p>The <code>border&ndash;spacing</code> property works only when the <code>border&ndash;collapse</code> property is set to its default value, i.e. <code>separate</code>. In the case that the <code>border&ndash;collapse</code> property had not been declared, the browser will assume this default value should any border be applied to the table, hence, in such a case, the <code>border&ndash;collapse</code> property can be used without worry.</p>
 
@@ -777,7 +787,7 @@
 
             <h6>CSS</h6>
 
-              <ol class="sample-code">
+              <ol class="code-sample">
                 <li>table {</li>
                   <li>&emsp;border&ndash;collapse: collapse;</li>
                   <li>&emsp;border&ndash;spacing: 4px;</li>
@@ -845,7 +855,7 @@
 
       <h3>Adding borders to rows</h3>
 
-        <p>As is not possible to add borders to the table's structural elements, a <code>border&ndash;bottom</code> cannot be applied to a <code>&lt;tr&gt;</code> element. To apply a row border it is possible to follow this process:</p>
+        <p>As is not possible to add borders to the table's structural elements, only to cells, i.e. <code>&lt;td&gt;</code> or <code>&lt;th&gt;</code>, a <code>border&ndash;bottom</code> cannot be applied to a <code>&lt;tr&gt;</code> element. To apply a row border it is possible to follow this process:</p>
 
         <ol>
           <li>Set the <code>border&ndash;collapse</code> property to <code>collapse</code> so borders are not staked up between them.</li>
@@ -917,7 +927,7 @@
 
             <h6>CSS</h6>
 
-              <ol class="sample-code">
+              <ol class="code-sample">
                 <li>table {</li>
                   <li>&emsp;border&ndash;collapse: collapse;</li>
                 <li>}</li>
@@ -1053,7 +1063,7 @@
 
             <h6>CSS</h6>
 
-              <ol class="sample-code">
+              <ol class="code-sample">
                 <li>table {</li>
                   <li>&emsp;border&ndash;collapse: separate;</li>
                   <li>&emsp;border-spacing: 0;</li>
@@ -1214,7 +1224,7 @@
 
             <h6>CSS</h6>
 
-              <ol class="sample-code">
+              <ol class="code-sample">
                 <li>table {</li>
                   <li>&emsp;border&ndash;collapse: separate;</li>
                   <li>&emsp;border-spacing: 0;</li>
