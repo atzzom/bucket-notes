@@ -229,14 +229,67 @@
       /* This rule set will allow the code samples be aligned to the left instead of justified (as the rest of the text), just as they would appear in a text editor. */
       .exempli code {text-align: left;}
 
-      .code-sample li {
-        font: 15px/18px "Courier New", Courier, sans-serif;
-      }
-
     /* Examples */
 
-      .ex-perf-01 {
-        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAO6m73+X/bdxogujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQAyIyYy0nBAGgAAAABJRU5ErkJggg==") no-repeat;
-        height: 100px;
-        width: 400px;
+      .ex-tables-01 table {
+        border-collapse: collapse;
       }
+      .ex-tables-01 th,
+      .ex-tables-01 td {
+        border: 1px solid #c6c7cc;
+        padding: 10px 15px;
+      }
+      .ex-tables-01 th {
+        font-weight: bold;
+      }
+
+      table.ex-tables-02 {
+        border-collapse: separate;
+        border-spacing: 4px;
+      }
+      table.ex-tables-02,
+      .ex-tables-02 th,
+      .ex-tables-02 td {
+        border: 1px solid #cecfd5;
+      }
+      .ex-tables-02 th,
+      .ex-tables-02 td {
+        padding: 10px 15px;
+      }
+
+      /* HTML201 - 02 detailed positioning */
+
+        .box-set,
+        .box {
+          border-radius: 6px;
+        }
+        .box-set {
+          background: #eaeaed;
+        }
+        .box {
+          background: #2db34a;
+          float: left;
+          margin: 1.858736059%;
+          padding: 20px 0;
+          text-align: center;
+          width: 29.615861214%;
+        }
+
+        .box-set-01 {
+          background: #eaeaed;
+          border-radius: 6px;
+          overflow: auto;
+        }
+
+        .box-set-02 {
+          background: #eaeaed;
+          border-radius: 6px;
+          overflow: auto;
+        }
+        .box-set-02 .box {
+          box-shadow: 0 15px 20px #ff7b29;
+        }
+        .box-set-02 .box:nth-child(2) {
+          position: relative;
+          top: 20px;
+        }

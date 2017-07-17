@@ -240,6 +240,41 @@
 
           <p class="faq">Replicate the Shay Howe's example about sprite images.</p>
 
+        <h3>URI's</h3>
+
+          <p>Another way to remove a HTTP request all together is encoding images within HTML and CSS using URI's (Uniform Resource Identifier) although in this context are used for images, they can be used for other type of data. URI's work best for 1) small images, and 2) images that are going to be severely cached (i.e. not ideal for the image of a home page because is not likely to never change). However there are some tradeoffs about using URI's they can be difficult to maintain and change leading to having to generate another encoding, and aren't supported by older browsers (IE7 and below). Nevertheless, the benefits far outweight these risks, also a caveat to consider is to double check that the actual URI data is lighter that the actual image's weight. Finally, the increasing support of the <code>&lt;canvas&gt;</code> element might turn this case obsolete.</p>
+
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;img height="100" width="660" alt="Rigged Pattern" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAO6m73+X/bdxogujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQAyIyYy0nBAGgAAAABJRU5ErkJggg=="&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>div {</li>
+                <li>&emsp;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAO6m73+X/bdxogujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQAyIyYy0nBAGgAAAABJRU5ErkJggg==");</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <div class="ex-perf-01">
+            </div>
+
+        <h3>Cache common files</h3>
+
+          <p>When the browser access a web page for the first time, all the information is brand new, the website might get regular updates but there is information that is likely to remain the same for a long while, because of this, some files are saved on the user's computer or <em>cached</em>, as the user access frequently the website these already stored cached files will diminish the number of HTTP request, serving pages faster.</p>
+
+          <p>Images, videos, web fonts, and common media types are often cached for a month, while CSS and JS files are often cached for a year. Should the CSS, or any other file, change more often than once each year the file name will need to be change, preferably versioned, in order to be loaded.</p>
+
+          <ol class="code-sample">
+            <li>ExpiresByType text/css "access plus 1 year"</li>
+            <li>ExpiresByType application/javascript "access plus a year"</li>
+          </ol>
+
+          <p>Changin the <code>"access plus 1 year"</code> value to <code>"access plus 1 week"</code> is better suited for CSS and JS files thar are changing weekly but are not version controlled with separate file names. For accepted expires header values reference the <code>mod_expires</code> <a href="http://httpd.apache.org/docs/current/mod/mod_expires.html">syntax</a>.</p>
+
     <footer>
       <h2 id="#intro">Summary</h2>
         <p></p>

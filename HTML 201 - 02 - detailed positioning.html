@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>line one | 02 detailed positioning</title>
+    <link rel="stylesheet" type="text/css" href="line-one.css">
+  </head>
+  <body>
+    <header>
+      <a href="home.html" class="line-one-home">line one</a>
+
+      <h1>Detailed positioning</h1>
+
+      <hr>
+
+      <nav>
+        <h2>Table of contents</h2>
+
+          <a href="#intro">Intro</a><br>
+          <a href="#summary">Summary</a>
+      </nav>
+    </header>
+
+    <h2>Intro</h2>
+
+      <p>As it has been seen previously there are different techniques available to build a layout and position elements, which to use largely depends on the type of content, the goal of the web page, as some techniques might be better than others. For example, floating elements allows them to adapt to surrounding elements into the page flow. However, when more strict control is needed, elements may be positioned using other techniques, including <code>relative</code> or <code>absolute</code> positioning.</p>
+
+    <h2>Containing floats</h2>
+
+      <p>Floats are a great way to allow different elements move around relative with their surroundings taking into account their size/content and the size of their containing parent. The exact interaction when elements are floated depends on their relationship into the Document Object Model (DOM).</p>
+
+      <aside>
+        <h3>What is the DOM?</h3>
+
+          <p>Is a (tree) structural representation or API, for HTML and XML. Specifically for HTML, the DOM represents all of the different elements and their relationship to each other. This representation can be considered a tree of sorts, with each element having a different relationship with those around it. Elements nested inside other have a parent-child relationship, while the ones who share the same parent element will have a sibling relationship.</p>
+      </aside>
+
+      <p>One of the pitfalls about floats arises when a parent element contains several floated elements. The content on the page will adapt to the floated elements but these not longer impact the outer edges of its parent element, causing the latter to lose context of exactly what it contains and collapses, thus giving the parent element a <code>height</code> or <code>0</code> leading to obviate properties that could have been assigned to it.</p>
+
+      <p>In the below example, the <code>.box-set</code> division should have a light gray background, however the background is not seen as all of the elements nested within it are floated. An inspection of the <code>.box-set</code> division will show a <code>height</code> of <code>0</code>.</p>
+
+      <div class="exempli">
+        <h6>HTML</h6>
+
+          <ol class="code-sample">
+            <li>&lt;div class="box-set"&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 1&lt;/figure&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 2&lt;/figure&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 3&lt;/figure&gt;</li>
+            <li>&lt;/div&gt;</li>
+          </ol>
+
+        <h6>CSS</h6>
+
+          <ol class="code-sample">
+            <li>.box-set {</li>
+              <li>&emsp;background: #eaeaed;</li>
+            <li>}</li>
+            <li>.box {</li>
+              <li>&emsp;background: #2db34a;</li>
+              <li>&emsp;float: left;</li>
+              <li>&emsp;margin: 1.858736059%;</li>
+              <li>&emsp;padding: 20px 0;</li>
+              <li>&emsp;text-align: center;</li>
+              <li>&emsp;width: 29.615861214%;</li>
+            <li>}</li>
+          </ol>
+
+        <h6>Result</h6>
+
+          <div class="box-set">
+            <figure class="box">Box 1</figure>
+            <figure class="box">Box 2</figure>
+            <figure class="box">Box 3</figure>
+          </div>
+      </div>
+
+      <p>A method to force containing these float would be adding an empty element which comprises the full parent element's width just prior close this parent element, that is, right after all the floated elements. This empty element would require the style declaration <code>clear: both;</code>.</p>
+
+      <p>Clearing floats this way can render the desired result, at the cost of semantical value, as its use in the page increases it becomes more of an issue as the number of empty elements starts to stack up quickly, while not providing any real contextual value to the page.</p>
+
+      <p>Fortunately there are ways to go around this situation, the most popular of which include the overflow technique and the clearfix technique.</p>
+
+    <h3>The overflow technique</h3>
+
+      <p>The overflow property specifies what happens to the nested content on an element when this is greater than it parent element (overflows it). Setting this property to <code>auto</code> within the parent element will contain the floats, resulting in an actual <code>height</code> for the parent element, thus including a gray background in the example.</p>
+
+      <div class="exempli">
+        <h6>HTML</h6>
+
+           <ol class="code-sample">
+            <li>&lt;div class="box-set"&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 1&lt;/figure&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 2&lt;/figure&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 3&lt;/figure&gt;</li>
+            <li>&lt;/div&gt;</li>
+          </ol>
+
+        <h6>CSS</h6>
+
+          <ol class="code-sample">
+            <li>.box-set {</li>
+              <li>&emsp;background: #eaeaed;</li>
+              <li>&emsp;overflow: auto;</li>
+            <li>}</li>
+            <li>.box {</li>
+              <li>&emsp;background: #2db34a;</li>
+              <li>&emsp;float: left;</li>
+              <li>&emsp;margin: 1.858736059%;</li>
+              <li>&emsp;padding: 20px 0;</li>
+              <li>&emsp;text-align: center;</li>
+              <li>&emsp;width: 29.615861214%;</li>
+            <li>}</li>
+          </ol>
+
+        <h6>Result</h6>
+
+          <div class="box-set-01">
+            <figure class="box">Box 1</figure>
+            <figure class="box">Box 2</figure>
+            <figure class="box">Box 3</figure>
+          </div>
+      </div>
+
+      <p>The overflow is a good way of clearing and containing floats, however, when <strong>styles</strong> span outside of the parent element these can appear cropped or cut off, such is the case of box shadows and dropdown menus. Another possible drawback is that the <code>overflow</code> property isn't handled the same for all browsers.</p>
+
+      <div class="exempli">
+        <h6>HTML</h6>
+
+          <ol class="code-sample">
+            <li>&lt;div class="box-set"&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 1&lt;/figure&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 2&lt;/figure&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 3&lt;/figure&gt;</li>
+            <li>&lt;/div&gt;</li>
+          </ol>
+
+        <h6>CSS</h6>
+
+          <ol class="code-sample">
+            <li>.box-set {</li>
+              <li>&emsp;background: #eaeaed;</li>
+              <li>&emsp;overflow: auto;</li>
+            <li>}</li>
+            <li>.box {</li>
+              <li>&emsp;background: #2db34a;</li>
+              <li>&emsp;float: left;</li>
+              <li>&emsp;margin: 1.858736059%;</li>
+              <li>&emsp;padding: 20px 0;</li>
+              <li>&emsp;text-align: center;</li>
+              <li>&emsp;width: 29.615861214%;</li>
+            <li>}</li>
+          </ol>
+
+        <h6>Result</h6>
+
+          <div class="box-set-02">
+            <figure class="box">Box 1</figure>
+            <figure class="box">Box 2</figure>
+            <figure class="box">Box 3</figure>
+          </div>
+      </div>
+
+      <h3>The clearfix technique</h3>
+
+        <p>In addition to the overflow, the clearfix technique although is more complex, produces more consistent results. It uses the <code>:before</code> and <code>:after</code> pseudo-elements which creates hidden elements preventing the margins of the child elements from collapsing by creating an anonymous table-cell element using the <code>display: table;</code> declaration. Additionally, adding the <code>*zoom</code> property to the parent element triggers the Internet Explorer mechanism <code>hasLayout</code> that determines how elements should draw and bound their content, as well as how elements should interact with and relate to other elements.</p>
+
+        <h6>HTML</h6>
+
+          <ol class="code-sample">
+            <li>.box-set:before,</li>
+            <li>.box-set:after {</li>
+              <li>&emsp;content: "";</li>
+              <li>&emsp;display: table;</li>
+            <li>}</li>
+            <li>.box-set:after {</li>
+              <li>&emsp;clear:both;</li>
+            <li>}</li>
+            <li>.box-set {</li>
+              <li>&emsp;*zoom: 1;</li>
+            <li>}</li>
+          </ol>
+
+  </body>
+</html>
