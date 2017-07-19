@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>line one | complex selectors</title>
+    <link rel="stylesheet" type="text/css" href="line-one.css">
+  </head>
+  <body>
+    <header>
+      <a href="home.html" class="line-one-home">line one</a>
+
+      <h1>Complex Selectors</h1>
+
+      <nav>
+        
+      </nav>
+    </header>
+
+    <h2 id="intro">Intro</h2>
+
+      <p>Selectors are fundamental in CSS, besides the basic selectors (type, class, and id) and their combinations, there are additional selectors than provide more power and versatility.</p>
+
+      <h6>Common Selectors Overview</h6>
+
+        <table>
+          <tr>
+            <th>Example</th>
+            <th>Classification</th>
+            <th>Explanation</th>
+          </tr>
+          <tr>
+            <td><code>h1</code></td>
+            <td>Type selector</td>
+            <td>Selects and element by it's type</td>
+          </tr>
+          <tr>
+            <td><code>.tagline</code></td>
+            <td>Class selector</td>
+            <td>Selects an element by the class attribute value, which may be reused multiple times per page.</td>
+          </tr>
+          <tr>
+            <td><code>#intro</code></td>
+            <td>ID selector</td>
+            <td>Selects an element by the ID attribute value, which is unique and to only be used once per page</td>
+          </tr>
+        </table>
+
+      <h2>Child selectors</h2>
+
+        <p>This type of selectors allow target elements nested within a parent element. These selections can be made two different ways, using either descendant or direct child selectors.</p>
+
+        <h3>Descendant selector</h3>
+
+          <p>This is the most common selector, which matches every element that follows an identified ancestor. The selected element doesn't need to fall immediately after the parent element inside the document tree, but may fall anywhere within the ancestor element. Descendant selectors are created by spacing apart elements within a selector, creating a new level of hierarchy for each element list.</p>
+
+          <p>For example the <code>section aside</code> selector target any <code>aside</code> element nested inside the <code>section</code> element, regardless of the position of the former into the <code>section</code> element. Additionally, any <code>aside</code> element outside the <code>section</code> won't be selected.</p>
+
+          <p>In the following example the indicated <code>aside</code> elements are going to be selected.</p>
+
+          <div class="exempli">
+            <h6>HTML</h6>
+
+              <ol class="code-sample">
+                <li>&lt;aside&gt;...&lt;/aside&gt;</li>
+                <li>&lt;section&gt;</li>
+                  <li>&emsp;&lt;aside&gt;This section will be selected&lt;/aside&gt;</li>
+                  <li>&emsp;&lt;figure&gt;</li>
+                    <li>&emsp;&emsp;&lt;aside&gt;This section will be selected&lt;/aside&gt;</li>
+                  <li>&emsp;&lt;/figure&gt;</li>
+                <li>&lt;/section&gt;</li>
+              </ol>
+
+            <h6>CSS</h6>
+
+              <ol class="code-sample">
+                <li>section aside {...}</li>
+              </ol>
+          </div>
+
+        <h3>Direct child selector</h3>
+
+          <p>To transform a child selector into a direct (child) selector a <code>&gt;</code> is placed between the parent and the child selector. This will target only elements that fall directly within the parent element, that is, excluding any child element that is nested inside another type of element.</p>
+
+          <p>Continuing the previous example, the <code>section &gt; aside</code> direct child selector will target the following elements.</p>
+
+          <div class="exempli">
+            <h6>HTML</h6>
+
+              <ol class="code-sample">
+                <li>&lt;aside&gt;...&lt;/aside&gt;</li>
+                <li>&lt;section&gt;</li>
+                  <li>&emsp;&lt;aside&gt;This section will be selected&lt;/aside&gt;</li>
+                  <li>&emsp;&lt;figure&gt;</li>
+                    <li>&emsp;&emsp;&lt;aside&gt;...&lt;/aside&gt;</li>
+                  <li>&emsp;&lt;/figure&gt;</li>
+                <li>&lt;/section&gt;</li>
+              </ol>
+
+            <h6>CSS</h6>
+
+              <ol class="code-sample">
+                <li>section &gt; aside {...}</li>
+              </ol>
+          </div>
+
+        <h3>Child selectors overview</h3>
+
+          <table>
+            <tr>
+              <th>Example</th>
+              <th>Classification</th>
+              <th>Explanation</th>
+            </tr>
+            <tr>
+              <td><code>section aside</code></td>
+              <td>Descendant selector</td>
+              <td>Selects an element that resides anywhere within an identified ancestor element</td>
+            </tr>
+            <tr>
+              <td><code>section &gt; aside</code></td>
+              <td>Direct child selector</td>
+              <td>Selects an element that resides immediately inside an identified parent element.</td>
+            </tr>
+          </table>
+
+    <h2>Sibling selectors</h2>
+
+      <p>In addition to the possibility to target nested elements, there's also the option to target adjacent elements within the parent element, known as sibling selectors. These sibling selections can be made by way of the general sibling and adjacent sibling selectors.</p>
+
+      <h3>General sibling selector</h3>
+
+        <p>This selector allows target elements based on their sibling elements. Siblings elements are those who share the same parent element and are in the same hierarchy level in the document tree, they are created by using the tilde character: <code>~</code> between two elements within a selector. The first element identifies what the second element shall be a sibling with, and both of which must share the same parent element.</p>
+
+        <p>The <code>h2 ~ p</code> selector is a general sibling selector that looks for a <code>p</code> elements that follow, and share the same parent, of any <code>h2</code> elements. In order for a <code>p</code> element to be selected it must come after any <code>h2</code> element. Should a <code>p</code> element be nested into another element it won't be selected.</p>
+
+        <p>The paragraphs on lines 5 and 9 are selected as they come after the heading within the document tree and share the same parent as their sibling heading.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;p&gt;...&lt;p&gt;</li>
+              <li>&lt;section&gt;</li>
+                <li>&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+                <li>&emsp;&lt;h2&gt;...&lt;/h2&gt;</li>
+                <li>&emsp;&lt;p&gt;This paragraph will be selected&lt;/p&gt;</li>
+                <li>&emsp;&lt;div&gt;</li>
+                  <li>&emsp;&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+                <li>&emsp;&lt;/div&gt;</li>
+                <li>&emsp;&lt;p&gt;This paragraph will be selected.&lt;/p&gt;</li>
+              <li>&lt;/section&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>h2 ~ p {...}</li>
+            </ol>
+        </div>
+  </body>
+</html>

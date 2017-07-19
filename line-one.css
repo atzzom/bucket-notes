@@ -293,3 +293,100 @@
           position: relative;
           top: 20px;
         }
+
+        .box-set-03:before,
+        .box-set-03:after {
+          content: "";
+          display: table;
+        }
+        .box-set-03:after {
+          clear: both;
+        }
+        .box-set-03 {
+          background: #eaeaed;
+          border-radius: 6px;
+          *zoom: 1;
+        }
+        .box-set-03 .box {
+          box-shadow: 0 15px 20px #ff7b29;
+        }
+        .box-set-03 .box:nth-child(2) {
+          position: relative;
+          top: 20px;
+        }
+
+        .box-set-04 {
+          background: #eaeaed;
+        }
+        .box-set-04 .box {
+          color: #fff;
+          float: none;
+          height: 80px;
+          line-height: 80px;
+          margin: 0;
+          padding: 0;
+          width: 80px;
+        }
+
+        .box-set-05 {
+
+        }
+        .box-set-05 .box {
+          color: #fff;
+          float: none;
+          position: relative;
+        }
+        .box-set-05 .box-1 {
+          top: 20px;
+        }
+        .box-set-05 .box-2 {
+          left: 40px;
+        }
+        .box-set-05 .box-3 {
+          bottom: -10px;
+          right: 20px;
+        }
+
+        div.box-set-06 {
+          position: relative;
+        }
+        .box-set-06 .box {
+          height: 80px;
+          float: none;
+          line-height: 80px;
+          position: absolute;
+          width: 80px;
+        }
+        .box-set-06 .box-1 {
+          top: 6%;
+          left: 2%;
+        }
+        .box-set-06 .box-2 {
+          top: 0;
+          right: -40px;
+        }
+        .box-set-06 .box-3 {
+          bottom: -10px;
+          right: 20px;
+        }
+        .box-set-06 .box-4 {
+          bottom: 0;
+        }
+
+        div.box-set-07 {
+          position: relative;
+        }
+        .box-set-07 .box {
+          float: none;
+          position: absolute;
+        }
+        .box-set-07 .box-1 {
+          bottom: 0px;
+          top: 0px;
+        }
+        .box-set-07 .box-2 {
+        }
+        .box-set-07 .box-3 {
+        }
+        .box-set-07 .box-4 {
+        }
