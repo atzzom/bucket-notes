@@ -390,3 +390,60 @@
         }
         .box-set-07 .box-4 {
         }
+
+      /* HTML 201 - 03 - advanced selectors */
+
+        .ex-adv-sel-01 li {
+          font: 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        }
+        h6 + input {
+          display: none; /* This property will hide the checkbox, so only the symbol/label next to it will be visible. */
+        }
+        h6 + label,
+        nav.ex-adv-sel-01 ul {
+          border: 1px solid #cecfd5;
+          border-radius: 6px;
+        }
+        input + label {
+          color: #0087cc; /* Blue */
+          cursor: pointer; /* Changes cursor to glove */
+          display: inline-block;
+          font-size: 18px;
+          padding: 5px 9px;
+          transition: all 2s ease;
+        }
+        input + label:hover {
+          color: #ff7b29; /* Orange */
+        }
+        input:checked + label {
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, .95);
+          color: #9799a7; /* Font is gray when box is checked. */
+        }
+        nav.ex-adv-sel-01 {
+          max-height: 0;
+          overflow: hidden; /* This attribute is the one that is going to wrap all links under the unordered list nested in the nav element. */
+          transition: all 5s ease;
+        }
+        input:checked ~ nav {
+          max-height: 500px;
+        }
+        nav.ex-adv-sel-01 ul {
+          list-style: none;
+          margin: 8px 0 0 0;
+          width: 100px;
+        }
+        .ex-adv-sel-01 li {
+          border-bottom: 1px solid #cecfd5;
+        }
+        .ex-adv-sel-01 li:last-child {
+          border-bottom: 0;
+        }
+        .ex-adv-sel-01 a {
+          color: #0087cc;
+          display: block;
+          padding: 6px 12px;
+          text-decoration: none;
+        }
+        .ex-adv-sel-01 a:hover {
+          color: #ff7b29;
+        }

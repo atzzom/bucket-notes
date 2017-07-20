@@ -157,5 +157,122 @@
               <li>h2 ~ p {...}</li>
             </ol>
         </div>
+
+      <h3>Adjacent sibling selector</h3>
+
+        <p>There are situations in which is necessary select a sibling element that follows another sibling element, which is where the adjacent sibling element comes in. This selector will only target elements that directly follow (i.e. adjacent) the stated sibling element, instead of using the tilde <code>~</code> character between two elements (as in the case of general sibling selectors) the adjacent sibling selector uses a plus <code>+</code> character between the two elements within the selector. Just as before, the first stated element will specify the sibling element at the same tree level of the targeted (second) element.</p>
+
+        <p>From the example below can be observed that the selector <code>h2 + p</code> will select the <code>p</code> element that is immediately after any <code>h2</code> element that is at the same level in the document tree:</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;h2&gt;...&lt;/h2&gt;</li>
+                <li>&emsp;&lt;p&gt;...&lt;p&gt;</li>
+              <li>&lt;section&gt;</li>
+                <li>&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+                <li>&emsp;&lt;h2&gt;...&lt;/h2&gt;</li>
+                <li>&emsp;&lt;p&gt;This paragraph will be selected&lt;/p&gt;</li>
+                <li>&emsp;&lt;div&gt;</li>
+                  <li>&emsp;&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+                <li>&emsp;&lt;/div&gt;</li>
+                <li>&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+              <li>&lt;/section&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>h2 + p {...}</li>
+            </ol>
+        </div>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>input type="checkbox" id="toggle"</li>
+              <li>label for="toggle"&lt;&#9776;</li>
+              <li>nav</li>
+                <li>ul</li>
+                  <li>li a href="#" Home</li>
+                  <li>li a href="#" About</li>
+                  <li>li a href="#" Services</li>
+                  <li>li a href="#" Contact</li>
+                <li>/ul</li>
+              <li>/nav</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>input {</li>
+                <li>display: none;</li>
+              <li>}</li>
+              <li>label,</li>
+              <li>ul {</li>
+                <li>border: 1px solid #cecfd5;</li>
+                <li>border-radius: 6px;</li>
+              <li>}</li>
+              <li>label {</li>
+                <li>color: #0087cc;</li>
+                <li>cursor: pointer;</li>
+                <li>display: inline-block;</li>
+                <li>font-size: 18px;</li>
+                <li>padding: 5px 9px;</li>
+                <li>transition: all .15s ease;</li>
+              <li>}</li>
+              <li>label:hover {</li>
+                <li>color: #ff7b29;</li>
+              <li>}</li>
+              <li>input:checked + label {</li>
+                <li>box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15);</li>
+                <li>color: #9799a7;</li>
+              <li>}</li>
+              <li>nav {</li>
+                <li>max-height: 0;</li>
+                <li>overflow: hidden;</li>
+                <li>transition: all .15s ease;</li>
+              <li>}</li>
+              <li>input:checked ~ nav {</li>
+                <li>max-height: 500px;</li>
+              <li>}</li>
+              <li>ul {</li>
+                <li>list-style: none;</li>
+                <li>margin: 8px 0 0 0;</li>
+                <li>padding: 0;</li>
+                <li>width: 100px;</li>
+              <li>}</li>
+              <li>li {</li>
+                <li>border-bottom: 1px solid #cecfd5;</li>
+              <li>}</li>
+              <li>li:last-child {</li>
+                <li>border-bottom: 0;</li>
+              <li>}</li>
+              <li>a {</li>
+                <li>color: #0087cc;</li>
+                <li>display: block;</li>
+                <li>padding: 6px 12px;</li>
+                <li>text-decoration: none;</li>
+              <li>}</li>
+              <li>a:hover {</li>
+                <li>color: #ff7b29;</li>
+              <li>}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <input type="checkbox" id="toggle">
+            <label for="toggle">&#9776;</label>
+            <nav class="ex-adv-sel-01">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+        </div>
   </body>
 </html>
