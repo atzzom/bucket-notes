@@ -315,24 +315,455 @@
         <li><a href="#att-hyphen">Hyphenated</a></li>
       </ol>
 
+      <p>In the following examples, the highlighted line will represent each of the potentially selected elements, should the attribute be applied to the below HTML sample. On the other hand, although all the examples use an anchor <code>&lt;a&gt;</code> element, these selectors can be applied to any element, e.g.: <code>&lt;figure&gt;</code>, <code>&lt;img&gt;</code>, <code>table</code>, etc.</p>
+
       <h3 id="att-present">Attribute present selector</h3>
 
-        <p>This selector will look if an element have the stated attribute, but won't look at its value, only if the attribute is there. To select an element based on if an attribute is present or not simply include a square brackets <code>[]</code> with the attribute name to look for in front of the element's name. The square brackets may or may not follow/include any qualifier such as an element type or class, all depending on the level of specificity desired.</p>
+        <p>This selector will look if an element have the stated attribute, but won't look at its value, just if the attribute is there. To select an element based on if an attribute is present or not, simply include a square brackets <code>[]</code> with the attribute name to look for in front of the element's name. The square brackets may or may not follow/include any qualifier such as an element type or class, all depending on the level of specificity desired.</p>
 
-        <h6>HTML</h6>
+        <div class="exempli">
+          <h6>HTML</h6>
 
-        <h6>Result</h6>
+            <ol class="code-sample">
+              <li>p List of web development resources:/p</li>
+              <li></li>
+              <li>&lt;ol&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515"&gt;Don't Make Me Think - Steve Krug&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://projectuxd.com" target="_blank"&gt;A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://www.ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf"&gt;Introducing HTML5 - Bruce Lawson &amp; Remy Sharp&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow"&gt;Bulletproof Web Design - Dan Cederholm&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://learn.shayhowe.com"&gt;Learn to Code HTML &amp; CSS - Shay Howe&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://www.codecademy.com"&gt;Codecademy&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website/Blog: &lt;a href="https://www.wired.com/2010/02/set_up_a_home_server/"&gt;Set Up Your Own Server - Wired&lt;/a&gt;&lt;/li&gt;</li>
+              <li>&lt;/ol&gt;</li>
+            </ol>
 
-          <p>List of web development resources:</p>
+          <h6>CSS</h6>
 
-          <ol>
-            <li>Book: <a href="https://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515">Don't Make Me Think - Steve Krug</a></li>
-            <li>Book: <a href="http://projectuxd.com" target="_blank">A Project Guide to UX design - Russ Unger &amp; Carolyn Chandler</a></li>
-            <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf">Introducing HTML5 - Bruce Lawson &amp; Remy Sharp</a></li>
-            <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf">Bulletproof Web Design - Dan Cederholm</a></li>
-            <li>Website: <a href="https://learn.shayhowe.com">Learn to Code HTML &amp; CSS - Shay Howe</a></li>
-            <li>Website: <a href="http://codecademy.com">codecademy</a></li>
-            <li>Website: <a href="https://www.wired.com/2010/02/set_up_a_home_server/">Set up your own server</a></li>
-          </ol>
+            <ol class="code-sample">
+              <li>a[rel] {}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <p>List of web development resources:</p>
+
+            <ol>
+              <li>Book: <a href="http://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515">Don't Make Me Think - Steve Krug</a></li>
+              <li>Book: <a href="http://projectuxd.com" target="_blank">A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler</a></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf">Introducing HTML5 - Bruce Lawson &amp; Remy Sharp</a></li>
+              <li><span class="selection">As the attribute selector is targeting a <code>rel</code> attribute, this is the selected element. Should another anchor have a <code>rel</code> attribute would it be selected too regardless of its value.<br>
+              Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow">Bulletproof Web Design - Dan Cederholm</a></span></li>
+              <li>Website: <a href="http://learn.shayhowe.com">Learn to Code HTML &amp; CSS - Shay Howe</a></li>
+              <li>Website: <a href="http://codecademy.com">codecademy</a></li>
+              <li>Website/Blog: <a href="https://www.wired.com/2010/02/set_up_a_home_server/">Set Up Your Own Server - Wired</a></li>
+            </ol>
+        </div>
+
+      <h3 id="att-equals">Attribute equals selector</h3>
+
+        <p>Also it is possible to target elements matching an exact attribute value using the same selector previously used by just adding after the attribute name and equal sign <code>=</code> followed by quotations marks wrapping the desired match.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>p List of web development resources:/p</li>
+              <li></li>
+              <li>&lt;ol&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515"&gt;Don't Make Me Think - Steve Krug&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://projectuxd.com" target="_blank"&gt;A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://www.ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf"&gt;Introducing HTML5 - Bruce Lawson &amp; Remy Sharp&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow"&gt;Bulletproof Web Design - Dan Cederholm&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://learn.shayhowe.com"&gt;Learn to Code HTML &amp; CSS - Shay Howe&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://www.codecademy.com"&gt;Codecademy&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website/Blog: &lt;a href="https://www.wired.com/2010/02/set_up_a_home_server/"&gt;Set Up Your Own Server - Wired&lt;/a&gt;&lt;/li&gt;</li>
+              <li>&lt;/ol&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>a[href="http://projectuxd.com"] {...}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <p>List of web development resources:</p>
+
+            <ol>
+              <li>Book: <a href="http://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515">Don't Make Me Think - Steve Krug</a></li>
+              <li><span class="selection">As this is the element that has the href attribute with the <strong>exact</strong> match for the value in quotes therefore is going to be selected.<br>
+              Book: <a href="http://projectuxd.com" target="_blank">A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler</a></span></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf">Introducing HTML5 - Bruce Lawson &amp; Remy Sharp</a></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow">Bulletproof Web Design - Dan Cederholm</a></li>
+              <li>Website: <a href="http://learn.shayhowe.com">Learn to Code HTML &amp; CSS - Shay Howe</a></li>
+              <li>Website: <a href="http://codecademy.com">codecademy</a></li>
+              <li>Website/Blog: <a href="https://www.wired.com/2010/02/set_up_a_home_server/">Set Up Your Own Server - Wired</a></li>
+            </ol>
+        </div>
+
+      <h3>Attribute contains selector</h3>
+
+        <p>This selector behaves similarly to the equals selector, with the difference that the equal sign "<code>=</code>" is preceded by an asterisk character "<code>*</code>", this will tell the selector in the attribute look for the quoted part without the necessity to be an exact match.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>p List of web development resources:/p</li>
+              <li></li>
+              <li>&lt;ol&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515"&gt;Don't Make Me Think - Steve Krug&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://projectuxd.com" target="_blank"&gt;A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://www.ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf"&gt;Introducing HTML5 - Bruce Lawson &amp; Remy Sharp&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow"&gt;Bulletproof Web Design - Dan Cederholm&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://learn.shayhowe.com"&gt;Learn to Code HTML &amp; CSS - Shay Howe&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://www.codecademy.com"&gt;Codecademy&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website/Blog: &lt;a href="https://www.wired.com/2010/02/set_up_a_home_server/"&gt;Set Up Your Own Server - Wired&lt;/a&gt;&lt;/li&gt;</li>
+              <li>&lt;/ol&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>a[href*="samplepages"] {...}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <p>List of web development resources:</p>
+
+            <ol>
+              <li>Book: <a href="http://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515">Don't Make Me Think - Steve Krug</a></li>
+              <li>Book: <a href="http://projectuxd.com" target="_blank">A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler</a></li>
+              <li><span class="selection">As one part of the <code>href</code> attribute in this element contains the <code>samplepages</code> criteria is going to be selected.<br>
+              Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf">Introducing HTML5 - Bruce Lawson &amp; Remy Sharp</a></span></li>
+              <li><span class="selection">This element is going to be selected.<br>
+              Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow">Bulletproof Web Design - Dan Cederholm</a></span></li>
+              <li>Website: <a href="http://learn.shayhowe.com">Learn to Code HTML &amp; CSS - Shay Howe</a></li>
+              <li>Website: <a href="http://codecademy.com">codecademy</a></li>
+              <li>Website/Blog: <a href="https://www.wired.com/2010/02/set_up_a_home_server/">Set Up Your Own Server - Wired</a></li>
+            </ol>
+        </div>
+
+      <h3>Attribute begins with selector</h3>
+
+        <p>As seen before, the contains selector will look for a matching result in any part of the specified attribute, however, if only this match is looked for at the beginning of the attribute value, then the begins with attribute selector should be used. Using a circumflex accent, <code>^</code>, within the square brackets of a selector between the attribute name and equals sign denotes that the attribute value should begin with the stated value.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>p List of web development resources:/p</li>
+              <li></li>
+              <li>&lt;ol&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515"&gt;Don't Make Me Think - Steve Krug&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://projectuxd.com" target="_blank"&gt;A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://www.ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf"&gt;Introducing HTML5 - Bruce Lawson &amp; Remy Sharp&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow"&gt;Bulletproof Web Design - Dan Cederholm&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://learn.shayhowe.com"&gt;Learn to Code HTML &amp; CSS - Shay Howe&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://www.codecademy.com"&gt;Codecademy&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website/Blog: &lt;a href="https://www.wired.com/2010/02/set_up_a_home_server/"&gt;Set Up Your Own Server - Wired&lt;/a&gt;&lt;/li&gt;</li>
+              <li>&lt;/ol&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>a[href^="https"] {...}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <p>List of web development resources:</p>
+
+            <ol>
+              <li>Book: <a href="http://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515">Don't Make Me Think - Steve Krug</a></li>
+              <li>Book: <a href="http://projectuxd.com" target="_blank">A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler</a></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf">Introducing HTML5 - Bruce Lawson &amp; Remy Sharp</a></span></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow">Bulletproof Web Design - Dan Cederholm</a></span></li>
+              <li>Website: <a href="http://learn.shayhowe.com">Learn to Code HTML &amp; CSS - Shay Howe</a></li>
+              <li>Website: <a href="http://codecademy.com">codecademy</a></li>
+              <li><span class="selection">This is the only element matching the selection criteria <strong>at the beginning</strong> of the attribute value.<br>
+              Website/Blog: <a href="https://www.wired.com/2010/02/set_up_a_home_server/">Set Up Your Own Server - Wired</a></span></li>
+            </ol>
+        </div>
+
+      <h3>Attribute ends with selector</h3>
+
+        <p>Alternatively to the begins with attribute selector, it is also available the possibility to target an attribute value located at the end of it. Using the ends with attribute selector, declared with a preceding dollar sign, <code>$</code>, this can be done.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>p List of web development resources:/p</li>
+              <li></li>
+              <li>&lt;ol&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515"&gt;Don't Make Me Think - Steve Krug&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://projectuxd.com" target="_blank"&gt;A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://www.ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf"&gt;Introducing HTML5 - Bruce Lawson &amp; Remy Sharp&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow"&gt;Bulletproof Web Design - Dan Cederholm&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://learn.shayhowe.com"&gt;Learn to Code HTML &amp; CSS - Shay Howe&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://www.codecademy.com"&gt;Codecademy&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website/Blog: &lt;a href="https://www.wired.com/2010/02/set_up_a_home_server/"&gt;Set Up Your Own Server - Wired&lt;/a&gt;&lt;/li&gt;</li>
+              <li>&lt;/ol&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>a[href$="server"] {...}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <p>List of web development resources:</p>
+
+            <ol>
+              <li>Book: <a href="http://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515">Don't Make Me Think - Steve Krug</a></li>
+              <li>Book: <a href="http://projectuxd.com" target="_blank">A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler</a></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf">Introducing HTML5 - Bruce Lawson &amp; Remy Sharp</a></span></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow">Bulletproof Web Design - Dan Cederholm</a></span></li>
+              <li>Website: <a href="http://learn.shayhowe.com">Learn to Code HTML &amp; CSS - Shay Howe</a></li>
+              <li>Website: <a href="http://codecademy.com">codecademy</a></li>
+              <li><span class="selection">This is the only element matching the selection criteria <strong>at the end</strong> of the attribute value.<br>
+              Website/Blog: <a href="https://www.wired.com/2010/02/set_up_a_home_server/">Set Up Your Own Server - Wired</a></span></li>
+            </ol>
+        </div>
+
+      <h3>Attribute spaced selector</h3>
+
+        <p>In the previous examples it have been seen that the targeted attribute values usually consists on a single string of characters, in this case an URL, however, this is not always the case, existing scenarios in which the attribute value might consists in more than one word. For the cases in which the attribute value may be spaced apart, and only one of the words needs to be matched the tilde character "<code>~</code>" is used preceding the equal sign.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>p List of web development resources:/p</li>
+              <li></li>
+              <li>&lt;ol&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515"&gt;Don't Make Me Think - Steve Krug&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://projectuxd.com" target="_blank"&gt;A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://www.ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf"&gt;Introducing HTML5 - Bruce Lawson &amp; Remy Sharp&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow"&gt;Bulletproof Web Design - Dan Cederholm&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://learn.shayhowe.com"&gt;Learn to Code HTML &amp; CSS - Shay Howe&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://www.codecademy.com"&gt;Codecademy&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website/Blog: &lt;a href="https://www.wired.com/2010/02/set_up_a_home_server/"&gt;Set Up Your Own Server - Wired&lt;/a&gt;&lt;/li&gt;</li>
+              <li>&lt;/ol&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>a[rel~="tag"] {...}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <p>List of web development resources:</p>
+
+            <ol>
+              <li>Book: <a href="http://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515">Don't Make Me Think - Steve Krug</a></li>
+              <li>Book: <a href="http://projectuxd.com" target="_blank">A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler</a></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf">Introducing HTML5 - Bruce Lawson &amp; Remy Sharp</a></li>
+              <li><span class="selection">This element match the stated word in its <code>rel</code> attribute.<br>
+              Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow">Bulletproof Web Design - Dan Cederholm</a></span></li>
+              <li>Website: <a href="http://learn.shayhowe.com">Learn to Code HTML &amp; CSS - Shay Howe</a></li>
+              <li>Website: <a href="http://codecademy.com">codecademy</a></li>
+              <li>Website/Blog: <a href="https://www.wired.com/2010/02/set_up_a_home_server/">Set Up Your Own Server - Wired</a></li>
+            </ol>
+        </div>
+
+      <h3>Attribute hyphenated selector</h3>
+
+        <p>To consider the cases in which an attribute might contain a hyphen-separated, rather than whitespace-separated value, the hyphenated attribute selector has been created. This selector consists on a vertical line character, "<code>|</code>", whichever value it's been targeted is necessary to take into account that the hyphen-separated words must begin with the stated value.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>p List of web development resources:/p</li>
+              <li></li>
+              <li>&lt;ol&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515"&gt;Don't Make Me Think - Steve Krug&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book: &lt;a href="https://projectuxd.com" target="_blank"&gt;A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://www.ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf"&gt;Introducing HTML5 - Bruce Lawson &amp; Remy Sharp&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Book snippet: &lt;a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow"&gt;Bulletproof Web Design - Dan Cederholm&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://learn.shayhowe.com"&gt;Learn to Code HTML &amp; CSS - Shay Howe&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website: &lt;a href="https://www.codecademy.com"&gt;Codecademy&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;li&gt;Website/Blog: &lt;a href="https://www.wired.com/2010/02/set_up_a_home_server/"&gt;Set Up Your Own Server - Wired&lt;/a&gt;&lt;/li&gt;</li>
+              <li>&lt;/ol&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>a[rel|="Think"] {...}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <p>List of web development resources:</p>
+
+            <ol>
+              <li><span class="selection">This is the element selected as is the one matching the selection attribute value while <strong>hyphenated</strong>.<br>
+              Book: <a href="http://www.amazon.es/Dont-Make-Think-Revisited-Usability/dp/0321965515">Don't Make Me Think - Steve Krug</a></span></li>
+              <li>Book: <a href="http://projectuxd.com" target="_blank">A Project Guide to UX Design - Russ Unger &amp; Carolyn Chandler</a></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321784421/samplepages/0321784421.pdf">Introducing HTML5 - Bruce Lawson &amp; Remy Sharp</a></li>
+              <li>Book snippet: <a href="http://ptgmedia.pearsoncmg.com/images/9780321808356/samplepages/0321808355.pdf" rel="tag nofollow">Bulletproof Web Design - Dan Cederholm</a></li>
+              <li>Website: <a href="http://learn.shayhowe.com">Learn to Code HTML &amp; CSS - Shay Howe</a></li>
+              <li>Website: <a href="http://codecademy.com">codecademy</a></li>
+              <li>Website/Blog: <a href="https://www.wired.com/2010/02/set_up_a_home_server/">Set Up Your Own Server - Wired</a></li>
+            </ol>
+        </div>
+
+      <h3>Attribute selectors summary</h3>
+
+        <table>
+          <tr>
+            <th>Example</th>
+            <th>Attribute Selector<br
+            Classification</th>
+            <th>Explanation</th>
+          </tr>
+          <tr>
+            <td><code>a[target]</code></td>
+            <td>Present</td>
+            <td>Selects an element if the given attribute is present</td>
+          </tr>
+          <tr>
+            <td><code>a[href="htttp://google.com"]</code></td>
+            <td>Equals</td>
+            <td>Selects an element if the given attribute value exactly matches the value stated</td>
+          </tr>
+          <tr>
+            <td><code>a[href*="login"]</code></td>
+            <td>Contains</td>
+            <td>Selects an element if the given attribute value contains at least once instance of the value stated</td>
+          </tr>
+          <tr>
+            <td><code>a[href^="https://"]</code></td>
+            <td>Begins with</td>
+            <td>Selects an element if the given attribute value begins with the value stated</td>
+          </tr>
+          <tr>
+            <td><code>a[href$=".pdf"]</code></td>
+            <td>Ends with</td>
+            <td>Selects an element if the given attribute value ends with the value stated</td>
+          </tr>
+          <tr>
+            <td><code>a[rel~="tag"]</code></td>
+            <td>Spaced</td>
+            <td>Selects an element if the given attribute value is whitespaced-separated with one word being exactly as stated</td>
+          </tr>
+          <tr>
+            <td><code>a[lang|="en"]</code></td>
+            <td>Hyphenated</td>
+            <td>Selects an element if the given attribute value is hyphen-separated and begins with the word stated</td>
+          </tr>
+        </table>
+
+    <h2>Pseudo-classes</h2>
+
+      <p>A pseudo-class, makes reference to a CSS selector that do not target an actual element, instead, is aimed to select dynamic elements as a result of user's actions. As seen in previous examples, one of the commonest pseudo-classes is the <code>:hover</code> pseudo-class, that targets elements whenever the pointer hovers over it. From this example, it also can be seen that this type of selectors begin with a colon "<code>:</code>", as will all other pseudo-classes.</p>
+
+      <h6>List of pseudo-classes types</h6>
+
+        <ol>
+          <li>Link</li>
+          <li>Action</li>
+          <li>State</li>
+          <li>Structural</li>
+          <li>Target</li>
+          <li>Empty</li>
+          <li>Negation</li>
+        </ol>
+
+      <h3>Link pseudo-classes</h3>
+
+        <p>There are two basic pseudo-classes that comprehend this classification, namely: <code>:link</code> and <code>:visited</code></p>
+
+        <dl>
+          <dt><code>:link</code></dt>
+            <dd>Style an anchor element that has not been visited.<br>
+            Example: <code>a:link {your rule set...}</code></dd>
+          <dt><code>:visited</code></dt>
+            <dd>Used to style anchor element that has been already visited by the user based on their browsing history.<br>
+            Example: <code>a:visited {your rule set...}</code></dd>
+        </dl>
+
+        <div class="exempli">
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>a:link{...}</li>
+              <li>a:visited {...}</li>
+            </ol>
+        </div>
+
+      <h3>User action pseudo-classes</h3>
+
+        <p>This type of classes come into play whenever a user has specific types of interaction with different elements. They are:</p>
+
+        <dl>
+          <dt><code>:hover</code></dt>
+            <dd>Pseudo-class used to style elements whenever a user hovers over the specified element.<br>
+            Example: <code>table:hover {your rule set...}</code></dd>
+          <dt><code>:active</code></dt>
+            <dd>This pseudo-class will come into play whenever the user engages an element, such as clicking it.<br>
+            Example: <code>input:active {your rule set...}</code></dd>
+          <dt><code>:focus</code></dt>
+            <dd>Its styles will be used when a user makes an element the focus point of the page, often by using the keyboard to tab from one element to another.<br>
+            Example: <code>img:focus {your rule set...}</code></dd>
+        </dl>
+
+        <div class="exempli">
+          
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>table:hover {...}</li>
+              <li>input:active {...}</li>
+              <li>img:focus {...}</li>
+            </ol>
+        </div>
+
+      <h3>User interface pseudo-class</h3>
+
+        <p>This type of classes targets elements depending on the state of some user interface elements, particularly within <strong>form</strong> elements. These user interface elements include:</p>
+
+        <dl>
+          <dt><code>:enabled</code></dt>
+            <dd>Styles an element when it is in its default state of enabled and available for use.<br>
+            Example: <code>input:enable</code>. It might be useful to imagine the difference between an active element and when it is <i>"gray out"</i>.</dd>
+          <dt><code>:disabled</code></dt>
+            <dd>Style an element or input when the <code>disabled</code> attribute is tied to it.<br>
+              Example: <code>input:disable {your rule set...}</code> Most browsers will fade out disabled inputs to inform users that the input is not available for interaction, however, there's still room for customization of these styles with this pseudo-class.
+            </dd>
+          <dt><code>:checked</code></dt>
+            <dd>This pseudo-class selector is specific to checkboxes and radio buttons input elements, selecting them if they are checked.<br>
+              Example: <code>input:checked {your rule set...}</code>.
+            </dd>
+          <dt><code>:indeterminate</code></dt>
+            <dd>Similarly to the <code>:checked</code> pseudo-class selector, this one it is also aimed to checkboxes and radio button. For this particular case, the styles within this rule set will be applicable only if these has neither been selected or unselected, living in an indeterminate state.<br>
+              Example: <code>input:indeterminate {your rule set...}</code>
+            </dd>
+        </dl>
+
+        <div class="exempli">
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>input:checked {your rule set...}</li>
+              <li>input:indeterminate {your rule set...}</li>
+            </ol>
+        </div>
+
+    <footer>
+      <h2 id="summary">Summary</h2>
+    </footer>
   </body>
 </html>
