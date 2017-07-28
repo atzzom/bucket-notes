@@ -1,0 +1,45 @@
+one
+	Line two
+		Line three
+			Line four
+var foo = 1;
+var bar = 'a';
+var foobar = foo + bar;
+
+This is a sample text/change
+
+This is a sample text/change
+
+This is a sample text/change
+
+This is a sample text/change
+
+var foo = 'method(" + argument1 + "," + argument2 + ")";
+
+...We're waiting for copy before the site can go live...
+...If you are content whith this, let's go ahead with it...
+...We'll launch as soon as we have the copy...
+
+...We're waiting for copy before the site can go live...
+...If you are content whith this, let's go ahead with it...
+...We'll launch as soon as we have the copy...
+
+--- Counts ---
+.blog, .news { background-image: url(/sprite.png); }
+.blog { background-position: 0 0 }
+.news { background-position: -180 0 }
+.news { background-position: -360 0 }
+.news { background-position: -540 0 }
+.news { background-position: -720 0 }
+.news { background-position: -900 0 }
+.news { background-position: -1080 0 }
+.news { background-position: -1260 0 }
+.news { background-position: -1440 0 }
+.news { background-position: -1620 0 }
+.news { background-position: -1800 0 }
+.news { background-position: -1980 0 }
+050
+
+to vimrc--> set nrformats= (to vim treat numbers with leading zeros as decimal instead of octal)
+
+I have some more questions.
