@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>line one | 10 - media</title>
+    <link rel="stylesheet" type="text/css" href="10-media.css">
+  </head>
+  <body>
+    <header>
+      <a href="home.html" class="line-one-home">line one</a>
+      <h1>Forms</h1>
+      <hr>
+
+      <nav>
+        <h2>Table of contents</h2>
+
+          <ol>
+            <li><a href="#intro">Intro</a></li>
+          </ol>
+      </nav>
+    </header>
+
+    <h2 id="intro">Forms intro</h2>
+
+      <p>Forms are used to retrieve information given by the user, process requests among others. Additionally, form gotten information can be used further by the user in a search query, a username or password. Here, the form main aspects are going to be explained, how do form elements are marked up,  skipping the details about the back&ndash;end (server) interaction.</p>
+
+      <h3>Initializing a form</h3>
+
+        <p>To introduce a form the <code>&lt;form&gt;</code> element must be used, this identifies where on the page the form controls will appear, wrapping any child element within the form into an opening and closing tag, similarly to a <code>&lt;div&gt;</code> element.</p>
+
+        <p>Within the most common attributes accepted by this element there are: <code>action</code> and <code>method</code>. The <code>action</code> contain the URL (server) to which the form is going to be sent. Whilst, the <code>method</code> attribute is the HTTP (transfer protocol) the browser should use when submitting the form. Both of these <code>&lt;form&gt;</code> attributes pertain to submitting and processing the data.</p>
+
+      <h3>Text fields</h3>
+
+        <p>These elements allow gather data in the form of text via the <code>&lt;input&gt;</code> element, and uses the <code>type</code> attribute to define the kind of information to be captured within the control. The most popular <code>type</code> attribute value is <code>text</code>, which denotes a single line of text input. Also, along with the <code>type</code> attribute, is a good practice to include the <code>name</code>, in this way, is easier to identify the <b>meaning</b> of the data gathered by this control.</p>
+
+        <p>As self&ndash;contained element, the <code>&lt;input&gt;</code> element only uses one tag (opening) don't wrapping any other content, being its value given by its attributes. The initial attribute values for this element were: <code>text</code> and <code>password</code> (password input), but HTML5 brought recently new values for the <code>type</code> attribute, with the aim of expand the range of semantical meaning for inputs and enhance the controls for the users. Should a browser not understand one of these HTML5 <code>type</code> attribute values, it will automatically fall back to the <code>text</code> attribute value. The following is a list of the new HTML5 input types:</p>
+
+        <code>
+          <ul>
+            <li>color</li>
+            <li>date</li>
+            <li>datetime</li>
+            <li>email</li>
+            <li>month</li>
+            <li>number</li>
+            <li>range</li>
+            <li>search</li>
+            <li>tel</li>
+            <li>time</li>
+            <li>url</li>
+            <li>week</li>
+          </ul>
+        </code>
+
+        <div class="exempli">
+          <h5>Example</h5>
+
+            <h6>HTML</h6>
+
+              <code>
+                <ol>
+                  <li>&lt;input type=&#8220;text&#8221; name=&#8220;username&#8221;&gt;</li>
+                </ol>
+              </code>
+
+            <h6>CSS</h6>
+
+              <code>
+                <ol>
+                  <li>/* No CSS properties were specified for this example. */</li>
+                </ol>
+              </code>
+
+            <h6>Result</h6>
+
+              <input type="text" name="username">
+        </div>
+
+        <p>The following are different <code>&lt;input&gt;</code> elements using different values for their respective <code>type</code> attributes. In each of the controls below, the <code>name</code> attribute value is used for reference into the form, isn't in any way displayed in the document. The difference in the nature of each attribute value is more evident in the controls on mobile websites.</p>
+
+        <div class="exempli">
+          <h5>Example</h5>
+
+            <h6>HTML</h6>
+
+              <code>
+                <ol>
+                  <li>&lt;input type=&#8220;date&#8221; name=&#8220;birthday&#8221;&gt;</li>
+                  <li>&lt;input type=&#8220;time&#8221; name=&#8220;game&ndash;time&#8221;&gt;</li>
+                  <li>&lt;input type=&#8220;email&#8221; name=&#8220;email&ndash;address&#8221;&gt;</li>
+                  <li>&lt;input type=&#8220;url&#8221; name=&#8220;website&#8221;&gt;</li>
+                  <li>&gt;input type=&#8220;number&#8221; name=&#8220;cost&#82201;&gt;</li>
+                  <li>&gt;input type=&#8220;tel&#8221; name=&#8220;phone&ndash;number&#8221;&gt;</li>
+                </ol>
+              </code>
+
+            <h6>CSS</h6>
+
+              <code>
+                <ol>
+                  <li>/* No CSS properties were specified for this example. */</li>
+                </ol>
+              </code>
+          
+            <h6>Result</h6>
+
+              <input type="date" name="birthday"><br>
+              <input type="time" name="game-time"><br>
+              <input type="email" name="email-address"><br>
+              <input type="url" name="website"><br>
+              <input type="number" name="cost"><br>
+              <input type="tel" name="phone-number">
+        </div>
+
+      <h3>Textarea</h3>
+
+        <p>Text field work to capture character&ndash;based data, however, when string&ndash;based is required to be gathered, another type of element is necessary, namely the <code>&lt;textarea&gt;</code> element, it differs from the <code>&lt;input&gt;</code> element in that it can accept larger text passages spanning multiple lines; this element has start and end tags that wrap plain text. Because plain text is the only type of value that this element accepts the <code>type</code> attribute doesn't play here, but the <code>name</code> attribute is still used.</p>
+
+        <p>The <code>&lt;textarea&gt;</code> element has two sizing attributes: <code>cols</code> for width in terms of the average character width and <code>rows</code> for height in terms of the number of lines of visible text. However, the dimensions of this element is as expected, modified via the CSS <code>width</code> and <code>height</code>.</p>
+
+        <div class="exempli">
+          <h5>Example</h5>
+
+            <h6>HTML</h6>
+
+              <code>
+                <ol>
+                  <li>&lt;textarea name=&#8220;comment&#8221;&gt;Add your comment here&lt;/textarea&gt;</li>
+                </ol>
+              </code>
+
+            <h6>CSS</h6>
+
+              <code>
+                <ol>
+                  <li>/* No CSS properties were specified for this example. */</li>
+                </ol>
+              </code>
+
+            <h6>Result</h6>
+
+              <textarea name="comment">Add your comment here.</textarea>
+        </div>
+
+    <h2 id="forms-multiple">Multiple choice inputs &amp; menus</h2>
+
+      <p>Another way to collect data is through drop&ndash;down and multiple choice lists. Each of those with specific usages and purposes.</p>
+
+      <h3 id="forms-radio">Radio buttons</h3>
+
+        <p>This type of multiple choice list allow users to quickly choice <b>one</b> option form a <b>small</b> list. This type of lists are created from an <code>&lt;input&gt;</code> element which has been assigned a <code>type</code> attribute value of <code>radio</code>. Each radio button element should have the same <code>name</code> attribute value so all of the buttons within a group correspond to one another. As in the list with radio buttons, the user is selecting a <b>predefined</b> option, each <code>&lt;input&gt;</code> element will need to have a declared <code>value</code>. Additionally, to preselect a radio button for users it is possible to use the Boolean attribute <code>checked</code>.</p>
+
+        <div class="exempli">
+          <h5>Example</h5>
+
+            <h6>HTML</h6>
+
+              <code>
+                <ol>
+                  <li>&lt;input type=&#8220;radio&#8221; name=&#8220;day&#8221; value=&#8220;Friday&#8221; checked&gt; Friday&lt;br&gt;</li>
+                  <li>&lt;input type=&#8220;radio&#8221; name=&#8220;day&#8221; value=&#8220;Saturday&#8221;&gt; Saturday&lt;br&gt;</li>
+                  <li>&lt;input type=&#8220;radio&#8221; name=&#8220;day&#8221; value=&#8220;Sunday&#8221;&gt; Sunday</li>
+                </ol>
+              </code>
+
+            <h6>CSS</h6>
+
+              <code>
+                <ol>
+                  <li>/* No CSS properties were specified for this example. */</li>
+                </ol>
+              </code>
+
+            <h6>Result</h6>
+
+              <input type="radio" name="day" value="Friday" checked> Friday<br>
+              <input type="radio" name="day" value="Saturday"> Saturday<br>
+              <input type="radio" name="day" value="Sunday"> Sunday
+        </div>
+      
+      <h3 id="forms-check">Check boxes</h3>
+
+        <p>Check boxes behave pretty similar to radio buttons, with the only difference that them allow users to select more than one value at a time, tiding them all to a <b>single control name</b>.</p>
+
+        <div class="exempli">
+          <h5>Example</h5>
+
+            <h6>HTML</h6>
+
+              <code>
+                <ol>
+                  <li>&lt;input type=&#8220;checkbox&#8221; name=&#8220;day&#8221; value=&#8220;Friday&#8221; checked&gt; Friday&lt;br&gt;</li>
+                  <li>&lt;input type=&#8220;checkbox&#8221; name=&#8220;day&#8221; value=&#8220;Saturday&#8221;&gt; Saturday&lt;br&gt;</li>
+                  <li>&lt;input type=&#8220;checkbox&#8221; name=&#8220;day&#8221; value=&#8220;Sunday&#8221;&gt; Sunday</li>
+                </ol>
+              </code>
+
+            <h6>CSS</h6>
+
+              <code>
+                <ol>
+                  <li>/* No CSS properties were specified for this example. */</li>
+                </ol>
+              </code>
+
+            <h6>Result</h6>
+
+              <input type="checkbox" name="day" value="Friday" checked> Friday<br>
+              <input type="checkbox" name="day" value="Saturday" checked> Saturday<br>
+              <input type="checkbox" name="day" value="Sunday"> Sunday
+        </div>
+  </body>
+
+  <footer>
+    <h2 id="summary">Summary</h2>
+  </footer>
+</html>

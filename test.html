@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>test</title>
+		<link rel="stylesheet" type="text/css" href="test.css">
+	</head>
+	<body>
+		<p>Green boxes: elements with stated dimensions. Because of attribute priorities only one attribute was declared.<br>
+		Red boxes: elements with unstated dimensions <b>and</b> more than one declared attribute.<br>
+		All elements are absolute positioned.<br>
+		</p>
+
+		<div class="dim-stated">
+			<figure class="dim1">
+				Box 1<br>
+				<code>
+					bottom: 0;<br>
+					height: 100px;<br>
+					width: 200px;
+				</code>
+			</figure>
+
+			<figure class="dim2">
+				Box 2<br>
+				<code>
+					height: 100px;<br>
+					top: 60%;<br>
+					width: 200px;
+				</code>
+			</figure>
+
+			<figure class="dim3">
+				Box 3<br>
+				<code>
+					height: 100px;<br>
+					right: 30px;<br>
+					width: 100px;
+				</code>
+			</figure>
+
+			<figure class="dim4">
+				Box 4<br>
+				<code>
+					left: -20px;
+				</code>
+			</figure>
+		</div>
+
+		<div class="dim-unstated">
+			<figure class="dim01">
+				Box 1<br>
+				<code>
+					bottom: 0;<br>
+					left: 500px;<br>
+					top: 0;
+				</code>
+			</figure>
+
+			<figure class="dim02">
+				Box 2<br>
+				<code>
+					left: -12px;<br>
+					top: 60%;<br>
+					right: 30px;
+				</code>
+			</figure>
+		</div>
+
+	<p>This paragraph goes after the div element containing the boxes.</p>
+	</body>
+</html>

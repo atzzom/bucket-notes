@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>line one | CSS 101 reseted</title>
+  <link rel="stylesheet" type="text/css" href="CSS101%20reseted.css">
+</head>
+<body>
+<header><h1>CSS 101</h1></header>
+
+<nav>
+  <h4>Table of contents</h4>
+
+  <a href="#CSS-101">Getting to know CSS</a><br>
+  <a href="#common-CSS">Understanding common CSS terms</a><br>
+  <a href="#working-selectors">Working with selectors</a><br>
+  <a href="#CSS-resets">Using CSS resets</a><br>
+  <a href="#specificity">Calculating specificity</a><br>
+  <a href="#combining">Combining selectors</a><br>
+  <a href="#multi-class">Layering styles with multiple classes</a><br>
+  <a href="#common-property">Common CSS property values</a>
+</nav>
+
+<h1 id="CSS-101">Getting to know CSS</h1>
+
+  <p>CSS is the language in charge of provide with format and styles to the structural HTML elements in the webpage, it stands for <b>C</b>ascade <b>S</b>tyle <b>S</b>heet, and <i>pours</i> the different format from the top to the bottom of the document. Therefore, styles can be overwritten as the style sheet progresses.</p>
+
+  <h2 id="common-CSS">Understanding common CSS terms</h2>
+
+    <p>In the same way there are terms commonly used in HTML, in CSS there are terms that appear repetively. These terms include: <i>selectors</i>, <i>properties</i>, and <i>values</i>.</p>
+
+      <h4>Selectors</h4>
+
+        <p>A selector allows target specific HTML elements within the document to style with properties such color, size, position, etc. They may include a combination of specific qualifiers in order to select unique elements, all depending on how specific we wish to be. For instance, we may want to select <b>all</b> the paragraphs of the document, <i>or</i>, only <b>a single</b> paragraph of the document. They generally target an attribute value, such as an <code>id</code> or <code>class</code> value, or target a type of element such as <code>&#60;h1&#62;</code> or <code>&#60;p&#62;</code>. CSS selectors use curly brackets, <code>{}</code>, which encompass the styles to be applied to the selected element. For example, the following selector is targeting all <code>&#60;p&#62;</code> elements:<br><code>p {...}</code></p>
+
+      <h4>Properties</h4>
+
+        <p>Properties are how elements are styled. Properties names fall after a selector, within the curly brackets <code>{}</code>, and immediately preceding a colon, <code>:</code>. Within the properties we find: <code>color</code>, <code>background</code>, <code>font-size</code>, <code>height</code>, among others. The following example shows two properties applied to all <code>&#60;p&#62;</code> elements of a document.</p>
+
+        <p><code>p {<br>
+        color: ...;<br>
+        font-size: ...;<br>
+        }</code></p>
+
+      <h4>Values</h4>
+
+        <p>Represent how a property is set, for example, when applying the <code>color</code> property to a text, is possible to set its value to <code>blue</code>. Values, fall after a colon <code>:</code> and a semi-colon <code>;</code> just right after the property name, like this:<br>
+        <code>p {color: blue;}</code></p>
+
+        <!-- 16.10.21 -->
+
+    <h3 id="working-selectors">Working with selectors</h3>
+
+      <p>The most common ways to select the different elements in a HTML document is with the <code>type</code>, <code>class</code>, and <code>ID</code> selectors, that target the aforementioned elements based on the nature, classification and/or identity of them. <i class=faq>Are there additional CSS selectors?</i></p>
+
+      <h4><i><code>Type</code></i> Selectors</h4>
+    
+        <p>They target elements based on their nature. For example, should we wish to target all paragraphs (<code>&#60;p&#62;</code>) in a document, we use then the type selector <code>p</code> -the whole CSS structure would be:<br>
+        <code>p {property: value;}</code></p>
+
+      <h4><code><i>Class</i></code> Selectors</h4>
+
+        <p>A <i>classification</i> selector, or <i>class</i> selector is a little more specific than type selectors, as they select a particular group of elements rather than all elements of one type, and allow us to select multiple elements of any kind containing the same <code>class</code> attibute. For example: the following <code>class</code> selector will target the following elements even though they are of different type:</p>
+
+          <h6>HTML</h6>
+            <p><code>&#60;div class="awesome"&#62; ... &#60;/div&#62;</code><br>
+            <code>&#60;p class="awesome"&#62; ... &#60;/p&#62;</code></p>
+
+          <h6>CSS</h6>
+            <p><code>.awesome {property(ies): value(s);}</code></p>
+
+      <h4><i><code>ID</code></i> Selectors</h4>
+
+        <p><i><code>ID</code></i> selectors are even more specific than <code>class</code> selectors, just as them, <code>ID</code> selectors, use the HTML attribute <code>ID</code> (within the tag) as a selector. Regardless of the type of element they appear on, this selectors can be used once thorought the document <i class="faq">why?</i>, hence, if used, ideally they must be reserved for significant elements.</p>
+
+        <p>Within CSS, <code>ID</code> selectors are denoted by a leading hash sign (<code>#</code>), followed by the <code>id</code> attribute value. In the following example, is only going to selected the element containing the <code>id="matrix"</code> (emphazided in italics).</p>
+
+        <p>CSS:<br>
+        <code>#matrix {property(ies): value(es);}</code></p>
+
+        <p>HTML:<br>
+        <code>&#60;p&#62;Is only after you lose everything you are free to do anything.&#60;/p&#62;<br>
+        <i>&#60;div id="matrix"&#62;There's a difference between knowing the path and walking the path.&#60;/div&#62;</i><br>
+        &#60;a class="club"&#62;I want you to hit me as hard as you can&#60;/a&#62;</code><p>
+
+<!-- 16.10.24 -->
+
+      <h4>Additional selectors</h4>
+
+        <p>The outlined selectors here, are the most common, nevertheless, there are additional selectors usually known as advanced or complex selectors. Once we feel confortable with them, we can start using these ones.</p>
+
+        <p>There are additional ways to get our CSS talking to our HTML, is usually accepted as best practice, reference a <strong>single</strong> CSS file in the <code>&#60;head&#62;</code> element of the document, in this way will become easier to handle, modify and update the styles sitewide. On the other hand, the styles can be applied to individual element inline and internally (inside the HTML document), but this option make the modification of a website style cumbersome and unwieldy.</p>
+
+        <p>Within the <code>&#60;head&#62;</code> element there's a lot of useful information in regard of the CSS style of the document. First, there lays the <code>&#60;link&#62;</code> element that define the relationship between the HTML and the CSS files. Second, defined by the <code>rel="stylesheet"</code> the type of relationship between both files is stablished. Finally, the <code>href=""</code> attribute defines the path or location to the file. The following is one example of how this relationship is stablished:</p>
+
+        <p><code>&#60;head&#62;<br>
+        &#60;link rel="stylesheet" href="main.css"&#62;<br>
+        &#60;/head&#62;</code></p>
+
+        <p>In the above example, the <code>main.css</code> file is stored in the same location as the HTML file. The location in which this HTML file is located is known as the root directory.</p>
+
+      <h4 id="CSS-resets">Using CSS resets</h4>
+
+        <p>As every browser has by default its ow predefined styles (margins, headings, paragraphs, etc.) the way they represent the very same content maight be different, because of this, the use of CSS resets have become widely used. The concept behind a CSS reset is to remove any predefined style setting and start working with a blank canvas, to do so effectively, this reset needs to be placed first in the CSS file, in this way is going to be read first by the browser and applied any additional style over this common baseline. In fact, this concept has gone further to not only deleting any predefined style but apply a common style to work with, this requires a stronger understanding of CSS, as well as awareness of what you'd like your styles to be. Below is a sample of one common CSS reset:</p>
+
+        <p><code>/*http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126<br>
+        License: none (public domain)<br>
+        */</code></p>
+
+        <p><code class="faq"><i>What are those elements used for? which is their meaning?</i></code></p>
+
+        <p><code>html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acrony, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, {<br>
+        margin: 0;<br>
+        padding: 0;<br>
+        border: 0;<br>
+        font-size: 100%;<br>
+        font: inherit;<br>
+        vertical-align: baseline;<br>
+        }<br>
+        /* HTML5 display-role reset for older browsers */<br>
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {<br>
+        display: block;<br>
+        }<br>
+        body {<br>
+        line-height: 1;<br>
+        }<br>
+        ol, ul {<br>
+        list-style: none;<br>
+        }<br>
+        blockquote, q {<br>
+        quotes: none;<br>
+        }<br>
+        blockquote:befroe, blockquote:after,<br>
+        q:before, q:after {<br>
+        content: '';<br>
+        content: none;<br>
+        }<br>
+        table {<br>
+        border-collapse: collapse;<br>
+        border-spacing: 0;<br>
+        }</code></p>
+
+        <p>See <a href="CSS101.css">this page</a> once a CSS reset is applied.</p>
+
+  <p>As outlined previously, CSS works pouring the styles properties as the style sheet goes on, for example, at the begining of the casade (or at the begining of the CSS document) we define the paragraphs elements to have a blue background color, but later in the CSS document, the color is set up to green, then, the paragraphs are going to be rendered green, as they were applied later on and override their previous blue set up.</p>
+
+  <p><code>p {<br>
+  background: blue;<br>
+  font-size: 24px;<br>
+  }<br>
+  p {<br>
+  background: green;<br>
+  }</code></p>
+
+  <p>Because the paragraph selector that sets the background color to <code>green</code> comes after the paragraph selector that sets the background color to <code>blue</code>, it will take precedence in the cascade. All of the paragraphs will appear with a <code>green</code> background. the font size will remain <code>24</code> pixels because the second paragraph selector didn't identify a new font size.</p>
+
+  <p>The same effect will take place with the properties inside the individual selectors, as the cascade also <i>pour</i> them inside them, like this:</p>
+
+  <p><code>p {<br>
+  background: blue;<br>
+  background: green;<br>
+  }</code></p>
+
+  <p>As mentioned previously, the styles of the cascade will be cascade from the top to the bottom of the style sheet, but not always will be this way. Those times occur when different types of selectors are used and the <strong>specificity</strong> of those selectors breaks the cascade.</p>
+
+  <h2 id="specificity">Calculating specificity</h2>
+
+    <p>In CSS each selector has a precedence/specificity, this, along with its placement in the cascade, determines how its styles will be rendered. The type, class and ID selector, each has a different specificity weight.</p>
+
+    <p>The lowest specificity weight is hold by the type selector with a value of <code>0-0-1</code>. The class selector has a medium specificity weight and holds a point value of <code>0-1-0</code>. Lastly, the ID selector has a high specificity weight or precedence with a value of <code>1-0-0</code>. Notice that the specificity/precedence is calculated using three columns. The first column counts ID selectors, the second columns counts class selectors, and the third column counts type selectors.</p>
+
+    <p>The specificity also can override a previously applied style, for example, if a paragraph is styled using a type selector in a first place, and later in the cascade is selected using a ID selector, as the latter has bigger precedence/specificity than the type selector, is going to override the type selector value regardless of its position in the cascade.</p>
+
+    <p>As the specificity values breaks the linearity of the cascade, although useful in many cases, it is also the cause of the styles not been rendered as intended.</p>
+
+  <h2 id="combining">Combining selectors</h2>
+
+    <p>Individual selectors as type, class, and ID, can be combined together to be more granular and specific in the elements selection. For example, if within one element classified as <code>hotdog</code> we want to set all the paragraphs to have a <code>brown</code> background color. However, if one of those elements happens to have the class attribute of <code>mustard</code>, we want to set its background color to <code>yellow</code>. The HTML and CSS may look like the following:</p>
+
+    <p class="faq">Do the &#60;code&#60; element need to be nested inside a &#60;p&#60; element?</p>
+
+        <h5>HTML</h5>
+
+          <p><code>&#60;div class="hotdog"&#60;<br>
+          &#60;p&#60;...&#60;/p&#62;<br>
+          &#60;p&#60;...&#60;/p&#62;<br>
+          &#60;p class="mustard"&#62;...&#60;/p&#62;<br>
+          &#60;/div&#62;</code></p>
+
+        <h5>CSS</h5>
+
+          <p><code>.hotdog p {<br>
+          background: brown;<br>
+          }<br>
+          .hotdog p.mustard {<br>
+          background: yellow;<br>
+          }</code></p>
+
+<!-- 16.11.18 -->
+
+    <p>When selectors are combined they are read from right to left. The selector inmediately before the curly brackect, is known as the <i>key selector</i>, because identifies exactly which element the styles will be applied to, for example, in the following scenario:</p>
+
+        <h5>HTML</h5>
+
+          <p><code>&#60;div class="hotdog"&#62;...&#60;/div&#62;<br>
+          &#60;a class="mustard" href="mustard.com"&#62;mustard&#60;/a&#62;<br>
+          &#60;p class="ketchup"&#62;...&#60;/p&#62;<br>
+          &#60;p class="hotdog"&#62;...&#60;/p&#62;<br>
+          &#60;footer class="end"&#62;...&#60;/footer&#62;</code></p>
+
+        <h5>CSS</h5>
+
+          <p><code>.hotdog p {<br>
+          background: brown;<br>
+          }<br>
+          .hotdog p.mustard {<br>
+          background: yellow;<br>
+          }</code></p>
+
+    <p>The first combined selector above, <code>.hotdog p</code>, includes two selectors: a class and a type selector, separated by a single space. The <em>key selector</em> targets <code>&#60;p&#62;</code> elements, but as is prequalified/preceded by the class selector <code>.hotdog</code>, this combined selector is going to chose: paragraphs element <b>THAT</b> are classified as/with <code>hotdog</code>.</p>
+
+    <p>The second selector <code>.hotdog p.mustard</code> is basically the same as the first one, with the addition of the class selector <code>.mustard</code>. This selector, is targeting paragraphs elements that are classified as <code>mustard</code> <b>AND</b> are <b>nested</b> into elements classified as <code>hotdog</code>. The absence of the space within these selectors would target: paragraphs elements classified as both: <code>mustard</code> <b>AND</b> <code>hotdog</code> at the same time, instead of nested. Following best practices, is desired not to prefix a class seletor (specificity <code>0-1-0</code>) with a type selector (specificity <code>0-0-1</code>), therefore if the best practice would be followed the selector should look like: <code>.hotdog .mustard</code></p>
+
+    <h3>Specificity with combined selectors</h3>
+
+      <p>Work out the specificity in the case of combined selector is pretty straighforward, for example, in the combined selector: <code>.hotdog p.mustard</code> it has one type selector (<code>0-0-1</code>), and two class selectors (<code>0-1-0</code>), therefore its specificity is <code>0-2-1</code> (two class and one type selector). Therefore we can deduce that the specificity of <code>.hotdog p.mustard</code> will be exactly the same as the one for: <code>p.mustard .hotdog</code>, or <code>.hotdog .mustard p</code>, or <code>p .hotdog.mustard</code>, etc, even though these combined selectors might deliver different results. These permutation in the specificity calculation translates to the fact that we can change the order of these selectors (<code>.hotdog p {}</code> and <code>.hotdog p.mustard</code>)  within our style sheet, placing the higher-weighted selector above the lower-weighted selector leading to the same result due to each selector's specificity weight. In general is desirable keep low specificity/precedence values as the higher the specificity the more likely the cascade is to break.</p>
+
+  <h2 id="multi-class">Layering styles with multiple classes</h2>
+
+    <p>One way to keep the specificity as low as possible is to construct the website as modular as possible, to achive this, we can take advantage of the fact that HTML elements can have more than one class attribute as long as they are separated with a space, for example, the following element is classified as <code>interactive</code>, <code>code</code>, and <code>hello-world</code>:<br>
+    <code>&#60;article class"interactive code hello-world"&#62;Some content here.&#60;/article&#62;</code>.<br>
+    With these classifications is possible to place/layer certain style on all elements of one sort while placing/layering other styles only on specific elements of that sort.</p>
+
+    <p>Let's take a look at buttons, for example. Say we want all of our buttons to have afont size of <code>16px</code>, but we want the background color of our buttons to vary depending on where the buttons are used. We can create a few classes and layer them on an element as necessary to apply the desired styles.</p>
+
+        <h5>HTML</h5>
+
+          <p><code>&#60;a class="btn btn-danger"&#62;...&#60;/a&#62;<br>
+          &#60;a class="btn btn-success"&#62;...&#60;/a&#62;<br></code></p>
+
+        <h5>CSS</h5>
+
+          <p><code>.btn {<br>
+          font-size: 16px;<br>
+          }<br>
+          .btn-danger {<br>
+          background: red;<br>
+          .btn-success {<br>
+          background: green;<br>
+          }</code></p>
+
+<!-- 16.11.20 -->
+
+    <p>It is possible to see here that a modular set up is really useful to apply different styles without a lot of rules in the <code>.css</code> document, keeping the code lean and specificity weights low.</p>
+
+  <h2 id="common-property">Common CSS property values</h2>
+
+  <p>As previously explained the CSS document is all about the apperance of our document. Between the parameters used for this are colors, length/sizes, among others, here, the first two are going to be explained.</p>
+
+    <h3>Colors</h3>
+
+      <p>All colors within CSS are defined on an sRGB (standard Red, Green, Blue) color space/standard. Colors within this space are formed by mixing red, green and blue, mirroring the way televisions and monitors generate all the different colors they display. Currently there are four ways to represent sRGB colors within CSS: keywords, hexadecimal notation, RGB and HSL values.</p>
+
+      <h4>Keyword colors</h4>
+
+        <p>Keyword color values are names (such as <code>red</code>, <code>green</code>, or <code>blue</code>) that map to a different color, these keyword names and their corresponding colors are determined by the CSS specification. A complete list of these keyword names can be found within the <a href="http://www.w3.org/TR/css3-color/">CSS specification</a>.</p>
+
+<!-- Insert table here with the most common colors for the specification -->
+
+        <p>Here there is an example of the application of a <code>maroon</code> background to any element with the <code>task</code> class attribute value and a <code>yellow</code> background to any element with the <code>count</code> class attribute value.</p>
+
+        <p><code>.task {<br>
+        background: maroon;<br>
+        }<br>
+        .count {<br>
+        background: yellow;<br>
+        }</code></p>
+
+        <p>Obviously, although these color values are simple in nature, they offer a limited spectre of options, thus are not the most popular color value choice.</p>
+
+      <h4>Hexadecimal colors</h4>
+
+        <p>Hexadecimals color values use an encoding to map the red, green, and blue color channels, consisting in a <code>#</code>, (pound, or hash) followed by a three- or six- character figure. As the base of these numbers is not decimal but hexadecimal, numbers consists in figures from <code>0</code> through <code>9</code> and letters form <code>a</code> through <code>f</code>.</p>
+
+        <p>In six-character notation, the first two characters are a matching pair, so are the third and fourth, and the fifth and sixth characters, each pair representing the red, green, and blue channels respectively. If <b>in every</b> matching pair (red, green, blue) both characters are the same, then, the hexadecimal number is shortened to a three figure number, where, of course, the first figure represents the red channel, the second figure the green channel and the third figure the blue channel.</p>
+
+        <p>The character pairs are obtained by converting <code>0</code> through <code>255</code> into a base-16, or hexadecimal format. Is useful to know that <code>0</code> equals black and <code>f</code> equals white.</p>
+
+        <p>The following is an example of the same <code>maroon</code> and <code>yellow</code> background colors from before but expressed in a hexadecimal base.<br>
+        <code>.task {<br>
+        background: #800000;</code> <i>Notice here that although the green and blue channels characters (last two pairs) are repeated, the number cannot be shortened to a three figure version because the red channel (first pair) has different characters <code>8</code>, and <code>0</code> respectively.</i><br>
+        <code>}<br>
+        .count {<br>
+        background: #ff0;</code> <i>This number is equivalent to <code>#ffff00</code></i><br>
+        <code>}</code></p>
+
+        <p>Because hexadecimal color values offers around 16.7 color values (256 options per channel, times three channels), is a fairly popular option, however, is a little difficult to work with when one is not familiar with them. Fortunately there are <a href="https://kuler.adobe.com/">color wheels</a> that help to find an specific color in its hexadecimal equivalent.</p>
+
+      <h4>RGB & RGBa colors</h4>
+
+        <p>The other way to render colors is using the <code>rgb()</code> function, which stands for red, green, and blue. The function accepts three comma-separated values, each of which is an integer from <code>0</code> to <code>255</code>. A value of <code>0</code> would be pure black; a value of <code>255</code> would be pure white. As it can be expected the first value within the <code>rgb()</code> function represents the red channel, the second value represents the green channel, and the third value represents the blue channel.</p>
+
+        <p>If we were to recreate the shade of orange from before as an RGB color value, it would be represented as <code>rgb(255, 102, 0)</code>. Once again, using the same <code>maroon</code> and <code>yellow</code> background colors previously used, is possible to represent them using RGB color values:<br>
+        <code>.task {<br>
+        background: rgb(128, 0, 0);<br>
+        }<br>
+        .count {<br>
+        background: rgb(255, 255, 0);<br>
+        }</code></p>
+
+        <p>An important feature of RGB color values is that it allows the introduction of a fourth parameter, known as alpha, or transparency channel, using the <code>rgba()</code> function, the values of the alpha channel range from <code>0</code> to <code>1</code> where <code>0</code> is a fully transparent color, and <code>1</code> is a fully opaque color. Any decimal value in between would create a semi-transparent color. As an example, if we wanted a shade of orange to appear 50% opaque, the RGBa color value to be used would be: <code>rgba(255, 102, 0, .5)</code>.</p>
+
+<!-- 16.11.21 -->
+
+      <h4>HSL & HSLa colors</h4>
+
+        <p>The HSL color values are similar to the <code>rgb()</code> function, it stands for: <b>H</b>ue, <b>S</b>aturation, and <b>L</b>ightness, and in this order the <code>hsl()</code> function accepts three comma-separated values. The first value, the hue, is a unitless number from <code>0</code> to <code>360</code>. This numbers represent the color wheel, and the value identifies the degree of a color on the color wheel. The second and third values, saturation and lightness respectively, are percentages values from <code>0</code> to <code>100%</code>. The saturation values identifies how saturated with color the hue is, with <code>0%</code> being grayscale and <code>100%</code> being completely white. Coming back to the previous shade of orange, as an HSL color value it would be writeen as <code>hsl(24, 100%, 50%)</code>. The aforementioned <code>maroon</code> and <code>yellow</code> background colors can also be stated as HSL color values, as shown here:</p>
+
+        <p><code>.task {<br>
+        background: hsl(0, 100%, 25%);<br>
+        }<br>
+        .count {<br>
+        background: hsl(60, 100%, 50%);<br>}</code></p>
+
+        <p>Just as the <code>rgba()</code> function the <code>hsla()</code> function accepts/includes an alpha parameter that identify the degree of opacity. The shade of orange previously seen with a 50% opacity, would be represented as an HSLa color value of <code>hsla(24, 100%, 50%, .5)</code>.</p>
+
+    <h3>Lengths</h3>
+
+      <p>Similarly to colors, length values can be represented in a handful of ways, each of them serving a distinct purpose. But regardless of how is expressed, length values can refer to absolute or relative length, each of which uses different units of measurement.</p>
+
+      <h4>Absolute lengths</h4>
+
+        <p>These type of values are the simpliest length values, as they are attached to a physical unit measure, namely, <code>mm</code>, <code>in</code>, <code>cm</code>, etc. Thew most popular absolute unit of measure is the pixel (<code>px</code>). The pixel is equal to 1/96th of an inch; rougthly <code>4px</code> make up a <code>mm</code>, nevertheless, the exact measurement varies slightly between high-density and low-density viewing devices. A CSS font-size set up example would look like:<br>
+        <code>p {<br>
+        font-size: 14px;<br>
+        }</code></p>
+
+      <h4>Relative lengths</h4>
+
+        <p>Relative lengths are expressed in percentages, represented by the <code>%</code> notation, they rely on the length of another measurement, making them a little bit more complicated. For example, to set the <code>width</code> of an element to <code>50%</code>, is necessary to know the length of its parent element (the element it is nested within), and then identify <code>50%</code> of the parent element's width.<br>
+        <code>.col {<br>
+        width: 50%;<br>
+        }</code></p>
+
+        <p>The above CSS, in simple words means, set the width of the element with the class attribute of <code>col</code> to <code>50%</code>. That <code>50%</code> will be calculated relative to the width of the parent element. This percentages are extremely helpful for setting the height and width of elements and building out a web page's layout.</p>
+
+        <h5>Em</h5>
+
+          <p><code>Em</code> is a very popular relative unit of length, and refers to the (times of the) element's font-size. An single <code>em</code> (<code>1em</code>) is equivalent to one time the element's font-size. So, for example, if an element has a font size of <code>14px</code> and a <code>width</code> set to <code>5em</code>, the width would be equal to <code>14px x 5 = 70px</code>.<br>
+          <code>.banner {<br>
+          font-size: 14px;<br>
+          width: 5em;<br>
+          }</code></p>
+
+          <p>Keep in mind that when a font size is not explicitly stated for an element, the <code>em</code> unit will be relative/take the value of the font size of the closest parent element with a stated font size.</p>
+
+<!-- end of lesson 3 -->
+
+</body>
+</html>

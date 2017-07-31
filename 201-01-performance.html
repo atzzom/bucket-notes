@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>line one | 2.01 - performance</title>
+    <link rel="stylesheet" type="text/css" href="201-01-performance.css">
+  </head>
+  <body>
+    <header>
+      <a href="home.html" class="line-one-home">line one</a>
+
+      <h1>Performance & organization</h1>
+
+      <nav>
+        <h2>Table of contents</h2>
+
+          <a href="#intro">Intro</a>
+          <a href="#summary">Summary</a>
+      </nav>
+    </header>
+
+    <h2 id="#intro">Intro</h2>
+
+      <p>The capability of write HTML and CSS is an asset, however, this by its own is not enough. As websites and traffic become bigger, also becomes the importance of optimizing it from a performance point of view, that is basically considering speed criterion such as: 1) the size of the files sent to the server and, 2) the number of request to it. The first objective is achieved using strategies structuring and getting a modular code as explained below. The second goal, is obtained by "asking" as few times as possible to the server in a relevant way to get more from each answer. Taking the time to optimize a website will pay off in the long run, allowing code be easily re-factored, quickly rendered, and speed up production. Additionally, web site performance greatly resembles the 80/20 rule, where 20% of the optimizations will speed up roughly 80% of the website.</p>
+
+      <p>As previously outlined a good way to improve web site performance is to structure the code base looking towards build a strong directory architecture (<i class="faq">what exactly this means?</i>) outlining design patterns, whenever possible reuse common code.</p>
+
+      <h3>CSS architecture - styles</h3>
+
+        <p>The ways to organize the styles varies from website to website, however, there are accepted good practices that are applicable to all of them. One of them includes separate styles based on intent, that is to say, creating directories for common base styles (the ones that are widely use throughout the website and has as purpose be applied to the general page layout), directories for user interface elements, such as buttons, forms, among others, and business logic modules (<i class="faq">ads?, content?</i>).</p>
+
+        <ol class="code-sample">
+          <li># Base</li>
+            <li>&emsp;- normalize.css</li>
+            <li>&emsp;- layout.css</li>
+            <li>&emsp;- typography.css</li>
+          <li></li>
+          <li># Components</li>
+            <li>&emsp;- alerts.css</li>
+            <li>&emsp;- buttons.css</li>
+            <li>&emsp;- forms.css</li>
+            <li>&emsp;- list.css</li>
+            <li>&emsp;- nav.css</li>
+            <li>&emsp;- tables.css</li>
+          <li></li>
+          <li># Modules</li>
+            <li>&emsp;- aside.css</li>
+            <li>&emsp;- footer.css</li>
+            <li>&emsp;- header.css</li>
+        </ol>
+
+        <p>As outlined above, the styles of the website has been broke down according to their purpose. The <code>Base</code> styles will be used for the general website layout, including typography, color, etc. The <code>Components</code> will be in charge of the user interface elements such as alerts, and buttons, finally, the <code>Modules</code> will be related with the business logic of the website. While each of these styles point to different aspects of the document this doesn't imply they eventually overlap, for instance, the sidebar of a page may have list and button styles that are define within component styles while other styles needed for the sidebar are inherited from the module style. This discrimination in uses encourages well thought out presets and the ability for styles to be widely shared and reused. There are more than one approach to this strategy as Object Oriented CSS, OOCSS, and Scalable and Modular Architecture for CSS, SMACSS. These methodologies have their own opinions on structure, as well as on how to use styles.</p>
+
+      <h3>Object Oriented CSS</h3>
+
+        <p>This methodology aimed to build scalable websites with a reasonable amount of code is based in two principles:</p>
+
+        <dl>
+          <dt>Separate structure from skin.</dt>
+            <dd>This means that the styles should not depend on the structure whatsoever, a transparent structure allows layouts to be interchangeable or inherited in the same website without issue. This approach requires a solid grid and layout structure, along with well crafted modules.</dd>
+          <dt>Separating content from container</dt>
+            <dd>When styling a website some elements might be selected prefixing a class with a type selector, although this could lead to the desired result, it comes with the tradeoff of tiding the style to the parent (type) element; should this element be moved to another place of the page the cascade will break. For example, a header should look the same regardless of its parent element. To accomplish this, elements should inherit default styles, any specific style will then be build on these defaults.</dd>
+        </dl>
+
+        <p>In a nutshell, OOCSS advocates building a common component library, a solid grid, and staying flexible. These are good ground rules, and will help avoid the need to add additional styles every time a new page/feature is added to a website.</p>
+
+        <h6>HTML</h6>
+
+          <ol class="code-sample">
+            <li>&lt;div class="alert alert-error"&gt;</li>
+              <li>&emsp;&lt;p class="msg"&gt;...&lt;/p&gt;</li>
+            <li>&lt;/div&gt;</li>
+          </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.alert {...}</li>
+              <li>.alert-error {...}</li>
+              <li>.msg {...}</li>
+            </ol>
+
+        <h3>Scalable & Modular Architecture for CSS</h3>
+
+          <p>The SMACSS proposes break the styles into five core categories:</p>
+
+          <dl>
+            <dt>Base</dt>
+              <dd>This category comprehends the styles common to all the website including the core elements and general defaults.</dd>
+            <dt>Layout</dt>
+              <dd>The styles in this category will control the sizing, position, and grid styles of different elements.</dd>
+            <dt>Module</dt>
+              <dd>Targets individual parts of the page, such as navigation or feature styles.</dd>
+            <dt>State</dt>
+              <dd>Override other styles on elements that could adopt different states, for example, when become active, turn off, etc.</dd>
+            <dt>Theme</dt>
+              <dd>Include styles related with the user experience, based on skin, and overall look and feel of different modules.</dd>
+          </dl>
+
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;div class="alert is-error"&gt;</li>
+                <li>&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+              <li>&lt;/div&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.alert {...}</li>
+              <li>.alert.is-error {...}</li>
+              <li>.alert p {...}</li>
+              <li>.alert.is-error p {...}</li>
+            </ol>
+
+          <p>In the example above, as a module category there is the <code>alert</code> class, while in the state category there is the <code>is-error</code>. Here, styles from each of these categories overlap the element as necessary.</p>
+
+          <p>The use of each methodology is generally left to personal preference, usually a mix of both OOCSS and SMACSS is employed.</p>
+
+      <h2>Performance driven best practices</h2>
+
+        <p>Assume everything is OK by the fact that a web page renders as expected is a poor assumption, is necessary to optimize the web site for a better performance, this can be achieved applying some considerations in the overall website architecture.</p>
+
+        <h3>Keep selectors short</h3>
+
+          <p>How elements are selected greatly affects the performance, and there is a handful of benefits in keeping selectors as short as possible, including minimizing specificity, allowing for better inheritance, efficiency, and portability. As discussed before, mixing type and class selectors can lead to refactoring issues and cascade breaks, also, long, over qualified selectors reduce performance because they force the browser to render each individual selector type from right to left. The also put a burden on all other selectors to be more specific.</p>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>/* Bad */</li>
+              <li>header nav ul li a {...}</li>
+              <li></li>
+              <li>/* Good */</li>
+              <li>.primary-link {...}</li>
+              <li></li>
+              <li>/* Bad */</li>
+              <li>button strong span {...}</li>
+              <li>button strong span .callout {...}</li>
+              <li></li>
+              <li>/* Good */</li>
+              <li>button span {...}</li>
+              <li>button .callout {...}</li>
+            </ol>
+
+        <h3>Prefer classes</h3>
+
+          <p>Classes are one of the more flexible ways to apply styles to a web site, but in order to make the most out of them, some considerations must be taken into account, for example, as selectors are rendered from right to left it is important to keep an eye on the key elector. The key selector is the selector unit at the end, furthest to the right. The key selector is crucial as it identifies the first element a browser is going to find. Having a poor key selector can send the browser on a wild goose hunt. The performance improvements are worth the use of an additional class. Again, can't be stressed enough, avoid as much as possible preceding classes with type selectors, doing so basically ties the style to the parent element, this goes against the modular scope embrace by the OOCSS and the SMACSS, think of this as equally bad as including a <code>&lt;style&gt;</code> element into an HTML file.</p>
+
+          <p>Finally, another point to avoid as much as possible is the use of <code>id</code> selectors, they always are going to be overly specific, due to their high specificity they are likely to break the cascade, moreover any possible benefit of using them as <strong>selectors</strong> won't compensate their pitfalls in CSS. At the end of the day, using and ID isn't a whole lot different than using <code>!important</code>.</p>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>/* Bad */</li>
+              <li>#container header nav {...}</li>
+              <li></li>
+              <li>/* Good */</li>
+              <li>.primary-nav {...}</li>
+              <li></li>
+              <li>/* Bad */</li>
+              <li>article.feat-post {...}</li>
+              <li></li>
+              <li>/* Good */</li>
+              <li>.feat-post {...}</li>
+            </ol>
+
+        <h3>Reuse code</h3>
+
+          <p>Specially applicable for CSS, is reuse code as much as possible, one of the largest performance drawbacks comes with bloated files sizes and unnecessary browser rendering. Any repeating styles or interface patterns should be combined. For instance, if two modules share a background, rounded corners, and a box shadow there is no reason to explicitly state those same styles twice. Instead they can be combined, within a single class, allowing the styles to be written once and then shared. This code reuse, doesn't have to come at the cost of semantics either. One technique would be to pair selectors together, separating them with a comma, allowing the same styles to be inherited across two selectors. Another approach, often seen within the OOCSS and SMACSS methodologies previously mentioned, includes binding styles to one class, then using multiple classes on the same element.</p>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.social</li>
+              <li>&emsp;background: #eee;</li>
+              <li>&emsp;border-radius: 5px;</li>
+              <li>&emsp;box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25);</li>
+              <li>}</li>
+              <li>.news {</li>
+              <li>&emsp;background: #eee;</li>
+              <li>&emsp;border-radius: 5px;</li>
+              <li>&emsp;box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25);</li>
+              <li>}</li>
+              <li></li>
+              <li>/* Good */</li>
+              <li>.news,</li>
+              <li>.social {</li>
+              <li>&emsp;background: #eee;</li>
+              <li>&emsp;border-radius: 5px;</li>
+              <li>&emsp;box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);</li>
+              <li>}</li>
+              <li></li>
+              <li>/* Even Better */</li>
+              <li>.modal {</li>
+              <li>&emsp;background: #eee;</li>
+              <li>&emsp;border-radius: 5px;</li>
+              <li>&emsp;box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25);</li>
+              <li>}</li>
+            </ol>
+
+        <h3>Compress, compress, compress files</h3>
+
+          <p>There's no better way to reduce file size than cutting down unnecessary code, however, when this has been done, it doesn't mean that there's no more resources to use. To keep files shrinking, minify, compression of HTML, CSS, JS files and images, in conjunction with the remotion of unnecessary color profiles and comments are strategies to make use of.</p>
+
+          <p class="faq">Include gzip and minify examples, isn't clear yet how do they work.</p>
+
+          <h4>Image compression</h4>
+
+            <p>As is suggested, avoiding write unnecessary code/text will reduce the file size, nevertheless, in comparison reducing the images' file size by compressing them will result in a dramatic size reduction. There are several tools that allow compress several commonly used formats such as JPG and PNG. For the most part, compressing an image leads to quality detriment, however, there are option that removes unnecessary comments and color profiles without affecting the quality of the image itself.</p>
+
+            <p>A clever technique to render web pages faster is to set aside the appropriate space for an image specifying the image's dimensions by way of the <code>width</code> and <code>height</code> attributes, together he. Using a larger image, to have later scale it down with the <code>height</code> and <code>width</code> attributes is bad practice as it loads more data than necessary.</p>
+
+            <code>&lt;img src="ocean.jpg" height="440<i class="faq">¿px?</i>" width="660<i class="faq">¿px?</i>" alt="Oceanview"&gt;</code>
+
+        <h3>Reduce HTTP requests</h3>
+
+          <p>After the file size, the next more important cause of rendering lags is the number and size of HTTP requests. Each time a request is made to the server the page load time increases. some requests have to finish before others can start, and too many requests can bloat the server. Lower this number can be done combining like files, for example, combining all the CSS files into a single one, the same applies for JS files, hopefully creating one small HTTP request.</p>
+
+          <h6>HTTP</h6>
+
+            <ol class="code-sample">
+              <li>&lt;!-- Bad --&gt;</li>
+              <li>&lt;link href="css/reset.css" rel="stylesheet"&gt;</li>
+              <li>&lt;link href="css/base.css" rel="stylesheet"&gt;</li>
+              <li>&lt;link href="css/site.css" rel="stylesheet"&gt;</li>
+              <li></li>
+              <li>&lt;!-- Good --></li>
+              <li>&lt;link href="css/styles.css" rel="stylesheet"&gt;</li>
+            </ol>
+
+          <p>In general, the CSS for a web page should be loaded at the <strong>beginning</strong> of the document within the <code>head</code>, while the JS for a web page should be loaded at the <strong>end</strong>, just before the closing <code>body</code> tag. The reason for these unique placements is because CSS can be loaded while the rest of the website is being loaded as well. JS on the other hand, can only render one file at a time, thus prohibiting anything else from loading. One caveat here is when JS files are asynchronously loaded after the page itself is done rendering. Another caveat is when JS is needed in helping render the page, as such the case with the HTML shiv <i class="faq">what is HTML shiv?</i></p>
+
+        <h3>Sprite Images</h3>
+
+          <p>This is another pretty clever technique to use as little resources as possible when it comes to images, it consists in use <strong>a single</strong> background image for multiple elements, the trick here consists in position/move this image into each element in such a way that only the desired portion of the image is shown. This technique is more useful when the image to be sprited is one commonly used throughout the web page, also, there are ways to combine multiple images into a single one looking forward to sprite it using this trick.</p>
+
+          <p>To create a sprite take a handful of background images, ones that are commonly used, and arrange them into a single image. Then using CSS add the sprite (the new single image) as a background image to an element, and use the <code>background-position</code> property to display the correct background image. Think of the background image sliding around behind elements, only to expose the proper background image on a given element. For example, if an element is <code>16px</code> wide by <code>16px</code> tall it can only expose a background image of <code>16px</code> by <code>16px</code>, with the rest of the background image being hidden.</p>
+
+          <p class="faq">Replicate the Shay Howe's example about sprite images.</p>
+
+        <h3>URI's</h3>
+
+          <p>Another way to remove a HTTP request all together is encoding images within HTML and CSS using URI's (Uniform Resource Identifier) although in this context are used for images, they can be used for other type of data. URI's work best for 1) small images, and 2) images that are going to be severely cached (i.e. not ideal for the image of a home page because is not likely to never change). However there are some tradeoffs about using URI's they can be difficult to maintain and change leading to having to generate another encoding, and aren't supported by older browsers (IE7 and below). Nevertheless, the benefits far outweight these risks, also a caveat to consider is to double check that the actual URI data is lighter that the actual image's weight. Finally, the increasing support of the <code>&lt;canvas&gt;</code> element might turn this case obsolete.</p>
+
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;img height="100" width="660" alt="Rigged Pattern" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAO6m73+X/bdxogujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQAyIyYy0nBAGgAAAABJRU5ErkJggg=="&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>div {</li>
+                <li>&emsp;background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAO6m73+X/bdxogujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQAyIyYy0nBAGgAAAABJRU5ErkJggg==");</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <div class="ex-perf-01">
+            </div>
+
+        <h3>Cache common files</h3>
+
+          <p>When the browser access a web page for the first time, all the information is brand new, the website might get regular updates but there is information that is likely to remain the same for a long while, because of this, some files are saved on the user's computer or <em>cached</em>, as the user access frequently the website these already stored cached files will diminish the number of HTTP request, serving pages faster.</p>
+
+          <p>Images, videos, web fonts, and common media types are often cached for a month, while CSS and JS files are often cached for a year. Should the CSS, or any other file, change more often than once each year the file name will need to be change, preferably versioned, in order to be loaded.</p>
+
+          <ol class="code-sample">
+            <li>ExpiresByType text/css "access plus 1 year"</li>
+            <li>ExpiresByType application/javascript "access plus a year"</li>
+          </ol>
+
+          <p>Changin the <code>"access plus 1 year"</code> value to <code>"access plus 1 week"</code> is better suited for CSS and JS files thar are changing weekly but are not version controlled with separate file names. For accepted expires header values reference the <code>mod_expires</code> <a href="http://httpd.apache.org/docs/current/mod/mod_expires.html">syntax</a>.</p>
+
+    <footer>
+      <h2 id="#intro">Summary</h2>
+        <p></p>
+    </footer>
+  </body>
+</html>

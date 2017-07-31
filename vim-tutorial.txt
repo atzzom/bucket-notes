@@ -43,6 +43,7 @@ var foo = 'method(" + argument1 + "," + argument2 + ")";
 to vimrc--> set nrformats= (to vim treat numbers with leading zeros as decimal instead of octal)
 
 I have some more questions.
+<<<<<<< HEAD
 
 --- paste w/out leaving insert mode ---
 
@@ -91,3 +92,5 @@ Select from here to here
 Yoru mum has a moustache.
 
 Your mum has a moustache.
+=======
+>>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9

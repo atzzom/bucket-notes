@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>line one | 02 detailed positioning</title>
+    <link rel="stylesheet" type="text/css" href="line-one.css">
+  </head>
+  <body>
+    <header>
+      <a href="home.html" class="line-one-home">line one</a>
+
+      <h1>Detailed positioning</h1>
+
+      <hr>
+
+      <nav>
+        <h2>Table of contents</h2>
+
+          <a href="#intro">Intro</a><br>
+          <a href="#summary">Summary</a>
+      </nav>
+    </header>
+
+    <h2>Intro</h2>
+
+      <p>As it has been seen previously there are different techniques available to build a layout and position elements, which to use largely depends on the type of content, the goal of the web page, as some techniques might be better than others. For example, floating elements allows them to adapt to surrounding elements into the page flow. However, when more strict control is needed, elements may be positioned using other techniques, including <code>relative</code> or <code>absolute</code> positioning.</p>
+
+    <h2>Containing floats</h2>
+
+      <p>Floats are a great way to allow different elements move around relative with their surroundings taking into account their size/content and the size of their containing parent. The exact interaction when elements are floated depends on their relationship into the Document Object Model (DOM).</p>
+
+      <aside>
+        <h3>What is the DOM?</h3>
+
+          <p>Is a (tree) structural representation or API, for HTML and XML. Specifically for HTML, the DOM represents all of the different elements and their relationship to each other. This representation can be considered a tree of sorts, with each element having a different relationship with those around it. Elements nested inside other have a parent-child relationship, while the ones who share the same parent element will have a sibling relationship.</p>
+      </aside>
+
+      <p>One of the pitfalls about floats arises when a parent element contains several floated elements. The content on the page will adapt to the floated elements but these not longer impact the outer edges of its parent element, causing the latter to lose context of exactly what it contains and collapses, thus giving the parent element a <code>height</code> or <code>0</code> leading to obviate properties that could have been assigned to it.</p>
+
+      <p>In the below example, the <code>.box-set</code> division should have a light gray background, however the background is not seen as all of the elements nested within it are floated. An inspection of the <code>.box-set</code> division will show a <code>height</code> of <code>0</code>.</p>
+
+      <div class="exempli">
+        <h6>HTML</h6>
+
+          <ol class="code-sample">
+            <li>&lt;div class="box-set"&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 1&lt;/figure&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 2&lt;/figure&gt;</li>
+              <li>&emsp;&lt;figure class="box"&gt;Box 3&lt;/figure&gt;</li>
+            <li>&lt;/div&gt;</li>
+          </ol>
+
+        <h6>CSS</h6>
+
+          <ol class="code-sample">
+            <li>.box-set {</li>
+              <li>&emsp;background: #eaeaed;</li>
+            <li>}</li>
+            <li>.box {</li>
+              <li>&emsp;background: #2db34a;</li>
+              <li>&emsp;float: left;</li>
+              <li>&emsp;margin: 1.858736059%;</li>
+              <li>&emsp;padding: 20px 0;</li>
+              <li>&emsp;text-align: center;</li>
+              <li>&emsp;width: 29.615861214%;</li>
+            <li>}</li>
+          </ol>
+
+        <h6>Result</h6>
+
+          <div class="box-set">
+            <figure class="box">Box 1</figure>
+            <figure class="box">Box 2</figure>
+            <figure class="box">Box 3</figure>
+          </div>
+      </div>
+
+      <p>A method to force containing these float would be adding an empty element which comprises the full parent element's width just prior close this parent element, that is, right after all the floated elements. This empty element would require the style declaration <code>clear: both;</code>.</p>
+
+      <p>Clearing floats this way can render the desired result, at the cost of semantical value, as its use in the page increases it becomes more of an issue as the number of empty elements starts to stack up quickly, while not providing any real contextual value to the page.</p>
+
+      <p>Fortunately there are ways to go around this situation, the most popular of which include the overflow technique and the clearfix technique.</p>
+
+      <h3>The overflow technique</h3>
+
+        <p>The overflow property specifies what happens to the nested content on an element when this is greater than it parent element (overflows it). Setting this property to <code>auto</code> within the parent element will contain the floats, resulting in an actual <code>height</code> for the parent element, thus including a gray background in the example.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+             <ol class="code-sample">
+              <li>&lt;div class="box-set"&gt;</li>
+                <li>&emsp;&lt;figure class="box"&gt;Box 1&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box"&gt;Box 2&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box"&gt;Box 3&lt;/figure&gt;</li>
+              <li>&lt;/div&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.box-set {</li>
+                <li>&emsp;background: #eaeaed;</li>
+                <li>&emsp;overflow: auto;</li>
+              <li>}</li>
+              <li>.box {</li>
+                <li>&emsp;background: #2db34a;</li>
+                <li>&emsp;float: left;</li>
+                <li>&emsp;margin: 1.858736059%;</li>
+                <li>&emsp;padding: 20px 0;</li>
+                <li>&emsp;text-align: center;</li>
+                <li>&emsp;width: 29.615861214%;</li>
+              <li>}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <div class="box-set-01">
+              <figure class="box">Box 1</figure>
+              <figure class="box">Box 2</figure>
+              <figure class="box">Box 3</figure>
+            </div>
+        </div>
+
+        <p>The overflow is a good way of clearing and containing floats, however, when <strong>styles</strong> span outside of the parent element these can appear cropped or cut off, such is the case of box shadows and dropdown menus. Another possible drawback is that the <code>overflow</code> property isn't handled the same for all browsers.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;div class="box-set"&gt;</li>
+                <li>&emsp;&lt;figure class="box"&gt;Box 1&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box"&gt;Box 2&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box"&gt;Box 3&lt;/figure&gt;</li>
+              <li>&lt;/div&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.box-set {</li>
+                <li>&emsp;background: #eaeaed;</li>
+                <li>&emsp;overflow: auto;</li>
+              <li>}</li>
+              <li>.box {</li>
+                <li>&emsp;background: #2db34a;</li>
+                <li>&emsp;float: left;</li>
+                <li>&emsp;margin: 1.858736059%;</li>
+                <li>&emsp;padding: 20px 0;</li>
+                <li>&emsp;text-align: center;</li>
+                <li>&emsp;width: 29.615861214%;</li>
+              <li>}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <div class="box-set-02">
+              <figure class="box">Box 1</figure>
+              <figure class="box">Box 2</figure>
+              <figure class="box">Box 3</figure>
+            </div>
+        </div>
+
+      <h3>The clearfix technique</h3>
+
+        <p>In addition to the overflow, the clearfix technique although is more complex, produces more consistent results. It uses the <code>:before</code> and <code>:after</code> pseudo-elements which creates hidden elements preventing the margins of the child elements from collapsing by creating an anonymous table-cell element using the <code>display: table;</code> declaration. Additionally, adding the <code>*zoom</code> property to the parent element triggers the Internet Explorer mechanism <code>hasLayout</code> that determines how elements should draw and bound their content, as well as how elements should interact with and relate to other elements.</p>
+
+        <p>It is worth noting that a single <code>:before</code> and one <code>:after</code> pseudo-elements are allowed per element, adding more than one of those would lead to a different outcome.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;div class="box-set"&gt;</li>
+                <li>&emsp;&lt;figure class="box"&gt;Box 1&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box"&gt;Box 2&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box"&gt;Box 3&lt;/figure&gt;</li>
+              <li>&lt;/div&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.box-set:before,</li>
+              <li>.box-set:after {</li>
+                <li>&emsp;content: "";</li>
+                <li>&emsp;display: table;</li>
+              <li>}</li>
+              <li>.box-set:after {</li>
+                <li>&emsp;clear:both;</li>
+              <li>}</li>
+              <li>.box-set {</li>
+                <li>&emsp;*zoom: 1;</li>
+              <li>}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <div class="box-set-03">
+              <figure class="box">Box 1</figure>
+              <figure class="box">Box 2</figure>
+              <figure class="box">Box 3</figure>
+            </div>
+        </div>
+
+    <h2>Position property</h2>
+
+      <p>There are situations in which more control is needed that the one a float can provide. For those cases the <code>position</code> property can be used, accepting four  <i class="faq">In the tutorial appears as five, notify.</i> different values: <code>static</code>, <code>relative</code>, <code>absolute</code>, and<code>fixed</code>, each of which provide different ways to uniquely position an element.</p>
+
+      <h3>Position: static</h3>
+
+        <p>This is the default value, meaning that elements behave as with their default behavior as expected, don't accepting any <code>box-offset</code> property. The example below shows all the boxes stacked one on top of the other as the are block level elements and are not floated in any specific direction.</p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;div class="box-set"&gt;</li>
+                <li>&emsp;&lt;figure class="box box-1"&gt;Box 1&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-2"&gt;Box 2&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-3"&gt;Box 3&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-4"&gt;Box 4&lt;/figure&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.box-set {</li>
+                <li>&emsp;background: #eaeaed;</li>
+              <li>}</li>
+              <li>.box {</li>
+                <li>&emsp;background: #2db34a;</li>
+                <li>&emsp;height: 80px;</li>
+                <li>&emsp;width: 80px;</li>
+              <li>}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <div class="box-set-04">
+              <figure class="box box-1">Box 1</figure>
+              <figure class="box box-2">Box 2</figure>
+              <figure class="box box-3">Box 3</figure>
+              <figure class="box box-4">Box 4</figure>
+            </div>
+        </div>
+
+      <h3>Position: relative</h3>
+
+        <p>The <code>position: relative;</code> value works similarly to the <code>static</code> value, with the difference that it will accept box-offset values (<code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>), shifting the element from its default position in the specified direction. With this property value, the element still remains the the normal document flow, any other element won't interfere in the space the element should be originally placed without the offset, however, the offset element might overlap or underlap its surrounding elements without produce in them any displacement or relocation from their default position.</p>
+
+        <aside>
+          <h4>How box offset properties work</h4>
+
+            <p>The <code>position</code> property in conjunction with the <code>box-offset</code> property values (<code>top</code>, <code>bottom</code>, <code>right</code>, <code>left</code>) specify how an element should be positioned <b>and</b> in which direction, working/affecting only elements with a <code>relative</code>, <code>absolute</code>, or <code>fixed</code> positioning value, i.e. all possible values for the <code>position</code> property but the <code>static</code>.</p>
+
+            <p>In the case of <strong>relatively</strong> positioned elements, these property specify how the element should move <strong>from its original default position</strong>. For example, using a <code>top</code> value of <code>20px</code> on a relatively positioned element will push the element 20 pixels <code>down</code> because the <code>top</code> value makes reference to the point from which the offset is going to be measured; to offset the element upwards, a <code>-20px</code> top value should be used.</p>
+
+            <p>For elements using the <code>absolute</code> or <code>fixed</code> values the point of reference for the offset changes from the original element's position to the edges of the <strong>relatively</strong> positioned <strong>parent</strong> element. For example, using a <code>top</code> value of <code>20px</code> on an absolutely positioned element will push the element 20 pixels down from the top of tis relatively positioned parent. Switching the <code>top</code> value to <code>-20px</code> will then pull the element 20 pixels up from the top of its relatively positioned element.</p>
+        </aside>
+
+        <p>In the event that both the <code>top</code> and <code>bottom</code> properties are declared in the same rule set on a relatively positioned element, the <code>top</code> property will take priority. Additionally, in the case of the <code>right</code> and <code>left</code> values be declared for the same element, the priority will be given by the language of the page, for example, if the page is written in English then the priority will be the <code>left</code> offset value; in the case of Arabic, then the <code>right</code> offset value will be given priority.</p>
+
+        <p>The below example shows the elements stacked on top of each other, however, they are shifted from their default position according to their individual box offset property values. <i class="faq">Review the CSS file for these examples in order to avoid repeated code, style each example using layered classes, e.g. class="box-set box-set-xx", that is, styling the specific example over the styles of the original example.</i></p>
+
+        <div class="exempli">
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;div class="box-set"&gt;</li>
+                <li>&emsp;&lt;figure class="box box-1"&gt;Box 1&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-2"&gt;Box 2&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-3"&gt;Box 3&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-4"&gt;Box 4&lt;/figure&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.box-set {</li>
+                <li>&emsp;background: #eaeaed;</li>
+              <li>}</li>
+              <li>.box {</li>
+                <li>&emsp;background: #2db34a;</li>
+                <li>&emsp;height: 80px;</li>
+                <li>&emsp;width: 80px;</li>
+              <li>}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <div class="box-set box-set-05">
+              <figure class="box box-1">Box 1</figure>
+              <figure class="box box-2">Box 2</figure>
+              <figure class="box box-3">Box 3</figure>
+              <figure class="box box-4">Box 4</figure>
+            </div>
+        </div>
+
+      <h3>Position: absolute</h3>
+
+        <p>The absolute positioned elements behave similarly to the relative positioned elements, with the difference that they are set apart of the document's flow. These elements will be positioned in relation to their relative or absolute positioned container parent element. Should this parent be absent, the element will be positioned in relation to the <code>body</code> of the page.</p>
+
+        <p>For absolute positioned elements, they can have either an stated or unstated <code>width</code> and <code>height</code>. In the former case, when there is a combination of <code>top</code> and <code>bottom</code> properties, priorities will be given following exactly the same criterion as for relative positioned elements. While in the latter case, when the element doesn't have a fixed dimension <b>and</b> is absolutely positioned, the dimensions will span the specified size, should it be either a <code>width</code> or <code>height</code>. Using all four offset properties will display an element with a full specified height and width.</p>
+
+        <div class="exempli">
+
+          <h6>Example</h6>
+
+          <p>Absolute positioned element, with stated <code>width</code> and <code>height</code> dimensions.</p>
+
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;div class="box-set"&gt;</li>
+                <li>&emsp;&lt;figure class="box box-1"&gt;Box 1&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-2"&gt;Box 2&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-3"&gt;Box 3&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-4"&gt;Box 4&lt;/figure&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.box-set {</li>
+                <li>&emsp;background: #eaeaed;</li>
+              <li>}</li>
+              <li>.box {</li>
+                <li>&emsp;background: #2db34a;</li>
+                <li>&emsp;height: 80px;</li>
+                <li>&emsp;position: absolute</li>
+                <li>&emsp;width: 80px;</li>
+              <li>}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <div class="box-set-06">
+              <figure class="box box-1">Box 1</figure>
+              <figure class="box box-2">Box 2</figure>
+              <figure class="box box-3">Box 3</figure>
+              <figure class="box box-4">Box 4</figure>
+            </div>
+
+          <p>Absolute positioned elements, without stated <code>width</code> and <code>height</code> dimensions. All four values: <code>top</code>, <code>bottom</code>, <code>right</code> and <code>left</code> have been stated.</p>
+
+          <h6>HTML</h6>
+
+            <ol class="code-sample">
+              <li>&lt;div class="box-set"&gt;</li>
+                <li>&emsp;&lt;figure class="box box-1"&gt;Box 1&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-2"&gt;Box 2&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-3"&gt;Box 3&lt;/figure&gt;</li>
+                <li>&emsp;&lt;figure class="box box-4"&gt;Box 4&lt;/figure&gt;</li>
+            </ol>
+
+          <h6>CSS</h6>
+
+            <ol class="code-sample">
+              <li>.box-set {</li>
+                <li>&emsp;background: #eaeaed;</li>
+              <li>}</li>
+              <li>.box {</li>
+                <li>&emsp;background: #2db34a;</li>
+                <li>&emsp;height: 80px;</li>
+                <li>&emsp;position: absolute</li>
+                <li>&emsp;width: 80px;</li>
+              <li>}</li>
+            </ol>
+
+          <h6>Result</h6>
+
+            <div class="box-set-07">
+              <figure class="box box-1">Box 1</figure>
+              <!-- <figure class="box box-2">Box 2</figure>
+              <figure class="box box-3">Box 3</figure>
+              <figure class="box box-4">Box 4</figure> -->
+            </div>
+        </div>
+
+    <footer>
+      <h2 id="summary">Summary</h2>
+    </footer>
+  </body>
+</html>

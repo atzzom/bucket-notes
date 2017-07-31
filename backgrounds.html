@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>line one | backgrounds & gradients</title>
+  <link rel="stylesheet" type="text/css" href="background.css">
+</head>
+
+<header>
+  <h1>backgrounds & gradients</h1>
+
+  <nav>
+    <h2>Table of contents</h2>
+
+    <a href="#backcolor">Background color</a>
+  </nav>
+
+</header>
+
+<body>
+
+<section class="background-color">
+
+<h2 id="backcolor">Background color</h2>
+
+  <p>The HTML provides several options to custom the background of a page, either with color or with images. To do this, it is possible to use either the <code>background</code> or the <code>background-color</code> properties. the former accepts color and images, but the latter is strictly used for solid colors, which can be specified using hexadecimals, RGB, RGBa, HSL, or HSLa values. The following is an example of a <code>background-color</code> being set:</p>
+
+  <code class="block">
+    div {<br>
+    background-color: #b2b2b2;<br>
+    }
+  </code>
+
+  <div class="example ex-background-color-01">
+    <p>This is a &#60;div&#62; element with <code>background-color: #b2b2b2;</code></p>
+  </div>
+
+  <h3>Transparent colors & backwards compatibility</h3>
+
+    <p>Older browsers not always support the use of transparent colors, for those cases, is useful to take advantage of the way CSS works, applying in a first-arrived, first-served basis, based on this, and thinking for those browsers, is useful to first declare a <code>background-color</code> using hexadecimal values, and later using a transparent <code>background-color</code> <b>within</b> the same rule set, the first hexadecimal value will provide a "save" background color, whilst, the second will provide a transparent background if supported. Like this:</p>
+
+    <code class="block">
+      div {<br>
+      background-color: #b2b2b2;<br>
+      background-color: rgba(0, 0, 0, .3);<br>
+      }
+    </code>
+
+    <div class="example ex-background-color-02">
+      <p>This is a &#60;div&#62; element with <code>background-color: rgba(0, 0, 0, .3);</code></p>
+    </div>
+
+</section>
+
+  <section class="background-image">
+
+  <h2>Background image</h2>
+
+    <p>In addition to adding a <code>background-color</code> it is also possible to add an image as a background. For this purpose, the <code>background</code> or the <code>background-image</code> properties can be used outright. Regardless of the property used an image source must be specified using the familiar rules for hyperlinks, although this time instead of the <code>href=""</code> attribute an <code>url("")</code> attribute is used, which employs a quotation between parenthesis, note also that there's neither equal (<code>=</code>) nor colon (<code>:</code>) symbols preceding the parenthesis or the quotations. Is always necessary to keep an eye on the image source path/directories, to reference the desired image. An example of a <code>background-image</code> property is shown below:</p>
+
+    <code class="block">
+      div {<br>
+      background-image: url("alert.png");<br>
+      }
+    </code>
+
+    <div class="ex-background-image-01"></div>
+
+    <p>Solely sourcing the image using an <code>url</code> value usually isn't enough, by default, the image will repeat itself from the top left corner of its parent element filling up the screen. To control this behavior the <code>background-repeat</code> and <code>background-position</code> properties can be used for this task.</p>
+
+    <h3><code>Background-repeat</code></h3>
+
+      <p>This property controls if an image is repeated as a background, and if it does, how it is done, for example, the direction of the repeat can be changed from its default left-to-right, or if it will repeated horizontally or vertically.</p>
+
+      <p>This property accepts four different values: <code>repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>, and <code>no-repeat</code>, being the default <code>repeat</code>. The <code>repeat-x</code> value, will repeat the image horizontally only; the <code>repeat-y</code> will do it in a vertical fashion; lastly, <code>no-repeat</code> tells the browser to display the image just once.</p>
+
+      <div class="ex-background-repeat-01"><code>background-repeat: repeat-x;</code></div>
+      <div class="ex-background-repeat-02"><code>background-repeat: repeat-y;</code></div>
+      <div class="ex-background-repeat-03"><code>background-repeat: repeat;</code></div>
+
+    <h3>Background position</h3>
+
+      <p>By default, images are placed at the top left corner of an element, by using the <code>background-position</code> property it is possible to control exactly where the background image is placed relative to that corner.</p>
+
+      <code class="block">
+        div {<br>
+        background-image: url("alert.png");<br>
+        background-position: 20px 10px;<br>
+        background-repeat: no-repeat;<br>
+        }
+      </code>
+
+      <p>In the above example, the first value of this property, corresponds to the horizontal offset, and the second one to the vertical offset. If at the time this property is declared, if only one value is stated it will be assumed as the horizontal offset; the vertical offset will default <code>50%</code>. As the image is moved related to the top-left corner of its parent element, length values specifically will be in relation to that corner.</p>
+
+      <p>The <code>background-position</code> property accepts keywords, percentages, pixels, or any length measurement. Keywords (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>center</code>) and percentages are strongly related, for example, a keyword value of <code>left top</code> is identical to the <code>0 0</code> percentage; similarly, they keyword value <code>right bottom</code> is exactly the same as <code>100% 100%</code>. Using pixels for position a background is also common, as they provide more precise control over where the background will be positioned.</p>
+
+      <img src="background-positioning.png">
+
+    <h3>Shorthand background image values</h3>
+
+      <p>All background properties: <code>background-color</code>, <code>background-image</code>, <code>background-position</code>, and <code>background-repeat</code>, can be summarized in a single shorthand <code>background</code> property, like this:</p>
+
+      <code>
+        div {<br>
+        background: color image position repeat;<br>
+        }
+      </code>
+
+      <code>
+        div {<br>
+        background: color image-properties;<br>
+        }
+      </code>
+
+      <code>
+        div {<br>
+        background: #b2b2b2 url("alert.png") 20px 10px no-repeat;<br>
+        }
+      </code>
+
+      <p>The following example shows the set up a background image using shorthand values. Notice that for the position property there are both absolute and relative values. The first value, <code>20px</code>, is the horizontal value, positioning the <code>background-image 20px</code> from the left of the element. The second value, <code>50%</code>, is the vertical value, which vertically centers the <code>background-image</code>. A few other properties and values are also included within the <code>notice-success</code> class rule set to further style the alert message.</p>
+
+      <p>HTML</p>
+
+      <code>
+        &#60;div class="notice-success"&#62;<br>
+        Woo hoo! Congratulations, you did it!<br>
+        &#60;/div&#62;
+      </code>
+
+      <p>CSS</p>
+
+      <code>
+        .notice-success {<br>
+        background: #67b11c url("tick.png") 20px 50% no-repeat;<br>
+        border: 2px solid #467813;<br>
+        border-radius: 5px;<br>
+        color: #fff;<br>
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
+        padding: 15px 20px 15px 50px;<br>
+        }
+      </code>
+
+    <h2>Gradient backgrounds</h2>
+
+      <p>HTML allows for the use of two colors and set up a linear or radial gradient. As expected the linear gradient, is controlled by the <code>linear-gradient()</code> function, as shown below:</p>
+
+      <code>
+        div {<br>
+        background: #466368;<br>
+        background: -webkit-linear-gradient(#648880, #293f50);<br>
+        background:    -moz-linear-gradient(#648880, #293f50);<br>
+        background:         linear-gradient(#648880, #293f50);<br>
+        }
+      </code>
+
+      <h3>A side note on vendor prefixes</h3>
+
+        <p>The previous example shows the <code>linear-gradient()</code> function for the <code>background</code> property with prefixes for the different web-browsers, as the CSS3 introduced this option and have been progressively adopted, the need to specify these vendor prefixes has been reduced. However, in order to guarantee proper rendering is good option to include them. <i class="faq">show demo</i></p>
+
+        <p>The previous code snippet shows that this function accepts two colors, the first one will be the top color and the second one will be bottom color. Browsers handle the transition between both, but additionally, to provide a fallback option should the browser don't support that gradient backgrounds a solid background color needs to be specified.</p>
+
+      <h3>Changing the direction of a gradient background</h3>
+
+        <p>By default background gradients go from top to bottom, nevertheless, the gradient orientation can be changed by the use of keywords, for example the keyword value <code>to right</code> will cause the gradient to move from the left to the right of an element. These keyword values can also be combined, orienting the gradient diagonally, as the <code>to right bottom</code> keyword does. <i class="faq">show demo</i></p>
+
+        <code>
+          div {<br>
+          background: #466368;<br>
+          background: linear-gradient(to right bottom, #648880, #293f50);<br>
+          }
+        </code>
+
+        <p>When a diagonal gradient is used in a non-square element, this will identify the element's absolute center and from there frame the element into a square/rectangle, applying the gradient from one corner to the other. These corners the gradient moves towards are called "magic corners". Further information can be gotten at <a href="http://meyerweb.com/eric/thoughts/2012/04/26/lineargradient-keywords/">Linear Gradient Keywords</a><i class="faq">show examples</i></p>
+
+        <p>Besides keyword values, gradients can be also controlled by degree values from <code>0</code> through <code>360</code>, for example, a degree value of <code>315deg</code> will cause the gradient to move to the left top on an element; a <code>135deg</code> will move the gradient to the right bottom of an element.</p>
+
+    <h2>Radial gradient background</h2>
+
+      <p>Just as linear gradients, radial gradients makes the transition between two different colors, being the first one the one in the center, and the second one the outer color. However, radial gradients, have additional parameters, with values for location, radius, size, and so forth. <i class="faq">show examples</i></p>
+
+      <code>
+        div {<br>
+        background: #466368;<br>
+        background: radial-gradient(#648880, #293f50);<br>
+        }
+      </code>
+
+      <p>The function will sit in the absolute center of the element, the browser will then create the transition between the two colors.</p>
+
+      <h3>CSS3 gradient background generator</h3>
+
+<p>Gradients can be difficult to work with especially for beginers, this work can be simplified using CSS3 gradient generators, although they are not going to be explained here, their existence can leverage work.</p>
+
+<h2>Gradient color stops</h2>
+
+<p>Gradient backgrounds can transition from more than one color, when declaring the gradient, each transition color must be separated by a comma value, for instance: <i class="faq"></i></p>
+
+<code>
+  div {<br>
+  background: #648880;<br>
+  background: linear-gradient(to right, #f6f1d3, #648880, #293f50);<br>
+  }
+</code>
+
+<p>By default, the browser will position every color stop at an equal distance from the next, this however, can be modified locating that color along the gradient with a lenght value. On the other hand and unless otherwise specified, the first color will be positioned at <code>0%</code>, and the last clor stop will be positioned at <code>100%</code> e.g.:</p>
+
+<code>
+  div {<br>
+  background: #648880;<br>
+  background: linear-gradient(to right, #f6f1d3, #648880 85%, #293f50);<br>
+  }
+</code>
+
+<h2>Multiple background images</h2>
+
+<p>CSS3 introduced the option to add more than one background image by comma-separating multiple values within a <code>background</code> or <code>background-image</code> property. The background image value that comes first will be the foremost background image, and the background image that's listed last will be the rearmost background image. Any value between the fist and the last will reside withing the middle ground accordingly. <i class="faq">show example</i></p>
+
+<code>
+  div {<br>
+  background: url("foreground.png") 0 0 no-repeat, url("middle-ground.png") 0 0 no-repeat, url("background.png") 0 0 no-repeat;<br>
+    }
+</code>
+
+<p>The preceding code uses a shorthand value for the background property, chaining multiple background image values together, nevertheless, these shorthand values, could have been broken up into comma-separated values across the <code>background-image</code>, <code>background-position</code>, and <code>background-repeat</code> properties. <i class="faq">include example</i></p>
+
+<h2>Additional background properties</h2>
+
+<p>CSS3 introduced new background properties: <code>background-size</code>, <code>background-clip</code>, and <code>background-origin</code>.</p>
+
+<p>As its name suggests, <code>background-size</code> allows make changes to the size of a background image, while the <code>background-clip</code> and <code>background-origin</code> properties allow us to control where a background image is cropped and where a background image is contained within the element (e.g. inside the border or inside the padding).</p>
+
+<h3>CSS background size</h3>
+
+<p>There are a few aspects to take into account when using the <code>background-size</code> property:<br>
+- It accepts length or percentage values.<br>
+- When using length values, they must be separated by a comma, being the first the background image's width, and the second one the background image's height.<br>
+- If a percentage value is used, this, will make reference to the container element, not to the actual size of the image being used as background. Consequently, setting a <code>background-size</code> property with a <code>100%</code> width will make the background image occupy the full width of the element. If a second value isn't identified after the width, the height value will be automatically set to preserve the aspect ratio of the background image.<br>
+- The <code>auto</code> value is useful to preserve the background image original ratio, it can be used either as the width or height. For instance, if the image's width is to be set to the 60% of the container element's width <b>while</b> preserving the image aspect ratio, the <code>auto</code> value can be used in the following way: <code>background-size: 60% auto;</code>, e.g.:</p>
+
+<code>
+  div {<br>
+  background: url("image.jpg") 0 0 no-repeat;<br>
+  background-size: 60% auto;<br>
+  border: 2px dashed #9799a7;<br>
+  height: 240px;<br>
+  width: 200px;<br>
+  }
+</code>
+
+<h3><code>background-image: cover</code> and <code>contain</code> keyword values</h3>
+
+<p>The <code>cover</code> and <code>contain</code> keyword values, are used to adjust an image to an element. The <code>cover</code> keyword value will adjust the size to fill up the whole container element's dimensions while preserving the image's aspect ratio, is necessary to consider that depending on the dimensions of the container, the image couldn't be displayed completely into the element, that is, often part of the background image is cut off in order for the image to occupy the full available space of the element.</p>
+
+<p>On the other hand the <code>contain</code> keyword makes the image be fit completely into the element's width and height, meaning that often the background image won't fill out completely the container element.</p>
+
+<p>Both the <code>cover</code>  and <code>contain</code> keyword values will result in slightly disorted images, specially when the image is stretched <b>beyond</b> their original size. Is necessary to keep an eye out for this to achieve the desire render.</p>
+
+<h3>CSS3 background clip & background origin</h3>
+
+<p>The <code>background-clip</code> property specifies the area a background image will cover, and the <code>background-origin</code> property specifies where the <code>background-position</code> should originate. The introduction of these two new properties corresponds with the introduction of the three new keyword values: <code>border-box</code>, <code>padding-box</code>, and <code>content-box</code>. Each of these three values may be used for the <code>background-clip</code> and <code>background-origin</code> properties. <i class="faq">include examples</i></p>
+
+</section>
+
+</body>
+
+<footer>
+
+  <h2>Summary</h2>
+
+    <p>Adding backgrounds and gradients to our pages allows us to bring color to the forefront of our designs. These features also help to define how content is grouped and to improve the layout of our pages as a whole.</p>
+
+    <p>This lesson covered:<br>
+    - How to add background colors and images to elements.<br>
+    - CSS gradients, both linear and radial, and how to customize them.<br>
+    - How to apply multiple background images to a single element.<br>
+    - New CSS3 properties that allow us to change the size, surface are, and origin of background images.</p>
+
+    <h3>Additional info--</h3>
+</footer>
+
+</html>

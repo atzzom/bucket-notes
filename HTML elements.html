@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>line one | 2 - HTML elements</title>
+  <link rel="stylesheet" type="text/css" href="HTML%20elements.css">
+</head>
+<body>
+<h1>List of HTML elements</h1>
+
+  <p>The following is the list of the HTML elements according to the <a href="w3.org">World Wide Web Consortium (W3C).</a></p>
+
+  <h2>HTML elements by function</h2>
+
+    <h3>1. Root element</h3>
+
+      <table>
+        <tr>
+          <td><code><b>&#60;html&#62;</b></code></td>
+          <td>Root element. Represents the root of the document, all possible elements must be descendants of this element, that is to say that is the parent element of any possible element within the document.</td>
+        </tr>
+      </table>
+
+    <h3>2. Document metadata</h3>
+
+      <p>Metadata provides information about the page like styles, scripts and data that help software as browsers, search engines, etc. to use and render the page.</p>
+
+      <table>
+        <tr>
+          <td><code><b>&#60;base&#62;</b></code></td>
+          <td>This will serve as the base for all <i>relative</i> URL contained within the document. There only can be one <code>&#60;base&#62;</code> element in the document.</td>
+        </tr>
+
+        <tr>
+          <td><code><b>&#60;head&#62;</b></code></td>
+          <td>Document metadata container. Collects the document's metadata, providing the general information about the document, including its title and links to its scripts and style sheets.</td>
+        </tr>
+
+        <tr>
+          <td><code><b>&#60;link&#62;</b></code></td>
+          <td>Represents metadata that expresses inter-document relationships (external resources). Possible uses for this element include <i class="faq">defining a relational framework for navigation (what does this exactly mean/examples)</i>, and is mostly used to link to style sheets.<i class="faq">insert examples of its usage.</i></td>
+        </tr>
+
+        <tr>
+          <td><code><b>&#60;meta&#62;</b></code></td>
+          <td>A multipurpose element for representing metadata that cannot be represented by one of the other HTML meta-related elements (<code>&#60;base&#62;</code>, <code>&#60;link&#62;</code>, <code>&#60;script&#62;</code>, <code>&#60;style&#62;</code>, or <code>&#60;title&#62;</code>). Can have the following attributes: <i class="faq">insert examples, turn the bullets into a list.</i></td>
+        </tr>
+      </table>
+
+      <p>: <br>
+      - <a href="https://www.w3.org/TR/html-markup/meta.name.html#meta.name">name</a><br>
+      - <a href="https://www.w3.org/TR/html-markup/meta.http-equiv.refresh.html#meta.http-equiv.refresh">http-equiv=refresh</a><br>
+      - <a href="https://www.w3.org/TR/html-markup/meta.http-equiv.default-style.html#meta.http-equiv.default-style">http-equiv=default-style</a><br>
+      - <a href="https://www.w3.org/TR/html-markup/meta.charset.html#meta.charset">charset</a><br>
+      - <a href="https://www.w3.org/TR/html-markup/meta.http-equiv.content-type.html#meta.http-equiv.content-type">http-equiv=content-type</a></p>
+
+      <p><code><b>&#60;style&#62;</b></code>: allows information to be embedded in documents. This information  might affect the whole or part of the document. By default the style instructions written inside this element are expected to be CSS.<i class="faq">insert examples of its usage.</i></p>
+
+      <p><code>&#60;title&#62;</code>: define the title of the document shown in a browser's title bar or on the page's tab. It can only contain text, and andy contained tags are ignored.</p>
+
+    <h3>3. Scripting</h3>
+
+      <p>As pages added interactivity, web applications, and dynamic content, HTML supports the use of scripting languages, most prominently JavaScript. The follwing elements support this type of features:</p>
+
+      <p><code>&#60;canvas&#62;</code>: element used to draw graphics via scripting (usually JavaScript), make photo compositions or even perform animations. Is strongly suggested to provide alternate content inside the <code>&#60;canvas&#62;</code> block so the information will be displayed in older browsers that don't suppport this feature or in browsers with JavaScript disabled.</p>
+
+      <p><code><b>&#60;noscript&#62;</b></code>: defines a section of HTML elements to be inserted if a script type is unsupported or if scripting is currently turned off in the browser.</p>
+
+      <p><code><b>&#60;script&#62;</b></code>: used to embed or reference an executable script within an HTML or XHTML document.</p>
+
+    <h3>4. Sections</h3>
+
+      <p>The content sectioning elements allow organize the document content into logical pieces, creating an outline for the content, including header and footer navigation, and heading elements to identify sections of content.</p>
+
+      <p><code><b>&#60;address&#62;</b></code>: this element provides contact information for its nearest <code>&#60;article&#62;</code> or <code>&#60;body&#62;</code> ancestor; in the latter case, it applies to the whole document. <i class="faq">see examples.</i></p>
+
+      <p><code><b>&#60;article&#62;</b></code>: represents a self-contained content or composition in a document (page, application, or site), which is intended to be independently distributable or reusable (e.g. in syndication). Such as, a forum, blog post, newspaper or magazine article, an object, or any other independent item of content. Each <code>&#60;article&#62;</code> should be identified, typically by including a heading (<code>&#60;h1&#62;&mdash;&#60;h6&#62;</code> element) as a child of the <code>&#60;article&#62;</code> element.</p>
+
+      <p><code><b>&#60;aside&#62;</b></code>: this element is intendend to hold information tangentially connected to the rest of the document or section, but that can be considered separate from that content. For example, a glossary, information/biography of the author, web applications, profile information or related links.</p>
+
+      <p><code><b>&#60;footer&#62;</b></code>: this element represents the footer for its <b>nearest sectioning content</b> or <b>nearest sectioning root</b> element. It typically contains information about the author of the section, copyright data or links to related docuemnts.</p>
+
+      <p><code><b>&#60;header&#62;</b></code>: represents a group of introductory or navigational aids. It may contain, a logo, wrapped section's header, search bar/form, and so on.</p>
+
+      <p><code><b>&#60;h1&#62;</b></code>, <code><b>&#60;h2&#62;</b></code>, <code><b>&#60;h3&#62;</b></code>, <code><b>&#60;h4&#62;</b></code>, <code><b>&#60;h5&#62;</b></code>, <code><b>&#60;h6&#62;</b></code>: <b>heading</b> elements implement six levels, being <code>&#60;h1&#62;</code> the one with the greatest importance and <code>&#60;h6&#62;</code> the one with the least. Is specially useful to identify content sections and build automatically generated table of contents.</p>
+
+      <p><code><b>&#60;hgroup&#62;</b></code>: <i>(Heading Group)</i> represents the heading of a section. It defines a single title that participates in the outline of the document as the heading of the implicit or explicit section that it belongs to. <i class="faq">insert examples.</i></p>
+
+      <p><code><b>&#60;nav&#62;</b></code>: <i>(navigation)</i> this element links to other pages or parts within the page, a section with navigational links.</p>
+
+      <p><code><b>&#60;section&#62;</b></code>: contains a thematic grouping of content, typically with a heading. Each <code>&#60;section&#62;</code> should be identified, typically by including a heading as a child element.</p>
+
+    <h3>Text content</h3>
+
+      <p>The text content elements help organizing sections, blocks and pieces of information within the opening <code>&#60;body&#62;</code> and closing <code>&#60;/body&#62;</code> tags. Also, are important for accessibility and SEO, <b>these elements identify the purpose or structure of that content</b></p>
+
+      <p><code><b>&#60;dd&#62;</b></code>: <i>(description)</i> indicates the description of a term in a description list (<code>&#60;dl&#62;</code>). <i class="faq">insert examples.</i></p>
+
+      <p><code><b>&#60;div&#62;</b></code>: <i>(division)</i> this element does not inherently represent anything (i.e. semantically meaningless), is a genertic container, and is used to group elements for styling purposes (using <code>class</code> and/or <code>id</code> attributes), or because they share attribute values, such as <code>lang</code>. It should be used only when no other semantic element &mdash;such as <code>&#60;article&#62;</code> or <code>&#60;nav&#62;</code>&mdash; is appropriate.</p>
+
+      <p><code><b>&#60;dl&#62;</b></code>: <i>description list</i> common uses for this element are: glossaries, display metadata (a list of key-value pairs). Basically encloses a list of groups of terms and descriptions.</p>
+
+      <p><code><b>&#60;dt&#62;</b></code>: <i>description term</i> identifies a description term inside a description list, this element can only appear as a child element of a <code>&#60;dl&#62;</code>. It it usually followed by a <code>&#60;dd&#62;</code> element; however, multiple <code>&#60;dt&#62;</code> elements in a row indicate several terms that are all defined by the immediate next <code>&#60;dd&#62;</code> element.</p>
+
+      <p><code><b>&#60;figcaption&#62;</b></code>: as its name implies it, represents a caption or a legend associated with the image of the <code>&#60;figure&#62;</code> element that is its immediate ancestor, meaning that <code>&#60;figcaption&#62;</code> can be the first or last element inside a <code>&#60;figure&#62;</code> block. Also, the <i>HTML figcaption element</i> is optional; if not provided, then the parent figure will have no caption.</p>
+
+      <p><code><b>&#60;figure&#62;</b></code>: this elements commonly holds content such as images, illustrations, diagrams, code snippets, or schemata referenced in the main text, but that can be moved to another page or to an appendix without affecting the main flow. In a more general way, the <code>&#60;figure&#62;</code> element represents self-contained content, frequently with a <code>&#60;figcaption&#62;</code> element, and typically referenced as a single unit. Its position is <strong>independent</strong> of the main flow.</p>
+
+      <p><code><b>&#60;hr&#62;</b></code>: <i>thematic break</i> represents a thematic break between <strong>paragraph-level</strong> elements (for example, a change in a scene in a story, or a shift of topic with a section). Previously, in older HTML versions, was represented as a horizontal rule, and it may still be displayed as such in visual browsers <i class="faq">which other types of browsers there are?</i>, but is now defined in sematic terms (<em>thematic break</em>), rather than presentation terms.</p>
+
+      <p><code><b>&#60;li&#62;</b></code>: <i>list item</i> used to represent an item inside a list, because of its nature/definition, must be contained into a parent element: an ordered list (<code>&#60;ol&#62;</code>) or inside an unordered list such as: <code>&#60;ul&#62;</code> or a menu: <code>&#60;menu&#62;</code>. In the latter, list items are usually displayed using bullet points, whilst in ordered list, they are usually displayed with an ascending counter on the left (number or letter).</p>
+
+      <p><code><b>&#60;main&#62;</b></code>: contains the core/main content of the document, or expands upon the central topic of a document or central functionality of an application, being unique to the document, as such, must exclude repeating content across a set of documents such as sidebars, navigation links, copyrigh information, site logos, and search forms (unless the document's main function is a search form).</p>
+
+      <p><code><b>&#60;ol&#62;</b></code>: <i>ordered list</i> holds an ordered list of items. Typically the ascending counter can be numbers, Romans numerals, letters, or simple bullets. This numbered style is defined in the associated CSS, using the <code>list-style-type</code> property.</p>
+
+      <p><code><b>&#60;p&#62;</b></code>: <i>paragraph</i> this element represents a paragraph of text.</p>
+
+      <p><code><b>&#60;pre&#62;</b></code>: <i>preformatted text</i>. Text within this element is displayed in a non-proportional ("monospace") font exactly as it is laid out in the file. Whitespace inside this element is displayed as typed. <i class="faq">show usage examples.</i></p>
+
+      <p><code><b>&#60;ul&#62;</b></code>: <i>unordered list</i> represents an unordered list of items, or where their order is meaningless/pointless. These items are usually represented with a bullet, which can be of several forms: dot, circle, square, etcetera. The bullet style is defined with the CSS property <code>list-style-type</code>.</p>
+
+    <h3>Inline text semantics</h3>
+
+      <p>The following elements are used to define the meaning, structure, or style of a word, line, or any arbitray piece of text.</p>
+
+      <p><code><b>&#60;a&#62;</b></code>: <i>anchor</i> creates a hyperlink to other web pages, files, or locations <strong>within</strong> the same page, e-mail addresses, or any other URL.</p>
+
+      <p><code><b>&#60;abbr&#62;</b></code>: <i>abbreviation</i> represents an abbreviation and optionlly provides a description for it. If present, the title attribute must contain this full description an nothing else. <i class="faq">show examples.</i></p>
+
+      <p><code><b>&#60;b&#62;</b></code>: <i>bold</i> this element is used for text that is stylistically different from normal text, without conveying any special meaning or importance. It is usually used for keywords in a summary, product names in a review, or other spans of text whose typical representation would be boldfaced. Another use, is to mark the lead sentence of each paragraph of an article.</p>
+
+      <p><code><b>&#60;bdi&#62;</b></code>: <i>bi-directional isolation</i> isolates a span of text that might be formatted in a different direction from other text outside it. <i class="faq">show examples</i>.</p>
+
+      <p><code><b>&#60;bdo&#62;</b></code>: <i>bi-directional override</i> used to override the current directionality of text. It causes the directionality of the characters to be ignored in favor of the specified directionality.</p>
+
+      <p><code><b>&#60;br&#62;</b></code>: <i>break (line)</i> produces a break in the text (carriage-return). Useful for writing poems, addresses, where the division of lines is significant.</p>
+
+      <p><code><b>&#60;cite&#62;</b></code>: <i>cite</i> represents a reference to a creative work, it must include the title of a work or a URL reference, which may be in an abbreviated form according to the conventions used for the addition of citation metadata. <i class="faq">include examples.</i></p>
+
+      <p><code><b>&#60;code&#62;</b></code>: represents a fragment of computer code, and is represented in the browser's default monospace font.</p>
+
+      <p><code><b>&#60;data&#62;</b></code>: this element links a given content with a machine-readable translation. If the content is time- or date-related, the <code>&#60;time&#62;</code> element must be used.</p>
+
+      <p><code><b>&#60;dfn&#62;</b></code>: <i>definition</i> represents the defining instance of a term.</p>
+
+      <p><code><b>&#60;em&#62;</b></code>: <i>emphasis</i> marks text that has stress emphasis. The <code>&#60;em&#62;</code> element can be nested, with each level of nesting indicating a greater degree of emphasis. <i class="faq">show examples of this</i>.</p>
+
+      <p><code><b>&#60;i&#62;</b></code>: <i>italic</i> represents a text segment that is set off from the normal text for some reason, for instance, technical terms, foreign language phrases, or fictional character thoughts. It is displayed in italic type.</p>
+
+      <p><code><b>&#60;kbd&#62;</b></code>: <i>keyboard</i> represents user input and produces an inline element displayed in the browser's default monospace font.</p>
+
+      <p><code><b>&#60;mark&#62;</b></code>: represents highlighted text, i.e., a run of text marked for reference purpose, due to its <strong>relevance</strong>> in a particular context. For example can be used in a page showing search results to highlight every instance of the searched-for word.</p>
+
+      <p><code><b>&#60;q&#62;</b></code>: <i>quote</i> indicates that the enclosed text is a short inline quotation. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the <code>&#60;blockquote&#62;</code> element.</p>
+
+      <p><code><b>&#60;rp&#62;</b></code>: <i class="faq">ruby parenthesis?</i> this element is used to provide fall-back parenthesis for browsers non-supporting ruby annotations. Ruby annotations are for showing pronunciation of East Asian characters, like using Japanese furigana or Taiwainese bopomofo characters. The <code>&#60;rp&#62;</code> element is used in the case of lack of <code>&#60;ruby&#62;</code> element support its support its content has what should be displayed in order to indicate the presence of a ruby annotation, usually parentheses. <i class="faq">show examples</i>.</p>
+
+      <p><code><b>&#60;rt&#62;</b></code>: <i class="faq">ruby pronunciation?</i> embraces pronunciation of characters presented in a ruby annotations, which are used to describe the pronunctiation of East Asian characters. This element is always used inside a <code>&#60;ruby&#62;</code> element. <i class="faq">show examples</i>.</p>
+
+      <p><code><b>&#60;rtc&#62;</b></code>: embraces semantic annotations of characters presented in a ruby of <code>&#60;rb&#62;</code> elements used inside of <code>&#60;ruby&#62;</code> element. <code>&#60;rb&#62;</code> elements can have both pronunciation (<code>&#60;rt&#62;</code>) and semantic (<code>&#60;rtc&#62;</code>) annotations. <i class="faq">show examples</i>.</p>
+
+      <p><code><b>&#60;ruby&#62;</b></code>: this element represents a ruby annotation. Ruby annotations are for showing pronunciation of East Asian characters. <i class="faq">show usage examples.</i></p>
+
+      <p><code><b>&#60;s&#62;</b></code>: <i>strikethrough</i> renders text with a strikethrough, or a line through it. Its usage must be selected to indicate when a portion of text is either unaccurate or irrelevant, and must be avoided to indicate text or document edition; for that, use the <code>&#60;del&#62;</code> and <code>&#60;ins&#62;</code> elements, as appropriate.</p>
+
+      <p><code><b>&#60;sample&#62;</b></code>: <i>sample</i>, used to identify a computer's program sample output. It is usually displayed in the browser's default monotype font (such as Lucida Console).</p>
+
+      <p><code><b>&#60;small&#62;</b></code>: makes the text font size <b>one size</b> smaller (for example, from lager to medium, or from small to extra-small) down to the browser's minimum font size. In HTML5, this element is repurposed to represent side-comments and small print, including copyright and legal text, independent of its styled presentation.</p>
+
+      <p><code><b>&#60;span&#62;</b></code>: this element doesn't hold a semantic meaning, is a generic <b>inline</b> container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the <code>class</code> or <code>id</code> attributes), or because they share attribute values, such as <code>lang</code>.</p>
+
+      <p><code><b>&#60;strong&#62;</b></code>: as opposed to the <code>&#60;b&#62;</code> (bold) element, this element has a semantic meaning, gives text strong imporntance, and is typically dsiplayed in bold.</p>
+
+      <p><code><b>&#60;sub&#62;</b></code>: <i>subscript</i>, defines a text span that should be displayed, for typographic reasons, lower, and most of the times, smaller than the main span of text.</p>
+
+      <p><code><b>&#60;sup&#62;</b></code>: <i>superscript</i>, defines a text span that should be displayed, for typographic reasons, higher, and most of the times, smaller than the main span of text.</p>
+
+      <p><code><b>&#60;time&#62;</b></code>: represents either a 24-hour clock time, or a precise date in the Gregorian calendar (with optional time an timezone information).</p>
+
+      <p><code><b>&#60;u&#62;</b></code>: <i>underline</i> renders text with an underline.</p>
+
+      <p><code><b>&#60;var&#62;</b></code>: <i>variable</i>, represents a variable in a mathematical or programming context.</p>
+
+      <p><code><b>&#60;wbr&#62;</b></code>: <i>word break opportunity</i> represents a position within the text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location.</p>
+
+    <h3>Image and multimedia</h3>
+
+      <p>The following elements are used to support various multimedia resources, such as, images, audio, and video.</p>
+
+      <p><code><b>&#60;area&#62;</b></code>: this element can only be used within a <code>&#60;map&#62;</code> element, and represents a hot-spot region on an image, optionally, a hyperlink can be associated with it.</p>
+
+      <p><code><b>&#60;audio&#62;</b></code>: allows embed sound content in documents. It may contain more than one source (represented by the <code>src</code> or <code>source</code> elements), the browser decides the most suitable one.</p>
+
+      <p><code><b>&#60;img&#62;</b></code>: <i>image</i>, represents an image in the document.</p>
+
+      <p><code><b>&#60;map&#62;</b></code>: is used with <code>&#60;area&#62;</code> elements to define an image map, i.e. a clickable link area.</p>
+
+      <p><code><b>&#60;track&#62;</b></code>: used a child element of the <code>&#60;audio&#62;</code> and <code>&#60;video&#62;</code> media elements. It lets you specify timed text track (subtitles) or time-based data. The tracks are formatted in WebVTT format (.vtt files) - Web Video Text Tracks.</p>
+
+      <p><code><b>&#60;video&#62;</b></code>: embeds video content in a document. As the <code>&#60;audio&#62;</code> media element, can contain more than one source, specified by the <code>src</code> <i>attribute</i> or the <code>&#60;source&#62;</code> element, again, the browser choose the most suitable one.</p>
+
+    <h3>Embedded content</h3>
+
+      <p>In addittion to the media content, HTML allows for other elements that support or complement it, even if it's not always easy to interact with.</p>
+
+      <p><code><b>&#60;embed&#62;</b></code>: represents a plug-in, that is, an interaction point for an external application or interactive content.</p>
+
+      <p><code><b>&#60;object&#62;</b></code>: represents an external resource, that can be: treated as an image, a nested browing context, or another resource to be handled by a <code>&#60;embed&#62;</code> (plug-in) element.</p>
+
+      <p><code><b>&#60;param&#62;</b></code>: this element defines parameters for the <code>&#60;object&#62;</code> element.</p>
+
+      <p><code><b>&#60;source&#62;</b></code>: specifies multiple media sources for either the: <code>&#60;picture&#62;</code>, <code>&#60;audio&#62;</code>, or the <code>&#60;video&#62;</code> element. It is an empty element, commonly used to serve the same media content in multiple formats supported by different browsers.</p>
+
+    <h3>Scripting</h3>
+
+      <p>With the purpose to add and support dynamic and interactive content in web applications, HTML supports the use of scripting languages, most prominently JavaScript. Certain elements support this capability.</p>
+
+      <p><code><b>&#60;canvas&#62;</b></code>: usually used to draw graphics, photo compositions, even, perform animations, via scripting (e.g. with JavaScript). You may (and should) provide alternate content inside this block-level element, in order to support older browsers that might not render this conten <b>and</b> in browsers with JavaScript disabled.</p>
+
+      <p><code><b>&#60;noscript&#62;</b></code>: used to insert an HTML section in the case a script is unsupported or if scripting is turned off in the browser.</p>
+
+      <p><code><b>&#60;script&#62;</b></code>: used to embed or reference an executable script within an HTML or XHTML element. <i class="faq">which is the difference between this element and a plug-in (the <code>&#60;embed&#62;</code> element)?</i></p>
+
+    <h3>Demarcating edits</h3>
+
+      <p>The following elements provide indications that specific parts of the text have been altered.</p>
+
+      <p><code><b>&#60;del&#62;</b></code>: represents a range of text that has been deleted from a document. Is often (but need not be) rendered as a strike-through text.</p>
+
+      <p><code><b>&#60;ins&#62;</b></code>: <i>inserted</i>, represents a range of text that has been added to a document.</p>
+
+    <h3>Table content</h3>
+
+      <p>This elements are used and created to handle tabular data.</p>
+
+      <p><code><b>&#60;caption&#62;</b></code>: this element serves as the title of the table, although is always the firts descendant of a <code>&#60;table&#62;</code>, its styling, using CSS, may place it elsewhere, relative to the table.</p>
+
+      <p><code><b>&#60;col&#62;</b></code>: <i>column</i> defines a column within a table and is used for defining common semantics on all common cells. Generally found within a <code>&#60;colgroup&#62;</code> element.</p>
+
+      <p><code><b>&#60;colgroup&#62;</b></code>: defines a group of columsn within a table. <i class="faq">show examples of this.</i></p>
+
+      <p><code><b>&#60;table&#62;</b></code>: used for information represented in a tabular way, that is, information expressed via a two-dimensional data table.</p>
+
+      <p><code><b>&#60;tbody&#62;</b></code>: groups one or more <code>&#60;tr&#62;</code> elements at the body of a <code>&#60;table&#62;</code> element.</p>
+
+      <p><code><b>&#60;td&#62;</b></code>: <i>table data</i> defines/set-up a cell that contains data. It participates in the <i>table model</i>. <i class="faq">show examples of this and search what is the table model.</i></p>
+
+      <p><code><b>&#60;tfoot&#62;</b></code>: defines a set of rows summarizing the columns of the table. <i class="faq">show examples.</i></p>
+
+      <p><code><b>&#60;th&#62;</b></code>: <i>table header</i> defines/identifies a cell as header of a group of table cells. The exact nature of this group is defined by the <code>scope</code> and <code>headers</code> attributes.</p>
+
+      <p><code><b>&#60;thead&#62;</b></code>: defines a set of rows as the head of the columns of the table.</p>
+
+      <p><code><b>&#60;tr&#62;</b></code>: defines a row of cells in a table. Those can be a mix of <code>&#60;td&#62;</code> and <code>&#60;th&#62;</code> elements. <i class="faq">show examples.</i></p>
+
+    <h3>Forms</h3>
+
+      <p>HTML allows the use of different elements which can be used together to create forms which the user can fill out and submit to the web site or application. There's a great deal of further information about this available in the HTML forms guide.</p>
+
+      <p><code><b>&#60;button&#62;</b></code>: represents a clickable button.</p>
+
+      <p><code><b>&#60;datalist&#62;</b></code>: contains a set of <code>&#60;option&#62;</code> elements that represent the values available for other controls.</p>
+
+      <p><code><b>&#60;fieldset&#62;</b></code>: used to group several controls as well as labels (<code>&#60;label&#62;</code>) within a web form. <i class="faq">show examples.</i></p>
+
+      <p><code><b>&#60;form&#62;</b></code>: represents a document section that contains interactive controls to submit information to a web server. <i class="faq">show examples</i></p>
+
+      <p><code><b>&#60;input&#62;</b></code>: create an interactive control that allow user input. Its behavior works depending on its <code>type</code> attribute.</p>
+
+      <p><code><b>&#60;label&#62;</b></code>: represents a caption for an item in a user interface.</p>
+
+      <p><code><b>&#60;legend&#62;</b></code>: represents a caption for the content of its parent element <code>&#60;fieldset&#62;</code>.</p>
+
+      <p><code><b>&#60;meter&#62;</b></code>: represents either a scalar value within a known range or a vractional value. <i class="faq">show example</i></p>
+
+      <p><code><b>&#60;optgroup&#62;</b></code>: creates a grouping of options within a <code>&#60;select&#62;</code> element.</p>
+
+      <p><code><b>&#60;option&#62;</b></code>: this element represents the result of a calculation or user action.</p>
+
+      <p><code><b>&#60;progress&#62;</b></code>: this element is used to represent the completion progress of a task, typically displayed as a progress bar.</p>
+
+      <p><code><b>&#60;select&#62;</b></code>: this element represents a control that provides a menu of options.</p>
+
+      <p><code><b>&#60;textarea&#62;</b></code>: represents a multi-line plain-text editing control.</p>
+
+    <h3>Interactive elements</h3>
+
+      <p>These HTML elements are used to create interactive user interface objects.</p>
+
+      <p><code><b>&#60;details&#62;</b></code>: this element is used as a disclosure widget from which the user can retrieve additional information. <i class="faq">show examples.</i></p>
+
+      <p><code><b>&#60;dialog&#62;</b></code>: represents a dialog box or toher interactive component, such as an inspector or window. <i>show examples</i></p>
+
+      <p><code><b>&#60;menu&#62;</b></code>: used to represent a group of commands that a user can perform or activate. This includes both list menues, which might appear across the top of a screen, as well as context menus, such as those that might appear underneath a button after it has been clicked. <i>show examples</i></p>
+
+      <p><code><b>&#60;menuitem&#62;</b></code>: represents a group of commands a user can invoke via a popup menu, this includes: context menus, as well as menus that might be attached to a menu button.</p>
+
+      <p><code><b>&#60;summary&#62;</b></code>: for the content of the <code>&#60;details&#62;</code> element is used as a summary, caption, or legend. <i class="faq">show examples</i></p>
+
+    <h3>Web components</h3>
+
+      <p>In addition to the elements already seen, HTML allows for the creation of additional elements as if it were regular HTML. In addition, it is possible to create custom versions of standard HTML elements.</p>
+
+      <p><code><b>&#60;shadow&#62;</b></code>: this element is used a a shadow DOM insertion point <i class="faq">what exactly this means?</i>. You might use it if you have created multiple shadow roots under a shadow host. It is not useful in ordinary HTML. It is used with Web Components. <i class="faq">show examples.</i></p>
+
+      <p><code><b>&#60;slot&#62;</b></code>: this element is a place holder inside a web component that users can fill with their own markup, with the effect of composing different DOM trees together. <i class="faq">show examples.</i></p>
+
+      <p><code><b>&#60;template&#62;</b></code>: is a mechanism for holding client-side content that is not to be rendered when a page is loaded buy may subsequently be instantiated during runtim using JavaScript. <i class="faq">what is instantiated? + show examples</i></p>
+
+  <h2>HTML elements by alphabetical order</h2>
+</body>
+</html>

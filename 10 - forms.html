@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>line one | 10 - forms</title>
+    <link rel="stylesheet" type="text/css" href="10-forms.css">
+  </head>
+  <body>
+    <header>
+      <a href="home.html" class="line-one-home">line one</a>
+      <h1>Forms</h1>
+      <hr>
+
+      <nav>
+        <h2>Table of contents</h2>
+
+          <ol>
+            <li><a href="#forms-101">Intro</a>
+              <ul>
+                <li><a href="#form-initializing">Initializing a form</a></li>
+                <li><a href="#txt-field">Text fields</a></li>
+                <li><a href="#txtarea">Textarea</a></li>
+              </ul>
+            </li>
+            <li><a href="#forms-multiple">Multiple choice forms</a>
+              <ul>
+                <li><a href="#form-radio">Radio buttons</a></li>
+                <li><a href="#form-check">Check boxes</a></li>
+                <li><a href="#drop-down">Drop&ndash;down lists</a></li>
+                <li><a href="#multiple-select">Multiple selection</a></li>
+              </ul>
+            </li>
+            <li><a href="#form-buttons">Form buttons &amp; inputs</a>
+              <ul>
+                <li><a href="#submit-input">Submit input</a></li>
+                <li><a href="#submit-button">Submit button</a></li>
+                <li><a href="#hidden">Hidden input</a></li>
+                <li><a href="#file-input">File input</a></li>
+              </ul>
+            </li>
+            <li><a href="#form-label">Form labels</a>
+              <ul>
+                <li><a href="#label">Label</a></li>
+                <li><a href="#fieldset">Fieldset</a></li>
+                <li><a href="#legend">Legend</a></li>
+              </ul>
+            </li>
+            <li><a href="#form-att">Form attributes</a>
+              <ul>
+                <li><a href="#disable">Disable</a></li>
+                <li><a href="#placeholder">Placeholder</a></li>
+                <li><a href="#required">Required</a></li>
+                <li><a href="#att-add">Additional attributes</a></li>
+              </ul>
+            </li>
+            <li><a href="#ex-login">Form example: login</a></li>
+            <li><a href="#summary">Summary</a></li>
+          </ol>
+      </nav>
+    </header>
+
+    <!--
+    <div class="faq">
+      <p>Prior to continue with the following topic asses this document with the following checklist:</p>
+
+      <ol>
+        <li>Whenever possible, download beforehand relevant material that allows off&ndash;line study.</li>
+        <li>Include <b>relevant and real</b> examples, aiming as much as possible to be hosted globally (Internet) rather than locally, so they work anywhere (iframes).</li>
+        <li>Check spelling and grammar, looking for overall legibility, form, and meaning.</li>
+        <li>Outline and solve any question that aroused from learning and making the document.</li>
+        <li>* Properly format lists with code samples so doesn't display error when validating the code</li>
+        <li>* Check code, both HTML and CSS indentation, overall presentation, use of the appropriate sectioning, and semantical markup elements.</li>
+        <li>Replace proper symbols by their respective encoding, e.g. apostrophes, ampersands, dashes, etc.</li>
+        <li>Validate HTML and CSS code, looking for errors.</li>
+        <li>Add descriptive and relevant comment to GitHub repository.</li>
+      </ol>
+    </div>
+    -->
+
+    <h2 id="forms-101">Forms 101<a href="#top" class="b2t">back to top</a></h2>
+
+      <p>Forms are used to retrieve user&ndash;provided information, process requests among others. Additionally, form gotten information can be used further by the user in a search query, a username, or password. Here, the form main aspects are going to be explained, how do form elements are marked up, skipping the details about the back&ndash;end (server) interaction.</p>
+
+      <section class="body-02 forms-101">
+        <h3 id="form-initializing">Initializing a form<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>To introduce a form the <code>&lt;form&gt;</code> element must be used, wrapping any child element in an opening and closing tag, similarly to a <code>&lt;div&gt;</code> element; this identifies where on the page the form controls will appear.</p>
+
+          <p>The most common attributes accepted by this element are: <code>action</code> and <code>method</code>. The <code>action</code> contain the URL (server or directory) to which the form is going to be sent. Whilst, the <code>method</code> attribute is the HTTP (transfer protocol) the browser should use when submitting the form and how the data is going to be sent. Both of these <code>&lt;form&gt;</code> attributes pertain to submitting and processing the data. There are two methods for this, the first one, is the value of <code>get</code> which is default, and latches the form information onto a web address, or <code>post</code>, which (essentially) invisibly sends the form's information. The first one, is used for shorter chunks of non&ndash;sensitive information&mdash;it is possible to see information sent by the user in the web address of its search results page, on the other hand, <code>post</code> is used for lengthier, more secure submissions, such as in contact forms.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;form action="processingscript.php" method="post"&gt;</li>
+                    <li>&emsp;&lt;label&gt;</li>
+                      <li>&emsp;&emsp;Field:</li>
+                      <li>&emsp;&emsp;&lt;input type="text" name="field" placeholder="Text field."&gt;</li>
+                    <li>&emsp;&lt;/label&gt;</li>
+                  <li>&lt;/form&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <form action="processingscript.php" method="post">
+                  <label>
+                    Field:
+                    <input type="text" name="field" placeholder="Text field.">
+                  </label>
+                </form>
+          </div>
+        
+        <h3 id="txt-field">Text fields<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>These elements allow gather data in the form of text via the <code>&lt;input&gt;</code> element, and uses the <code>type</code> attribute to define the kind of information to be captured within the control. The most popular <code>type</code> attribute value is <code>text</code>, which denotes a single line of text input. Also, along with the <code>type</code> attribute, is a good practice to include the <code>name</code>, in this way, is easier to identify the <b>meaning</b> of the data gathered by this control.</p>
+
+          <p>As self&ndash;contained element, the <code>&lt;input&gt;</code> element only uses one tag (opening) don't wrapping any content, being its value given by its attributes. Initially, the only accepted attribute values for this element were: <code>text</code> and <code>password</code> (password input), but recently, HTML5 brought new values for the <code>type</code> attribute, with the aim of expand the range of semantical meaning for inputs and enhance the controls for users. Should a browser not understand one of these HTML5 <code>type</code> attribute values, it will automatically fall back to the <code>text</code> attribute value. The following is a list of the new HTML5 input types:</p>
+
+          <ul class="code-sample">
+            <li>color</li>
+            <li>date</li>
+            <li>datetime</li>
+            <li>email</li>
+            <li>month</li>
+            <li>number</li>
+            <li>range</li>
+            <li>search</li>
+            <li>tel</li>
+            <li>time</li>
+            <li>url</li>
+            <li>week</li>
+          </ul>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;label&gt;</li>
+                    <li>&emsp;Username</li>
+                    <li>&emsp;&lt;input type=&#8220;text&#8221; name=&#8220;username&#8221; placeholder="Your username."&gt;</li>
+                  <li>&lt;/label&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <label>
+                  Username:
+                  <input type="text" name="username" placeholder="Your username.">
+                </label>
+          </div>
+
+          <p>The following are different <code>&lt;input&gt;</code> elements using different values for their respective <code>type</code> attributes. In each of the controls below, the <code>name</code> attribute value is used for reference into the form, isn't in any way displayed in the document. The difference in the nature of each attribute value is more evident in the controls on mobile websites.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;input type=&#8220;date&#8221; name=&#8220;birthday&#8221;&gt;</li>
+                  <li>&lt;input type=&#8220;time&#8221; name=&#8220;game&ndash;time&#8221;&gt;</li>
+                  <li>&lt;input type=&#8220;email&#8221; name=&#8220;email&ndash;address&#8221;&gt;</li>
+                  <li>&lt;input type=&#8220;url&#8221; name=&#8220;website&#8221;&gt;</li>
+                  <li>&gt;input type=&#8220;number&#8221; name=&#8220;cost&#82201;&gt;</li>
+                  <li>&gt;input type=&#8220;tel&#8221; name=&#8220;phone&ndash;number&#8221;&gt;</li>
+                </ol>
+            
+              <h6>Result</h6>
+
+                <input type="date" name="birthday"><br>
+                <input type="time" name="game-time"><br>
+                <input type="email" name="email-address"><br>
+                <input type="url" name="website"><br>
+                <input type="number" name="cost"><br>
+                <input type="tel" name="phone-number">
+          </div>
+
+        <h3 id="txtarea">Textarea<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>Text field work to capture character&ndash;based data, however, when string&ndash;based is required to be gathered, another type of element is necessary, namely the <code>&lt;textarea&gt;</code> element, it differs from the <code>&lt;input&gt;</code> element in that it can accept larger text passages spanning multiple lines; this element has start and end tags that wrap plain text. Because plain text is the only type of value that this element accepts the <code>type</code> attribute doesn't play here, but the <code>name</code> attribute is still used.</p>
+
+          <p>The <code>&lt;textarea&gt;</code> element has two sizing attributes: <code>cols</code> for width in terms of the average character width and <code>rows</code> for height in terms of the number of lines of visible text. However, the dimensions of this element is as expected, modified via the CSS <code>width</code> and <code>height</code>.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;textarea name=&#8220;comment&#8221;&gt;Add your comment here&lt;/textarea&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <textarea name="comment">Add your comment here.</textarea>
+          </div>
+      </section>
+
+    <h2 id="forms-multiple">Multiple choice forms<a href="#top" class="b2t">back to top</a></h2>
+
+      <p>Another way to collect data is through drop&ndash;down and multiple choice lists. Each of those with specific usages and purposes.</p>
+
+      <section class="body-02 forms-multiple">
+        <h3 id="form-radio">Radio buttons<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>This type of multiple choice list allow users to quickly choice <b>one</b> option form a <b>small</b> list. This type of lists are created from an <code>&lt;input&gt;</code> element which has been assigned a <code>type</code> attribute value of <code>radio</code>. Each radio button element should have the same <code>name</code> attribute value so all of the buttons within a group correspond to one another. As in the list with radio buttons, the user is selecting a <b>predefined</b> option, each <code>&lt;input&gt;</code> element will need to have a declared <code>value</code>. Additionally, to preselect a radio button for users it is possible to use the Boolean attribute <code>checked</code>.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;input type=&#8220;radio&#8221; name=&#8220;day&#8221; value=&#8220;Friday&#8221; checked&gt; Friday&lt;br&gt;</li>
+                  <li>&lt;input type=&#8220;radio&#8221; name=&#8220;day&#8221; value=&#8220;Saturday&#8221;&gt; Saturday&lt;br&gt;</li>
+                  <li>&lt;input type=&#8220;radio&#8221; name=&#8220;day&#8221; value=&#8220;Sunday&#8221;&gt; Sunday</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <input type="radio" name="day" value="Friday" checked> Friday<br>
+                <input type="radio" name="day" value="Saturday"> Saturday<br>
+                <input type="radio" name="day" value="Sunday"> Sunday
+          </div>
+        
+        <h3 id="form-check">Check boxes<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>Check boxes behave pretty similar to radio buttons, with the only difference that them allow users to select more than one value at a time, tiding them all to a <b>single control name</b>.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;input type=&#8220;checkbox&#8221; name=&#8220;day&#8221; value=&#8220;Friday&#8221; checked&gt; Friday&lt;br&gt;</li>
+                  <li>&lt;input type=&#8220;checkbox&#8221; name=&#8220;day&#8221; value=&#8220;Saturday&#8221;&gt; Saturday&lt;br&gt;</li>
+                  <li>&lt;input type=&#8220;checkbox&#8221; name=&#8220;day&#8221; value=&#8220;Sunday&#8221;&gt; Sunday</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <input type="checkbox" name="day" value="Friday" checked> Friday<br>
+                <input type="checkbox" name="day" value="Saturday" checked> Saturday<br>
+                <input type="checkbox" name="day" value="Sunday"> Sunday
+          </div>
+
+        <h3 id="drop-down">Drop&ndash;down lists<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>This type of lists is of great help when a <b>long</b> list of element to choose from is presented to the user. Employ another type of list, like radio buttons or check boxes isn't not only visually unappealing, but also unpractical specially on mobile devices.</p>
+
+          <p>To create a drop&ndash;list the <code>&lt;select&gt;</code> parent element and the <code>&lt;option&gt;</code> child element are used. As is expected that all options are all of the same nature, the <code>name</code> attribute is placed inside the <code>&lt;select&gt;</code> element instead. hence, the <code>value</code> attribute on each <code>&lt;option</code> element corresponds to the <code>name</code> attribute on the <code>&lt;select&gt;</code> element. The text to be displayed to the user is then wrapped into an <code>&lt;option&gt;</code> opening and closing tag. Much like in the case of radio buttons, a preselected option can be marked up using the <code>checked</code> Boolean attribute.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;select name=&#8220;day&#8221;&gt;</li>
+                    <li>&emsp;&lt;option value=&#8220;Friday&#8221; selected&gt;Friday&lt;/option&gt;</li>
+                    <li>&emsp;&lt;option value=&#8220;Saturday&#8221;&gt;Saturday&lt;/option&gt;</li>
+                    <li>&emsp;&lt;option value=&#8220;Sunday&#8221;&gt;Sunday&lt;/option&gt;</li>
+                  <li>&lt;/select&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <select name="day">
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Sunday" selected>Sunday</option>
+                </select>
+          </div>
+
+        <h3 id="multiple-select">Multiple selection<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>By just adding the <code>multiple</code> attribute to the <code>&lt;select&gt;</code> element in a drop&ndash;list, it will allow the user to select more than one option, converting it into a multiple selection list. When this is done the <code>checked</code> attribute can be added to more than one <code>&lt;option&gt;</code> element preselecting several options. It is worthwhile to inform users that by holding down the Shift key they could select more than one option.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;select name=&#8220;day&#8221; multiple&gt;</li>
+                    <li>&emsp;&lt;option value=&#8220;Friday&#8221; selected&gt;Friday&lt;/option&gt;</li>
+                    <li>&emsp;&lt;option value=&#8220;Saturday&#8221; selected&gt;Saturday&lt;/option&gt;</li>
+                    <li>&emsp;&lt;option value=&#8220;Sunday&#8221;&gt;Sunday&lt;/option&gt;</li>
+                  <li>&lt;/select&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <select name="day" multiple>
+                  <option value="Friday" selected>Friday</option>
+                  <option value="Saturday" selected>Saturday</option>
+                  <option value="Sunday">Sunday</option>
+                </select>
+          </div>
+      </section>
+
+    <h2 id="form-buttons">Form buttons &amp; inputs<a href="#top" class="b2t">back to top</a></h2>
+
+      <p>Once the user has provided information is necessary to put it into action along with complementary information that might not be relevant (or even understandable, like a tracking or serial number) to the user but will better serve the purpose of the form.</p>
+
+      <section class="body-02 form-buttons">
+        <h3 id="submit-input">Submit input<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>This essential form element is created modifying the <code>&lt;input&gt;</code> element by applying the <code>submit</code> attribute to it. In this case, the <code>value</code> attribute is used to specify the text that appears within the button.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;input type=&#8220;submit&#8221; name=&#8220;submit&#8221; value=&#8220;Send&#8221;&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <input type="submit" name="submit" value="Click to send">
+          </div>
+
+        <h3 id="submit-button">Submit button<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>As a self&ndash;contained element the <code>&lt;input&gt;</code> element do not wrap any content, this represents an inconvenience if the submit button is to be modified, because of this, the <code>&lt;button&gt;</code> element is a more appropriate option, basically acts as the <code>&lt;input&gt;</code> element but skipping the <code>type=&#8220;submit&#8221;</code> attribute as it is already its default behavior, however this value can be added. Moreover, because it has an opening and closing tags, there is no need for a <code>value</code> attribute, instead the content to be displayed must be added within the tags.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;button name=&#8220;submit&#8221;&gt;</li>
+                    <li>&emsp;&lt;strong&gt;Send Us&lt;/strong&gt; a Message.</li>
+                  <li>&lt;/button&gt;</li>
+                </ol>
+
+              <h6>CSS</h6>
+
+                <ol class="code-sample">
+                  <li>strong {</li>
+                    <li>&emsp;font&ndash;weight: bold;</li>
+                  <li>}</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <button name="submit">
+                  <strong>Send Us</strong> a Message.
+                </button>
+          </div>
+    
+        <h3 id="hidden">Hidden input<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>Hidden inputs provide a way to pass data to the server without displaying it to users. Hidden inputs are typically used for tracking codes, keys, or other information that is not pertinent to the user but is helpful when processing the form. This information is not displayed on the page; however, it can be found by viewing the source code of a page. It should therefore not be used for sensitive or secure information. To create a hidden input, the <code>type=&#8220;hidden&#8221;</code> attribute value is added in addition to the appropriate <code>name</code> and <code>value</code> attributes.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;input type=&#8220;hidden&#8221; name=&#8220;tracking&ndash;code&#8221; value=&#8220;abc&ndash;123&#8221;&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <input type="hidden" name="tracking-code" value="abc-123"&>
+          </div>
+        
+        <h3 id="file-input">File input<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>When added to an <code>&lt;input&gt;</code> element the <code>type=&#8220;file&#8221;</code> attribute value will allow users to attach files to the form. One of the pitfalls of this element is that is cumbersome style it, this is because each browser has its own default input style, and none provide much control to override it. JavaScript and other solutions can be employed to allow for file input, but they are slightly more difficult to construct.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;input type=&#8220;file&#8221; name=&#8220;file&#8221;&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <input type="file" name="attachement">
+          </div>
+      </section>
+
+    <h2 id="form-label">Form labels<a href="#top" class="b2t">back to top</a></h2>
+
+      <p>In order to help users understand what is being asked of them, and/or how to properly fill out the form, the implementation of labels, fieldsets, and legends will help to guide them.</p>
+
+      <section class="body-02 form-label">
+        <h3 id="label">Label<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>This elements provide captions or headings for form controls, unambiguously tying them together, creating accessible forms for users and assistive technologies. Needless to say, labels should include text that describes the inputs or controls they pertain to. Labels could include a <code>for</code> attribute which ties the label to the <code>id</code> with the same value in the corresponding <code>&lt;input&gt;</code> element. This match allows users click on the <code>&lt;label&gt;</code> element to bring focus to the proper form control.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;label for=&#8220;username&#8221;&gt;Username&lt;/label&gt;</li>
+                  <li>&lt;input type=&#8220;text&#8221; name=&#8220;username&#8221; id=&#8220;username&#8221;&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+          </div>
+
+          <p>The <code>&lt;label&gt;</code> elements can wrap form controls, such as radio buttons or check boxes. Doing so allows omission of the <code>for</code> and <code>id</code> attributes.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;label&gt;</li>
+                    <li>&emsp;&lt;input type=&#8220;radio&#8221; name=&#8220;day&#8221; value=&#8220;Friday&#8221; checked&gt; Friday&lt;br&gt;</li>
+                  <li>&lt;/label&gt;</li>
+                  <li>&lt;label&gt;</li>
+                    <li>&emsp;&lt;input type=&#8220;radio&#8221; name=&#8220;day&#8221; value=&#8220;Saturday&#8221;&gt; Saturday&lt;br&gt;</li>
+                  <li>&lt;/label&gt;</li>
+                  <li>&lt;label&gt;</li>
+                    <li>&emsp;&lt;input type=&#8220;radio&#8221; name=&#8220;day&#8221; value=&#8220;Sunday&#8221;&gt; Sunday</li>
+                  <li>&lt;/label&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <label>
+                  <input type="radio" name="day" value="Friday" checked> Friday<br>
+                </label>
+                <label>
+                  <input type="radio" name="day" value="Saturday"> Saturday<br>
+                </label>
+                <label>
+                  <input type="radio" name="day" value="Sunday"> Sunday
+                </label>
+          </div>
+
+        <h3 id="fieldset">Fieldset<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>A fieldset can be seen as the equivalent of a <code>&lt;div&gt;</code> element for <code>&lt;form&gt;</code> elements, as it groups in a <b>block&ndash;level</b> element related elements, specifically <b>within</b> a form. Fieldsets, by default, outline a border, which can be modified using CSS.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;fieldset&gt;</li>
+                    <li>&emsp;&lt;label&gt;</li>
+                      <li>&emsp;&emsp;Username</li>
+                      <li>&emsp;&emsp;&lt;input type=&#8220;text&#8221; name=&#8220;username&#8221;&gt;&lt;br&gt;</li>
+                    <li>&emsp;&lt;/label&gt;</li>
+                    <li>&emsp;&lt;label&gt;</li>
+                      <li>&emsp;&emsp;Password</li>
+                      <li>&emsp;&emsp;&lt;input type=&#8220;text&#8221; name=&#8220;password&#8221;&gt;</li>
+                    <li>&emsp;&lt;/label&gt;</li>
+                  <li>&lt;/fieldset&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <fieldset>
+                  <label>
+                    Username
+                    <input type="text" name="username"><br>
+                  </label>
+                  <label>
+                    Password
+                    <input type="password" name="password">
+                  </label>
+                </fieldset>
+          </div>
+
+        <h3 id="legend">Legend<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>This element provides a description or caption in the form of a heading to a fieldset. Indeed, if used, must go right after the <code>&lt;fieldset&gt;</code> element. On the page, the <code>&lt;legend&gt;</code> will appear within the left top of the fieldset border.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;fieldset&gt;</li>
+                    <li>&emsp;&lt;legend&gt;Login&lt;/legend&gt;</li>
+                    <li>&emsp;&lt;label&gt;</li>
+                      <li>&emsp;&emsp;Username</li>
+                      <li>&emsp;&emsp;&lt;input type=&#8220;text&#8221; name=&#8220;username&#8221;&gt;&lt;br&gt;</li>
+                    <li>&emsp;&lt;/label&gt;</li>
+                    <li>&emsp;&lt;label&gt;</li>
+                      <li>&emsp;&emsp;Password</li>
+                      <li>&emsp;&emsp;&lt;input type=&#8220;text&#8221; name=&#8220;password&#8221;&gt;</li>
+                    <li>&emsp;&lt;/label&gt;</li>
+                  <li>&lt;/fieldset&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <fieldset>
+                  <legend>Login</legend>
+                  <label>
+                    Username
+                    <input type="text" name="username"><br>
+                  </label>
+                  <label>
+                    Password
+                    <input type="password" name="password">
+                  </label>
+                </fieldset>
+          </div>
+      </section>
+
+    <h2 id="form-att">Form attributes<a href="#top" class="b2t">back to top</a></h2>
+
+      <p>There are different attributes that allow add properties, conditions, and behavior to the form, such as disabling controsl and adding form validation. The following attributes are amongst the most common.</p>
+
+      <section class="body-02 form-att">
+        <h3 id="disable">Disable<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>This Boolean attribute turns off an element rendering useless for interaction or input. Elements with this attribute will not send any value to the server for form processing. When applied to a parent element the <code>disabled</code> attribute will affect the element's child elements. If the element has the <code>type=&#8220;hidden&#8221;</code> attribute value, the <code>hidden</code> Boolean attribute is ignored.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;label&gt;</li>
+                    <li>&emsp;Username</li>
+                    <li>&lt;input type="text" name="username" disabled&gt;</li>
+                  <li>&lt;/label&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <label>
+                  Username
+                  <input type="text" name="username" disabled>
+                </label>
+
+                <p>If one tries to type any character in this disabled field it will be unresponsive.</p>
+          </div>
+
+        <h3 id="placeholder">Placeholder<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>This attribute shows information within the form control of an <code><b>&lt;input&gt;</b></code> or <code><b>&lt;textarea&gt;</b></code> that disappears once the element is clicked or gain focus. This is used to give users further information on how the form input should be filled in, for example, the email address format to use.</p>
+
+          <p>The main difference between the <code>placeholder</code> and <code>value</code> attributes is that the <code>value</code> attribute value text stays in place when a control has focus unless a user manually deletes it. This is a good option for pre-populating data, such as personal information, for a user but not for providing suggestions.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                <ol class="code-sample">
+                  <li>&lt;label&gt;</li>
+                    <li>&emsp;Email address</li>
+                    <li>&emsp;&lt;input type="email" name="email-address" placeholder="name@domain.com"&gt;</li>
+                  <li>&lt;/label&gt;</li>
+                </ol>
+
+              <h6>Result</h6>
+
+                <label>
+                  Email Address
+                  <input type="email" name="email-address" placeholder="name@domain.com">
+                </label>
+
+                <p>Once any text is type in the above field the placeholder: <i>name@domain.com</i> will disappear.</p>
+          </div>
+
+        <h3 id="required">Required<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>The <code>required</code> HTML5 attribute enforces that an element or form control must contain a value upon being submitted to the server, otherwise, an error message will be displayed by the browser, who handle the styling of this message, that is to say, this error message cannot be styled using CSS. Form controls and invalid elements on the other hand, can be styled using the <code>:optional</code> and <code>:required</code> CSS pseudo-classes.</p>
+
+          <p>Validation also occurs specific to a control's type. For example, an <code>&lt;input&gt;</code> control form with a <code>type="date"</code> will verify that the provided value is a valid one, and not, let's say text or symbols other than numbers.</p>
+
+          <div class="exempli">
+            <span class="subtitle-ex">Example</span>
+
+              <h6>HTML</h6>
+
+                  <ol class="code-sample">
+                    <li>&lt;label&gt;</li>
+                      <li>&emsp;Email Address</li>
+                      <li>&emsp;&lt;input type="email" name="email-address" required&gt;</li>
+                    <li>&lt;/label&gt;</li>
+                  </ol>
+
+              <h6>Result</h6>
+
+                <label>
+                  Email Address
+                  <input type="email" name="email-address" required>
+                </label>
+          </div>
+
+        <h3 id="att-add">Additional attributes<a href="#top" class="b2t">back to top</a></h3>
+
+          <p>Other form and form control attributes include, but are not limited to:</p>
+
+          <ul class="code-sample">
+            <li>accept</li>
+            <li>autocomplete</li>
+            <li>autofocus</li>
+            <li>formaction</li>
+            <li>formenctype</li>
+            <li>formmethod</li>
+            <li>formnovalidate</li>
+            <li>formtarget</li>
+            <li>max</li>
+            <li>maxlength</li>
+            <li>min</li>
+            <li>pattern</li>
+            <li>readonly</li>
+            <li>selectionDirection</li>
+            <li>step</li>
+          </ul>
+      </section>
+
+    <h2 id="ex-login">Form example: login<a href="#top" class="b2t">back to top</a></h2>
+
+      <p>The following is an example of a login page using several form controls and attributes. These, are later styled using CSS.</p>
+
+      <div class="exempli">
+        <h6>HTML</h6>
+
+          <ol class="code-sample">
+            <li>&lt;form&gt;</li>
+              <li>&emsp;&lt;fieldset class="account-info"&gt;</li>
+                <li>&emsp;&emsp;&lt;label&gt;</li>
+                  <li>&emsp;&emsp;&emsp;Username</li>
+                  <li>&emsp;&emsp;&emsp;&lt;input type="text" name="username"&gt;</li>
+                <li>&emsp;&emsp;&lt;/label&gt;</li>
+                <li>&emsp;&emsp;&lt;label&gt;</li>
+                  <li>&emsp;&emsp;&emsp;Password</li>
+                  <li>&emsp;&emsp;&emsp;&lt;input type="password" name="password"&gt;</li>
+                <li>&emsp;&emsp;&lt;/label&gt;</li>
+              <li>&emsp;&lt;/fieldset&gt;</li>
+              <li>&emsp;&lt;fielset class="account-action"&gt;</li>
+                <li>&emsp;&emsp;&lt;input class="btn" type="submit" name="submit" value="Login"&gt;</li>
+                <li>&emsp;&emsp;&lt;label&gt;</li>
+                  <li>&emsp;&emsp;&emsp;&lt;input type="checkbox" name="remember"&gt; Stay signed in</li>
+                <li>&emsp;&emsp;&lt;/label&gt;</li>
+              <li>&emsp;&lt;/fieldset&gt;</li>
+            <li>&lt;/form&gt;</li>
+          </ol>
+
+        <h6>CSS</h6>
+
+          <ol class="code-sample">
+            <li>*,</li>
+            <li>*:before</li>
+            <li>*:after {</li>
+              <li>&emsp;box-sizing: border-box;</li>
+            <li>}</li>
+            <li>form {</li>
+              <li>&emsp;border: 1px solid #c6c7cc;</li>
+              <li>&emsp;border-radius: 5px;</li>
+              <li>&emsp;font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;</li>
+              <li>&emsp;overflow: hidden;</li>
+              <li>&emsp;width: 240px;</li>
+            <li>}</li>
+            <li>fieldset {</li>
+              <li>&emsp;border: 0;</li>
+              <li>&emsp;margin: 0;</li>
+              <li>&emsp;padding; 0;</li>
+            <li>}</li>
+            <li>input {</li>
+              <li>&emsp;border-radius: 5px;</li>
+              <li>&emsp;font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;</li>
+              <li>&emsp;margin: 0;</li>
+            <li>}</li>
+            <li>.account-info {</li>
+              <li>&emsp;padding: 20px 20px 0 20px;</li>
+            <li>}</li>
+            <li>.account-info label {</li>
+              <li>&emsp;color: #395870;</li>
+              <li>&emsp;display: block;</li>
+              <li>&emsp;font-weight: bold;</li>
+              <li>&emsp;margin-bottom: 20px;</li>
+            <li>}</li>
+            <li>.account-info input {</li>
+              <li>&emsp;background: #fff;</li>
+              <li>&emsp;border: 1px solid #c6c7cc;</li>
+              <li>&emsp;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 1);</li>
+              <li>&emsp;color: #636466;</li>
+              <li>&emsp;padding: 6px;</li>
+              <li>&emsp;margin-top: 6px;</li>
+              <li>&emsp;width: 100%;</li>
+            <li>}</li>
+            <li>.account-action {</li>
+              <li>&emsp;background: #f0f0f2;</li>
+              <li>&emsp;border-top: 1px solid #c6c7cc;</li>
+              <li>&emsp;padding: 20px;</li>
+            <li>}</li>
+            <li>.account-action .btn {</li>
+              <li>&emsp;background: linear-gradient(#49708f, #293f50);</li>
+              <li>&emsp;border: 0;</li>
+              <li>&emsp;color: #fff;</li>
+              <li>&emsp;cursor: pointer;</li>
+              <li>&emsp;font-weight: bold;</li>
+              <li>&emsp;float: left;</li>
+              <li>&emsp;padding: 8px 16px;</li>
+            <li>}</li>
+            <li>.account-action label {</li>
+              <li>&emsp;color: #7c7c80;</li>
+              <li>&emsp;font-size: 12px;</li>
+              <li>&emsp;float: left;</li>
+              <li>&emsp;margin: 10px 0 0 20px;</li>
+            <li>}</li>
+          </ol>
+
+        <h6>Result</h6>
+
+          <form class="example-login">
+            <fieldset class="account-info">
+              <label>
+                Username
+                <input type="text" name="username">
+              </label>
+              <label>
+                Password
+                <input type="password" name="password">
+              </label>
+            </fieldset>
+            <fieldset class="account-action">
+              <input type="submit" name="submit" value="Login" class="btn">
+              <label>
+                <input type="checkbox" name="remember"> Stay signed in
+              </label>
+            </fieldset>
+          </form>
+      </div>
+
+    <footer>
+      <h2 id="summary">Summary<a href="#top" class="b2t">back to top</a></h2>
+
+        <p>Forms represent one basic way to get an interaction from the user, could modify a few element's set to serve multiple purposes, being the ones outlined here the following:</p>
+
+        <ol>
+          <li>The <code>&lt;form&gt;</code> element, the way to initialize form controls.</li>
+          <li>
+            The <code>&lt;input&gt;</code> element, being the most versatile so far, given that with the addition of a:
+            <ol>
+              <li><code>&lt;type="text"</code> attribute a text field is introduced in the page.</li>
+              <li><code>&lt;type="radio"</code> attribute will result in a radio button lists.</li>
+              <li><code>&lt;type="checkbox"&gt;</code> attribute will lead to a multiple selection list.</li>
+              <li><code>&lt;type="submit"&gt;</code> displays a form submission button.</li>
+              <li><code>hidden</code> attribute allow send relevant hidden information for the form that might be incomprehensible to the user.</li>
+            </ol>
+          </li>
+          <li>Accessibility can be enhance through the use of the <code>&lt;label&gt;</code> elements.</li>
+          <li>The use of the <code>&lt;fieldset&gt;</code> element as a semantic sectioning element for form controls.</li>
+          <li>How it is possible to change the state of a form control using the <code>disable</code>, <code>required</code>, and <code>placeholder</code> attributes.</li>
+        </ol>
+    </footer>
+  </body>
+</html>

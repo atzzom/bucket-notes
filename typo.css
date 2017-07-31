@@ -1,0 +1,442 @@
+/*
+============================================
+CSS reset
+http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+License: none (public domain)
+============================================
+*/
+
+What are those elements used for? which is their meaning?
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+/*
+============================================
+Document's style
+============================================
+*/
+
+body {
+  background-color: rgba(6, 32, 42, 0.9); /* dark green */
+  color: rgba(150, 154, 152, 1); /* silver */
+  font: 200 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 10%;
+  text-align: justify;
+}
+
+/* styles for the link to the home page */
+    .line-one-home {
+      color: rgb(235, 75, 66); /* red */
+      display: block; /* This value will prevent other elements interfere with the link into the same line the home link is. */
+      text-align: center;
+    }
+
+a {
+  color: rgba(27, 135, 204, 1); /* blue */
+}
+a:hover {
+  color: #ff7b29; /* orange */
+}
+
+/* style for the back to top link */
+.b2t {
+  color: rgba(6, 32, 42, 0.4); /* Almost the same as the background color so is barely perceptible. */
+  float: right;
+  font: 100 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* FAQ */
+.faq { /* Elements hightlighted to indicate questions to be solved. */
+  background-color: yellow;
+  color: rgba(6, 32, 42, 0.9); /* dark green */
+}
+
+/* Headers */
+
+h1 {
+  color: rgba(235, 75, 66, 1); /* Red */
+  text-align: center;
+  padding-top: 50px;
+}
+
+h2 {
+  padding-left: 5%;
+  padding-top: 70px;
+  text-align: left;
+}
+
+h3 {
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+h2, h3 {
+  color: rgba(235, 75, 66, .65); /* The same red color as the h1 element but slightly lighter. */
+}
+
+h4, h5, h6 {
+  color: rgba(49, 131, 103, 1); /* green */
+  font-style: italic;
+  padding-left: 5%;
+}
+
+/* websafe font samples */
+.font {
+  padding: 0%;
+  margin: 0%;
+}
+
+.Arial {font-family: Arial;}
+.Courier {font-family: Courier;}
+.Courier-New {font-family: Courier-New;}
+.Garamond {font-family: Garamond;}
+.Georgia {font-family: Georgia;}
+.Lucida {font-family: Lucida;}
+.Lucida-Grande {font-family: Lucida-Grande;}
+.Lucida-Sans {font-family: Lucida-Sans;}
+.Palatino-Linotype {font-family: Palatino-Linotype;}
+.Tahoma {font-family: Tahoma;}
+.Trebuchet {font-family: Trebuchet;}
+.Times-New-Roman {font-family: "Times-New-Roman";}
+.Times {font-family: Times;}
+.Verdana {font-family: Verdana;}
+
+/* miscellaneous */
+
+hr {
+  margin-top: 70px;
+}
+
+.code-example {
+  text-align: left;
+}
+
+footer {
+  padding-bottom: 10%;
+}
+
+nav {
+  float: left;
+}
+
+/*
+============================================
+Document's frames
+============================================
+*/
+
+.frame {
+  border-color: silver;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  left: 0px; /* this "left" property locates the box in the left of its parent element (because we are using an absolute positioning, in this case the left of the <html> element) */
+  padding: 0% 2%;
+  position: absolute; /* property used to take the box out of the document's flow and send it to the left of its parent element */
+  width: 15%; /* 15% of its parent element, so it doesn't overlap the content next to it */
+}
+
+/* .ten-percent {
+  width: 10%;
+} */
+
+.frame h3 {
+  /* Aligns the title (h3) of any element classified as frame, i.e. is displayed aside/next to the main content, specially useful when the title occupies more than one line, in this way isn't shown as justified text. */
+  text-align: left;
+}
+
+/*
+============================================
+Document's examples
+============================================
+*/
+
+/* The styles here are going to be layered with each of the specific examples. */
+.example {
+  color: rgba(255, 255, 255, 0.8); /* The font is white to help highlight the examples from the rest of the content. */
+  border-color: rgba(49, 131, 103, 1); /* Green */
+  border-radius: 5px;
+  border-style: dotted;
+  border-width: 2px;
+  font-weight: 100;
+  padding: 0% 12%;
+}
+
+.ex-color-01 {color: #555; /* Gray */}
+
+.ex-font-family-01 {font-family: Garamond, Georgia, Lucida, serif;}
+
+/* font-size examples */
+.ex-font-size-01 {font-size: 14px;}
+.ex-font-size-02 {font-size: 150%;}
+.ex-font-size-03 {font-size: 0.8em;}
+.ex-font-size-04 {font-size: 20pt;}
+
+/* font-style examples */
+.ex-font-style-01 {font-style: italic;}
+.ex-font-style-02 {font-style: normal;}
+.ex-font-style-03 {font-style: oblique;}
+.ex-font-style-04 { /* this selector is used to illustrate how the oblique and initial properties work related to their parent element. */
+  font-style: oblique;
+  padding-left: 5%;
+}
+div.ex-font-style-04 p {font-style: inherit;}
+div.ex-font-style-04 .ex-font-style-05 {font-style: initial;}
+
+.ex-font-variant-01 {font-variant: small-caps;}
+
+.ex-font-weight-typeface {font-family: "Avenir Next";} /* This property is used to experiment with different typefaces looking for one defined for all font-weights. */
+.ex-font-weight-01 {font-weight: 100;}
+.ex-font-weight-02 {font-weight: 200;}
+.ex-font-weight-03 {font-weight: 300;}
+.ex-font-weight-04 {font-weight: 400;}
+.ex-font-weight-05 {font-weight: 500;}
+.ex-font-weight-06 {font-weight: 600;}
+.ex-font-weight-07 {font-weight: 700;}
+.ex-font-weight-08 {font-weight: 800;}
+.ex-font-weight-09 {font-weight: 900;}
+
+.ex-line-height-01 {line-height: 05px;}
+.ex-line-height-02 {line-height: 10px;}
+.ex-line-height-03 {line-height: 15px;}
+.ex-line-height-04 {line-height: 050%;}
+.ex-line-height-05 {line-height: 100%;}
+.ex-line-height-06 {line-height: 150%;}
+.ex-line-height-07 {line-height: 200%;}
+.ex-line-height-08 {line-height: 00.5;}
+.ex-line-height-09 {line-height: 0001;}
+.ex-line-height-10 {line-height: 01.5;}
+.ex-line-height-11 {line-height: 0002;}
+.ex-line-height-12 {
+  /* This code shows a trick to vertically center text, here the font-size and line-height are the same. */
+  font-size: 16px;
+  line-height: 16px;
+}
+
+/* Styles used for the Shay Howe's example where several font-based properties are used. */
+div.all-font h2 {
+  color: #555;
+  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+div.all-font p {
+  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+div.all-font a {
+  color: #0087cc;
+}
+div.all-font a:hover {
+  color: #ff7b29;
+}
+div.all-font h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.byline {
+  color: #9799a7;
+  font-family: Georgia, Times, "Times-New-Roman", serif;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+/* Text-align examples */
+.ex-text-align-01 {text-align: left;}
+.ex-text-align-02 {text-align: right;}
+.ex-text-align-03 {text-align: center;}
+.ex-text-align-04 {text-align: justify;}
+.ex-text-align-05 {text-align: inherit;}
+
+/* Text-decoration examples */
+.ex-text-deco-01 {text-decoration: none;}
+.ex-text-deco-02 {text-decoration: underline;}
+.ex-text-deco-03 {text-decoration: overline;}
+.ex-text-deco-04 {text-decoration: line-through;}
+.ex-text-deco-05 {text-decoration: inherit;}
+
+/* Text-indent examples */
+.ex-text-indent-01 {text-indent: +25px;}
+.ex-text-indent-02 {text-indent: -25px;}
+.ex-text-indent-03 {text-indent: +10%;}
+.ex-text-indent-04 {text-indent: -10%;}
+.ex-text-indent-05 {text-indent: +5em;}
+.ex-text-indent-06 {text-indent: -5em;}
+
+/* Text shadow examples */
+div.text-shadow div {
+  border-color: rgba(27, 135, 204, 1);
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 40px;
+  padding: 1%;
+}
+
+.ex-text-shadow-01 {
+  box-shadow: +30px +0px +50px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: +5px +0px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-02 {
+  box-shadow: +0px +10px +0px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: +0px +5px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-03 {
+  box-shadow: +5px -5px +10px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: +5px -6px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-04 {
+  box-shadow: +5px +6px +3px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: +5px +6px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-05 {
+  box-shadow: -5px +6px +3px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: -5px +6px +3px rgba(27, 135, 204, 1); /* blue */
+}
+.ex-text-shadow-06 {
+  box-shadow: -5px -6px +3px rgba(27, 135, 204, 1); /* blue */
+  text-shadow: -5px -6px +3px rgba(27, 135, 204, 1); /* blue */
+}
+
+/* Text transform examples */
+.ex-text-transform-01 {text-transform: none;}
+.ex-text-transform-02 {text-transform: capitalize;}
+.ex-text-transform-03 {text-transform: uppercase;}
+.ex-text-transform-04 {text-transform: inherit;}
+
+/* Letter spacing examples */
+.ex-letter-space-01 {letter-spacing: none;}
+.ex-letter-space-02 {letter-spacing: -2px;}
+.ex-letter-space-03 {letter-spacing: +0px;}
+.ex-letter-space-04 {letter-spacing: +2px;}
+.ex-letter-space-05 {letter-spacing: +5px;}
+.ex-letter-space-06 {letter-spacing: -0.1em;}
+.ex-letter-space-07 {letter-spacing: 0em;}
+.ex-letter-space-08 {letter-spacing: +0.1em;}
+.ex-letter-space-09 {letter-spacing: +0.5em}
+.ex-letter-space-10 {letter-spacing: 1em;}
+
+/* Word spacing examples */
+.ex-word-space-01 {word-spacing: none;}
+.ex-word-space-02 {word-spacing: -10px;}
+.ex-word-space-03 {word-spacing: -05px;}
+.ex-word-space-04 {word-spacing: -01px;}
+.ex-word-space-05 {word-spacing: +01px;}
+.ex-word-space-06 {word-spacing: +05px;}
+.ex-word-space-07 {word-spacing: +10px;}
+.ex-word-space-08 {word-spacing: -0.50em;}
+.ex-word-space-09 {word-spacing: -0.25em;}
+.ex-word-space-10 {word-spacing: +0.25em;}
+.ex-word-space-11 {word-spacing: +0.50em;}
+
+/* Styles used for Shay Howe's example where several text properties are used. */
+div.all-text h2 p {
+  color: #555;
+  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+div.all-text a {
+  color: #0087cc; /* blue */
+}
+div.all-text a:hover {
+  color: #ff7b29; /* orange */
+}
+div.all-text h2 {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+div.all-text h2 {
+  text-decoration: none;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
+}
+.all-text-byline {
+  color: #9799a7;
+  font-family: Georgia, times, "Times-New-Roman", serif;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.intro {text-indent: 15px;}
+div.all-text .intro a {
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+/* Web-safe fonts examples. */
+
+.ex-web-safe-arial {font-family: arial;}
+.ex-web-safe-courier {font-family: courier;}
+.ex-web-safe-courier-new {font-family: "courier new";}
+.ex-web-safe-garamond {font-family: garamond;}
+.ex-web-safe-georgia {font-family: georgia;}
+.ex-web-safe-lucida {font-family: lucida;}
+.ex-web-safe-lucida-grande {font-family: "Lucida Grande";}
+.ex-web-safe-lucida-sans {font-family: "Lucida Sans";}
+.ex-web-safe-palatino {font-family: "Palatino Linotype";}
+.ex-web-safe-tahoma {font-family: tahoma;}
+.ex-web-safe-trebuchet {font-family: trebuchet;}
+.ex-web-safe-times-new-roman {font-family: "Times New Roman";}
+.ex-web-safe-verdana {font-family: verdana;}
+
+/* web-font embedding examples */
+
+.ex-embed-01 {font-family: 'Heebo', sans-serif;}
+
+/*
+============================================
+Document's indents
+============================================
+*/
+
+.block {
+  /* The block class is added to the code element in order to differenciate it in a subtle manner from the rest of the page elements. */
+  background-color: rgba(6, 32, 42, 0.06);
+  display: block;
+  padding-left: 10%;
+  text-align: left;
+}
+
+.level01 {
+  padding-left: 5%;
+}
+
+.level02 {
+  padding-left: 10%;
+}
+
+.ex {
+  padding-left: 5%;
+}
+
+.code-example {
+  padding: 0 10%;
+}

@@ -1,0 +1,296 @@
+/*
+============================================
+CSS reset
+http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+License: none (public domain)
+============================================
+*/
+
+What are those elements used for? which is their meaning?
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+/*
+============================================
+Document's style
+============================================
+*/
+
+html {
+  background-color: rgba(6, 32, 42, 0.9); /* Dark green. */
+  color: rgba(150, 154, 152, 1); /* Silver. */
+  font: 200 15px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 10%;
+  text-align: justify;
+}
+
+/* Styles for the link to the home page */
+    .line-one-home {
+      color: rgb(235, 75, 66); /* Red */
+      display: block; /* This value will prevent other elements interfere with the link into the same line the home link is. */
+      text-align: center;
+    }
+
+a {
+  color: rgba(27, 135, 204, 1); /* Blue */
+}
+a:hover {
+  color: #ff7b29; /* Orange */
+}
+
+/* Style for the back to top link. */
+.b2t {
+  color: rgba(6, 32, 42, 0.4); /* Almost the same as the background color so is barely perceptible. */
+  float: right;
+  font: 100 15px/18px "Helvetica  Neue", Helvetica, Arial, sans-serif;
+}
+
+.faq { /* Elements hightlighted to indicate questions to be solved. */
+  background-color: yellow;
+  color: rgba(6, 32, 42, 0.9); /* Dark green */
+}
+
+nav {
+  /* This rule set will make the table of contents float to the left of the page. */
+  float: left;
+  margin-bottom: 1%;
+  padding-right: 1%;
+}
+
+.block {
+  /* The block class is added to the code element in order to differenciate it in a subtle manner from the rest of the page elements. */
+  background-color: rgba(6, 32, 42, 0.06);
+  display: inline-block; /* This inline-block value must be added allowing this element behave as a inline element and preventing the code element to "underlap" (instead of overlap) the table of contents (nav element). Without it, it will occupy the whole body's element width being displayed under the table of contents. */
+  margin: 1% 0;
+  padding: 1% 0 1% 10%;
+  text-align: left;
+}
+
+/* Headers */
+
+h1 {
+  color: rgba(235, 75, 66, 1); /* Red */
+  text-align: center;
+  padding-top: 50px;
+}
+
+h2 {
+  padding-left: 5%;
+  padding-top: 70px;
+  text-align: left;
+}
+
+h3 {
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+h2, h3 {
+  color: rgba(235, 75, 66, .65); /* The same red color as the h1 element but slightly lighter. */
+}
+
+h4, h5, h6 {
+  color: rgba(49, 131, 103, 1); /* green */
+  font-style: italic;
+  padding-left: 5%;
+}
+
+/*
+============================================
+Document's indents
+============================================
+*/
+
+/* Miscellaneous */
+
+div { /* Divisions elements are used here to display sample background images. */
+  border-color: rgba(27, 135, 204, 1); /* Blue */
+  border-style: dashed;
+  border-width: 2px;
+  height: 500px;
+  width: 100%;
+}
+
+div.body02 {
+  /* As by div elements are set to be 500px high, is necessary to override this behaviour for the div classified as body02, otherwise, and additional 500px empty space will be displayed, that's why the height: auto; is added so this specific element is adjusted to its content. */
+  border: none;
+  height: auto;
+  padding-left: 5%;
+  width: auto;
+}
+
+div.body03 {
+  /* As by div elements are set to be 500px high, is necessary to override this behaviour for the div classified as body02, otherwise, and additional 500px empty space will be displayed, that's why the height: auto; is added so this specific element is adjusted to its content. */
+  border: none;
+  height: auto;
+  padding-left: 5%; /* This 5% left padding will be added to the one already applied by the 2nd indentation level, for a total of 10% left padding, this effect is only achieved if the div.body03 is a nested element of the div.body02 elements otherwise, this 5% won't be noticeable, just matching the left padding of body02 elements. */
+  width: auto; /* Previously, the width was set to be 100%, resulting in being displayed outside the margin/alignment that other elements had, this 100% made reference to length the parent's element width; now with the width: auto; value it adjust itself to do not surpass the width of its parent element. */
+}
+
+div.box{
+  height: 100px; /* This will allow to modify all the div elements classified as box with specific properties. */
+}
+
+code {
+  font-size: 1.1em;
+}
+
+.sample-img { /* As a single image could be used to illustrate more than one example, whichever element has this classification will display the selected image here. */
+  background-image: url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-02.jpg"); /* RAF airplane image */
+}
+
+/*
+============================================
+Document's background examples
+============================================
+*/
+
+.ex-background-01 {
+  background-color: #b2b2b2; /* Grey */
+  color: black;
+  display: inline-block; /* This inline-block value must be added to allow the div element to behave as an inline element, preventing also the div element to "underlap" (instead of overlap) the table of contents (nav element). Without it, it will occupy the whole body's element width being displayed under the table of contents. */
+}
+
+.ex-background-02 {
+  background-color: #b2b2b2;
+  background-color: rgba(0, 0, 0, .1); /* Black */
+}
+
+.ex-background-03 {
+  background-image: url("///Users/ptr/Folder/web-development/line%20one/ausangate.jpg");
+  background-repeat: no-repeat;
+}
+
+.ex-background-04 {}
+
+.ex-background-05 {
+  background-repeat: no-repeat;
+}
+
+.ex-background-06 {
+  background-position: 100px 25%;
+}
+
+.ex-background-07 {
+  background-position: 100px 25%;
+  background-repeat: no-repeat;
+}
+
+.ex-background-08 {
+  background-position: 100px;
+}
+
+.ex-background-09 {
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.ex-background-10 {
+  background-position: right top;
+}
+
+.ex-background-11 {
+  background-position: left bottom;
+}
+
+.ex-background-12 {
+  background-position: right bottom;
+}
+
+.ex-background-13 {
+  background: #b2b2b2 url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-02.jpg") 20px 10px no-repeat;
+}
+
+.ex-background-14 {
+  background: url("///Users/ptr/Folder/web-development/line%20one/ex-background-foreground.jpg") 0 0 no-repeat, url("///Users/ptr/Folder/web-development/line%20one/ex-background-middleground.jpg") 0 0 no-repeat, url("///Users/ptr/Folder/web-development/line%20one/ex-background-rearground.jpg");
+  height: 700px;
+}
+
+.ex-background-15 {
+  background: teal url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-01.jpg") 0 0 no-repeat;
+  background-size: auto 500px;
+  border: 2px dashed #9799a7;
+}
+
+.ex-background-16 {
+  background-color: teal;
+  background-image: url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-01.jpg");
+  background-size: cover;
+}
+
+.ex-background-17 {
+  background-color: teal;
+  background-image: url("///Users/ptr/Folder/web-development/line%20one/ex-background-image-01.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*
+============================================
+Document's gradient examples
+============================================
+*/
+
+.ex-gradient-01 {
+  background: linear-gradient(gold, teal);
+  background-color: teal;
+}
+
+.ex-gradient-02 {
+  background: #466368;
+  background: linear-gradient(to right bottom, #648880, #293f50);
+}
+
+.ex-gradient-03 {
+  background: linear-gradient(to right bottom, black, white);
+  background-color: teal;
+}
+
+.ex-gradient-04 {
+  background: linear-gradient(222deg, #fff, #293f50);
+  background-color: teal;
+}
+
+.ex-gradient-05 {
+  background: radial-gradient(teal, aqua);
+  background-color: #293f50;
+}
+
+.ex-gradient-06 {
+  background: #648880;
+  background: linear-gradient(to right, #f6f1d3, #648880, #293f50);
+}
+
+.ex-gradient-07 {
+  background: #648880;
+  background: linear-gradient(to right, #f6f1d3, #648880 85%, #293f50);
+}

@@ -1,0 +1,28 @@
+p {
+  background-color: grey;
+  color: white;
+}
+
+.blue {
+  background-color: blue;
+  color: grey;
+}
+
+p.red {
+  background-color: red;
+}
+
+div.green {
+  background-color: green;
+  color: white;
+}
+
+div p.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.notes p {
+  background-color: white;
+  color: grey;
+}

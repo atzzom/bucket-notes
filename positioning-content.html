@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>line one | 5 - Positioning content</title>
+  <link rel="stylesheet" type="text/css" href="positioning-content.css">
+</head>
+
+<body id="top">
+
+<header>
+  <h1>&#8212; Positioning Content &#8212;</h1>
+
+  <nav>
+    <a href="home.html">Home</a>
+
+    <p>Table of contents</p>
+
+    <a href="#floats">Floats</a><br>
+    <a href="#inline-block">Inline-block</a><br>
+    <a href="#summary">Summary</a><br>
+    <a href="#+info">+ Info</a><br>
+
+  </nav>
+</header>
+
+<section id="intro">
+  <p>One of the most important features of CSS is the possibility to place content in almost any desired way, bringing structure to the document and making the content more digestible. There are different options to do this, each with its own application, allowing the creation of reusable layouts and uniquely positioning one&ndash;off elements.</p>
+
+  <article>
+    <h2 id="floats">Positioning with floats</h2>
+
+      <p>A very useful way to position element is with the <code>float</code> property, this feature, allow us to take an element, and remove it from the normal flow of the page, and position it next to its parent element (either in its left or right). All other elements on the page will then flow around the floated element. For example and <code>&#60;img&#62;</code> element floated to the side of a few paragraphs of text, will allow these paragraphs to wrap around the image as necessary.</p>
+
+      <p>When the <code>float</code> property is used on multiple elements at the same time, it provides the ability to create a layout by floating elements directly to or opposite each other, as seen in multiple-column layouts. <i class="faq">What exaclty this means? examples of this?</i>. The <code>float</code> property accepts a few values, being the most popular <code>left</code> and <code>right</code><br>
+      <code>img {<br>
+      float: left;<br>
+      }</code></p>
+
+      <a href="ex-positioning-01.html" target="_blank" class="ex">Example</a>
+
+        <h3>Floats in practice <i class="review">add link to another page with solved example</i></h3>
+
+          <p>In a common page layout with a header, two columns in the center, and a footer at the bottom, the elements would look like this:</p>
+
+          <div>
+            <header><code>&#60;header&#62;</code></header>
+            <div><code>&#60;section&#62;</code></div>
+            <aside><code>&#60;aside&#62;</code></aside>
+            <footer><code>&#60;footer&#62;</code></footer>
+          </div>
+
+          <p>See the <a href="ex-float-00.html" target="_blank">page here</a>.</p>
+
+          <img src="ex-float-00.png">
+
+          <i class="faq">how to shrink images to fit the screen size? Ans/ set <code>width: 100%;</code></i>
+
+          <p>Here, as block-level elements the <code>&#60;section&#62;</code> and <code>&#60;aside&#62;</code> elements will be stacked in top of one another by default. However, in the cases when setting these elements side by side is necessary/desired, by floating these elements is possible position them as two columns sitting opposite one another. The CSS to do so look like this:</p>
+
+          <code>section {<br>
+          float: left;<br>
+          }<br>
+          aside {<br>
+          float: right;<br>
+          }</code>
+
+          <p>See an example of how this page would look like <a href="ex-float-01-1.html" target="_blank">here</a> and <a href="ex-float-01-2.html" target="_blank">here</a>.</p>
+
+          <p>When an element is floated, it will float all the way to the edge of its parent element; when no parent element is present, then, it will float all the way to the edge of the page. Floating an element will remove it from the normal flow of the page, and as seen in the previous examples, this causes the width to default the width of the content within it. This situation isn't always desirable, for example, when creating columns for a reusable layout that can have different contents. Fortunately this can be corrected setting up a fixed or proportional (percentage) width, and additionally, to avoid elements from touching one another, causing the content of one to sit directly next to the content of the other, we can use the <code>margin</code> property to create space between elements.</p>
+
+          <p>In this <a href="ex-float-01-3.html" target="_blank">example</a> a <code>margin</code> and a <code>width</code> are added to the columns of layout of the previous example to better shape the desired outcome.</p>
+
+          <code>
+            section {<br>
+            float: left;<br>
+            margin: 0 1.5%<br>
+            width: 63%;<br>
+            }<br>
+            aside {<br>
+            float: right;<br>
+            margin: 0 1.5%;<br>
+            width: 30%<br>
+            }
+          </code>
+
+          <p>Once this <code>margin</code> and <code>width</code> are applied the layout looks like this, notice that when inspecting the page, although the <code>footer</code> element still touches the <code>section</code> and <code>aside</code> elements, the last two don't touches one another any more. On the other hand, the values for the <code>margin</code> and <code>width</code> has been set up in such a way that add up to the 100%, filling out the entire width of its parente element (<code>body</code> in this case).</p>
+
+          <img src="ex-float-03.png">
+
+          <p>In order to prevent the <code>&#60;footer&#62;</code> from overlap the <code>&#60;section&#62;</code> elements, is necessary to include the following code in the CSS file:</p>
+          <code>footer {<br>
+          clear: both;<br>
+          margin-bottom: 0;<br>
+          }</code>
+
+          <p>See the page with the above code implemented <a href="ex-float-01-4.html" target="_blank">here</a>.</p>
+
+          <img src="ex-float-01-4.png">
+
+          <div class="comment-box">
+            <h4>Floating an element might change the value for its display property</h4>
+
+            <section class="ex-float-section">
+              <p>As floating an element removes it from the normal flow of the page, this property will also handle any time of floated element as a <code>block</code> element, hence, if an <code>inline</code> element is floated (i.e. ignoring any possible <code>height</code> or <code>width</code> value)</p>
+            </section>
+
+            <section class="ex-float-aside">
+              <p>it will now be treated as a block element, being possible to assign a width and height value.</p>
+            </section>
+            <hr>
+          </div>
+
+          <p><i class="faq">How to display the silver box <b>below</b> the two columns as well?</i> the key is to locate an element (in this case was an horizontal break (&#60;hr&#62;) <b>after</b> the float, so this will extend the container element way beyond the float is applied. Also, is necessary to take care that the element positioned beyond the float don't lay any empty space/gap that might be present between the floated elements.</p>
+
+          <h3>Building a three column layout with floats</h3>
+
+          <p>In the previous exercise two columns were displayed by floating one to the left and the other to the right. If more columns are desired, the approach to take will be slightly different; Say, for example, we'd like to have a row of three columns between our <code>&#60;header&#62;</code> and <code>&#60;footer&#62;</code> elements. If the <code>&#60;aside&#62;</code> element is dropped and three <code>&#60;section&#62;</code> elements are used, the HTML look like this:</p>
+
+          <code>
+            &#60;header&#62;...&#60;/header&#62;<br>
+            &#60;section&#62;...&#60;/section&#62;<br>
+            &#60;section&#62;...&#60;/section&#62;<br>
+            &#60;section&#62;...&#60;/section&#62;<br>
+            &#60;footer&#62;...&#60;/footer&#62;<br>
+          </code>
+
+        <p>The layout of the page is shown below  and in this <a href="ex-float-01-5.html" target="_blank">link</a>:</p>
+
+        <img src="ex-float-05.png">
+
+        <p>In this case, instead of float one column to the left and the other to the right, all three <code>&#60;section&#62;</code> elements are floated to the left, in this case is necessary to adjust the width of the <code>&#60;section&#62;</code> elements to account for the additional columns and to get them to sit one next to the other.</p>
+
+        <code>
+          section {<br>
+          float: left;<br>
+          margin: 0 1.5%;<br>
+          width: 30%;<br>
+          }
+        </code>
+
+        <p>Once this CSS code for floating the elements is applied, the layout will look like <a href="ex-float-01-6.html" target="_blank">this</a>:</p>
+
+        <img src="ex-float-06.png">
+
+      <h3>Clearing & containing floats</h3>
+
+        <p>The <code>float</code> property was originally designed to wrap content around images, instead of positioning content as is also usually employed, this <i>"misuse"</i> rises some rendering issues, where elements that are next to a floated element or, are parent elements of a floated element won't be displayed properly, due to the fact that the floated element is taken out of the normal flow of the page.</p>
+
+        <p>Within these pitfalls, we might encounter that <code>margin</code> and <code>padding</code> properties aren't correctly interpreted, causing them to blend into the floated element; other properties can also be affected. Also, there are situations were unwanted content start to wrap around the floated element. The action of removing an element from the flow of the document, produce that all the elements around the floated element wrap and consume any available space around the floated element, which is often undesired.</p>
+
+        <p>In <a href="ex-float-01-3.html">this previous example</a>, once the <code>&#60;aside&#62;</code> and <code>&#60;section&#62;</code> elements where floated and also prior to assign any fixed/specific <code>width</code> value to them, as they were floating, the <code>&#60;footer&#62;</code> element wrapped around these two elements, sitting in the gutter left by them. To prevent this kind of situations, is necessary to <i>"contain"</i> or <i>"clear"</i> those floats for the document return to its normal flow.</p>
+
+        <h4>Clearing floats</h4>
+
+          <p>Clearing floats is done by the <code>clear</code> property, which accepts a few different values: the most common being: <code>left</code>, <code>right</code>, and <code>both</code>, e.g.:</p>
+
+          <code>div {<br>
+          clear: left;<br>
+          }</code>
+
+          <p>As their name suggests, the <code>left</code> value for the <code>float</code> property will clear left floats, while the <code>right</code> value will clear right floats. The most ideal and often used value is <code>both</code>.</p>
+
+          <p>In the example shown, adding a <code>clear: both</code> value to the footer, will clear the float. It is important that this <code>clear</code> property be applied to the element inmediately after the floated elements, not before, to return the page to its normal flow.</p>
+
+          <code>footer {<br>
+          clear: both;<br>
+          }</code>
+
+        <h4>Containing floats</h4>
+
+          <p>Another technique to return the document to its normal flow, is containing floats, this method requires the floated element to be contained into a parent element, that will act as the container. The CSS for this parent element, represented by the <code>group</code> class, is shown below. The results are almost identical to the ones achieved with <code>clear</code>; however, containing floats does help to guarantee that all of our styles will be rendered properly.</p>
+
+          <code>
+            .group:before,<br>
+            .group:after {<br>
+            content: "";<br>
+            display: table;<br>
+            }<br>
+            .group:after {<br>
+            clear: both;<br>
+            }<br>
+            .group {<br>
+            clear: both;<br>
+            *zoom: 1;<br>
+            }
+          </code>
+
+          <p>The previous code involves a lot of things, but what is basically doing is clearing any floated elements within the element with the class of <code>group</code> and returning the flow of the document back to normal.<br>
+          - More specifically the <code>:before</code> and <code>:after</code> pseudo-elements, are dynamically generated elements above and below the element that has the <code>group</code> class. Those elements do not include any content and are displayed as <code>table</code>-level elements, much like block-level elements.<br>
+          - The dynamically generated element after the element with the class of <code>group</code> is clearing the floats <strong>within</strong> the element with the class of <code>group</code>, much like the <code>clear</code> from before (notice the use of <code>clear: both</code> in this instance).<br>
+          - Lastly, the element with the class of <code>group</code> itself also clears any floats that may appear above it, in case a left or right float may exist. It also includes a little trickery to get older browsers to play nicely.<br>
+          <i class="faq">Look for more examples, and how exactly each part of this code works.</i></p>
+
+          <p>This is way more work than the <code>clear: both;</code> declaration, but it can produce more consistent and better results, proving to be quite useful.</p>
+
+          <p>Comming back to the two-column page layout from before, the <code>&#60;section&#62;</code> and <code>&#60;aside&#62;</code> elements could be wrapped into a parent element, that will contain the floats <b>within itself</b>. The code and page would look like this:</p>
+
+          <p class="ex">HTML</p>
+
+          <code>
+            &#60;header&#62;...&#60;/header&#62;<br>
+            &#60;div class="group"&#62;<br>
+            &#60;section&#62;...&#60;/section&#62;<br>
+            &#60;aside&#62;...&#60;/aside&#62;<br>
+            &#60;/div&#62;<br>
+            &#60;footer&#62;...&#60;/footer&#62;
+          </code>
+
+          <p class="ex">CSS</p>
+
+          <code>
+          /* selects any possible element <b>outside</b> the float's parent element. */<br>
+          <br>
+            .group:before,<br>
+            .group:after {<br>
+            content: "";<br>
+            display: table;<br>
+            }<br>
+            <br>
+            /* selects any possible element <b>within</b> the float's parent element. */<br>
+            <br>
+            .group:after {<br>
+            clear: both;<br>
+            }<br>
+            <br>
+          /* selects any possible left/right float element that might appear above it.*/<br>
+          <br>
+            .group {<br>
+            clear: both;<br>
+            *zoom: 1; /* trickery to get backwards compatibility with browsers*/<br>
+            }<br>
+            section {<br>
+            float: left;<br>
+            margin: 0 1.5%;<br>
+            width: 63%<br>
+            }<br>
+            aside {<br>
+            float: right;<br>
+            margin: 0 1.5%<br>
+            width: 30%;<br>
+            }
+          </code>
+
+          <p>The page with this float container/code implementation will look like <a href="ex-float-01-7.html" target="_blank">this</a>.</p>
+          <i class="faq">insert screenshot</i>
+
+          <p>This technique is known as <code>clearfix</code> and is usually found in websites under this name or as <code>cf</code>. Is necessary to keep track of the floated elements specially in pages with multiple rows of multiple columns to keep the normal flow of the page.</p>
+  </article>
+</section>
+
+<section>
+  <h2 id="inline-block">Positioning with inline-block</h2>
+  <article>
+    <p>As seen previously, the <code>float</code> property will allow to position block elements next to each other creating in this way columns layouts and the like, also, as treated, is necessary to keep track of the clearing/containing of these floats, to avoid rendering issues.</p>
+
+    <p>Another method to position content apart from floats, is take advantage of the <code>display: inline-block;</code> property: value; This will allow place elements next to one another within a line while taking full advantage of all the properties of the box model (<code>width</code>, <code>height</code>, <code>padding</code>, <code>border</code>, <code>margin</code>) without the concern of clearing floats.</p>
+
+    <p>Create the three column layout seen previously could be done with exactly the same HTML:</p>
+
+    <code>
+      &#60;header&#62;...&#60;/header&#62;<br>
+      &#60;section&#62;...&#60;/section&#62;<br>
+      &#60;section&#62;...&#60;/section&#62;<br>
+      &#60;section&#62;...&#60;/section&#62;<br>
+      &#60;footer&#62;...&#60;/footer&#62;<br>
+    </code>
+
+    <p>The changes of this inline-block method occurs within the CSS for the <code>display</code> property, like this:</p>
+
+    <code>
+      section {<br>
+      display: inline-block;<br>
+      width: 30%;<br>
+      }
+    </code>
+
+    <p>This code implementation will create <a href="ex-inline-block-1-01.html" target="_blank">this</a> page.</p>
+
+    <img src="ex-inline-block-1-01.png">
+
+    <h3>Removing the spaces between inline-block elements</h3>
+
+        <p>There are different ways to remove the space between inline-block elements, each one with different complexities, advantages, and disadvantages. Here two of the easiest ways are going to be explained, both of which happen inside HTML.</p>
+
+        <h4>Method 1: one element right after the other</h4>
+
+        <p>The first solution is to begin a <code>&#60;section&#62;</code> element's opening immediately after the closing tag of the previous element, in this case: <code>&#60;/section&#62;</code>. For the layout used previously the HTML will look like this:</p>
+
+        <code>
+          &#60;header&#62;...&#60;/header&#62;<br>
+          <br>
+          &#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;&#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;&#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;<br>
+          <br>
+          &#60;footer&#62;...&#60;/footer&#62;<br>
+        </code>
+
+        <p>Writing the <strong>inline-block</strong> elements this way ensures that the space between inline-block elements withing HTML doesn't exist; consequently, the space will not appear when the page is rendered.</p>
+
+      <h4>Method 2: commenting out spaces</h4>
+
+        <p>In this methods, an HTML comment is opened directly after an inline-block element's closing tag and immediately closed prior the next element opening tag. Doing this <i>"comments out"</i> any possible space between elements. The resulting code would look like this:</p>
+
+        <code>
+          &#60;header&#62;...&#60;/header&#62;<br>
+          <br>
+          &#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;&#60;!--<br>
+          --&#62;&#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;&#60;!--<br>
+          --&#62;&#60;section&#62;<br>
+          ...<br>
+          &#60;/section&#62;<br>
+          <br>
+          &#60;footer&#62;...&#60;/footer&#62;<br>
+        </code>
+
+        <p>Neither option is perfect, but helpful anyway.</p>
+
+      <h3>Uniquely positioning elements</h3>
+
+        <p>There are situations where the previous two methods to position elements, floats and inline-block elements won't do the trick to get the element in the desired position, for example, floats might get unwanted surrounding elements wrapped next to the floated elements; and on the other hand, unless a column layout is created, inline-block can be fairly awkward to work with. For these situations we can use the <code>position</code> property in connection with box offset properties.</p>
+
+        <p>The <code>position</code> property controls <i>how</i> an element is displayed, and if is going to be displayed at all. This property in conjunction with the box offset properties -<code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>-which identify exactly <i>where</i> an element will be positioned by moving elements in a number of different directions.</p>
+
+        <p>The <code>position</code>'s <code>static</code> default value for every element, means that it exists in the normal flow of the page without accept any box offset property. This value is commonly overwritten by a <code>relative</code> or <code>absolute</code> value.</p>
+
+        <h4><code>position: relative;</code></h4>
+
+          <p>The <code>relative</code> value for the <code>position</code> property allows elements appear within the normal flow of the page while leaving room for an element as intended without allowing other elements to flow around it; however, it also allows an element's display position to be modified with the box offset properties. For instance:</p>
+
+          <p>HTML</p>
+
+          <code>
+            &#60;div&#62;...&#60;/div&#62;<br>
+            &#60;div class="offset"&#62;...&#60;/div&#62;<br>
+            &#60;div&#62;...&#60;/div&#62;<br>
+          </code>
+
+          <p>CSS</p>
+
+          <code>
+            div {<br>
+            height: 100px;<br>
+            width: 100px;<br>
+            }<br>
+            .offset {<br>
+            left: 20px;<br>
+            position: relative;<br>
+            top: 20px;<br>
+            }
+          </code>
+
+          <p>The previous code will produce the following <a href="ex-relative-1-01.html" target="_blank">result</a>. Here, an <code>offset</code> (using a <code>class</code>) has been applied to the second <code>&#60;div&#62;</code> element, also it has a <code>position: relative</code> attribute with two offset properties, <code>left</code> and <code>top</code>. This preserves the original position of the element, preventing other elements to occupy this space. Additionally, the box offset properties reposition the element, pushing it <code>20px</code> <strong>from</strong> the <code>left</code> and <code>20px</code> <strong>from</strong> the <code>top</code> of its original location.</p>
+
+          <p>With relatively positioned elements, it's important to know that the box offset properties identify where an element will be moved from given its original position. Thus, the <code>left</code> property with a value of <code>20px</code> will actually push the element <strong>from</strong> the <code>left</code> towards the right, <code>20px</code>. the <code>top</code> property with a value of <code>20px</code>, will push an element <strong>from</strong> the <code>top</code> towards the bottom, <code>20px</code>.</p>
+
+          <p>When we position the element using the box offset properties, the element <b>overlaps</b> the element below it rather than moving that element down as the <code>margin</code> or <code>padding</code> properties would.</p>
+
+        <h4>Absolute positioning</h4>
+
+          <p>Another value to place elements with the <code>position</code> property is with the <code>absolute</code> attribute/value. Its difference with the <code>relative</code> value, is that the element will not appear within the normal flow of the document, and the original space and position of the absolutely positioned element <b>will not</b> be preserved.</p>
+
+          <p>Additionally, absolutely positioned elements are moved in relation to <b>their closest</b> relatively positioned parent element. In the case this relatively positioned parent element don't exist, then, the absolutely positioned element will be positioned in relation to the <code>&#60;body&#62;</code>. The following is an example of a relatively positioned element:</p>
+
+          <p class="ex">HTML</p>
+
+          <code>
+            &#60;section&#62;<br>
+            <br>
+            &#60;code&#62;&#60;section&#62;&#60;br&#62;<br>
+            position: relative;&#60;/code&#62;<br>
+            <br>
+            &#60;div class="offset"&#62;<br>
+            &#60;code&#62;&#60;div class="offset"&#62;&#60;br&#62;<br>
+            position: absolute;&#60;br&#62;<br>
+            &#60;/div&#62;<br>
+            <br>
+            &#60;/section&#62;
+          </code>
+
+          <p class="ex">CSS</p>
+
+          <code>
+            code {<br>
+            color: #666;<br>
+            font: 14/24px "Source Code Pro", Inconsolate, "Lucida Console", Terminal, "Courier New", Courier;<br>
+            }<br>
+            section,<br>
+            .offset,<br>
+            .offset code {<br>
+            border-radius: 6px;<br>
+            padding: 24px 30px;<br>
+            }<br>
+            section {<br>
+            background: #eaeaed;<br>
+            height: 145px;<br>
+            position: relative;<br>
+            }<br>
+            .offset,<br>
+            .offset code {<br>
+            height: 96px;<br>
+            position: absolute;<br>
+            width: 160px;<br>
+            }<br>
+            .offset {<br>
+            border: 2px dashed #9799a7;<br>
+            right: 0;<br>
+            top: 0;<br>
+            }<br>
+            .offset code {<br>
+            background: #2db34a;<br>
+            color: #fff;<br>
+            display: block;<br>
+            right: 20px;<br>
+            top: 20px;<br>
+            }
+          </code>
+
+          <p>The previous code produce the <a href="ex-absolute-1-01.html" target="_blank">following</a> result.</p>
+
+          <i class="faq">work with more examples until completely grasp this concept.</i>
+
+          <img src="ex-absolute-1-01.png">
+
+          <p>Although in the previous example, the <code>&#60;section&#62;</code> element is relatively positioned, as it doesn't include any box offset property, therefore, its position won't be affected. On the other hand, the <code>&#60;div&#62;</code> element is absolutely positioned (by the use of a class <code>class="offset"</code>). Taking into account that the <code>&#60;section&#62;</code> element is its closest relatively positioned <b>parent</b> element, the absolutely positioned <code>&#60;div&#62;</code> element will be positioned in relation to this <code>&#60;section&#62;</code> element.</p>
+
+          <p>With <b>relatively</b> positioned elements, the box offset properties identify in which direction an element would be moved in relation to <b>itself</b>. With <b>absolutely</b> positioned elements, the box offset properties identify in which direction an element will be moved in relation to <b>its closest relatively positioned parent element</b>. As a result of the <code>right</code> and <code>top</code> box offset properties, the <code>&#60;div&#62;</code> element will appear <code>20px</code> <b>from</b> the <code>right</code> and <code>20px</code> <b>from</b> the top of the <code><b>&#60;section&#62;</b></code> element.</p>
+
+          <p>As a result of the <code>right</code> and <code>top</code> box offset properties, the <code>div</code> element will appear <code>20px</code> <b>from</b> the <code>right</code> and <code>20px</code> <b>from</b> the <code>top</code> of the <code>&#60;section&#62;</code>. Additionally, because the <code>&#60;div&#62;</code> element is absolutely positioned, it does not sit within the normal flow of the page and will overlap any surrounding elements. Also, the original position of the <code>&#60;div&#62;</code> is not preserved, and other elements <strong>are able</strong> to occupy that space. Typically, most positioning can be handled without the use of the <code>position</code> property and box offset properties, but in certain cases they can be extremely helpful.</p>
+
+  </article>
+</section>
+
+<!-- 16.11.26 -->
+<footer>
+  <h2 id="summary">Summary</h2>
+
+    <p>Mastering how to position content joining HTML & CSS in conjunction with the understanding of the box model is a huge step in the way to become a front-end developer. To review, within this lesson it has been covered:</p>
+
+    <p>
+      &#8859; What is a float and how they are used to position content.<br>
+      &#8859; How to clear and contain floated elements.<br>
+      &#8859; How to position content with inline-block elements.<br>
+      &#8859; How to remove/comment out white spaces between inline-block elements.<br>
+      &#8859; How to uniquely position content with relatively and absolutely positioned elements.
+    </p>
+
+  <h2 id="+info">+Info</h2>
+
+    <p>
+      &#8859; <a href="http://www.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/">CSS float theory</a> via Smashing Magazine.<br>
+      &#8859; <a href="http://alistapart.com/article/css-positioning-101">CSS positioning 101</a> via A List Apart.
+    </p>
+</footer>
+</body>
+</html>

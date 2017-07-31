@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>line one | 9. media</title>
+    <link rel="stylesheet" type="text/css" href="9%20-%20media.css">
+  </head>
+  <body>
+    <header>
+      <a href="home.html" class="line-one-home">line one</a>
+
+      <h1>
+        Media<br>
+        <hr>
+      </h1>
+
+      <nav>
+        <h2>Table of contents</h2>
+
+          <ul>
+            <li><a href="#intro">Intro</a></li>
+            <li><a href="#img">Images</a></li>
+              <ul>
+                <li><a href="#img-formats">Supported image formats</a></li>
+                <li><a href="#img-size">Sizing images</a></li>
+                <li><a href="#img-position">Positioning images</a></li>
+                <li><a href="#img-position-inline">&mdash;Inline images positioning</a></li>
+                <li><a href="#img-position-block">&mdash;Block images positioning</a></li>
+                <li><a href="#img-position-flush">&mdash;Flush images positioning</a></li>
+                <li><a href="#img-vs-back">When to use &lt;img&gt; vs background</a></li>
+              </ul>
+            <li>
+              <a href="#audio">Audio</a>
+              <ul>
+                <li><a href="#audio-fallback">Audio fallback</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#video">Video</a>
+              <ul>
+                <li><a href="#att-poster">Poster attribute</a></li>
+                <li><a href="#audio-&-video-additionals">Customizing audio &amp; video controls</a></li>
+                <li><a href="#audio-&-video-additionals">HTML5 audio &amp; video file formats</a></li>
+              </ul>
+            </li>
+            <li><a href="#iframe">Inline frames</a></li>
+            <li>
+              <a href="#figcaption">Semantically identifying figures &amp; captions</a>
+              <ul>
+                <li><a href="#figure">Figure</a></li>
+                <li><a href="#caption">Figure caption</a></li>
+              </ul>
+            </li>
+            <li><a href="#summary">Summary</a></li>
+          </ul>
+      </nav>
+    </header>
+
+    <h2 id="intro">Intro<a href="#top" class="b2t">back to top</a></h2>
+
+      <div class="faq">
+        <p>Prior to continue with the following topic asses this document with the following checklist:</p>
+
+        <ol>
+          <li>Check spelling and grammar, looking for overall legibility, form, and meaning.</li>
+          <li>Replace proper symbols by their respective encoding, e.g. apostrophes, ampersands, dashes, etc.</li>
+          <li>- Include <b>relevant and real</b> examples, aiming as much as possible to be hosted globally (on internet) rather than locally, so they work everywhere/anywhere (iframes).</li>
+          <li>- Check content indentation, format and frames when applicable (asides).</li>
+          <li>Check code, both HTML and CSS indentation, overall presentation, use of the appropriate sectioning, and semantical markup elements.</li>
+          <li>Add descriptive and relevant comment to GitHub repository.</li>
+          <li>Whenever possible, download beforehand relevant material that allows off&ndash;line study.</li>
+          <li>- Solve and outline any question that aroused from learning and making the document.</li>
+          <li>- Validate HTML and CSS code, looking for errors.</li>
+        </ol>
+      </div>
+
+      <p>Text has always been a fundamental part of HTML, as time has passed, additional type of content like images, audio, video, and even other web page snippets, have been introduced to convey content in a more powerful way. Here is going to be explained how to add and use this media elements in the construction of a web site.</p>
+
+    <section id="img">
+      <h2>Images<a href="#top" class="b2t">back to top</a></h2>
+
+        <p>Adding images can be done in a pretty straightforward way by means of the <code>&lt;img&gt;</code> <b>inline</b> element. The <code>&lt;img&gt;</code> element is a self&ndash;containing (or empty), element; meaning that it doesn&#39;t wrap any other content, therefore it doesn&#39;t have a closing tag, because of this, there&#39;s no such a thing as <code>&lt;/img&gt;</code> tag. For this element display the intended image is necessary to specify the path to it, this can be done using the <code>src</code> attribute, which is basically an <code>url</code>, typically relative to the server where the image or website is hosted. On the other hand, should the image be unavailable for any reason, an <code>alt</code> attribute (alternative text) describing and/or including keywords of the image must be added to the tag; this attribute is used for search engines and assistive technologies to help convey the purpose of the image or content.</p>
+
+        <div class="exempli">
+          <h5>Example</h5>
+
+            <h6>HTML</h6>
+
+              <code>
+                <ol>
+                  <li>&lt;img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                </ol>
+              </code>
+
+            <h6>Result</h6>
+
+              <img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera." class="ex-img-01">
+        </div>
+
+        <aside id="img-formats">
+          <h3>Supported image formats</h3>
+
+            <p>Browsers may or may not support different types of images formats. By large, the most commonly supported formats online are <code>jpg</code>, <code>png</code> and <code>gif</code> formats. The <code>jpg</code> format is more suited for situations where the quality of a high color count image needs to be preserved whilst keeping a decent file size, such in a photograph on a website. On the other hand, <code>png</code> format is better for images with transparencies or low color counts, such in an icon or a background pattern.</p>
+        </aside>
+
+        <section class="body-02" id="img-size">
+          <h3>Sizing images<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>It is common to encounter situations in which is necessary to adjust the size of an image, this could be to fit an element&#39;s size, adjust it to the nearby content, or some other reason. Not only adjusting the size of an image can be of aesthetic value, it also could translate in faster loading times, telling the browser how large the image should be even before the page loads. There a few different ways to size an image:</p>
+
+            <ol>
+              <li>Specifying a value for the CSS property <code>height</code> but not <code>width</code> (preserves aspect ratio).</li>
+              <li>Specifying a value for the CSS property <code>width</code> but not <code>height</code> (preserves aspect ratio).</li>
+              <li>Specifying a value for both, <code>width</code> and <code>height</code> CSS properties (might or might not destroy aspect ratio).</li>
+            </ol>
+
+            <div class="exempli">
+              <h5>Example</h5>
+
+                <ol>
+                  <li>Specifying a value for the CSS property <code>height</code> but not <code>width</code> (preserves aspect ratio).</li>
+                </ol>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                    </ol>
+                  </code>
+
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>img {</li>
+                      <li>&emsp;height: 400px;</li>
+                      <li>}</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera." class="ex-img-02">
+
+                <ol start="2">
+                  <li>Specifying a value for the CSS property <code>width</code> but not <code>height</code> (preserves aspect ratio).</li>
+                </ol>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                    </ol>
+                  </code>
+
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>img {</li>
+                      <li>&emsp;width: 400px;</li>
+                      <li>}</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera." class="ex-img-03">
+
+                <ol start="3">
+                  <li>Specifying a value for both, <code>width</code> and <code>height</code> CSS properties (might or might not destroy aspect ratio).</li>
+                </ol>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                    </ol>
+                  </code>
+
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>img {</li>
+                      <li>&emsp;height: 400px;</li>
+                      <li>&emsp;width: 400px;</li>
+                      <li>}</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera." class="ex-img-04">
+            </div>
+        </section>
+
+        <section class="body-02" id="img-position">
+          <h3>Positioning images<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>The following are available ways to position images:</p>
+
+            <ol>
+              <li>As inline&ndash;level elements, which is its default value.</li>
+              <li>Floating them.</li>
+              <li>Using the CSS <code>display</code> property.</li>
+              <li>Modifying the <code>padding</code>, <code>border</code>, and <code>margin</code> box model properties.</li>
+            </ol>
+
+            <article class="body-03" id="img-position-inline">
+              <h4>1. Inline images positioning<a href="#top" class="b2t">back to top</a></h4>
+
+                <p>As by default the <code>&lt;img&gt;</code> element is an inline element, hence, if added and no CSS property is specified the image would be displayed within the same line as the content that surrounds it. Additionally, the height of the line in which an image appears will be changed to match the height of the image, which can create large vertical gaps within that line. However, leaving images untouched in their default positioning isn&#39;t too common. More often than not, images are displayed as block&ndash;level elements or are floated flush to one side.</p>
+
+                <div class="exempli">
+                  <h5>Example</h5>
+
+                    <h6>HTML</h6>
+
+                      <code>
+                        <ol>
+                          <li>&lt;blockquote&gt;</li>
+                            <li>&emsp;&lt;p&gt;&amp;#8220;And when, on the still cold night, he pointed his nose at a star and howled long and wolflike,&lt;img src=&#8220;http://clipart-library.com/images/dT45adj8c.jpg&#8221; alt=&#8220;A grey wolf howling in a sunny day with rocky mountains behind him.&#8221;&gt; it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&amp;#8221;&lt;/p&gt;</li>
+                            <li></li>
+                            <li>&emsp;&lt;p&gt;&lt;cite&gt;The Call of the Wild &amp;mdash; Jack London&lt;/cite&gt;&lt;/p&gt;</li>
+                          <li>&lt;/blockquote&gt;</li>
+                      </ol>
+                      </code>
+
+                    <h6>CSS</h6>
+
+                      <code>
+                        <ol>
+                          <li>blockquote {</li>
+                          <li>&emsp;border&ndash;left: 2px solid silver;</li>
+                          <li>&emsp;font: 200 15px/18px Georgia, serif;</li>
+                          <li>&emsp;padding&ndash;left: 12px;</li>
+                          <li>&emsp;text&ndash;align: right;</li>
+                          <li>}</li>
+                          <li>blockquote img {</li>
+                          <li>width: 50%;</li>
+                          <li>}</li>
+                        </ol>
+                      </code>
+
+                    <h6>Result</h6>
+                        <blockquote class="ex-img-05">
+                          <p>&#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike,<img src="http://clipart-library.com/images/dT45adj8c.jpg" alt="A grey wolf howling in a sunny day with rocky mountains behind him.">it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&#8221;</p>
+
+                          <p><cite>The Call of the Wild &mdash; Jack London</cite></p>
+                        </blockquote>
+                </div>
+            </article>
+
+            <article class="body-03" id="img-position-block">
+              <h4>2. Block images positioning<a href="#top" class="b2t">back to top</a></h4>
+
+                <p>This technique assigns the <code>block: display;</code> property to the image, making the image be displayed in its own line surrounded by text above and below it.</p>
+
+                <div class="exempli">
+                  <h5>Example</h5>
+
+                    <h6>HTML</h6>
+
+                      <code>
+                        <ol>
+                          <li>&lt;blockquote&gt;</li>
+                          <li>&emsp;&lt;p&gt;&amp;#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike, it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&amp;#8221;&lt;img src="http://clipart&ndash;library.com/images/dT45adj8c.jpg" alt="A gray wolf howling in a sunny day with rocky mountains behind him."&gt;&lt;/p&gt;</li>
+                          <li></li>
+                          <li>&emsp;&lt;p&gt;&lt;cite&gt;The Call of the Wild &amp;mdash; Jack London&lt;/cite&gt;&lt;/p&gt;</li>
+                          <li>&lt;/blockquote&gt;</li>
+                        </ol>
+                      </code>
+
+                    <h6>CSS</h6>
+
+                      <code>
+                        <ol>
+                          <li>img {</li>
+                          <li>&emsp;display: block;</li>
+                          <li>&emsp;height: 50%;</li>
+                          <li>}</li>
+                        </ol>
+                        <i class="faq">Include the border&ndash;left property in the CSS rule set.</i>
+                      </code>
+
+                    <h6>Result</h6>
+
+                      <blockquote>
+                        <p>&#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike,<img src="http://clipart-library.com/images/dT45adj8c.jpg" alt="A gray wolf howling in a sunny day with rocky mountains behind him." class="ex-img-06">it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&#8221;</p>
+
+                        <p><cite>The Call of the Wild &mdash; Jack London</cite></p>
+                      </blockquote>
+                </div>
+
+            </article>
+
+            <article class="body-03" id="img-position-flush">
+              <h4>3. Flush images positioning<a href="#top" class="b2t">back to top</a></h4>
+
+                <p>The previous two techniques, <code>inline</code>, and <code>block</code> positioning will introduce the image <i>at a point</i> in the element. However, if is necessary to position the image either to the left or right, while at the same time allowing surrounding content <i>adapt</i> and wrap around the image as required, a <code>float</code> must be used, taking advantage of course, that this is the original purpose of this property. Floating an image is the first step, because by default the text will align directly against it, is highly recommended add it a <code>margin</code>, <code>border</code>, and/or <code>padding</code> (see example below).</p>
+
+                <div class="exempli">
+                  <h5>Example</h5>
+
+                    <h6>HTML</h6>
+
+                      <code>
+                        <ol>
+                          <li>&lt;blockquote&gt;</li>
+                          <li>&emsp;&lt;p&gt;&amp;#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike,&lt;img src="http://clipart&ndash;library.com/images/dT45adj8c.jpg" alt="A gray wolf howling in a sunny day with rocky mountains behind him."&gt;&lt;/p&gt; it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&amp;#8221;</li>
+                          <li></li>
+                          <li>&emsp;&lt;p&gt;&lt;cite&gt;The Call of the Wild &amp;mdash; Jack London&lt;/cite&gt;&lt;/p&gt;</li>
+                          <li>&lt;/blockquote&gt;</li>
+                        </ol>
+                      </code>
+
+                    <h6>CSS</h6>
+
+                      <code>
+                        <ol>
+                          <li>img {</li>
+                          <li>&emsp;background: #eaeaed; /* White */</li>
+                          <li>&emsp;border: 1px solid #9799a7; /* Silver */</li>
+                          <li>&emsp;float: right;</li>
+                          <li>&emsp;margin: 8px 0 0 20px;</li>
+                          <li>&emsp;padding: 4px;</li>
+                          <li>}</li>
+                        </ol>
+                      </code>
+
+                    <h6>Result</h6>
+
+                      <blockquote>
+                        <p>&#8220;And when, on the still cold nights, he pointed his nose at a star and howled long and wolflike,<img src="http://clipart-library.com/images/dT45adj8c.jpg" alt="A gray wolf howling in a sunny day with rocky mountains behind him." class="ex-img-07"> it was his ancestors, dead and dust, pointing nose at star and howling down through the centuries and through him.&#8221;</p>
+
+                        <p><cite>The Call of the Wild &mdash; Jack London</cite></p>
+                      </blockquote>
+                </div>
+            </article>
+
+            <aside id="img-vs-back">
+              <h3>When to use <code>&lt;img&gt;</code> vs <code>background</code></h3>
+
+                <p>As anything in HTML the usage of an element comes down to its <i>semantic</i> value. In the case of the <code>&lt;img&gt;</code> element, this is suited when the contained image is <b>relevant</b> to the content of the document.</p>
+
+                <p>On the other hand, the <code>background</code> property is the preferred option when the image being used is part of the design or user interface of the page. As such, it is not directly relevant to the content of the page.</p>
+            </aside>
+        </section>
+    </section>
+
+    <section id="audio">
+      <h2>Audio<a href="#top" class="b2t">back to top</a></h2>
+
+        <p>In addition to images, another type of media that can be easily added to a web document is audio via the HTML <code>&lt;audio&gt;</code> element, unlike the <code>&lt;img&gt;</code> element, though, audio requires both opening and closing tags, accepting the following attributes:</p>
+
+        <article id="audio-att">
+          <ol>
+            <li><code>&lt;src&gt;</code>, specify the source URL to the audio to be played.</li>
+            <li><code>controls</code> a Boolean attribute which has a value of true when present in the element, should it be added, it will display the browser&#39;s default audio controls, i.e. play, pause, seek, and volume. Otherwise, the element won&#39;t be visible in the document.</li>
+            <li><code>loop</code> Boolean attribute that will cause an audio file to repeat continually from beginning to end.</li>
+            <li> 
+              <code>preload</code> helps identify what, if any, information about the audio file should be loaded before the clip is played. It accepts three values:
+              <ul>
+                <li><code>none</code>, no information about the audio file is going to be preloaded.</li>
+                <li><code>auto</code>, will preload all information about an audio file.</li>
+                <li><code>metadata</code>, will preload any available metadata information about and audio file, such as the clip&#39;s length, but not all the information; sits in between the <code>none</code> and <code>auto</code> values.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <p>If the <code>preload</code> attribute isn&#39;t present, all information about the audio file will be loaded as if the <code>auto</code> value was specified. For this reason, when an audio file is not essential to a page, is good practice to add the <code>preload</code> attribute with either a <code>none</code> or <code>metadata</code> value to help conserve bandwidth and allow the page load faster.</p>
+
+          <div class="exempli">
+            <h5>Example</h5>
+
+              <h6>HTML</h6>
+
+                <code>
+                  <ol>
+                    <li>&lt;audio src="http://traffic.libsyn.com/impossibleradio/Gym_Jones.mp3" controls preload="metadata"&gt;&lt;/audio&gt;</li>
+                  </ol>
+                </code>
+
+              <h6>CSS</h6>
+
+                <code>
+                  <ol>
+                    <li>/* No CSS property is specified for this example. */</li>
+                  </ol>
+                </code>
+
+              <h6>Result</h6>
+
+                <audio src="http://traffic.libsyn.com/impossibleradio/Gym_Jones.mp3" controls preload="metadata"></i></audio>
+                <p><i class="faq">Make sure the example is working properly.</i></p>
+          </div>
+        </article>
+
+        <article class="body-02" id="audio-fallback">
+          <h3>Audio fallback<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>When using audio&mdash;and overall media&mdash;is necessary to keep in mind that not all browsers support all audio formats, considering this case, more than one source must be provided for an audio file, i.e. an audio fallback. To add a fallback the <code>src</code> attribute is deleted, and instead the <code>&lt;source&gt;</code> <b>element</b> is <b>nested</b> into the <code>&lt;audio&gt;</code> element.</p>
+
+            <p>Adding the <code>type</code> attribute inside the <code>&lt;source&gt;</code> element, helps the browser quickly identify the available audio types, the most common are: <code>mp3</code>, <code>wav</code>, and <code>ogg</code>. When a browser recognizes an audio file format it will load that file and ignore all the others.</p>
+
+            <p>Because it was introduced in HTML5, some browsers may not support the <code>&lt;audio&gt;</code> element. For those cases, a download link might be provided after any <code>&lt;source&gt;</code> elements within the <code>&lt;audio&gt;</code> element.</p>
+
+            <div class="exempli">
+              <h5>Example</h5>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;audio controls&gt;</li>
+                        <li>&emsp;&lt;source src="http://impossibleradio.libsyn.com/rss" type="audio/mpeg"&gt;</li>
+                        <li>&emsp;&lt;source src="http://d2aw5xe2jldque.cloudfront.net/podcast/darren_burgess.mp4" type="audio/mpeg"&gt;</li>
+                        <li>&emsp;&lt;source src="http://traffic.libsyn.com/impossibleradio/S1E6_&ndash;_Building_a_Bulletproof_Mind_with_Bobby_Maximus.mp3" type="audio/mpeg"&gt;</li>
+                        <li>&lt;/audio&gt;</li>
+                      <li>&lt;a href="song.mp3" download&gt;Download&lt;/a&gt; <i class="faq">Guarantee to provide a working example.</i></li>
+                    </ol>
+                  </code>
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>/* No CSS property is specified for this example. */</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <audio controls>
+                    <source src="http://traffic.libsyn.com/impossibleradio/S1E6_-_Building_a_Bulletproof_Mind_with_Bobby_Maximus.mp3" type="audio/mpeg">
+                    <source src="song.wav" type="audio/wav">
+                    <source src="song.ogg" type="audio/ogg">
+                  </audio>
+                  <br>
+                  <a href="http://traffic.libsyn.com/impossibleradio/S1E6_-_Building_a_Bulletproof_Mind_with_Bobby_Maximus.mp3">Download &ndash; Building a bulletproof mind with Bobby Maximus</a>
+            </div>
+        </article>
+    </section>
+
+    <section id="video">
+      <h2>Video<a href="#top" class="b2t">back to top</a></h2>
+
+        <p>To add a video to a web page the <code>&lt;video&gt;</code> element is used, their attributes, namely: <code>src</code>, <code>controls</code>, <code>autoplay</code>, <code>loop</code>, <code>preload</code>, and <code>&lt;source&gt;</code>. behaves exactly the same as the <code>&lt;audio&gt;</code> element, with the only exception that it counts with an additional attribute: <code>poster</code> and, that if the Boolean attribute <code>controls</code> isn&#39;t specified the video is going to still be displayed. Additionally, unless the <code>autoplay</code> Boolean attribute is applied, the visualization of the video might be restricted. If there is a good reason to not allow users to start, stop, or replay the video the <code>controls</code> attribute should be omitted.</p>
+
+        <p>As an additional consideration, given that videos will take up space, is highly recommended to specify their <code>height</code> and <code>width</code> via CSS. This helps ensure that video isn&#39;t larger than necessary, rendering it faster and within the document&#39;s layout. In regards of the fallback options, that could be used in place of a plain text fallback is to use a <a href="https://youtube.com">YouTube</a> or <a href="https://vimeo.com">Vimeo</a> embedded video. These video hosting websites allow to upload videos, providing a standard video player, and enable to use embed videos onto a pages using an inline frame.</p>
+
+        <article id="att-poster">
+          <h3>Poster attribute<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>This <b>video</b> attribute allows add an image via an URL to be shown before the video is played, the selected <code>poster</code> image might be or might be not a snippet or video thumbnail.</p>
+        </article>
+
+        <div class="exempli">
+          <h5>Example</h5>
+
+            <h6>HTML</h6>
+
+              <code>
+                <ol>
+                  <li>&lt;video controls poster="http://img01.deviantart.net/939c/i/2012/177/8/8/no052_my_metropolis_minimal_movie_poster_by_chungkong-d54womx.jpg"&gt;&lt;/video&gt;</li>
+                    <li>&emsp;&lt;source src="https://archive.org/download/Metropolis_201610/Metropolis.m4v" type="video/mpeg"&gt;</li>
+                    <li>&emsp;&lt;source src="https://archive.org/download/Metropolis_201610/Metropolis.ogv" type="video/ogg"&gt;</li>
+                    <li>&emsp;&lt;a href="https://archive.org/download/Metropolis_201610/Metropolis.mp4" download&gt;Download&gt;/a&lt;</li>
+                  <li>&lt;/video&gt;</li>
+                </ol>
+              </code>
+
+            <h6>CSS</h6>
+
+              <code>
+                <ol>
+                  <li>video {</li>
+                    <li>&emsp;height: 600px;</li>
+                    <li>&emsp;width: 1000px;</li>
+                  <li>}</li>
+                </ol>
+              </code>
+
+            <h6>Result</h6>
+
+              <video controls poster="http://img01.deviantart.net/939c/i/2012/177/8/8/no052_my_metropolis_minimal_movie_poster_by_chungkong-d54womx.jpg" preload="metadata">
+                <source src="https://archive.org/download/Metropolis_201610/Metropolis.m4v" type="video/mp4">
+                <source src="https://archive.org/download/Metropolis_201610/Metropolis.ogv" type="video/ogg">
+                <source src="https://archive.org/download/Metropolis_201610/Metropolis.mp4" type="video/ogg">
+              </video>
+        </div>
+
+        <aside class="frame" id="audio-&-video-additionals">
+          <h3>Customizing audio &amp; video controls<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>Because of design purposes, the browser&#39;s default controls might need to be changed, which is possible using JavaScript. Additionally, if a customized player uses the <code>&lt;img&gt;</code> element as a control the value of the <code>alt</code> attribute <b>should</b> explicitly state that the image is a control and requires the proper interaction to work. <i class="faq">Notify Shay Howe about the typo, say thanks.</i></p>
+
+          <h3>HTML5 audio &amp; video files formats<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>The support for the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> changes from browser to browser, as do the file formats required with these elements. Each browser has its own preferred audio and video file formats. When required, tools to convert audio and/or video to a specific format can be used to ensure compatibility.</p>
+        </aside>
+    </section>
+
+    <section id="iframe">
+      <h2>Inline frames<a href="#top" class="b2t">back to top</a></h2>
+
+        <p>HTML allows embed the content of another, external page into the current document. This is done using and inline frame: <code>&lt;iframe&gt;</code> element. It accepts the URL of another HTML page within the <code>src</code> attribute value; displaying the content from the embedded HTML page. The <code>src</code> attribute value may be a URL relative to the page the <code>&lt;iframe&gt;</code> element appears on, or an absolute URL for an entirely external page.</p>
+
+        <p>The default values for this element include an inset <code>border</code>, <code>width</code> and <code>height</code>, which can be modified using HTML with the <code>frameborder</code>, <code>width</code>, <code>height</code> attributes; or via CSS with the <code>border</code>, <code>width</code>, and <code>height</code> properties. Is necessary to take into account that as external resources:</p>
+
+        <ol>
+          <li>Pages referenced within the <code>src</code> attribute of an <code>&lt;iframe&gt;</code> element play their own rules, as they do not inherit any style or behaviors from the page they are referenced on.</li>
+          <li>Other way around behavior it is also true, that is, the pages referenced on the <code>&lt;iframe&gt;</code> won&#39;t add any of the styles to the current document.</li>
+          <li>Additionally, links within the page referenced inside the <code>&lt;iframe&gt;</code> element will open inside that frame, leaving the page that contains the <code>&lt;iframe&gt;</code> element unchanged.</li>
+          <li>In other words, an <code>&lt;iframe&gt;</code> can be thought as a window or mini&ndash;browser to visualize other web pages.</li>
+        </ol>
+    </section>
+
+    <section id="figcaption">
+      <h2>Semantically identifying figures &amp; captions<a href="#top" class="b2t">back to top</a></h2>
+
+        <p>When there is present more than one item of self&ndash;contained content, specially media, such as <b>multiple</b> images, videos, diagrams, code blocks, audio clips, illustrations, diagrams, among others, all of those can be wrapped into a <code>&lt;figure&gt;</code> element; that were created to semantically mark up self&ndash;contained content or media, commonly with a caption (<code>&lt;figcaption&gt;</code>). Before HTML5 this was frequently done using an ordered list. While an ordered list worked, the markup was not semantically correct.</p>
+
+        <article class="body-02" id="figure">
+          <h3>Figure<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>This element is a <b>block&ndash;level</b> element, as mentioned above, is used to identify and wrap self&ndash;contained content, often in the form of media. It may surround:</p>
+
+            <ol>
+              <li>Images</li>
+              <li>Audio clips</li>
+              <li>Videos</li>
+              <li>Blocks of code</li>
+              <li>Diagrams</li>
+              <li>Illustrations</li>
+              <li>Other <b>self&ndash;contained</b> media.</li>
+            </ol>
+
+            <p>More than one (media) item of self&ndash;contained content, such as multiple images or videos, may be contained within the <code>&lt;figure&gt;</code> element at a time, in such a way that if this element is moved from the main portion of a page to another location, it should not disrupt the content or legibility of the page.</p>
+        </article>
+
+        <article class="body-02" id="caption">
+          <h3>Figure caption<a href="#top" class="b2t">back to top</a></h3>
+
+            <p>Semantically can be very useful to add a legend or description of the content grouped in the <code>&lt;figure&gt;</code> element, to do this the <code>&lt;figcaption&gt;</code> element should be used, although not all <code>&lt;figure&gt;</code> element must have a <code>&lt;figcaption&gt;</code> element, if its addition leads to a relevant description of all the items grouped into the <code>&lt;figure&gt;</code> element, then is appropriate to use it. As it describes <b>all</b> the grouped items, this element should be used only once, and could be located anywhere within the <code>&lt;figure&gt;</code> element (top, bottom, middle, etc.)</p>
+
+            <p>Additionally, the <code>&lt;figcaption&gt;</code> element may replace an <code>&lt;img&gt;</code> element&#39;s <code>alt</code> attribute if the content of the <code>&lt;figcaption&gt;</code> element provides a useful description of the visual content of the image. <i class="faq">Include a relevant example of the use of the figure and figcaption below.</i></p>
+
+            <div class="exempli">
+              <h5>Example</h5>
+
+                <h6>HTML</h6>
+
+                  <code>
+                    <ol>
+                      <li>&lt;figure&gt;</li>
+                        <li>&emsp;&lt;img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light gray wolf in the wilderness sniffing a photographic camera."&gt;</li>
+                        <li>&emsp;&lt;img src=http://hkarttutoring.com/wp-content/uploads/2015/06/david-oliveira-08.jpg" alt="An artist performance showing a wolf's wire frame."&gt;</li>
+                        <li>&emsp;&lt;figcaption&gt;As untamed creatures, wolfs play an important part in the steppes ecosystem, moreover, along time, these predators have had an deep influence in the folklore and psyche of many cultures.&lt;/figcaption&gt;</li>
+                      <li>&lt;/figure&gt;</li>
+                    </ol>
+                  </code>
+
+                <h6>CSS</h6>
+
+                  <code>
+                    <ol>
+                      <li>figure img {</li>
+                        <li>&emsp;display: block;</li>
+                        <li>&emsp;margin: 0 auto;</li>
+                        <li>}</li>
+                    </ol>
+
+                    <ol>
+                      <li>figcaption {</li>
+                        <li>&emsp;font&ndash;size: 13px;</li>
+                        <li>&emsp;font&ndash;style: italic;</li>
+                        <li>&emsp;text&ndash;align: center;</li>
+                    </ol>
+                  </code>
+
+                <h6>Result</h6>
+
+                  <figure>
+                    <img src="https://68.media.tumblr.com/5652b6f2f2d2c3852bdd4a1fde61d984/tumblr_o2u8wohIiC1tjanhao1_500.jpg" alt="A light grey wolf in the wilderness sniffing a photographic camera.">
+                    <img src="http://hkarttutoring.com/wp-content/uploads/2015/06/david-oliveira-08.jpg" alt="An artist performance showing a wolf's wire frame.">
+                    <figcaption>As untamed creatures, wolfs play an important part in the steppes ecosystem, moreover, along time, these predators have had an deep influence in the folklore and psyche of many cultures.</figcaption>
+                  </figure>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+      <h2 id="summary">Summary<a href="#top" class="b2t">back to top</a></h2>
+
+        <p>Within the ways to add and manipulate media into a web document there are:</p>
+
+        <ol>
+          <li>Adding images and their description by means of the <code>&lt;img&gt;</code> element and <code>alt</code> attribute respectively.</li>
+          <li>Inset audio specifying its source with either a relative or absolute URL, or providing the specific file in order to guarantee browser compatibility.</li>
+          <li>Identify and manipulate the different <code>&lt;audio&gt;</code>, and <code>&lt;video&gt;</code> attributes and their keywords with the purpose of present information/metadata of the resource and/or for a faster preload.</li>
+          <li>Embed external web page content using the <code>&lt;iframe&gt;</code> element.</li>
+          <li>Introduce semantic meaning and value to grouped media and reference it with the <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements respectively.</li>
+        </ol>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>line one | 6 - Typography</title>
+    <link rel="stylesheet" href="typo.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:100" rel="stylesheet">
+</head>
+
+<header id="top">
+    <a class="line-one-home" href="home.html">line one</a>
+
+    <h1>Working with typography</h1>
+
+    <nav>
+        <h2>Table of contents</h2>
+
+            <p>Font-based properties</p>
+
+            <a href="#intro">Introduction</a><br>
+            <a href="#color">Adding color to text</a><br>
+            <a href="#font-based">Font-based properties</a><br>
+                <a href="#font-family">&mdash; Font-family</a><br>
+                <a href="#font-size">&mdash; Font-size</a><br>
+                <a href="#font-style">&mdash; Font-style</a><br>
+                <a href="#font-variant">&mdash; Font-variant</a><br>
+                <a href="#font-weight">&mdash; Font-weight</a><br>
+                <a href="#line-height">&mdash; Line height</a><br>
+            <a href="#all-font">Font properties all together</a><br>
+
+            <p>Text based properties</p>
+
+            <a href="#text-properties">Text based properties</a><br>
+                <a href="#text-align">&mdash; Text-align</a><br>
+                <a href="#text-deco">&mdash; Text-decoration</a><br>
+                <a href="#text-indent">&mdash; Text-indent</a><br>
+                <a href="#text-shadow">&mdash; Text-shadow</a><br>
+                <a href="#text-transform">&mdash; Text-transform</a><br>
+                <a href="#letter-space">&mdash; Letter spacing</a><br>
+                <a href="#word-space">&mdash; Word spacing</a><br>
+            <a href="#all-text">Text properties all together</a><br>
+
+            <p>Web fonts</p>
+
+            <a href="#web-safe">Web safe fonts</a><br>
+            <a href="#embed">Embedding web fonts</a><br>
+
+            <p>Citing</p>
+
+            <a href="#quoting">Citations & quotes</a><br>
+            <a href="#citing-creative-work">Citing a creative work</a><br>
+            <a href="#dialogue&prose">Dialogue and prose</a><br>
+            <a href="#externalQ">External quotation</a><br>
+            <a href="#externalC">External citation</a><br><br>
+            <a href="#summary">Summary</a>
+    </nav>
+</header>
+
+<body>
+
+    <h2 id="intro">Introduction</h2>
+
+    <p>
+        As browsers started to be able to embed fonts into computers, those, were not longer limited to only render the fonts installed by default. This, opened a vast amount of options to choose from when selecting a font, in order to make the most out of them, is mandatory know and be aware of the basic typography principles.
+        </p>
+
+            <p>This, with the typeface, is one of the first decisions to be made when building a website, and is also one of the most powerful elements to set an unmistakable personality to the page, as they have the largest impact on the look and legibility of the page.</p>
+
+            <p>The <code>color</code> property sets and modifies the text color, allowing only one value, that can be expressed in different formats, as <code>rgb</code>, <code>rgba</code>, <code>HSL</code>, <code>HSLa</code>, and <code>hexadecimal</code> values. The latter are preferred as provide great control with little effort. As example, the following CSS will change the color of all the text within the <code>&#60;html&#62;</code> element on a page:</p>
+
+            <code class="block">
+                html {<br>
+                color: #555;<br>
+                }
+            </code>
+
+            <div class="example ex-color-01">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla neque nisi, ut consequat nulla sollicitudin eget. Sed sit amet nibh vehicula, aliquet est sollicitudin, elementum velit. Aliquam at rhoncus est. Donec a facilisis ex, ut bibendum orci. Phasellus molestie vestibulum bibendum. Donec bibendum efficitur ipsum, ac iaculis metus volutpat ac. Morbi egestas mauris sed risus accumsan gravida. Phasellus quam orci, elementum vel feugiat et, porttitor a sem. Mauris lacinia rhoncus nulla vel rutrum.</p>
+
+                <p>Vivamus sed dignissim orci. Aenean ut maximus elit. Suspendisse et lacinia risus. Mauris hendrerit sem eu enim hendrerit, et pulvinar tortor tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis eget risus gravida, gravida mi nec, aliquet metus. Mauris lobortis ullamcorper sapien, at placerat sapien tempus sit amet. Pellentesque non tellus sollicitudin, consectetur ex eu, pharetra nulla. Vestibulum gravida velit vitae ante semper sollicitudin. Duis tempor tellus at tempus laoreet. Maecenas non venenatis enim. Donec cursus tellus non nunc condimentum congue. Pellentesque tristique augue id eros imperdiet, nec sollicitudin nisl congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed bibendum vestibulum mi. Duis rutrum lorem ut arcu molestie suscipit.</p>
+            </div>
+
+        <h2 id="font-based">Font-based properties<a class="b2t" href="#top">back to top</a></h2>
+
+            <p>Within the available typography properties, they are classified in two categories: font-based properties and text-based properties. They are easily identifiable because most of these will be preface with either <code>font-*</code> or <code>text-*</code>.</p>
+
+    <!-- beginning of level 01 indent: font-based properties -->
+    <div class="font-based level01">
+
+        <h2 id="color">Adding color to text<a class="b2t" href="#top">back to top</a></h2>
+
+    <!-- comment on typeface vs. font -->
+    <aside class="frame">
+
+        <h3>Typeface vs. font</h3>
+
+            <p>The terms "typeface" and "font" are often interchanged, causing confusion. Here is a breakdown of exactly what each term means.</p>
+
+            <p>A <em>typeface</em> is what we see. It is the artistic impression of how text looks, feels, and reads.</p>
+
+            <p>A <em>font</em> is a file that contains a typeface. Using a font on a computer allows the computer to access the typeface.</p>
+
+            <p>One way to help clarify the difference between a typeface and a font is to compare them to a song and and MP3. A typeface is very similar to a song in that it is a work of art. It is created by an artist or artists and is open to public interpretation. A font, on the other hand, is very similar to an MP3 in that it is not the artistic impression itself, but only a method of delivering the artistic value.</p>
+    </aside>
+
+        <!-- beginning of level 02 indent -->
+        <div class="level02">
+
+            <h3>Font family</h3>
+
+                <p>The <code>font-family</code> property is used to declare which font -as well as which fallback or substitute fonts- should be used to display text. The value of the <code>font-family</code> property contains multiple font names, all comma separated. The first declared font (starting from the left), is the primary font choice. If this font is unavailable, then, the alternative declared fonts will follow after it in order of preference from left to right.</p>
+
+                <p>When declaring fonts, take into account that font names with more than one word must be declared wrapped in quotation marks. Additionally, the las font should be a keyword value, which will use the system default font for the specified type, most commonly either <code>sans-serif</code> or <code>serif</code>.</p>
+
+                <p>The following is an example of the declaration of the <code>font-family</code> property.</p>
+
+                <code class="block">
+                    body {<br>
+                    font-family: Garamond, Georgia, Lucida, serif;<br>
+                    }
+                </code>
+
+                    <div class="example ex-font-family-01">
+                        <p>Sed auctor interdum sapien, elementum sagittis ante varius quis. Aenean pulvinar sollicitudin libero vehicula luctus. Nulla sagittis tempor feugiat. Donec facilisis metus vitae dui aliquam, id consequat nunc rhoncus. Maecenas lorem massa, molestie ut egestas sit amet, aliquet et justo. In tincidunt dui ut ex blandit finibus ut ac neque. Donec et justo iaculis, tempor quam non, laoreet quam. Ut ac elementum lacus. Integer vel est sem. Fusce dignissim felis scelerisque suscipit pretium. Ut varius dolor ut eleifend tincidunt.</p>
+
+                        <p>Aliquam pulvinar diam quis dapibus sollicitudin. Praesent porta sapien fermentum nunc pellentesque tincidunt. Aliquam erat volutpat. Nunc pellentesque quis tortor at tempus. Nam eget lorem magna. Maecenas bibendum nunc auctor, euismod arcu nec, semper lacus. Duis sed turpis nec ante iaculis tempus. Mauris quis est et metus placerat fringilla at vel sapien. Fusce venenatis massa tempor ultrices sollicitudin. Suspendisse eleifend tortor laoreet, auctor ante et, rutrum sem. Fusce hendrerit imperdiet consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer tempus pulvinar ex, a varius mauris elementum semper. Phasellus diam ligula, faucibus vitae ligula ut, ultrices congue nunc.</p>
+                    </div>
+
+                <p>According to the previously exposed, the font of choice will be <code>Garamond</code>, should this font will be unavailable/uninstalled, then the <code>Georgia</code> font will follow, and so on until <code>serif</code> provided the <code>Lucida</code> font isn't available neither.</p>
+
+            <h3>Font size<a class="b2t" href="#top">back to top</a></h3>
+
+                <p>The <code>font-size</code> property provides the ability to set the size of text using common length values, including pixels, em units, percentages, points, or <code>font-size</code> keywords <i class=faq>which are those keywords for the font-size property?</i></p>
+
+                <p>Here is a CSS example setting the <code>font-size</code> of the <code>&#60;body&#62;</code> element to <code>14px</code>.</p>
+
+                <code class="block">
+                    body {<br>
+                    font-size: 14px;<br>
+                    }
+                </code>
+
+                    <div class="example">
+
+                        <code>font-size: 14px;</code>
+                        <p class="ex-font-size-01">Etiam tincidunt velit sit amet dolor luctus rutrum. Vestibulum vitae finibus augue. Etiam non est eu sem ullamcorper pulvinar in aliquet urna. In maximus tortor pharetra venenatis vehicula. Morbi tempus scelerisque justo vel pellentesque. Ut euismod varius augue, ac malesuada lorem hendrerit sed. In maximus finibus lacinia. Fusce lacus ipsum, laoreet eget ex et, porta vulputate diam. Aliquam dignissim velit a neque gravida rhoncus. Fusce interdum turpis quis est sagittis mollis. Integer at risus vel lacus euismod auctor. Ut varius malesuada lectus, eu vehicula erat placerat non. Aenean felis risus, posuere ut commodo non, rhoncus eget est. Phasellus non urna nunc. Nunc at sodales libero. Aliquam faucibus ipsum vitae dolor commodo auctor.</p>
+
+                        <code>font-size: 150%</code>
+                        <p class="ex-font-size-02">Etiam tincidunt velit sit amet dolor luctus rutrum. Vestibulum vitae finibus augue. Etiam non est eu sem ullamcorper pulvinar in aliquet urna. In maximus tortor pharetra venenatis vehicula. Morbi tempus scelerisque justo vel pellentesque. Ut euismod varius augue, ac malesuada lorem hendrerit sed. In maximus finibus lacinia. Fusce lacus ipsum, laoreet eget ex et, porta vulputate diam. Aliquam dignissim velit a neque gravida rhoncus. Fusce interdum turpis quis est sagittis mollis. Integer at risus vel lacus euismod auctor. Ut varius malesuada lectus, eu vehicula erat placerat non. Aenean felis risus, posuere ut commodo non, rhoncus eget est. Phasellus non urna nunc. Nunc at sodales libero. Aliquam faucibus ipsum vitae dolor commodo auctor.</p>
+
+                        <code>font-size: 0.8em</code>
+                        <p class="ex-font-size-03">Etiam tincidunt velit sit amet dolor luctus rutrum. Vestibulum vitae finibus augue. Etiam non est eu sem ullamcorper pulvinar in aliquet urna. In maximus tortor pharetra venenatis vehicula. Morbi tempus scelerisque justo vel pellentesque. Ut euismod varius augue, ac malesuada lorem hendrerit sed. In maximus finibus lacinia. Fusce lacus ipsum, laoreet eget ex et, porta vulputate diam. Aliquam dignissim velit a neque gravida rhoncus. Fusce interdum turpis quis est sagittis mollis. Integer at risus vel lacus euismod auctor. Ut varius malesuada lectus, eu vehicula erat placerat non. Aenean felis risus, posuere ut commodo non, rhoncus eget est. Phasellus non urna nunc. Nunc at sodales libero. Aliquam faucibus ipsum vitae dolor commodo auctor.</p>
+
+                        <p><code>font-size: 20pt</code> (Keep in mind that <code>12px = 16pt</code>)</p>
+                        <p class="ex-font-size-04">Etiam tincidunt velit sit amet dolor luctus rutrum. Vestibulum vitae finibus augue. Etiam non est eu sem ullamcorper pulvinar in aliquet urna. In maximus tortor pharetra venenatis vehicula. Morbi tempus scelerisque justo vel pellentesque. Ut euismod varius augue, ac malesuada lorem hendrerit sed. In maximus finibus lacinia. Fusce lacus ipsum, laoreet eget ex et, porta vulputate diam. Aliquam dignissim velit a neque gravida rhoncus. Fusce interdum turpis quis est sagittis mollis. Integer at risus vel lacus euismod auctor. Ut varius malesuada lectus, eu vehicula erat placerat non. Aenean felis risus, posuere ut commodo non, rhoncus eget est. Phasellus non urna nunc. Nunc at sodales libero. Aliquam faucibus ipsum vitae dolor commodo auctor.</p>
+                    </div>
+
+            <h3>Font style<a class="b2t" href="#top">back to top</a></h3>
+
+                <p>This property is commonly used to set text to italics, or to prevent text from being italicized. This property accepts, four keyword values, namely: <code>normal</code>, <code>italic</code>, <code>oblique</code>, and <code>inherit</code>. The following CSS sets all elements with a class of <code>special</code> to include a <code>font-style</code> of <code>italic</code>:</p>
+
+                <code class="block">
+                    .ex-font-style-01 {<br>
+                    font-style: italic;<br>
+                    }
+                </code>
+
+                    <div class="example"> <!-- font-styles examples -->
+
+                        <aside class="frame">
+                            <h3>Italic vs. Oblique</h3>
+
+                            <p>The oblique font styles (<b>necessarily</b>) uses exactly the same glyphs as the regular (roman) typeface but in a slanted way. On the other hand the italic font style <b>not necessarily</b> uses the same glyphs as the roman typeface -albeit sometimes it does-.</p>
+                        </aside>
+
+                        <code>font-style: italic;</code>
+                        <p class="ex-font-style-01">Curabitur laoreet ex in erat varius, sed ullamcorper est auctor. Aenean ut purus dictum, sagittis nulla sed, pretium ante. Quisque ligula neque, dignissim vel tellus at, convallis fermentum erat. Vestibulum sed metus non nunc vulputate rutrum quis tristique nunc. Quisque nec mi id sapien auctor viverra id a erat. Fusce et risus nisi. Proin consectetur tellus ipsum, vitae auctor tellus vulputate eget. Nulla lacinia nisi vel iaculis gravida. Vivamus quis ornare ligula. Morbi malesuada risus nibh, suscipit feugiat justo mollis vitae. Ut pulvinar, ex non euismod hendrerit, augue dui pellentesque nisl, et faucibus turpis nisi vel massa.</p>
+
+                        <code>font-style: normal;</code>
+                        <p class="ex-font-style-02">Duis ut justo sed dui gravida malesuada quis vel massa. Donec eleifend nibh dolor, id porttitor sapien vestibulum a. Suspendisse sed nibh pharetra, imperdiet ex id, venenatis erat. Nulla facilisi. Sed suscipit auctor dictum. Maecenas maximus sagittis quam ut hendrerit. Nunc risus turpis, efficitur id nisi eu, interdum posuere lacus. Etiam varius scelerisque neque, ut faucibus ante vestibulum tempus. Vestibulum tristique posuere sapien, ac varius enim egestas eget. Morbi id enim eget mauris interdum tincidunt. Duis porta, lorem vitae consequat posuere, urna libero congue nisl, scelerisque tincidunt lacus purus id mauris. Nam aliquam lorem gravida, feugiat metus a, suscipit sem. Fusce venenatis mauris ex, vel lacinia nunc consectetur in. Donec neque massa, gravida ut velit ac, rhoncus volutpat nisi.</p>
+
+                        <code>font-style: oblique;</code>
+                        <p class="ex-font-style-03">Duis vel enim quam. Integer ipsum diam, convallis non mi et, vulputate tristique nunc. Mauris a neque tristique, venenatis sem egestas, rutrum quam. Integer tempus vulputate ultricies. Sed auctor turpis ac ipsum ultrices, nec pharetra risus molestie. Nulla posuere molestie est. Quisque maximus neque arcu, nec volutpat ligula dignissim eget. Morbi pellentesque, lectus vitae luctus consequat, quam odio porta velit, sed accumsan turpis odio ac felis.</p>
+
+                        <!-- A <div> element is used here to use an illustrate how the inherit and initial properties work. -->
+                        <div class="ex-font-style-04">
+                            <p><code>font-style: inherit;</code> The typeface inherits the style of its parent element, in this case the <code>&#60;div&#62;</code> element that is <b>parent</b> of this paragraph has a oblique font-style, therefore, this paragraph will be showed with an oblique font-style.<br>Nulla ligula leo, imperdiet a nulla vel, tincidunt rutrum arcu. Quisque sit amet sem dapibus, rhoncus mauris sit amet, molestie velit. Etiam at gravida diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam pretium, velit eget luctus gravida, tortor ex accumsan risus, a efficitur magna nulla vel lectus. Sed non tincidunt quam. Mauris elementum pharetra lectus in porta. Proin a sapien lectus. Nullam feugiat maximus justo, a iaculis odio vulputate vitae. Nullam molestie nisi eget felis egestas hendrerit. Ut tincidunt augue et lacinia interdum. Donec libero quam, molestie iaculis aliquam porta, commodo quis diam. Aliquam dignissim neque egestas enim pharetra, ut lobortis dui imperdiet.</p>
+
+                            <p class="ex-font-style-05"><code>font-style: initial;</code> The typeface takes its default initial value. By the way, is useful to note that the selector that worked to get this result, i.e. a <code>font-style: normal;</code> was <code>div.ex-font-style-04 ex-font-style-05</code>, that is, the elements classified as <code>ex-font-style-05</code> that are child elements of <code>&#60;div class="ex-font-style-05"&#62;</code>, otherwise the font of this paragraph would be showed as <code>oblique</code>.<br>
+                            Pellentesque ut arcu tristique ante euismod congue. Nulla in pretium nisl. Morbi faucibus, justo at sagittis tempus, leo neque tempus sem, sit amet blandit libero purus sit amet orci. Sed mattis ligula id sem cursus fringilla. Aliquam placerat nisl sapien, nec rutrum lorem mollis a. Aenean luctus odio sit amet nisi dignissim placerat. Pellentesque et dignissim tellus, eget dapibus magna. Nunc vitae tempus ipsum. Vivamus volutpat justo urna, a tempus est consectetur tincidunt. Aliquam congue facilisis urna, a interdum arcu bibendum et. Sed eleifend erat ac metus pellentesque, sit amet ornare ex sagittis. In hac habitasse platea dictumst. Curabitur ac nisi elit. Nunc lectus diam, vestibulum a semper in, vestibulum at elit. Donec auctor lectus ut gravida laoreet. Ut eget scelerisque mi.</p>
+                        </div> <!-- End of example that uses the <div> element to show how the inherit and initial properties work. -->
+                    </div> <!-- end of font-styles examples -->
+
+            <h3>Font variant<a class="b2t" href="#top">back to top</a></h3>
+
+                <p>This property is used mostly in the rare cases the text needs to be displayed in small capitals, known also as small caps. The <code>font-variant</code> property accepts three values: <code>normal</code>, <code>small-caps</code>, and <code>inherit</code> or <code>initial</code>. The following example shows all the elements with a class of firm to a <code>font-variant</code> of <code>small-caps</code>:</p>
+
+                    <code class="block">
+                        .firm {<br>
+                        font-variant: small-caps;<br>
+                        }
+                    </code>
+
+
+                    <!-- font-variant: small-caps; example -->
+                    <div class="example">
+                        <p>THIS IS A SAMPLE TEXT IN REGULAR CAPITALS TO ILLUSTRATE THE DIFFERENCE BETWEEN THEM AND THE SMALL CAPITALS.</p>
+
+                        <p class="ex-font-variant-01">Suspendisse viverra posuere pellentesque. Donec leo erat, commodo eu aliquam a, sollicitudin sed nulla. Morbi venenatis augue sagittis mi luctus, sed placerat ex tristique. Ut ut lacus sed libero dignissim faucibus ac ut magna. Phasellus a nisi a lorem interdum sagittis sed non leo. Vestibulum libero nibh, ornare vel viverra id, iaculis at erat. Cras ut aliquam sapien, vestibulum faucibus lorem. Sed blandit purus dapibus, pellentesque dolor quis, convallis magna. Aliquam consequat, felis ut mollis semper, justo mauris luctus tellus, at elementum diam sem nec tellus. Praesent ut tristique arcu, id congue diam. Aenean at elementum turpis. Integer dictum sit amet dolor in elementum. Cras porttitor ornare quam sit amet interdum. Quisque non erat nec justo laoreet efficitur. Donec posuere eros neque, rhoncus venenatis nulla rhoncus sed. Integer quis viverra dolor.</p>
+                    </div> <!-- End of font-variant: small-caps; example -->
+
+            <h3>Font weight<a class="b2t" href="#top">back to top</a></h3>
+
+                <!-- comment box on the weights of a typeface file -->
+                <aside class="frame">
+                    <h4>Typeface weights</h4>
+
+                        <p>Before using a numeric value, we need to check and see whether the typeface we are using comes in the weight we'd like to use. Attempting to use a weight that's not available for a given typeface will cause those styles to default to the closest value. For example, the Times New Roman typeface comes in two weights: <code>normal</code> (<code>400</code>), and <code>bold</code> (<code>700</code>). Attempting to use a weight of <code>900</code> will default the typeface to the closest related weight, <code>700</code> in this case.</p>
+                </aside>
+
+                <p>This property makes reference to the thickness of the typeface, is used to make the text bolder or lighter, this property accepts both, keyword and numerical values.</p>
+
+                <p>Keyword values include <code>normal</code>, <code>bold</code>, <code>bolder</code>, <code>lighter</code>, and <code>inherit</code>. Of these keyword values, it is recommended to primarily use <code>normal</code> and <code>bold</code> to change text from normal to bold an vice versa. Rather than using the keyword values <code>bolder</code> or <code>lighter</code>, it's better to use a numeric value for more specific control. Here is an example of the use of the <code>font-weight</code> property using keyword values:</p>
+
+                    <code class="block">
+                        .daring {<br>
+                        font-weight: bold;<br>
+                        }
+                    </code>
+
+                    <!-- font-weight example -->
+                    <div class="example ex-font-weight-typeface">
+
+                        <p class="ex-font-weight-01"><code>font-weight: 100;</code><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl ac nunc pellentesque bibendum. Phasellus ultrices, dui non aliquet mollis, sem felis vehicula massa, a consectetur diam eros sit amet mi. Nullam sed leo odio. Aenean nec enim nulla. Morbi maximus nulla ac dui ullamcorper, non tincidunt ligula auctor. Fusce tortor nisi, posuere ut diam eget, hendrerit ultrices dui. Maecenas ornare ipsum sit amet metus vestibulum ornare. Etiam tincidunt dui orci, et tincidunt elit viverra vitae. Nulla facilisi. Morbi sed sapien lectus. Proin urna lectus, ultricies in diam euismod, eleifend fringilla neque. Maecenas egestas aliquet feugiat.</p>
+
+                        <p class="ex-font-weight-02"><code>font-weight: 200;</code><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl ac nunc pellentesque bibendum. Phasellus ultrices, dui non aliquet mollis, sem felis vehicula massa, a consectetur diam eros sit amet mi. Nullam sed leo odio. Aenean nec enim nulla. Morbi maximus nulla ac dui ullamcorper, non tincidunt ligula auctor. Fusce tortor nisi, posuere ut diam eget, hendrerit ultrices dui. Maecenas ornare ipsum sit amet metus vestibulum ornare. Etiam tincidunt dui orci, et tincidunt elit viverra vitae. Nulla facilisi. Morbi sed sapien lectus. Proin urna lectus, ultricies in diam euismod, eleifend fringilla neque. Maecenas egestas aliquet feugiat.</p>
+
+                        <p class="ex-font-weight-03"><code>font-weight: 300;</code><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl ac nunc pellentesque bibendum. Phasellus ultrices, dui non aliquet mollis, sem felis vehicula massa, a consectetur diam eros sit amet mi. Nullam sed leo odio. Aenean nec enim nulla. Morbi maximus nulla ac dui ullamcorper, non tincidunt ligula auctor. Fusce tortor nisi, posuere ut diam eget, hendrerit ultrices dui. Maecenas ornare ipsum sit amet metus vestibulum ornare. Etiam tincidunt dui orci, et tincidunt elit viverra vitae. Nulla facilisi. Morbi sed sapien lectus. Proin urna lectus, ultricies in diam euismod, eleifend fringilla neque. Maecenas egestas aliquet feugiat.</p>
+
+                        <p class="ex-font-weight-04"><code>font-weight: 400;</code><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl ac nunc pellentesque bibendum. Phasellus ultrices, dui non aliquet mollis, sem felis vehicula massa, a consectetur diam eros sit amet mi. Nullam sed leo odio. Aenean nec enim nulla. Morbi maximus nulla ac dui ullamcorper, non tincidunt ligula auctor. Fusce tortor nisi, posuere ut diam eget, hendrerit ultrices dui. Maecenas ornare ipsum sit amet metus vestibulum ornare. Etiam tincidunt dui orci, et tincidunt elit viverra vitae. Nulla facilisi. Morbi sed sapien lectus. Proin urna lectus, ultricies in diam euismod, eleifend fringilla neque. Maecenas egestas aliquet feugiat.</p>
+
+                        <p class="ex-font-weight-05"><code>font-weight: 500;</code><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl ac nunc pellentesque bibendum. Phasellus ultrices, dui non aliquet mollis, sem felis vehicula massa, a consectetur diam eros sit amet mi. Nullam sed leo odio. Aenean nec enim nulla. Morbi maximus nulla ac dui ullamcorper, non tincidunt ligula auctor. Fusce tortor nisi, posuere ut diam eget, hendrerit ultrices dui. Maecenas ornare ipsum sit amet metus vestibulum ornare. Etiam tincidunt dui orci, et tincidunt elit viverra vitae. Nulla facilisi. Morbi sed sapien lectus. Proin urna lectus, ultricies in diam euismod, eleifend fringilla neque. Maecenas egestas aliquet feugiat.</p>
+
+                        <p class="ex-font-weight-06"><code>font-weight: 600;</code><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl ac nunc pellentesque bibendum. Phasellus ultrices, dui non aliquet mollis, sem felis vehicula massa, a consectetur diam eros sit amet mi. Nullam sed leo odio. Aenean nec enim nulla. Morbi maximus nulla ac dui ullamcorper, non tincidunt ligula auctor. Fusce tortor nisi, posuere ut diam eget, hendrerit ultrices dui. Maecenas ornare ipsum sit amet metus vestibulum ornare. Etiam tincidunt dui orci, et tincidunt elit viverra vitae. Nulla facilisi. Morbi sed sapien lectus. Proin urna lectus, ultricies in diam euismod, eleifend fringilla neque. Maecenas egestas aliquet feugiat.</p>
+
+                        <p class="ex-font-weight-07"><code>font-weight: 700;</code><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl ac nunc pellentesque bibendum. Phasellus ultrices, dui non aliquet mollis, sem felis vehicula massa, a consectetur diam eros sit amet mi. Nullam sed leo odio. Aenean nec enim nulla. Morbi maximus nulla ac dui ullamcorper, non tincidunt ligula auctor. Fusce tortor nisi, posuere ut diam eget, hendrerit ultrices dui. Maecenas ornare ipsum sit amet metus vestibulum ornare. Etiam tincidunt dui orci, et tincidunt elit viverra vitae. Nulla facilisi. Morbi sed sapien lectus. Proin urna lectus, ultricies in diam euismod, eleifend fringilla neque. Maecenas egestas aliquet feugiat.</p>
+
+                        <p class="ex-font-weight-08"><code>font-weight: 800;</code><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl ac nunc pellentesque bibendum. Phasellus ultrices, dui non aliquet mollis, sem felis vehicula massa, a consectetur diam eros sit amet mi. Nullam sed leo odio. Aenean nec enim nulla. Morbi maximus nulla ac dui ullamcorper, non tincidunt ligula auctor. Fusce tortor nisi, posuere ut diam eget, hendrerit ultrices dui. Maecenas ornare ipsum sit amet metus vestibulum ornare. Etiam tincidunt dui orci, et tincidunt elit viverra vitae. Nulla facilisi. Morbi sed sapien lectus. Proin urna lectus, ultricies in diam euismod, eleifend fringilla neque. Maecenas egestas aliquet feugiat.</p>
+
+                        <p class="ex-font-weight-09"><code>font-weight: 900;</code><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nisl ac nunc pellentesque bibendum. Phasellus ultrices, dui non aliquet mollis, sem felis vehicula massa, a consectetur diam eros sit amet mi. Nullam sed leo odio. Aenean nec enim nulla. Morbi maximus nulla ac dui ullamcorper, non tincidunt ligula auctor. Fusce tortor nisi, posuere ut diam eget, hendrerit ultrices dui. Maecenas ornare ipsum sit amet metus vestibulum ornare. Etiam tincidunt dui orci, et tincidunt elit viverra vitae. Nulla facilisi. Morbi sed sapien lectus. Proin urna lectus, ultricies in diam euismod, eleifend fringilla neque. Maecenas egestas aliquet feugiat.</p>
+
+                        <p>
+                            <code>font-weight: 100; </code><span class="ex-font-weight-01">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br>
+                            <code>font-weight: 200; </code><span class="ex-font-weight-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br>
+                            <code>font-weight: 300; </code><span class="ex-font-weight-03">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br>
+                            <code>font-weight: 400; </code><span class="ex-font-weight-04">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br>
+                            <code>font-weight: 500; </code><span class="ex-font-weight-05">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br>
+                            <code>font-weight: 600; </code><span class="ex-font-weight-06">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br>
+                            <code>font-weight: 700; </code><span class="ex-font-weight-07">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br>
+                            <code>font-weight: 800; </code><span class="ex-font-weight-08">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br>
+                            <code>font-weight: 900; </code><span class="ex-font-weight-09">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br>
+                        </p>
+                    </div>
+
+                <p>On the other hand, when adjusting this property using numerical values, the <code>font-weight</code> property accepts the following weights: <code>100</code>, <code>200</code>, <code>300</code>, <code>400</code>, <code>500</code>, <code>600</code>, <code>700</code>, <code>800</code>, and <code>900</code>, being <code>100</code> the lightest weight, and <code>900</code> the boldest/strongest weight.</p>
+
+                <p>For reference, the keyword value of <code>normal</code> maps to <code>400</code> and the keyword <code>bold</code> maps to <code>700</code>; thus, any numeric value below <code>400</code> will be fairly thin, and any value above <code>700</code> will be fairly thick.</p>
+
+                <p>In this example, changing the <code>font-weight</code> to <code>600</code> for any element with the class of <code>daring</code> now renders that text as semibold-not quite as thick as the <code>bold</code> keyword value from before:</p>
+
+                    <code class="block">
+                        .daring {<br>
+                        font-weight: 600;<br>
+                        }
+                    </code>
+
+            <h3>Line height<a class="b2t" href="#top">back to top</a></h3>
+
+                <p>Line height or leading, is the distance between two lines of text, is declared using the <code>line-height</code> property. The <code>line-height</code> property accepts all general length values, like pixels, percentages, and em.</p>
+
+                <p>The best practice for legibility is to set the <code>line-height</code> to around one and a half times the <code>font-size</code> property value. This could be quickly accomplished by setting the leading/<code>line-height</code> to <code>150%</code>, or just <code>1.5</code>. However, if we're working with a baseline grid, having a little more control over our <code>line-height</code> using pixels may be preferable.</p>
+
+                <p>The following CSS sets <code>22px</code> between lines of text:</p>
+
+                    <code class="block">
+                        body {<br>
+                        line-height: 22px;<br>
+                        }
+                    </code>
+
+                    <!-- beginning of leading (line-height) example -->
+                    <div class="example line-height">
+
+                    <h4>Setting up the leading with pixels</h4>
+
+                        <code>line-height: 05px;</code>
+                        <p class="ex-line-height-01">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <code>line-height: 10px;</code>
+                        <p class="ex-line-height-02">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <code>line-height: 15px;</code>
+                        <p class="ex-line-height-03">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <h4>Setting up the leading with percentages</h4>
+
+                        <code>line-height: 050%;</code>
+                        <p class="ex-line-height-04">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <code>line-height: 100%;</code>
+                        <p class="ex-line-height-05">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <code>line-height: 150%;</code>
+                        <p class="ex-line-height-06">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <code>line-height: 200%;</code>
+                        <p class="ex-line-height-07">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <h4>Setting up the leading with ems</h4>
+
+                        <code>line-height: 0.5;</code>
+                        <p class="ex-line-height-08">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <code>line-height: 1;</code>
+                        <p class="ex-line-height-09">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <code>line-height: 1.5;</code>
+                        <p class="ex-line-height-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+
+                        <code>line-height: 2;</code>
+                        <p class="ex-line-height-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit vel diam auctor volutpat. Maecenas auctor dictum vehicula. Curabitur vel nulla non mi faucibus accumsan. Phasellus sed fermentum magna. Cras aliquam dignissim tellus vitae auctor. Aenean accumsan pulvinar elementum. Suspendisse venenatis velit magna, quis faucibus orci egestas et.</p>
+                    </div> <!-- end of leading example -->
+
+                <p>A little trick to vertically center text can be done making equal the <code>height</code> with the <code>line-height</code>, this technique is commonly used with buttons, alert messages, and other single-line text blocks.</p>
+
+                <div class="example">
+                    <p class="ex-line-height-12">This is a single line text is vertically centered using a leading = font-size.</p>
+                </div>
+
+                <h4>Shorthand font properties<a class="b2t" href="#top">back to top</a></h4>
+
+                    <p>As many other properties, the <code>font</code> property accepts shorthand declarations, needless to say, all of the stated properties must be font-based. The order to declare these properties is the following from left to right: <code>font-style</code>, <code>font-variant</code>, <code>font-weight</code>, <code>font-size</code>, <code>line-height</code>, and <code>font-family</code>. As a shorthand declaration, no commas must be present within each value, only with the exception of font names, as the <code>font-family</code> property value uses commas, otherwise, as usual, should a value have more than one word, it must be wrapped in quotation marks. Additionally, a forward slash, <code>/</code>, separator is needed between the <code>font-size</code> and <code>line-height</code>, like this: <code>font-size/line-height</code>, <code>18px/27px</code>.</p>
+
+                    <p>In shorthand declaration for the <code>font</code> property all values are optional but the <code>font-size</code> and <code>font-family</code>. That said, it is possible include only the <code>font-size</code> and <code>font-family</code> property values in the shorthand value if desired.</p>
+
+                        <code class="block">
+                            html {<br>
+                            font: italic small-caps bold 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
+                            }
+                        </code>
+
+        </div> <!-- end of 2nd level indent -->
+
+        <h2 id="all-font">Font properties all together<a class="b2t" href="#top">back to top</a></h2>
+
+            <p>The following examples show the use of the font-based properties together. The following HTML and CSS demonstrates the different possibilities when styling text.</p>
+
+            <h4>HTML</h4>
+
+                <code class="block">
+                    &#60;h2&#62;&#60;a href="#"&#62;I Am a Builder&#60;/a&#62;&#60;h2&#62;<br>
+                    &#60;p class="byline"&#62;Posted by Shay Howe&#60;/p&#62;<br>
+                    &#60;p&#62;Every day I see designers and developers working alongside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders.&#60;a href="#"&#62;Continue&#8230;&#60;/a&#62;&#60;/p&#62;
+                </code>
+
+            <h4>CSS</h4>
+
+        <aside class="frame">
+
+        <h3>CSS pseudo-classes</h3>
+            <p>
+                The previous example shows the <code>:hover</code> CSS pseudo-class. For reference, pseudo-classes are keywords that may be added to the end of a selector to style an element when it's in a unique state. The <code>:hover</code> pseudo-class styles and element when a uses hovers over that element. When used with the <code>&#60;a&#62;</code> element, as shown above, all <code>&#60;a&#62;</code> elements will receive unique styles when they are hovered over. Now the <code>&#60;a&#62;</code> elements will change color upon being hovered over.
+            </p>
+        </aside>
+
+                <code class="block">
+                    h2,<br>
+                    p {<br>
+                    color: #555;<br>
+                    font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+                    }<br>
+                    a {<br>
+                    color: #0087cc;<br>
+                    }<br>
+                    a:hover {<br>
+                    color: #ff7b29;<br>
+                    }<br>
+                    h2 {<br>
+                    font-size: 22px;<br>
+                    font-weight: bold;<br>
+                    margin-bottom: 6px;<br>
+                    }<br>
+                    .byline {<br>
+                    color: #9799a7;<br>
+                    font-family: Georgia, Times, "Times New Roman", serif;<br>
+                    font-style: italic;<br>
+                    margin-bottom: 18px;<br>
+                    }
+                </code>
+
+                <div class="example all-font">
+                    <h2><a href="#">I Am a Builder</a></h2>
+                    <p class="byline">Posted by Shay Howe</p>
+                    <p>Every day I see designers and developers working alongside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders.<a href="#">Continue...</a></p>
+                </div>
+    </div> <!-- end of level 01 indent -->
+
+    <hr>
+
+    <!-- beginning of level 01 indent: text-based properties -->
+    <div class="level01">
+        <h2 id="text-properties">Text-based properties<a class="b2t" href="#top">back to top</a></h2>
+
+            <p>Using the font-based properties (<code>family</code>, <code>size</code>, <code>weight</code>, <code>style</code>, <code>variant</code>, and <code>line-height</code>), is half the process. Additionally it is possible to decide how to align, decorate, indent, transform, and space text.</p>
+
+            <!-- beginning of level 02 indent: -->
+            <div class="level02">
+
+                <h3 id="text-align">Text align<a class="b2t" href="#top">back to top</a></h3>
+
+                    <p>The <code>text-align</code> is very useful improve the layout and legibility of a page. The <code>text-align</code> property has five values: <code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code>, and <code>inherit</code>. All of these values are fairly straightforward; as expected, they align text to the left, right, or center, or they justify text. However, the <code>text-align</code> property should not be confused with the <code>float</code> property. The <code>text-align</code> values <code>left</code> and <code>right</code> will align the text <i>within</i> the element to the left or right, whereas the <code>float</code> values <code>left</code> and <code>right</code> will move the <i>entire</i> element. Sometime the <code>text-align</code> will produce the desired outcome, and other times the <code>float</code> property will.</p>
+
+                    <div class="example">
+                        <p class="ex-text-align-01"><code>text-align: left;</code><br>
+                        Phasellus et justo vel metus tempus maximus nec vel ante. Mauris ut elit id nulla mollis lacinia. Nam sodales laoreet arcu, a elementum quam rutrum non. Aenean vel massa porttitor, bibendum risus a, bibendum lorem. Morbi pharetra lacus nec faucibus semper. In consectetur ac elit ut accumsan. Etiam fermentum risus mollis ex commodo imperdiet. Suspendisse in elementum enim. Nulla nibh dolor, sagittis eu justo a, volutpat dictum elit. Sed mollis blandit magna non aliquam. Integer eu pellentesque urna. Proin quis urna vitae nisi euismod vestibulum. Nullam vitae metus volutpat, feugiat massa eu, bibendum arcu. Donec laoreet, lacus sed scelerisque rutrum, arcu est dignissim mauris, eu convallis mi leo maximus elit.</p>
+
+                        <p class="ex-text-align-02"><code>text-align: right;</code><br>
+                        Phasellus et justo vel metus tempus maximus nec vel ante. Mauris ut elit id nulla mollis lacinia. Nam sodales laoreet arcu, a elementum quam rutrum non. Aenean vel massa porttitor, bibendum risus a, bibendum lorem. Morbi pharetra lacus nec faucibus semper. In consectetur ac elit ut accumsan. Etiam fermentum risus mollis ex commodo imperdiet. Suspendisse in elementum enim. Nulla nibh dolor, sagittis eu justo a, volutpat dictum elit. Sed mollis blandit magna non aliquam. Integer eu pellentesque urna. Proin quis urna vitae nisi euismod vestibulum. Nullam vitae metus volutpat, feugiat massa eu, bibendum arcu. Donec laoreet, lacus sed scelerisque rutrum, arcu est dignissim mauris, eu convallis mi leo maximus elit.</p>
+
+                        <p class="ex-text-align-03"><code>text-align: center;</code><br>
+                        Phasellus et justo vel metus tempus maximus nec vel ante. Mauris ut elit id nulla mollis lacinia. Nam sodales laoreet arcu, a elementum quam rutrum non. Aenean vel massa porttitor, bibendum risus a, bibendum lorem. Morbi pharetra lacus nec faucibus semper. In consectetur ac elit ut accumsan. Etiam fermentum risus mollis ex commodo imperdiet. Suspendisse in elementum enim. Nulla nibh dolor, sagittis eu justo a, volutpat dictum elit. Sed mollis blandit magna non aliquam. Integer eu pellentesque urna. Proin quis urna vitae nisi euismod vestibulum. Nullam vitae metus volutpat, feugiat massa eu, bibendum arcu. Donec laoreet, lacus sed scelerisque rutrum, arcu est dignissim mauris, eu convallis mi leo maximus elit.</p>
+
+                        <p class="ex-text-align-04"><code>text-align: justify;</code><br>
+                        Phasellus et justo vel metus tempus maximus nec vel ante. Mauris ut elit id nulla mollis lacinia. Nam sodales laoreet arcu, a elementum quam rutrum non. Aenean vel massa porttitor, bibendum risus a, bibendum lorem. Morbi pharetra lacus nec faucibus semper. In consectetur ac elit ut accumsan. Etiam fermentum risus mollis ex commodo imperdiet. Suspendisse in elementum enim. Nulla nibh dolor, sagittis eu justo a, volutpat dictum elit. Sed mollis blandit magna non aliquam. Integer eu pellentesque urna. Proin quis urna vitae nisi euismod vestibulum. Nullam vitae metus volutpat, feugiat massa eu, bibendum arcu. Donec laoreet, lacus sed scelerisque rutrum, arcu est dignissim mauris, eu convallis mi leo maximus elit.</p>
+
+                        <p class="ex-text-align-05"><code>text-align: inherit;</code> Text here appears as justified because of the inherit property makes this element take the <code>text-align</code> value of its parent element, in this case <code>justify</code>.<br>
+                        Phasellus et justo vel metus tempus maximus nec vel ante. Mauris ut elit id nulla mollis lacinia. Nam sodales laoreet arcu, a elementum quam rutrum non. Aenean vel massa porttitor, bibendum risus a, bibendum lorem. Morbi pharetra lacus nec faucibus semper. In consectetur ac elit ut accumsan. Etiam fermentum risus mollis ex commodo imperdiet. Suspendisse in elementum enim. Nulla nibh dolor, sagittis eu justo a, volutpat dictum elit. Sed mollis blandit magna non aliquam. Integer eu pellentesque urna. Proin quis urna vitae nisi euismod vestibulum. Nullam vitae metus volutpat, feugiat massa eu, bibendum arcu. Donec laoreet, lacus sed scelerisque rutrum, arcu est dignissim mauris, eu convallis mi leo maximus elit.</p>
+                    </div>
+
+                <h3 id="text-deco">Text decoration<a class="b2t" href="#top">back to top</a></h3>
+
+                    <p>This property accepts keyword values of: <code>none</code>, <code>underline</code>, <code>overline</code>, <code>line-through</code>, and <code>inherit</code>. Use of the <code>text-decoration</code> property varies, but the most popular use is to underline links, which is a default browser style. Is possible also to apply multiple text decoration values to an element at once by space-separating each keyword within the value.</p>
+
+                    <div class="example">
+                        <p>
+                            1&mdash; <code>text-decoration: none;</code><br>
+                            <span class="ex-text-deco-01">Phasellus et justo vel metus tempus maximus nec vel ante. Mauris ut elit id nulla mollis lacinia.</span>
+                        </p>
+
+                        <p>
+                            2&mdash; <code>text-decoration: underline;</code><br>
+                            <span class="ex-text-deco-02">Nam sodales laoreet arcu, a elementum quam rutrum non. Aenean vel massa porttitor, bibendum risus a, bibendum lorem.</span>
+                        </p>
+
+                        <p>
+                            3&mdash; <code>text-decoration: overline;</code><br>
+                            <span class="ex-text-deco-03">Morbi pharetra lacus nec faucibus semper. In consectetur ac elit ut accumsan. Etiam fermentum risus mollis ex commodo imperdiet.</span>
+                        </p>
+
+                        <p>
+                            4&mdash; <code>text-decoration: line-through;</code><br>
+                            <span class="ex-text-deco-04">Suspendisse in elementum enim. Nulla nibh dolor, sagittis eu justo a, volutpat dictum elit. Sed mollis blandit magna non aliquam. Integer eu pellentesque urna.</span>
+                        </p>
+
+                        <p>
+                            5&mdash; <code>text-decoration: inherit;</code><br>
+                            <span  class="ex-text-deco-05">Nullam vitae metus volutpat, feugiat massa eu, bibendum arcu. Donec laoreet, lacus sed scelerisque rutrum, arcu est dignissim mauris, eu convallis mi leo maximus elit.</span>
+                        </p>
+                    </div>
+
+                <h3 id="text-indent">Text Indent<a class="b2t" href="#top">back to top</a></h3>
+
+                    <p>This property is commonly used in printed publications, as it name suggests, its used to indent the first line of text within an element. All common length values are available for this property, including pixels, points, percentages, and so on. Positive values will indent text inward, while negative values will indent text outward.</p>
+
+                    <div class="example">
+
+                    <h4>Text indent with pixels</h4>
+                        <p class="ex-text-indent-01">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-indent: 25px;</code></p>
+
+                        <p class="ex-text-indent-02">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-indent: -25px;</code></p>
+
+                        <h4>Text indent with percentages</h4>
+
+                        <p class="ex-text-indent-03">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-indent: 10%;</code></p>
+
+                        <p class="ex-text-indent-04">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-indent: -10%;</code></p>
+
+                        <h4>Text indent with em's</h4>
+
+                        <p class="ex-text-indent-05">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-indent: 5em;</code></p>
+
+                        <p class="ex-text-indent-06">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-indent: -5em;</code></p>
+                    </div>
+
+                <h3 id="text-shadow">Text and box shadow<a class="b2t" href="#top">back to top</a></h3>
+
+                    <!-- comment box on box shadow -->
+                    <aside class="frame">
+                        <h4>Box shadow<a class="b2t" href="#top">back to top</a></h4>
+
+                            <p>As previously seen, the <code>text-shadow</code> places a shadow <b>specifically</b> on the text of an element, nevertheless, it is also possible to cast shadows in other type of elements, by the use of the <code>box-shadow</code> property. This property works just like the <code>text-shadow</code> property, accepting values for horizontal and vertical offsets, a blur, and a color.</p>
+
+                            <p>The <code>box-shadow</code> property accepts an optional forth length value, before the <code>color</code> value, for the spread of the shadow. If this value is positive it will expand the shadow larger than the size of the element it's applied to, and in the cases of negative values the shadow will shrink to be smaller than the size of the element it's applied to. Lastly, this property also may include and optional <code>inset</code> value at the beginning of the value to place the shadow inside an element as opposed to outside the element.</p>
+                    </aside> <!-- end of comment box on box shadow -->
+
+                    <p>This property allow to add one or multiple shadows to a text. The property generally takes four values, all listed one after the other from left to right. The first three values are lengths, and the last value is a color.</p>
+
+                    <p>Each of the following values represents in the following order:<br>
+                    - 1st: horizontal shadow's offset.<br>
+                    - 2nd: vertical shadow's offset.<br>
+                    - 3rd: shadow's blur radius.<br>
+                    - 4th: shadow's color.</p>
+
+                    <p>Using negative length values for the horizontal and vertical offsets allows us to move shadows toward the left and the top.</p>
+
+                    <div class="example text-shadow"> <!-- beginning of text and box shadow examples -->
+
+                        <div class="ex-text-shadow-01">
+                            <h4>Horizontal text and box shadow</h4>
+                                <p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                                <code>text-shadow: +5px +0px +3px rgba(27, 135, 204, 1);</code><br>
+                                <code>box-shadow: +30px +0px 50px rgba(27, 135, 204, 1);</code></p>
+                        </div>
+
+                        <div class="ex-text-shadow-02">
+                            <h4>Vertical text and box shadow</h4>
+                                <p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                                <code>text-shadow: +0px +5px +3px rgba(27, 135, 204, 1);</code><br>
+                                <code>box-shadow: +10px +0px +0px rgba(27, 135, 204, 1);</code></p>
+                        </div>
+
+                        <div class="ex-text-shadow-03">
+                            <h4>Top right corner text and box shadow</h4>
+                                <p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                                <code>text-shadow: +5px -6px +3px rgba(27, 135, 204, 1);</code><br>
+                                <code>box-shadow: +5px -5px +10px rgba(27, 135, 204, 1);</code></p>
+                        </div>
+
+                        <div class="ex-text-shadow-04">
+                            <h4>Bottom right corner text and box shadow</h4>
+                                <p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                                <code>text-shadow: +5px +6px +3px rgba(27, 135, 204, 1);</code><br>
+                                <code>box-shadow: +5px +6px +3px rgba(27, 135, 204, 1);</code></p>
+                        </div>
+
+                        <div class="ex-text-shadow-05">
+                            <h4>Bottom left corner text and box  shadow</h4>
+                                <p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                                <code>text-shadow: -5px +6px +3px rgba(27, 135, 204, 1);</code><br>
+                                <code>box-shadow: -5px +6px +3px rgba(27, 135, 204, 1);</code></p>
+                        </div>
+
+                        <div class="ex-text-shadow-06">
+                            <h4>Top left corner text and box shadow</h4>
+                                <p>Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                                <code>text-shadow: -5px -6px +3px rgba(27, 135, 204, 1);</code><br>
+                                <code>box-shadow: -5px -6px +3px rgba(27, 135, 204, 1);</code></p>
+                        </div>
+                    </div> <!-- end of text and box shadow examples -->
+
+                <h3 id="text-transform">Text transform<a class="b2t" href="#top">back to top</a></h3>
+
+                    <p>Similar to the <code>font-variant</code> property, there is the <code>text-transform</code> property. While the <code>font-variant</code> property looks for an <strong>alternate</strong> variant of a typeface, this property (<code>text-transform</code>) will change the text <strong>without change the typeface</strong>, this property accepts five values: <code>none</code>, <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>, and <code>inherit</code>.</p>
+
+                    <p>The <code>capitalize</code> value will capitalize the first letter of each word, the <code>uppercase</code> value will capitalize every letter, and the <code>lowercase</code> will make every letter lowercase, whilst <code>none</code> will return any of these inherited values back to the original text style.</p>
+
+                    <div class="example">
+                        <p class="ex-text-transform-01">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-transform: none;</code></p>
+
+                        <p class="ex-text-transform-02">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-transform: capitalize;</code></p>
+
+                        <p class="ex-text-transform-03">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-transform: uppercase;</code></p>
+
+                        <p class="ex-text-transform-04">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.<br>
+                        <code>text-transform: inherit;</code></p>
+                    </div>
+
+                <h3 id="letter-space">Letter spacing<a class="b2t" href="#top">back to top</a></h3>
+
+                    <p>With the <code>letter-spacing</code> it is possible to adjust the space (or tracking) between the letters on a page. A positive value will push apart letter from one another, while a negative value will pull letters closer together. The keyword value <code>none</code> will return the space between letters back to its normal size. The use of this property will help ensure that the rendering and tracking will be adequate as the <code>font-size</code> is changed. It is, however, always a good idea to double-check our work.</p>
+
+                        <div class="example">
+
+                            <code>letter-spacing: none;</code><br>
+                            <p class="ex-letter-space-01">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                            <code>letter-spacing: -2px;</code><br>
+                            <p class="ex-letter-space-02">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                            <code>letter-spacing: +0px;</code><br>
+                            <p class="ex-letter-space-03">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                            <code>letter-spacing: +2px;</code><br>
+                            <p class="ex-letter-space-04">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                            <code>letter-spacing: +5px;</code><br>
+                            <p class="ex-letter-space-05">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                            <code>letter-spacing: -0.1em</code><br>
+                            <p class="ex-letter-space-06">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                            <code>letter-spacing: 0em;</code><br>
+                            <p class="ex-letter-space-07">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                            <code>letter-spacing: +0.1em;</code><br>
+                            <p class="ex-letter-space-08">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                            <code>letter-spacing: +0.5em;</code><br>
+                            <p class="ex-letter-space-09">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                            <code>letter-spacing: 1em;</code><br>
+                            <p class="ex-letter-space-10">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+                    </div> <!-- end of letter-spacing examples -->
+
+                <h3 id="word-space">Word spacing<a class="b2t" href="#top">back to top</a></h3>
+
+                    <p>In a similar fashion with the tracking, it is possible to adjust the space between words within an element using the <code>word-spacing</code> property. Instead to modify the space between characters, this property only changes the space between words.</p>
+
+                    <div class="example">
+                        <code>word-spacing: none;</code><br>
+                        <p class="ex-word-space-01">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: -10px;</code><br>
+                        <p class="ex-word-space-02">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: -05px;</code><br>
+                        <p class="ex-word-space-03">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: -01px;</code><br>
+                        <p class="ex-word-space-04">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: +01px;</code><br>
+                        <p class="ex-word-space-05">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: +05px;</code><br>
+                        <p class="ex-word-space-06">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: +10px;</code><br>
+                        <p class="ex-word-space-07">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: -0.50em;</code><br>
+                        <p class="ex-word-space-08">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: -0.25em;</code><br>
+                        <p class="ex-word-space-09">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: +0.25em;</code><br>
+                        <p class="ex-word-space-10">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+
+                        <code>word-spacing: +0.50em;</code><br>
+                        <p class="ex-word-space-11">Sed eleifend ligula at ipsum tempor varius a eget nisi. Suspendisse vel aliquam est, vehicula tristique lorem. Sed facilisis sit amet justo a laoreet. Phasellus aliquet blandit ligula, non cursus nunc ornare vel. In elementum leo eget justo euismod, a aliquam tellus feugiat. Nulla facilisi. Mauris velit quam, placerat quis sem at, feugiat vehicula augue. Vivamus ullamcorper porttitor urna, non feugiat felis luctus semper. Nunc tincidunt scelerisque placerat. Etiam eu felis ac leo egestas imperdiet. Integer cursus nulla nisl, vel porta leo feugiat ac.</p>
+                    </div>
+            </div> <!-- end of level 02 indent -->
+
+        <h2 id="all-text">Text properties all together<a class="b2t" href="#top">back to top</a></h2>
+
+            <p>The following is an example of various text-based properties used/applied together.</p>
+
+            <h4>HTML</h4>
+
+                <code class="block">
+                    &#60;h2&#62;&#60;a href="#"&#62;I am a builder&#60;/a&#62;&#60;/h2&#62;<br>
+                    &#60;p class="byline"&#62;Posted by Shay Howe&#60;/p&#62;<br>
+                    &#60;p class="intro"&#62;Every day I see designers and developers working alongside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. They are builders.&#60;a href="#"&#62;Continue&#8230;&#60;/a&#62;&#60;/p&#62;
+                </code> <!-- end of code example -->
+
+            <h4>CSS</h4>
+
+                <code class="block">
+          h2,<br>
+          p {<br>
+          color: #555;<br>
+          font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;<br>
+          }<br>
+          a {<br>
+          color: #0087cc;<br>
+          }<br>
+          a:hover {<br>
+          color: #ff7b29;<br>
+          }<br>
+          h2 {<br>
+          font-size: 22px;<br>
+          font-weight: bold;<br>
+          letter-spacing: -.02em;<br>
+          margin-bottom: 6px;<br>
+          }<br>
+          h2 a {<br>
+          text-decoration: none;<br>
+          text-shadow: 2px 2px 1px rgba(0, 0, 0, .2);<br>
+          }<br>
+          .byline {<br>
+          color: #9799a7;<br>
+          font-family: Georgia, Times, "Times New Roman", serif;<br>
+          font-style: italic;<br>
+          margin-bottom: 18px;<br>
+          }<br>
+          .intro {<br>
+          text-indent: 15px;<br>
+          }<br>
+          .intro a {<br>
+          font-size: 11px;<br>
+          font-weight: bold;<br>
+          text-decoration: underline;<br>
+          text-transform: uppercase;<br>
+          }
+        </code> <!-- end of code example -->
+
+        <div class="example all-text">
+            <h2><a href="#">I am a builder</a></h2>
+
+            <p class="all-text-byline">Posted by Shay Howe</p>
+
+            <p class="intro">Every day I see designers and developers working alongside one another. They work intelligently in pursuit of business objectives. They work diligently making exceptional products. They solve real problems and take pride in their work. The are builders.<a href="#">Continue...</a></p>
+        </div>
+
+        <h2 id="web-safe">Web-safe fonts<a class="b2t" href="#top">back to top</a></h2>
+
+            <p>Regardless of the device, there are fonts pre-installed on every device: computer, smartphone, tablet, or other web-browsing-capable device, because of this, it is possible to freely use these fonts, without the concern of an improper rendering. These fonts set is known as "web-safe fonts", and they are listed below:</p>
+
+            <p class="font Arial">01- Arial</p>
+      <p class="font Courier">02- Courier</p>
+      <p class="font Courier-New">03- Courier New</p>
+      <p class="font Garamond">04- Garamond</p>
+      <p class="font Georgia">05- Georgia</p>
+      <p class="font Lucida">06- Lucida</p>
+      <p class="font Lucida-Grande">07- Lucida Grande</p>
+      <p class="font Lucida-Sans">08- Lucida Sans</p>
+      <p class="font Palatino-Linotype">09- Palatino Linotype</p>
+      <p class="font Tahoma">10- Tahoma</p>
+      <p class="font Trebuchet">11- Trebuchet</p>
+      <p class="font Times-New-Roman">12- Times New Roman</p>
+      <p class="font Verdana">13- Verdana</p>
+
+      <div class="example"> <!-- web safe fonts examples -->
+        <code>font-family: arial;</code>
+        <p class="ex-web-safe-arial">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: courier;</code>
+        <p class="ex-web-safe-courier">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: "courier new";</code>
+        <p class="ex-web-safe-courier-new">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family; garamond;</code>
+        <p class="ex-web-safe-garamond">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: georgia;</code>
+        <p class="ex-web-safe-georgia">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: lucida;</code>
+        <p class="ex-web-safe-lucida">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: "Lucida Grande"</code>
+        <p class="ex-web-safe-lucida-grande">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: "Lucida Sans";</code>
+        <p class="ex-web-safe-lucida-sans">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: "Palatino Linotype";</code>
+        <p class="ex-web-safe-palatino">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: Tahoma;</code>
+        <p class="ex-web-safe-tahoma">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: Trebuchet;</code>
+        <p class="ex-web-safe-trebuchet">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: "Times New Roman";</code>
+        <p class="ex-web-safe-times-new-roman">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+
+        <code>font-family: Verdana;</code>
+        <p class="ex-web-safe-verdana">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+      </div> <!-- end of web-safe fonts examples -->
+
+    <h2 id="embed">Embedding web fonts<a class="b2t" href="#top">back to top</a></h2>
+
+      <p>Off course, it is also possible to use fonts additional to the web-safe fonts, indeed, it is possible to upload an specific font to a server in order to be rendered when the page is visited, this capability has opened unlimited options to choose from. Embedding a web font looks like the following CSS:</p>
+
+          <code class="block">
+              @font-face {<br>
+              font-family: "Lobster";<br>
+              src: local("Lobster"), url("lobster.woff") format("woff");<br>
+              }<br>
+              body {<br>
+              font-family: "Lobster", "Comic Sans", cursive;<br>
+              }
+          </code> <!-- end of code example -->
+
+      <p>From the previous example, it can be observed that when embedding a web font it is necessary to:<br>
+      - Use the <code>@font-face</code> at-rule to identify the font's name, via the <code>font-family</code> property.<br>
+      - The font's source (the path to the font file containing the chosen font), via the <code>src</code> property.<br>
+      - From there is possible to use the font by including its name within any <code>font-family</code> property value.</p>
+
+      <p>Take into account that the ability to embed any font on a website is totally different to have legally right to do so. As artistic work, fonts have licenses in order to be used. Fortunately, the value of using new fonts on websites have been recognized. Companies like <a href="https://typekit.com/">Typekit</a> and <a href="http://fontdeck.com/">Fontdeck</a>, work off a subscription mode for licensing fonts, while others, like <a href="https://www.google.com/fonts">Google Fonts</a>, license fonts for free.</p>
+
+      <div class="example"> <!-- web-font embedding examples -->
+        <code>HTML:<br>
+        &#60;link href="https://fonts.googleapis.com/css?family=Heebo:100" rel="stylesheet"&#62;<br>
+        CSS: font-family: 'Heebo', sans-serif;</code>
+        <p class="ex-embed-01">Nullam augue felis, fermentum a quam vel, egestas venenatis tellus. In egestas turpis eget leo sagittis sagittis. Phasellus posuere purus magna, vitae tempor ex pellentesque vitae. Proin accumsan maximus est, id dignissim nisi convallis vel. Cras pellentesque augue nunc, in semper libero congue id. Aenean risus felis, lobortis eget eros ultricies, sollicitudin laoreet felis. Cras eros elit, ullamcorper a molestie et, fermentum in sapien. In dignissim nisi ipsum, at gravida nulla fermentum condimentum. Praesent porttitor nibh placerat auctor faucibus. Quisque non consectetur magna. Aliquam ultricies purus sit amet dui fringilla lacinia. Vestibulum non augue efficitur, tempus tortor nec, varius nulla. Nulla efficitur quam sed sapien euismod, vitae luctus est congue. Fusce volutpat, nisl at tincidunt fermentum, augue tortor euismod ante, condimentum fringilla ante elit aliquet velit. Duis venenatis sollicitudin porta.</p>
+      </div>
+
+    <h2 id="quoting">Citations & quotes<a class="b2t" href="#top">back to top</a></h2>
+
+      <p>Writing requires sometimes citing different sources or quotations. In HTML exists different markups to semantically cover this cases, specifically the <code>&#60;cite&#62;</code>, <code>&#60;q&#62;</code>, and <code>&#60;blockquote&#62;</code> elements. In order to know which of these elements use, the follow principles can be followed:</p>
+
+      <p>
+          <code>&#60;cite&#62;</code>: used to reference a resource, creative work, or author.<br>
+          <code>&#60;q&#62;</code>: used for short, <i>inline</i> quotations.<br>
+          <code>&#60;blockquote&#62;</code>: used for longer external quotations (paragraph-like quotations).
+      </p>
+
+      <!-- beginning of level 02 indent: citations -->
+      <div class="level02">
+        <h3 id="#citing-creative-work">Citing a creative work<a class="b2t" href="#top">back to top</a></h3>
+
+            <p>In HTML this element is used specifically to cite a creative work, the <code>&#60;cite&#62;</code> element must include either the title of the work, the author's name, or a URL reference to the work. By default, content wrapped within the <code>&#60;cite&#62;</code> element will appear in italics. When relevant, is useful to include and additional reference/hyperlink to the original source of the citation.</p>
+
+            <p>Here the book <i>Steve Jobs</i>, by Walter Isaacson, is reference within the <code>&#60;cite&#62;</code> element. Inside the citation is also a hyperlink to the book.</p>
+
+                <code class="block">
+                    &#60;p&#62;The book &#60;cite&#62;&#60;a href="http://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537"&#62;Steve Jobs&#60;/a&#62;&#60;/cite&#62; is truly inspirational.&#60;/p&#62;
+                </code>
+
+            <div class="example">
+                <p>The book <cite><a href="http://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537">Steve Jobs</a></cite> is truly inspirational.</p>
+            </div>
+
+          <h3 id="dialogue&prose">Dialogue & prose quotation<a class="b2t" href="#top">back to top</a></h3>
+
+            <p>For purposes of quote prose or dialogue inline, that is, <i>within</i> other text, the <code>&#60;q&#62;</code> element should be used, and shouldn't be used for any other purposes. By default, the browser will insert the proper quotation marks and will even change the quotation marks based on the language identified within the <code>lang</code> global attribute. For example:</p>
+
+            <p>An additional attribute to quote text is use the <code>&#60;cite&#62;</code> attribute (not element), that acts as a citation reference to the quote in the form of a URL. As this attribute won't be displayed on the browser, it won't change the appearance of the element but will add semantic value for screen readers and other devices, it is also helpful to provide a hyperlink to this source next to the actual quotation, like in the following example:</p>
+
+                <code class="block">
+                &#60;p&#62;&#60;a href="http://www.businessweek.com/magazine/content/06_06/b3970001.html"&#62;Steve Jobs&#60;/a&#62; once said, &#60;q cite="http://www.businessweek.com/magazine/content/06_06/b3970001.html"&#62;One home run is much better than two doubles.&#60;/q&#62;&#60;/p&#62;
+                </code>
+
+                <div class="example">
+                    <p><a href="http://www.businessweek.com/magazine/content/06_06/b3970001.html">Steve Jobs</a> once said, <q cite="http://www.businessweek.com/magazine/content/06_06/b3970001.html">One home run is much better than two doubles.</q></p>
+                </div>
+
+          <h3 id="externalQ">External quotation<a class="b2t" href="#top">back to top</a></h3>
+
+            <p>When it comes to quote large portions of text, the type that fill out entire paragraphs, the element that holds the respective semantical meaning is the <code>&#60;blockquote&#62;</code>. This element is a block-level element that may have other block-level elements nested inside it, including headings and paragraphs. For example:</p>
+
+                <code class="block">
+                    &#60;blockquote&#62;<br>
+                    &#60;p&#62;&#8220;In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa. But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product.&#8221;&#60;/p&#62;<br>
+                    &#60;/blockquote&#62;
+                </code>
+
+                <div class="example">
+                    <blockquote>
+                        <p>In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa. But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product</p>
+                    </blockquote>
+                </div>
+
+          <h3 id="externalC">External citation<a class="b2t" href="#top">back to top</a></h3>
+
+            <p>Quotes used within the <code>&#60;blockquote&#62;</code> will often include both the <code>&#60;cite&#62;</code> element and the <code>cite</code> attribute. As discussed previously the former works to specify the original source of the quote, if relevant; the latter, to provide a citation reference to the quote. The following example will help make this difference more clear:</p>
+
+                <code class="block">
+                &#60;blockquote cite="http://money.cnn.com/magazines/fortune/fortune_archive/2000/01/24/272277/index.html"&#62;<br>
+                &#60;p&#62;&#8220;In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa. But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the product.&#8221;&#60;/p&#62;<br>
+                &#60;/blockquote&#62;<br>
+                &#60;p&#62;&#60;cite&#62;&#8212; Steve Jobs in &#60;a href="http://money.cnn.com/magazines/fortune/fortune_archive/2000/01/24/272277/index.html"&#62; Fortune Magazine&#60;/a&#62;&#60;/cite&#62;&#60;/p&#62;<br>
+                &#60;/blockquote&#62;
+                </code>
+
+                <div class="example">
+                    <blockquote cite="http://money.cnn.com/magazines/fortune/fortune_archive/2000/01/24/272277/index.html"><br>
+                        <p>&#8220;In most people&#8217;s vocabularies, design is a veneer. It&#8217;s interior decorating. It&#8217;s the fabric of the curtains, of the sofa. But to me, nothing could be further from the meaning of design. Design is the fundamental soul of a human-made creation that ends up expressing itself in successive outer layers of the the product.&#8221;</p>
+
+                        <p><cite>- Steve Jobs in <a href="http://money.cnn.com/magazines/fortune/fortune_archive/2000/01/24/272277/index.html">Fortune Magazine</a></cite></p>
+                    </blockquote>
+                </div>
+      </div> <!-- end of level 02 indent -->
+    </div> <!-- end of level 01 indent -->
+
+<footer>
+
+    <h2 id="summary">Summary<a class="b2t" href="#top">back to top</a></h2>
+
+    <p>Certainly, selecting a typeface will give an identity to the page, there are several methods to do so (local, embedded, adding color, leading/line-space, spacing, among others), modifying the legibility and general flow for the user. Some of the properties saw were:</p>
+
+    <p>
+        - Text color.<br>
+        - <code>font-based</code> properties: <code>font-family</code>, <code>font-family</code>, <code>font-size</code>, <code>font-style</code>, <code>font-weight</code>, and more.<br>
+        - <code>text-based</code> properties: <code>text-align</code>, <code>text-decoration</code>, <code>text-indent</code>, <code>text-shadow</code>, among others.<br>
+        - Font embedding.<br>
+        - How to properly mark up citations and quotations.
+    </p>
+</footer>
+</body>
+
+</html>

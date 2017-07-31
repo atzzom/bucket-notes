@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset=utf-8>
+    <title>line one | 1 - HTML 101</title>
+    <link rel="stylesheet" type="text/CSS" href="HTML101.css">
+  </head>
+
+<body id="top">
+
+<header><h1>HTML 101</h1></header>
+
+<nav>
+  <h4>Table of contents</h4>
+
+  <a href="#HTML">What is HTML?</a><br>
+  <a href="#structure">The structure of and HTML document</a><br>
+  <a href="#validation">Code validation</a><br>
+  <a href="#knowing">Getting to know HTML</a><br>
+  <a href="#semantics">Semantics overview</a><br>
+  <a href="#div&spans">Divisions & spans</a><br>
+  <a href="#text">Using text-based elements</a><br>
+  <a href="#b-structure">Building structure</a><br>
+  <a href="#hyper">Creating hyperlinks and connecting pages</a><br>
+  <a href="#summary">Summary</a>
+</nav>
+
+<section class="chp-01">
+
+  <h2 id="HTML">What is HTML?</h2>
+
+    <p><i>HTML</i> (<b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage), gives structure and meaning to the content of a document by defining that content as: paragraphs, headings, images, among others elements, the most important among them are: <i>elements</i>, <i>tags</i>, and <i>attributes</i>. On the other hand, <i>CSS</i> (Cascading Style Sheets), is a language in charge of the presentation and style of the content, using colors, fonts etc.</p>
+
+    <h3>Elements</h3>
+
+      <i class="faq"> It would be nice if one could add indentation to the headings. CSS: h4 {padding-left: 50px;}??? (already tested: effectively is a way to do it).</i>
+
+      <p>Elements define stucture and content of objects within a page. Elements are identified by the use of less-than and greater-than angle brackets <code>&#60;</code> <code>&#62;</code>, surrounding the element name. Some of the most used elements are: multiple levels of headings (<code>&#60;h1&#62;</code>, <code>&#60;h2&#62;</code>, <code>&#60;h3&#62;</code>, ... , <code>&#60;h6&#62;</code>) paragraphs (<code>&#60;p&#62;</code>), links (<code>&#60;a&#62;</code> <i>anchor</i>), divisions (<code>&#60;div&#62;</code>) and many more (see <a href="http://www.w3.org/TR/html-markup/elements.html">list of HTML elements</a> and the <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element">Mozilla Development Network</a>).</p>
+
+          <h6><i>Examples:</i></h6>
+
+            <p><code>&#60;element name&#62;</code><br>
+            <code>&#60;p&#62;</code><br>
+            <code>&#60;div&#62;</code></p>
+
+      <h4>Tags</h4>
+
+        <p>The use of less-than and greater-than angle brackets surrounding and element creates what is known as a <i>tag</i>. Most of the times tags occur in pairs of opening and closing tags. An <i>opening</i> tag marks the beginning of an element (e.g.: div, p, a, h1, h2, h6, span, etc.), It consists of a less-than sign followed by the element's name with a greater-than sign, i.e. <code>&#60;<i>element's name</i>&#62;</code>, e.g. <code>&#60;h1&#62;</code>, <code>&#60;div&#62;</code>.</p>
+
+        <p>A <i>closing</i> tag marks the end of an element, and it consist of a less-than sign followed by a forward-salsh and the element's name with the greater-than sign, i.e. <code>&#60;/<i>element's name&#62;</i></code>. Therefore, a division tag will look like this: <code>&#60;div&#62; ... &#60;/div&#62;</code>.</p>
+
+      <h4>Attributes</h4>
+
+        <p>An <i>Attribute</i> provides additional information about an element. The most common attributes are:</p>
+
+        <p><code>id</code>: which identifies an element.<br><code>class</code>: which classifies and element.<br><code>src</code>: which specifies the source for embeddable content.<br><code>href</code>: which provides a hyperlink reference to a linked source.</p>
+
+        <p>A characteristic of the attributes is that <em>they are defined within the <strong>opening</strong> tag, and <strong>after</strong> and element's name.</em>. Generally attributes includes a name and a value. The format of these attributes consists of the attribute name followed by and equal sign and then a quoted attribute value, for instance, an anchor element <code>&#60;a&#62;</code> with a <code>href</code> attribute would look like the following: <code>&#60;a href="google.com"&#62;</code>just another search engine<code>&#60;/a&#62;</code></p>
+
+        <p><a href="https://google.com">just another search engine</a></p>
+
+      <h4 id="structure">The structure of an HTML document</h4>
+
+        <p>The main structural elements of an HTML file are: <code>&#60;!DOCTYPE html&#62;</code>, <code>&#60;html&#62;</code>, <code>&#60;head&#62;</code>, and <code>&#60;body&#62;</code>.<br>
+        <i class="faq">What exactly can be understood by the structure of a document?</i></p>
+
+        <p>The <code>&#60;!DOCTYPE html&#62;</code> is a declaration that tells browsers which version of HTML is being used and is placed at the very beginning of the HTML document. <i class="faq">When no specific number is used is it understood that the latest HTML version is used?</i>. Following the document type declaration, the <code>&#60;html&#62;</code> element signifies the beginning of the document.</p>
+
+        <p>Inside the <code>&#60;html&#62;</code> element, the <code>&#60;head&#62;</code> element identifies the top of the document, the content inside this element is not displayed on the web page itself. Instead, it may include the document title (displayed on the title bar in the browser window), links to any external files, or additional metadata. Lastly, all of the visible content within the web page will fall within the <code>&#60;body&#62;</code> element.<br>
+        <i class="faq">Are there other type of HTML structures?</i><br>
+        <i class="faq">Which type of metadata can these elements contain and what is their meaning?</i><br>
+        <i class="faq">Which other type of elements can be placed/have meaning <strong>outside</strong> the <code>&#60;body&#62;</code> element?</i></p>
+
+        <p>An example of the breakdown of a typical HTML document structure would look like this:</p>
+
+        <p><code>&#60;!DOCTYPE html&#62;<br>
+        &#60;html lang="en"&#62;<br>
+        &#60;head&#62; <i class="faq">(btw, what's the code to display indents?)</i><br>
+        &#60;meta charset:"utf-8"&#62; <i class="faq">What is character encoding?</i><br>
+        &#60;title&#62;Hello World&#60;/title&#62;<br>
+        &#60;/head&#62;<br>
+        &#60;body&#62;<br>
+        &#60;h1&#62;Hello World&#60;/h1&#62;<br>
+        &#60;p&#62;This is a web page.&#60;/p&#62;<br>
+        &#60;/body&#62;<br>
+        &#60;/html&#62;</code></p>
+
+    <h3>Self-closing elements</h3>
+
+      <p>Those elements whom are composed only of one opening tag, are called self-closing elements, and receive their content or behaviour from attributes within a single tag. As the <code>&#60;meta&#62;</code> element, there are additional self-closing elements as:</p>
+
+      <p>
+      <code>&#60;br&#62;</code>  <i class="faq">What exactly are these elements used for?<br>
+      Which other elements elements are self-closing?</i><br>
+      <code>&#60;img&#62;</code><br>
+      <code>&#60;wbr&#62;</code><br>
+      <code>&#60;embed&#62;</code><br>
+      <code>&#60;input&#62;</code><br>
+      <code>&#60;param&#62;</code><br>
+      <code>&#60;hr&#62;</code><br>
+      <code>&#60;link&#62;</code><br>
+      <code>&#60;source&#62;</code><br>
+      </p>
+
+    <h3 id="validation">Code validation</h3>
+
+      <p>Regardless of how careful we are when writing code, we will invitably make mistakes. Because of this and to help comply with HTML & CSS standars the <a href="https://w3.org" target="_blank">W3C</a> has built both <a href="https://validator.w3.org" target="_blank">HTML</a> and <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS</a> validators that will scan code for mistakes. The code validation not only helps in rendering code properly in browsers, but also, teaches us the best practices for writing code.</p>
+
+      <hr>
+</section>
+
+<!--16.10.24 - Finished Shay Howe 1st chapter...................................-->
+
+<section class="chp-02">
+
+  <section class="structure">
+
+  <h1 id="knowing">Getting to know HTML</h1>
+
+    <h2 id="semantics">Semantics overview</h2>
+
+      <p>As we start building websites, is necessary to know which type of element is best to display an specific type of content, additionally, is very useful to know how elements are displayed on a web page.</p>
+
+      <p>Semantics is the meaning of a word from its name. Within HTML, is the practice to give the document the proper meaning and structure by using the adequate element. Semantic content works in the same way, describes its <em>meaning</em> and <em>value</em> regardless the style or appearance of that content. Semantic content has several benefits related with make easier for people, developers, computers, search engines, etc. to understand and manage the content on a web page as it shows clearly what piece of content is about. Before go deeper in this concepts, the elements <code>&#60;div&#62;</code> and <code>&#60;spans&#62;</code> -<i>that contradictorily don't hold any semantic value, as they exist only for styling purposes</i>- are going to be studied.</p>
+
+    <h2 id="div&spans">Identifying divisions & spans</h2>
+
+      <p>This two elements do not have any specific meaning, that's why they don't hold any semantic value, they act as containers only for styling purposes. In order to see more clear the difference of the elements with semantic value from the ones who don't have any semantic value, let's see an example: Paragraphs (<code>&#60;p&#62;</code>) have semantic value as whatever the content they have (or are expected to have) is going to be interpreted as a paragraph (words), therefore, no other value is expected for this element (e.g. no images, video, media, etc. is expected); but on the other hand, an element as a <code>&#60;div&#62;</code> and a <code>&#60;spans&#62;</code> doesn't have this difference, basically, any type of content can be expected inside them (they are simply containers).</p>
+
+      <p>Although they are part of the HTML and not CSS, these elements are extremely valuable when building a website, as they give us the ability to apply targeted styles to a contained set of content. A <code>&#60;div&#62;</code> is a <strong>block</strong>-level element that encloses or identify large groupings of content, helping to build a page layout and design. On the other hand an <code>&#60;span&#62;</code> is an <strong>inline</strong>-level element used to identify smaller groups of text within a block level element.</p>
+
+      <p>Is common to see <code>&#60;div&#62;</code> and <code>&#60;spans&#62;</code> with <code>class</code> and <code>id</code> attributes with the purpose of aiding in the application of an style, however, is necessary to keep in mind that the value of these attributes ideally must refer to the <strong>content</strong> or <strong>nature</strong> of the element rather than its apperance or style.</p>
+
+      <p>For example, if we have a <code>&#60;div&#62;</code> with an orange background that contains social media links, our first thought might be to give the <code>&#60;div&#62;</code> a <code>class</code> value of <code>orange</code>. What happens if that orange background is later changed to blue? Having a <code>class</code> value of <code>orange</code> no longer makes sense. A more sensible choice for a <code>class</code> value would be <code>social</code>, as it pertains to the contents of the <code>&#60;div&#62;</code>, not the style.</p>
+
+      <!-- 16.10.28 -->
+      <p>The following is an example of the use of a division:<br>
+      <code>&#60;!-- Division --&#62;<br>
+      &#60;div class="social"&#62;<br>
+      &#60;p&#62;I may be found on ... &#60;/p&#62;<br>
+      &#60;p&#62;Additionally, I have a profile on ...&#60;/p&#62;<br>
+      &#60;/div&#62;</code></p>
+
+      <p><code>&#60;!-- Span --&#62;<br>
+      &#60;p&#62;Soon we'll be &#60;span class="tooltip"&#62;writing HTML&#60;/span&#62; with the best of them&#60;/p&#62;</code></p>
+
+    <h2 id="text">Using text-based elements</h2>
+
+      <p>This kind of elements are thought to contain text, they also can be formatted. On the other hand, although there are other types of media or content (images, video, etc.) text is predominant, this type of elmentes can be italized and/or bolded.</p>
+
+      <h3>headings</h3>
+
+        <p>Headings are block-line elements, they are ranked from <code>&#60;h1&#62; ... &#60;/h1&#62;</code> until <code>&#60;h6&#62; ... &#60;/h6&#62;</code> being the element <code>&#60;h1&#62;</code> the one of the biggest importance. These elements help to give structure to the document and also search engines to index and determine the content on a page.</p>
+
+        <p>They should be used only when relevant to a page, i.e. when they hold semantic value, and should not be used to make text bold or big&mdash;there are better ways to do that.</p>
+
+        <p>The following is an example of all the different heading levels and the resulting display on a web page:</p>
+
+        <div class="embeded-note">
+          <p><code>&#60;h1&#62;Heading level 1&#60;/h1&#62;<br>
+          &#60;h2&#62;Heading level 2&#60;/h2&#62;<br>
+          &#60;h3&#62;Heading level 3&#60;/h3&#62;<br>
+          &#60;h4&#62;Heading level 4&#60;/h4&#62;<br>
+          &#60;h5&#62;Heading level 5&#60;/h5&#62;<br>
+          &#60;h6&#62;Heading level 6&#60;/h6&#62;<br></code></p>
+        </div>
+
+  <h1>Heading level 1</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis, nibh ac malesuada dignissim, dolor quam eleifend lacus, non tristique dui justo id neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ligula arcu, elementum a diam vel, vehicula pharetra leo. In pretium urna a placerat pharetra. Aenean id massa vitae turpis porta faucibus. Curabitur nec diam in nulla mattis laoreet. Suspendisse ultricies sem non libero malesuada, venenatis viverra velit molestie. Quisque a felis interdum, laoreet nulla in, consequat felis. Curabitur efficitur vitae massa a scelerisque. Sed vitae dignissim justo, eu ultrices ex.</p>
+
+    <h2>Heading level 2</h2>
+
+      <p>Morbi erat velit, venenatis eget rhoncus eget, aliquam sit amet lorem. Donec auctor felis quis justo rhoncus, non sodales enim tempor. Fusce placerat felis et interdum pulvinar. Donec sed enim sit amet leo placerat vestibulum. Aliquam quis augue eget ex posuere varius ac sed nunc. Ut sed risus semper, efficitur ligula a, pretium lectus. Vestibulum quis diam id ante faucibus hendrerit ut in erat. Vivamus convallis, sapien non vehicula semper, elit arcu ultrices dolor, lacinia tristique sem nibh vitae mi. Proin tempor magna vel ullamcorper interdum. Proin vitae magna dictum, ultrices mauris eget, lobortis nunc. Nullam eget metus aliquet, elementum ante vel, dignissim erat. Mauris tincidunt ipsum vitae velit pulvinar, eu interdum est vulputate. Sed pellentesque convallis justo, nec sodales tortor tincidunt eu.</p>
+
+      <h3>Heading level 3</h3>
+
+        <p>Praesent vitae gravida leo. Aliquam lacinia velit eu est ultrices, at venenatis ipsum suscipit. Pellentesque in leo eget tellus cursus volutpat eu non metus. Etiam lacinia magna vitae fringilla mollis. Donec luctus nibh nulla, eu pulvinar augue fermentum quis. Nullam eleifend consectetur leo non pretium. Morbi aliquet sed odio sed elementum. In et porttitor orci, nec ornare elit. Curabitur at placerat metus. Duis elementum, enim nec dapibus tempor, nulla augue condimentum leo, eu aliquam nunc augue non nunc. Quisque efficitur molestie nunc non tempus. Donec in enim pellentesque, iaculis erat non, commodo felis. Vestibulum fringilla blandit enim, non fermentum leo lacinia eu.</p>
+
+        <h4>Heading level 4</h4>
+
+          <p>Aenean commodo velit sed ultricies hendrerit. Suspendisse ut lorem fringilla, tincidunt sem quis, aliquet ligula. Suspendisse ac risus ac tellus faucibus posuere. Mauris nec commodo enim. In lacinia urna augue, sagittis pellentesque mauris fringilla sit amet. Donec quis blandit mauris. Nam vel nisi sapien. Phasellus dapibus lacus vel neque suscipit lobortis. Nulla faucibus sem eu quam gravida, nec auctor ante tempor. Curabitur faucibus rhoncus mollis. Duis id lacus rutrum, pulvinar odio in, posuere nisi. Sed iaculis in tellus nec pharetra. Aliquam id turpis lectus. Proin eget blandit urna. Fusce hendrerit velit in quam luctus congue.</p>
+
+          <h5>Heading level 5</h5>
+
+            <p>Donec viverra vehicula ornare. Duis eleifend, risus commodo faucibus placerat, orci metus porttitor massa, ac ultrices massa enim eu quam. Phasellus ac dui sit amet lectus vulputate dictum sit amet quis dolor. Fusce id facilisis risus, non iaculis felis. Quisque sed nisi et augue ultricies rutrum. Cras vitae quam quam. Fusce in luctus neque.</p>
+
+              <h6>Heading level 6</h6>
+
+                <p>Duis in interdum sem. Cras elementum vitae sapien sit amet ullamcorper. Mauris elementum nulla id diam vestibulum aliquam. Vivamus gravida sit amet nisi fermentum porta. In venenatis fringilla pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed augue dui, rutrum a mauris ac, ornare suscipit lectus. Donec ac dignissim arcu. Nunc aliquet gravida mi, at dignissim nulla egestas id.</p>
+
+    <h3>Bolding text</h3>
+
+      <p>There is more than one way to bold text, namely, <code>&#60;b&#62;</code> (bold) and <code>&#60;strong&#62;</code>, althougth the final result is the same both hold different meaning, and are used in different situations.</p>
+
+      <p>The <code>&#60;b&#62;</code> element is used when the content to be bolded is going to receive only a stylistically offset, but its relevance or meaning into the page is not high.</p>
+
+      <p>On the other hand, the <code>&#60;strong&#62;</code> element is used when the text bolded <strong>has</strong> a high relevance in the page. Examples of both cases are shown below:</p>
+
+      <p><code>&#60;!-- Strong importance --&#62;<br>
+      &#60;p&#62;&#60;strong&#62;Caution:&#60;/strong&#62; Falling rocks.&#60;/p&#62;</code></p>
+
+      <p><code>&#60;!-- Stuylistically offset --&#62;<br>
+      &#60;p&#62;This recipe calls for &#60;b&#62;bacon&#60;/b&#62; and &#60;b&#62;baconnaise&#60;/b&#62;.&#60;/p&#62;</code></p>
+
+      <p><strong>Caution:</strong> Falling rocks.</p>
+
+      <p>This recipe calls for <b>bacon</b> and <b>baconnaise</b>.</p>
+
+      <!-- 16.11.01 -->
+      <h3>Italicize text with emphasis</h3>
+
+        <p>As with the elements for bold text, there are two different ways to italicize text, with slightly different semantic meaning.</p>
+
+        <h4>Italicise without semantical meaning</h4>
+
+          <p>When is desired italicize text only for stylistical purposes the best option is use the <code>&#60;i&#62;</code> element. This element adds/conveys <i>an alternative voice or tone</i>.</p>
+
+        <h4>Italicize including semantical meaning</h4>
+
+          <p>On the other hand, when the reason to italicize text is to add emphasis or semantical meaning to the text, the best option is use the <code>&#60;em&#62;</code> (emphasize), which is an in-line element. Here are examples of the usage of both elements for italicizing:</p>
+
+          <p><code>&#60;!-- Stressed emphasis --&#62;<br>
+          &#60;p&#62; I &#60;em&#62;love&#60;/em&#62; Chicago!</code></p>
+
+          <p><code>&#60;!-- Alternative voice or tone --&#62;<br>
+          &#60;p&#62;The name &#60;i&#62;Shay&#60;/i&#62; means a gift.&#60;/p&#62;</code></p>
+
+          <p>These text-level elements are very useful for bringing the content to life. In addition to these, there are additional elements to provide structure to the document in a wider way, i.e. identifying groupings of content such as, headers, articles, footers, and so forth.</p>
+
+      <h3>Bold vs. Strong</h3>
+
+        <p>As previously mentioned, the <code>&#60;strong&#62;</code> element is used to add <strong>importance</strong> to the text, <strong>NOT</strong> to add the boldfaced result.</p>
+
+        <p>To make the difference between these two elements more clear, accoriding to the MDN (<i>Mozilla Developer Network</i>)it is possible to say that <code>&#60;strong&#62;</code> represents a <em>logical</em> state, not a <em>physical</em> state. The fact that in the first case (<code>&#60;strong&#62;</code>) the result is a boldfaced text doesn't mean this is its purpose, indeed, this text could be represented with a different style/presentation to achive this importance, let's say red, underlined, bigger, smaller, etc. In this case it makes more sense to change the presentation properties of the <code>&#60;strong&#62;</code> element that it does the bold element. This is because bold is a physical state; in this element there is no speration of the presentation and content, and making bold to anything other than bold text would be confussing and illogical.</p>
+
+      <h3>Bold vs. Emphasis</h3>
+
+        <p>The main distinction to make is that <code>&#60;strong&#62;</code> add importance to the text <strong>due to its contents</strong>, the <code>&#60;em&#62;</code> (emphasis) element is used to <strong>change</strong> the meaning of a sentence, e.g.: "I <em>love</em> carrots" vs. "I love <em>carrots</em>". Both, <code>&#60;strong&#62;</code> and <code>&#60;em&#62;</code> can be nested to increase the rleative degree of importance or stress emphasis, repectively.</p>
+
+    <h2 id="b-structure">Building structure</h2>
+
+      <p>Webpages, used to be built using divisions to separate content, the problem was that these divisions didn't add any semantical meaning, and didn't give an idea about the content they holded. Because of this, <em>structural based elements</em> where introduced to help build web documents in an easier and more coherent way. All of these, in addition to give meaning, improve the semantics of the document. Examples of those elements are: <code>&#60;header&#62;</code>, <code>&#60;nav&#62;</code>, <code>&#60;article&#62;</code>, <code>&#60;section&#62;</code>, <code>&#60;aside&#62;</code>, and <code>&#60;footer&#62;</code> elements.</p>
+
+     <h3>Header</h3>
+
+      <p>As its name implies it, the <code>&#60;header&#62;</code> element, is used to identify the top of the document, whether it is the body, article, section, or other page segment. In general, the <code>&#60;header&#62;</code> element may include a heading, introductory text, and even navigation.</p>
+
+        <h4><code>&#60;header&#62;</code> <b>vs.</b> <code>&#60;head&#62;</code> <b>vs.</b> <code>&#60;h1&#62;</code> through <code>&#60;h6&#62;</code> elements.</h4>
+
+          <p>Here are the main differences between these three elements:</p>
+
+        <p><code>&#60;header&#62;</code><br>
+        Falls within the <code>&#60;body&#62;</code> element. Outlines the heading of a <em>section/segment</em> of the page.</p>
+
+        <p><code>&#60;head&#62;</code><br>
+        Falls directly within the <code>&#60;html&#62;</code> element. Outlines metadata, the document title and links to external files.</p>
+
+        <p>Headings elements <code>&#60;h1&#62;</code> through <code>&#60;h6&#62;</code><br>
+        Falls within the body of the document, designate multiple levels of text.</p>
+
+        <!-- 16.11.07 -->
+
+      <h3>Navigation</h3>
+
+        <p>The <code>&#60;nav&#62;</code> element identifies a section of major navigational links on a page<em> (might be thought as a section/division as a header, footer, aside, etc, etc.?)</em>. This element should be reserved for primary navigation sections only, such as global navigation, a table of contents, previous/next links, or other noteworthy groups of navigational links. Commonly the <code>&#60;nav&#62;</code> element links to other pages within the same website or parts of the same page. However, miscellaneous one-off links should be wrapped within the <code>&#60;a&#62;</code> (anchor elment) and the anchor element only.</p>
+
+        <p><b>-</b> Keep in mind that <b>not all</b> links of a document must be wrapped into a <code>&#60;nav&#62;</code> element, as it is intended only for major block of navigation links; typically the <code>&#60;footer&#62;</code> element often has a list of list that don't need to be in a <code>&#60;nav&#62;</code> element.</p>
+
+        <p><b>-</b> For a document it is possible to have more than one <code>&#60;nav&#62;</code> element, for example one for a global site navigation and one for intra-page navigation.</p>
+
+        <p><b>-</b> User agents <i class="faq">(is a user agent equal to a browser?)</i>, such as screen readers targeting disabled users, can use this element to determine wheter to omit the initial rendering of this content.</p>
+
+          <h4>Example</h4>
+
+            <code>&#60;nav&#62;<br>
+            &#60;ul&#62;<br>
+            &#60;li&#62;&#60;a href="#"&#62;Home&#60;/a&#62;&#60;/&#62;<br>
+            &#60;li&#62;&#60;a href="#"&#62;About&#60;/a&#62;&#60;/&#62;<br>
+            &#60;li&#62;&#60;a href="#"&#62;Contact&#60;/a&#62;&#60;/&#62;<br></code>
+
+            <nav>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+
+      <h3>Article</h3>
+
+        <p>Whenever there is self-contained or independent content that can be distributed or indepentently resused without confusion, such as, newspapers articles, blog post, user submitted content and the like, the <code>&#60;article&#62;</code> element should be used. A good criteria for its use can be, if the content within the <code>&#60;article&#62;</code> element were removed from the context of the page and placed, within an email or printed work, that content should still make sense.</p>
+
+      <h3>Section</h3>
+
+        <p>There are situations in which there are contents related although might be generic enough to be difficult assign a header for them, in this case, enclose it within a <code>&#60;section&#62;</code> element, as mentioned before, although might be generic in nature, this element help us identify the content as related. The <code>&#60;section&#62;</code> element is commonly used to break up and provide hierarchy to a page.</p>
+
+          <h4><b>Deciding between</b> <code>&#60;article&#62;</code> <b>,</b> <code>&#60;section&#62;</code> <b>, or</b> <code>&#60;div&#62;</code> <b>elements</b></h4>
+
+          <p>At times is fairly difficult to decide which element is the best for the job, either the <code>&#60;article&#62;</code>, the <code>&#60;section&#62;</code> or the <code>div</code> element. As any matter related to every semantic decision, the key is to look at the content. In a nutshell:</p>
+
+          <p>If the content can be placed independently relocated without loose meaning, use the element <code>&#60;article&#62;</code>.</p>
+
+          <p>If the content represent a thematic group of content and adds to the document outline, then use the <code>&#60;section&#62;</code> element. Keep in mind that both, the <code>&#60;article&#62;</code> and <code>&#60;section&#62;</code> element contribute to a document's structure and help to outline a document.</p>
+
+          <p>But in the other hand, the displayed content is wrapped only for stylish purposes use the <code>&#60;div&#62;</code> element.</p>
+
+          <!-- 16.11.16 (back in the game) -->
+
+      <h3>Article</h3>
+
+        <p>The <code>&#60;article&#62;</code> element is used to identify a section of independent, self-contained content that can be distributed or reused througout the website without lose meaning, like: blog post, user-submitted content, newspaper articles, and the like. The key to determine if it is appropiate to use the <code>&#60;article&#62;</code> element is to determine if that content could be extracted from the context of the page and placed, for example, within an e-mail or printed work, and should still make sense.</p>
+
+      <h3>Aside</h3>
+
+        <p>The <code>&#60;aside&#62;</code> element holds content that is tangentially related to the content surrounding it, such as sidebars, brief explanations, inserts, etc. For instance when used <strong>within</strong> an <code>&#60;article&#62;</code> element, for example, the <code>&#60;aside&#62;</code> element may identify content related to the author of the article. Instinctively the <code>&#60;aside&#62;</code> element might be thought to be placed in the right or left side of a page. However, as block-level element will fill up the whole page or parent element width unless stated otherwise.</p>
+
+    <h3>Footer</h3>
+
+      <p>This element identifies the closing or end of an: <i>element</i>, <i>page</i>, <i>article</i>, <i>section</i>, <i>box</i>, or other segement of a page. As its name suggest, is located at the bottom of its parent element. The content holded by the <code>&#60;footer&#62;</code> should be related information and should not diverge from the document or section it is included within.</p>
+
+  </section>
+
+        <h4>Encoding special characters</h4>
+
+          <p>When typing directly into HTML certain characters, specially punctuation marks, accented letters, symbols among others, they can be misunderstood or mistaken for the wrong character; to avoid this instead the desired character is replaced by its unique encoded equivalent, in this way is not mistaken. Encoded characters begin with an ampersand <code>&</code>, and end with a semicolon <code>;</code>. What falls in between is the character unique encoding, be it a name or numeric encoding. For example, we could encode the word "resum&eacute;" as "<code>resum& eacute;</code>". An extensive list of character encodings may be found at <a href=http://copypastecharacter.com/>Copy Paste Character</a>. <i class="faq">Which are the <strong>must encode charaters in HTML</strong>?</i></p>
+
+  <section class="connect">
+
+      <h3 id="hyper">Creating hyperlinks and connecting pages</h3>
+
+        <p>One of the most important elements of the Internet is the hyperlink, they allow connect a website with another. In HTML they are know as <code>&#60;a&#62;</code> (anchor) and used to be in-line level elements only, but with the introduction of HTML5, they can now wrap any kind of level elements including block-level elements. The way to set up an hyperlink to another page is the following: <code>&#60;a href="website-address"&#62;Text to be displayed to the user&#60;a&#62;</code> the <code>&#60;href&#62;</code> attribute value identifies the destination of the link.</p>
+
+        <h4>Relative & absolute paths</h4>
+
+          <p>The two most common type of links, are:<br>
+          The ones that point to other pages <strong>within</strong> the same website, and,<br>
+          The ones that point to other pages <strong>outside</strong> the same website.</p>
+
+          <p>The first type of links are know as <em>relative</em> and in the <code>href</code> attribute value, don't end in .com, .edu, .org, etc, but rather in the file name including its extension, e.g.: <code>href="about.html"</code>, <code>href="index.css"</code>, <code>href="pink-floyd.mp3"</code>, <code>href="codex.pdf"</code>, etc. Should the page being linked to reside within a different directory, or folder, the <code>href</code> attribute value needs to reflect this as well. Say the <code>about.html</code> page resides within the <code>pages</code> directory; the relative path would the be <code>pages/about.html</code>.</p>
+
+          <p>On the other hand, the links to other pages <strong>outside</strong> the website, require an <em>absolute</em> reference. Here the <code>href</code> attribute has the following structure: <code>href="http://web-address.domain"</code>, e.g.: <code>http:wikipedia.org</code>.</p>
+
+        <h4>Linking to an e-mail address</h4>
+
+          <p>Is also possible to link to an e-mail address, even including a subject line and full body text. For this the <code>href</code> attribute takes the following structure:<br>
+
+          <h5>Blank e-mail (neither subject nor body):</h5><br>
+
+            <code>href="mailto:theemailaddress@domain.com"</code><br>
+
+          <h5>E-mail with subject line:</h5><br>
+
+            <code>href="mailto:theemailaddress@domain.com<b>?</b>subject=Your%20Subject%20Line"</code>
+            <i>The <code>?</code> binds the e-mail address with the subject attribute, and the <code>%20</code> is the <strong>encoding</strong> for the space character.</i><br>
+
+          <h5>E-mail with subject line and body text</h5><br>
+
+            <code>href="mailto:theemailaddress@doamin.com?subject=Your%20Subject%20Line<b>&</b>body=Write%20your%20message."</code>
+
+            <p>Here is the full example:<br>
+            <a href="mailto:theemailaddress@doamin.com?subject=Your%20Subject%20Line&body=Write%20your%20message."><code>E-mail sample</code></a></p>
+
+        <h4>Linking to a new window</h4>
+
+          <p>Usually links open in the very same window, just sometimes this behaviour isn't desired, instead, is preferred if it opens in a new window, to trigger this action, the <code>target</code> attribute is added to the <code>&#60;a&#62;</code> tag. For example: to open <code>stackoverflow.com</code> in a new window, the anchor tag would be this: <code>&#60;a href="http://stackoverflow.com/" target="_blank"&#62;Stackoverflow&#60;a&#62;</code>. The utility of the <code>target=""</code> attribute is that determines the link behaviour when it's clicked.</p>
+
+          <p>Example: this link will open <a href="http://stackoverflow.com" target="_blank">Stack Overflow</a> in a new window</p>
+
+        <h4>Linking/jumping to parts of the same page</h4>
+
+          <p>In a similar fashion as in the case of linking to new windows, is possible to link/jump to parts on the same webpage by the use of an attribute with the <code>href</code> attribute value. In this case, is necessary to first create an <code>id</code> attribute <strong>on</strong> the element we wish to link to, then, using the value of that <code>id</code> attribute within an anchor element's <code>href</code> attribute. For example, the well known "Back to top" that sends/returns the user to the top/begining of the page once is clicked:<br>
+          <code>&#60;body id="top"&#62;</code> <i>here the <code>id</code> <b>on</b> the element we wish to link to is created</i><br>
+          <code>...<br>
+          &#60;a href="<b>#</b>top"&#62;Back to top&#60;/a&#62;</code> <i>the pound sign necessarily precedes the value in the <code>id</code> attribute.</i><br>
+          <code>...<br>
+          &#60;/body&#62;</code></p>
+
+          <p>Examples:</p>
+
+          <ul>
+            <li><a href="#top">Back to the top</a></li>
+            <li><a href="#HTML">What is HTML?</a></li>
+            <li><a href="#knowing">Getting to know HTML</a></li>
+          </ul></section>
+
+<footer>
+  <h3 id="summary">Summary</h3>
+
+    <p>The main topics seen are:</p>
+
+    <ol>
+      <li>HTML basics</li>
+      <li>Code validation</li>
+      <li>Semantics & structures</li>
+      <li>Hyperlinks</li>
+    </ol>
+
+  <p>More info:<br>
+  <a href="http://learn.shayhowe.com" target="_blank">Tutorial</a><br>
+  <a href="mailto:atzzom@gmail.com">Contact the person behind this page ;)</a></p>
+</footer>
+
+<!-- end of lesson 2 -->
+<!-- 16.11.17 -->
+
+</section>
+</body>
+</html>
