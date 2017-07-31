@@ -26,9 +26,15 @@
 
         <table>
           <tr>
+<<<<<<< HEAD
+            <td>Example</td>
+            <td>Classification</td>
+            <td>Explanation</td>
+=======
             <th>Example</th>
             <th>Classification</th>
             <th>Explanation</th>
+>>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
           </tr>
           <tr>
             <td><code>h1</code></td>
@@ -109,9 +115,15 @@
 
           <table>
             <tr>
+<<<<<<< HEAD
+              <td>Example</td>
+              <td>Classification</td>
+              <td>Explanation</td>
+=======
               <th>Example</th>
               <th>Classification</th>
               <th>Explanation</th>
+>>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
             </tr>
             <tr>
               <td><code>section aside</code></td>
@@ -284,9 +296,15 @@
         <table>
           <caption>Sibling selectors overview</caption>
           <tr>
+<<<<<<< HEAD
+            <td>Example</td>
+            <td>Classification</td>
+            <td>Explanation</td>
+=======
             <th>Example</th>
             <th>Classification</th>
             <th>Explanation</th>
+>>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
           </tr>
           <tr>
             <td><code>h2 ~ p</code></td>
@@ -623,10 +641,17 @@
 
         <table>
           <tr>
+<<<<<<< HEAD
+            <td>Example</td>
+            <td>Attribute Selector<br
+            Classification</td>
+            <td>Explanation</td>
+=======
             <th>Example</th>
             <th>Attribute Selector<br
             Classification</th>
             <th>Explanation</th>
+>>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
           </tr>
           <tr>
             <td><code>a[target]</code></td>
@@ -869,9 +894,15 @@
 					<table>
 						<caption>Possible combinations for selector expressions</caption>
 						<tr>
+<<<<<<< HEAD
+							<td>Expression</td>
+							<td>Example</td>
+							<td>Behaviour</ht>
+=======
 							<th>Expression</th>
 							<th>Example</th>
 							<th>Behaviour</ht>
+>>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
 						</tr>
 						<tr>
 							<td>a×n + b</td>
@@ -1041,7 +1072,203 @@
 
 			<h3>Empty pseudo-class</h3>
 
+<<<<<<< HEAD
+				<p>This pseudo-class will target elements that do not contain any child elements or text nodes to be selected. Comments, processing instructions, and empty text nodes are not considered children and are not treated as such. <i class="faq">test if an element with just text will be treated also as an empty element.</i></p>
+
+				<div class="exempli">
+					<h6>HTML</h6>
+
+						<ol class="code-sample">
+							<li>&lt;div&gt;Hello&lt;/div&gt;</li>
+							<li>&lt;div&gt;&lt;!-- Coming soon --&gt;&lt;/div&gt;&lt;!-- This div will be selected even though it has a comment, comments are not considered child elements, that's why it doesn't interfere with the selection of this empty &lt;div&gt; element. --&gt;</li>
+							<li>&lt;div&gt;&lt;/div&gt;&lt;!-- This div will be selected --&gt;</li>
+							<li>&lt;div&gt; &lt;/div&gt;&lt;!-- This div won't be selected as it contains a white space :( --&gt;</li>
+							<li>&lt;div&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/div&gt;&lt;!-- This div won't be selected because it has a child element, in this case a &lt;strong&gt; element. --&gt;</li>
+						</ol>
+
+					<h6>CSS</h6>
+
+						<ol class="code-sample">
+							<li>div:empty {...}</li>
+						</ol>
+				</div>
+
+			<h3>Negation pseudo-class</h3>
+
+				<p>To understand how this pseudo-class works let's take a look at the following example, here the CSS will style every single element but the ones classified as <code>awesome</code>:<p>
+
+				<div class="exempli">
+					<h6>HTML</h6>
+
+						<ol class="code-sample">
+							<li>&lt;div&gt;This div will be selected, as is not classified as (awesome) even though is a &lt;div&gt; element.&lt;/div&gt;</li>
+							<li>&lt;div class="awesome"&gt;...&lt;/div&gt;</li>
+							<li>&lt;strong&gt;This section will be selected even though is classified as awesome it is not a &lt;div&gt; element.&lt;/strong&gt;</li>
+							<li>&lt;strong&gt;This section will be selected&lt;/strong&gt;</li>
+						</ol>
+
+					<h6>CSS</h6>
+
+						<ol class="code-sample">
+							<li>div:not(.awesome) {...}</li>
+							<li>:not(div) {...}</li>
+						</ol>
+				</div>
+
+				<p>From the example above it can be noted that the pseudo-class <code>:not(x)</code>, is a pseudo-class that takes an argument which is filtered out from the selection to be made. The declared element together with the argument inside the parenthesis identify the elements to be excluded from the rule set.</p>
+
+				<p class="faq">Insert pseudo-class example with table included in the Shay Howe's course.</p>
+
+			<h3>Pseudo-classes overview</h3>
+
+				<table>
+					<tr>
+						<th>Example</th>
+						<th>Classification</th>
+						<th>Explanation</th>
+					</tr>
+					<tr>
+						<td><code>a:link</code></td>
+						<td>Link pseudo-class</td>
+						<td>Selects a link that has not been visited by a user</td>
+					</tr>
+					<tr>
+						<td><code>a:visited</code></td>
+						<td>Link pseudo-class</td>
+						<td>Selects a link that has been visited by a user</td>
+					</tr>
+					<tr>
+						<td><code>a:hover</code></td>
+						<td>Action pseudo-class</td>
+						<td>Selects an element when a user has hovered their cursor over it</td>
+					</tr>
+					<tr>
+						<td><code>input:active<code></td>
+						<td>Action pseudo-class</td>
+						<td>Selects an element when a user has engaged it</td>
+					</tr>
+					<tr>
+						<td><code>input:focus</code></td>
+						<td>Action pseudo-class</td>
+						<td>Selects an element when a user has made it their focus point</td>
+					</tr>
+					<tr>
+						<td><code>input:enabled</code></td>
+						<td>State pseudo-class</td>
+						<td>Selects an element in the default enabled state</td>
+					</tr>
+					<tr>
+						<td><code>input:disabled</code></td>
+						<td>State pseudo-class</td>
+						<td>Selects an element in the disable state, by way of the disable attribute</td>
+					</tr>
+					<tr>
+						<td><code>input:checked</code></td>
+						<td>State pseudo-class</td>
+						<td>Selects a checkbox or radio button that has been checked</td>
+					</tr>
+					<tr>
+						<td><code>input:indeterminate</code></td>
+						<td>State pseudo-class</td>
+						<td>Selects a checkbox or radio button that neither been checked or unchecked, leaving it in an indeterminate state</td>
+					</tr>
+					<tr>
+						<td><code>div:first-child</code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selects an element that is the first within a parent</td>
+					</tr>
+					<tr>
+						<td><code>div:last-child</code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selects an element that is the last within a parent</td>
+					</tr>
+					<tr>
+						<td><code>div:only-child</code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selects an element that is the only element within a parent</td>
+					</tr>
+					<tr>
+						<td><code>div:first-of-type</code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selects an element that is the first of its type within a parent</td>
+					</tr>
+					<tr>
+						<td><code>div:last-of-type</code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selects an element that is the last of its type within a parent</td>
+					</tr>
+					<tr>
+						<td><code>div:only-of-type</code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selects an element that it the only of its type within a parent</td>
+					</tr>
+					<tr>
+						<td><code>div:nth-child(±an±b)<code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selects an element that matches the given number or expression, counting all elements from the beginning of the document tree</td>
+					</tr>
+					<tr>
+						<td><code>div:nth-last-child(±an±b)<code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selects an element that matches the given number or expression, counting all elements from the end of the document tree</td>
+					</tr>
+					<tr>
+						<td><code>div:nth-of-type(±an±b)</code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selects an element that matches the given number or expression, counting only elements of its type from the beginning of the document tree</td>
+					</tr>
+					<tr>
+						<td><code>div:nth-last-of-type(±an±b)<code></td>
+						<td>Structural pseudo-class</td>
+						<td>Selelcts an element that matches the given number or expression, counting only elements of its type from the end of the documen tree</td>
+					</tr>
+					<tr>
+						<td><code>div:target</code></td>
+						<td>Target pseudo-class</td>
+						<td>Selects an element whose ID attribute value matches that of the URI fragment identifier</td>
+					</tr>
+					<tr>
+						<td><code>div:empty</code></td>
+						<td>Empty pseudo-class</td>
+						<td>Selects an element that does not contain any children or text nodes</td>
+					</tr>
+					<tr>
+						<td><code>div:not(...)</code></td>
+						<td>Negation pseudo-class</td>
+						<td>Selects an element not represented by the stated argument</td>
+					</tr>
+				</table>
+
+			<h2>Pseudo-elements</h2>
+
+				<p>As its name suggest, this are not actual HTML elements, instead, they are dynamically generated elements that do not exist within the document but target unique parts of it. One important point of note, only one pseudo-element may be used within a selector at a given time.</p>
+
+
+				<h3>Textual pseudo-elements</h3>
+				
+					<p>There are two textual pseudo-elements: <code>:first-letter</code> and <code>:first-line</code> allowing style the first letter and the first line of text within an element. In the demosntration below the first letter of the paragraph with the class of <code>alpha</code> is set in a larger font size and colored orange, as is the first line of the pragrpah with the calss of <code>bravo</code>. These selections are made by use of the <code>:first-letter</code> and <code>:first-line</code> textual pseudo-elements respectively.</p>
+
+					<div class="exempli">
+						<h6>HTML</h6>
+
+							<ol class="code-sample">
+								<li>&lt;p class="alpha"&gt;Lorem ipsum dolor...&lt;/p&gt;</li>
+								<li>&lt;p class="bravo"&gt;Lorem ipsum dolor...&lt;/p&gt;</li>
+							</ol>
+
+						<h6>CSS</h6>
+
+							<ol class="code-sample">
+								<li>.alpha:first-letter,</li>
+								<li>.bravo:first-line {</li>
+								<li>&emsp;color: #ff7b29;</li>
+								<li>&emsp;font-size: 18px;</li>
+								<li>}</li>
+							</ol>
+					</div>
+=======
 				<p></p>
+>>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
 
 		 <footer>
       <h2 id="summary">Summary</h2>
