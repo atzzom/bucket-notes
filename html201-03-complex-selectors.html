@@ -834,32 +834,216 @@
 
 			<h3>:first-of-type, :last-of-type, &amp; :only-of-type</h3>
 			
-			<p>Targeting the first, last, and only children of a parent is helpful. However there are situations that what is desired is to target a type of child (fist, last, only) <b>of a specific type</b> of element, let's say, target only the last child <b>paragraph</b> even though it might not be the last child element of its respective parent. Fortunately this is where the <code>:first-of-type</code>, <code>:last-of-type</code>, and <code>:only-of-type</code> pseudo-selectos come into plaee.</p>
+				<p>Targeting the first, last, and only children of a parent is helpful. However there are situations where is desired to target a type of child (fist, last, only) <b>of a specific type</b> of element, let's say, target only the last child <b>paragraph</b> even though it might not be the last child element of its respective parent. Fortunately this is where the <code>:first-of-type</code>, <code>:last-of-type</code>, and <code>:only-of-type</code> pseudo-selectos come into place.</p>
 			
-			<p>The <code>:first-of-type</code> pseud-class will select the first element of <b>its type</b> within a parent, while the <code>:last-of-type</code> pseudo-class will select the last element of <b>its type within a parent</b>. The <code>:only-of-type</code> pseudo-class will select an element if it is the only of its type within a parent.</p>
+				<p>The <code>:first-of-type</code> pseudo-class will select the first element of <b>its type</b> within a parent, while the <code>:last-of-type</code> pseudo-class will select the last element of <b>its type within a parent</b>. The <code>:only-of-type</code> pseudo-class will select an element if it is the only of its type within a parent.</p>
 
-			<p>In the below example the <code>p:first-of-type</code> and <code>p:last-of-type</code> pseudo-classes select the first an last paragrapsh within the artice respectively, regardless if they are acutally the first or last children within the article. The <code>img:only-of-type</code> selector identifies the image on line 5 as it is the only image to appear within the article, thus also selected.</p>
+				<p>In the below example the <code>p:first-of-type</code> and <code>p:last-of-type</code> pseudo-classes select the first an last paragrapsh within the artice respectively, regardless if they are acutally the first or last children within the article. The <code>img:only-of-type</code> selector identifies the image on line 5 as it is the only image to appear within the article, thus also selected.</p>
+
+				<div class="exempli">
+					<h6>HTML</h6>
+
+					<ol class="code-sample">
+						<li>&lt;article&gt;</li>
+							<li>&emsp;&lt;h1&gt;...&lt;/h1&gt;</li>
+							<li>&emsp;&lt;p&gt;This paragraph will be selected&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+							<li>&emsp;&lt;img src="#"&gt;&lt;!-- This image will be selected --&gt;</li>
+							<li>&emsp;&lt;p&gt;This paragraph will be selected&lt;/p&gt;</li>
+							<li>&emsp;&lt;h6&gt;...&lt;/h6&gt;</li>
+					</ol>
+
+					<h6>CSS</h6>
+
+					<ol class="code-sample">
+						<li>p:first-of-type {...}</li>
+						<li>p:last-of-type {...}</li>
+						<li>img:only-of-type {...}</li>
+					</ol>
+				</div>
+
+			<aside>
+				<h4>Using pseudo-class numbers &amp; expressions</h4>
+					<p>When using a selector like <code>li:nth-child(5)</code> it will start counting in incements of one unit until reach the fifth list item in the list. <i class="faq">when counting, it will skip/jump any element that is not a list item?</i>. Counter expressions come in the form of ±an±b (linear functions), where <code>a</code> is the multiplier (slope) and <code>b</code> is where the count should start. For example an expression like, <code>li:nth-child(-2n+5)</code> will select the items: <code>-2×0+5 = 5</code>, <code>-2×1+5 = 3</code>, <code>-2×2+5 = 1</code>, items, the item <code>-2×3+5 = -1</code> won't be selected as it takes a negative value. Possible combinations are the following:</p>
+
+					<table>
+						<caption>Possible combinations for selector expressions</caption>
+						<tr>
+							<th>Expression</th>
+							<th>Example</th>
+							<th>Behaviour</ht>
+						</tr>
+						<tr>
+							<td>a×n + b</td>
+							<td>2n + 2</td>
+							<td>Selects all even items starting from the second item.</td>
+						</tr>
+						<tr>
+							<td>a×n - b</td>
+							<td>3×n - 1</td>
+							<td>Selects the 2nd, 5th, 8th, (by threes) items till the end of it</td>
+						</tr>
+						<tr>
+							<td>-a×n + b</td>
+							<td>-3n + 12</td>
+							<td>Selects every third list item within the first twelve list items. Here is important to note that, when a negative slope is given, must be followed by a positive <code>b</code> variable that identifies how high the count will reach.</td>
+						</tr>
+					</table>
+			</aside>
+
+			<h3>:nth-child(n) &amp; :nth-last-child(n)</h3>
+
+				<p>The <code>:nth-child(n)</code> and the <code>:nth-last-child(n)</code> work in a pretty similar manner to the <code>:first-child</code> and <code>:last-child</code> pseudo-classes in that they look and count, all of the elements within a parent and only select the element specifically stated in the selector (eg. a paragraph, division, article, aside, etc). The <code>:nth-child(n)</code> will start counting and selecting from the beginning of the parent element, whilst the <code>:nth-last-child(n)</code> will start looking from the end of the parent element in the document tree. Considering what has been exposed in the previous table, the selector <code>li:nth-child(3n)</code> will select every third item in a multiple of three position:</p>
+
+				<div class="exempli">
+					<h6>HTML</h6>
+
+						<ol class="code-sample">
+							<li>&lt;ul&gt;</li>
+								<li>&emsp;&lt;li&gt;...&lt;/li&gt;</li>	
+								<li>&emsp;&lt;li&gt;...&lt;/li&gt;</li>	
+								<li>&emsp;&lt;li&gt;This item will be selected&lt;/li&gt;</li>
+								<li>&emsp;&lt;li&gt;...&lt;/li&gt;</li>	
+								<li>&emsp;&lt;li&gt;...&lt;/li&gt;</li>	
+								<li>&emsp;&lt;li&gt;This item will be selected&lt;/li&gt;</li>
+							<li>&lt;/ul&gt;</li>
+						</ol>
+
+					<h6>CSS</h6>
+
+						<ol class="code-sample">
+							<li>li:nth-child(3n)</li>
+						</ol>
+
+					<h6>Result</h6>
+
+						<ul class="ex-nth-01">
+							<li>...</li>
+							<li>...</li>
+							<li>This list item will be selected</li>
+							<li>...</li>
+							<li>...</li>
+							<li>This list item will be selected</li>
+						</ul>
+				</div>
+
+		<h3>:nth-of-type(n) &amp; :nth-last-of-type(n)</h3>
+		
+			<p>The <code>:nth-of-type</code> and the <code>:nth-last-of-type(n)</code> work pretty similarly to the <code>:nth-first-child(n)</code> and the <code>:nth-last-child(n)</code>, with the difference that the former items when counting into the parent element, will only consider the declared element instead of count every single element inside this parent, that is to say, this elements will only count elements of their own type. For example, when counting paragraphs within an article, the <code>:nth-of-type(n)</code> and the <code>:nth-last-of-type(n)</code> pseudo-classes will skip any headings, divisions, or miscellaneous elements that are not paragraphs, while the <code>:nth-child(n)</code> and <code>:nth-last-child(n)</code> would count every element, no matter it's type, only selecting the ones that match the element within the stated selector. Additionally, all of the same expression possibilities used within the <code>:nth-child(n)</code> and <code>:nth-last-child(n)</code> pseudo-classes are also available within the <code>:nth-of-type(n)</code> pseudo-classes.</p>
+
+			<p>Using the <code>:nth-of-type(n)</code> pseduo-class within the <code>p:nth-of-type(3n)</code> selector the third paragraph within a parent is going to be targeted regardless of its position within the parent or any other sibling elements within the parent.</p>
 
 			<div class="exempli">
-							<h6>HTML</h6>
-							<ol class="code-sample">
-							        <li><article/></li>
-							        <li><h1>...</h1></li>
-							        <li><p>This paragraph will be selected</p></li>
-							        <li><p>...</p></li>
-							        <li><img src="#" alt="">This image will be selected</li>
-							        <li><p>This paragraph will be selected</p></li>
-							        <li><h6>...</h6></li>
-							        <li>article></li>
-							</ol>
-			        <h6>CSS</h6>
-			        <ol class="code-sample">
-			                <li>p:first-of-type {...}</li>
-			                <li>p:last-of-type {...}</li>
-			                <li>img:only-of-type {...}</li>
-			        </ol>
+				<h6>HTML</h6>
+
+					<ol class="code-sample">
+						<li>&lt;article&gt;</li>
+							<li>&emsp;&lt;h1&gt;...&emsp;&lt;/h1&gt;</li>
+							<li>&emsp;&lt;p&gt;...&emsp;&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;...&emsp;&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;This paragraph will be selected&lt;/p&gt;</li>
+							<li>&emsp;&lt;h2&gt;...&emsp;&lt;/h2&gt;</li>
+							<li>&emsp;&lt;p&gt;...&emsp;&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;...&emsp;&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;...&emsp;&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;This paragraph will be selected&lt;/p&gt;</li>
+						<li>&lt;/article&gt;</li>
+					</ol>
+
+				<h6>CSS</h6>
+
+					<ol class="code-sample">
+						<li>p:nth-of-type(3n) {...}</li>
+					</ol>
+
+  			<h6>HTML</h6>
 			</div>
-    <footer>
+
+			<p>Similarly to the <code>:nth-last-child(n)</code> the <code>:nth-last-of-type(n)</code> will target elements starting from the end of the parent element, for example, the following pseudo-class selector will start counting from the bottom of the parent element:</p>
+
+			<div class="exempli">
+				<h6>HTML</h6>
+
+					<ol class="code-sample">
+						<li>&lt;article&gt;</li>
+							<li>&emsp;&lt;h1&gt;...&lt;/h1&gt;</li>
+							<li>&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;This paragraph will be selected&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+							<li>&emsp;&lt;h2&gt;...&lt;/h2&gt;</li>
+							<li>&emsp;&lt;p&gt;This paragraph will be selected&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;...&lt;/p&gt;</li>
+							<li>&emsp;&lt;p&gt;This paragraph will be selected&lt;/p&gt;</li>
+						<li>&lt;/article&gt;</li>
+					</ol>
+
+				<h6>CSS</h6>
+
+					<ol class="code-sample">
+						<li>p:nth-last-of-type(2n+1)</li>
+					</ol>
+
+				<h6>Result</h6>
+
+				<p class==faq">Insert real example with pseudo-class selector styling the above code.</p>
+			</div>
+			
+			<h3>Target pseudo-class</h3>	
+
+				<p>This pseudo-class selector usually will come into play when the ID attribute of an element matches the fragment after the <code>#</code> symbol of an URL, this URL can be a navigational link, that with the <code>:target</code> selector once is clicked, will triger the styles attribute specified under the <code>:target</code> element. Let's consider the following example:<p>
+
+				<div class="exempli">
+					<h6>HTML</h6>
+						
+						<ol class="code-sample">
+							<li>&lt;ol&gt;</li>
+								<li>&emsp;&lt;li&gt;&lt;a href="#p1"&gt;Jump to the first paragraph!&lt;/a&gt;&lt;/li&gt;</li>
+								<li>&emsp;&lt;li&gt;&lt;a href="#p2"&gt;Jump to the second paragraph!&lt;/a&gt;&lt;/li&gt;</li>
+								<li>&emsp;&lt;li&gt;&lt;a href="#nowhere"&gt;This link goes nowhere, because the target doesn't exist.&lt;/a&gt;&lt;/li&gt;</li>
+								<li>&emsp;</li>
+								<li>&emsp;&lt;p id="p1"&gt; You can target &lt;i&gt;this paragraph&lt;/i&gt; using a URL fragment. Click on the link above to try out!&lt;/p&gt;</li>
+								<li>&emsp;&lt;p id="p2"&gt; This is&lt;i&gt; another paragraph&lt;/i&gt;, also accessible from the links above. In't that delightful?&lt;/p&gt;</li>
+							<li>&lt;/ol&gt;</li>
+						</ol>
+
+					<h6>CSS</h6>
+
+						<ol class="code-sample">
+							<li>:target {</li>
+							<li>&emsp;box-shadow: 0 0 2px gray;</li>
+							<li>}</li>
+							<li></li>
+							<li>/* You can use pseudo-elements inside a target element */</li>
+							<li>:target::before {</li>
+							<li>&emsp;font: 70% sans-serif;</li>
+							<li>&emsp;content: "&gt;";</li>
+							<li>&emsp;color: gray;</li>
+							<li>&emsp;margin-right: .25em;</li>
+							<li>}</li>
+							<li></li>
+							<li>/* You can apply special styles to elements withinn a target element */</li>
+							<li>:target i {</li>
+							<li>&emsp;color: orange;</li>
+							<li>}</li>
+						</ol>
+
+					<h6>Result</h6>
+
+						<ol>
+							<li><a href="#p1">Jump to the first paragraph!</a></li>
+							<li><a href="#p1">Jump to the second paragraph!</a></li>
+							<li><a href="#p1">This link goes nowhere, because the target doesn't exist.</a></li>
+						</ol>
+
+						<p id="p1">You can target <i>this paragraph</i> using a URL fragment. Click on the link above to try out!</p>
+						<p id="p2">This is <i>another paragraph</i>, also accessible from the links above. Isn't that delightful?</p>
+				</div>
+
+			<h3>Empty pseudo-class</h3>
+
+				<p></p>
+
+		 <footer>
       <h2 id="summary">Summary</h2>
     </footer>
   </body>
