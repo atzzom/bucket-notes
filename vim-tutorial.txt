@@ -1,0 +1,93 @@
+one
+	Line two
+		Line three
+			Line four
+var foo = 1;
+var bar = 'a';
+var foobar = foo + bar;
+
+This is a sample text/change
+
+This is a sample text/change
+
+This is a sample text/change
+
+This is a sample text/change
+
+var foo = 'method(" + argument1 + "," + argument2 + ")";
+
+...We're waiting for copy before the site can go live...
+...If you are content whith this, let's go ahead with it...
+...We'll launch as soon as we have the copy...
+
+...We're waiting for copy before the site can go live...
+...If you are content whith this, let's go ahead with it...
+...We'll launch as soon as we have the copy...
+
+--- Counts ---
+.blog, .news { background-image: url(/sprite.png); }
+.blog { background-position: 0 0 }
+.news { background-position: -180 0 }
+.news { background-position: -360 0 }
+.news { background-position: -540 0 }
+.news { background-position: -720 0 }
+.news { background-position: -900 0 }
+.news { background-position: -1080 0 }
+.news { background-position: -1260 0 }
+.news { background-position: -1440 0 }
+.news { background-position: -1620 0 }
+.news { background-position: -1800 0 }
+.news { background-position: -1980 0 }
+050
+
+to vimrc--> set nrformats= (to vim treat numbers with leading zeros as decimal instead of octal)
+
+I have some more questions.
+
+--- paste w/out leaving insert mode ---
+
+Practical Vim, by Drew Neil
+Read Drew Neil's Practical Vim
+i-CTRL-r% current file path --> Desktop/vim-tutorial.txt
+i_CTRL-r: last command --> q
+i_CTRL-r" last delete or yank --> i
+i_CTRL-r# alternate file name --> 
+i_CTRL-r/ last search --> .
+i_CTRL-r+ clipboard --> 
+i_CTRL-r* clipboard contents --> 
+i_CTRL-r0 --> contents 
+i_CTRL-r1 --> .news { background-position: -180 0 }
+i_CTRL-r2 --> 605
+i_CTRL-r3 --> ...
+i_CTRL-r4 --> 
+i_CTRL-r5 --> 
+i_CTRL-r6 --> ...
+i_CTRL-r7 --> ...
+i_CTRL-r8 --> A sequence of changes. A sequence of changes
+i_CTRL-r9 --> 
+
+--- Calculations in insert mode using i_ctrl-r-= ---
+6 chairs, each costing $35, totals $210 
+
+--- Inserting unusual characters with unicode ---
+
+- Use i-ctrl-v-### to insert a character by decimal code.
+- Use i_ctrl-v-u#### where # represents an hex number, eg: i_ctrl-v-u00bf = ¿.
+- also the ascii representation of a symbol into the document can be retrieved using the ga command (get ascii).
+- A very useful trick specially when a key has been mapped to another value, is to use i_ctrl-v-{key} to insert the character represented by that key, for example, if by pressing a Tab, vim translate it to spaces, then using i_ctrl-v-Tab will insert an actual Tab (not the mapped spaces when the 'expandtab' option is enabled).
+- Additionally using i_ctrl-k-{char1}-{char2} will insert the character represented by the {char1}-{char2} digraph. More info: h: digraphs-default. 
+
+--- Visual mode ---
+
+Visual mode is a way to select text that resembles the way text editors work, however, visual mode has three 'submodes' that allows work with different granulity levels, namely:
+v --> character-wise visual mode.
+V --> line-wise visual mode.
+ctrl-v --> block-wise visual mode.
+gv --> reselect last visual selection.
+
+eg:
+Select from here to here
+
+Yoru mum has a moustache.
+
+Your mum has a moustache.
