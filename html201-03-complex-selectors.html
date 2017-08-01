@@ -26,15 +26,9 @@
 
         <table>
           <tr>
-<<<<<<< HEAD
-            <td>Example</td>
-            <td>Classification</td>
-            <td>Explanation</td>
-=======
             <th>Example</th>
             <th>Classification</th>
             <th>Explanation</th>
->>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
           </tr>
           <tr>
             <td><code>h1</code></td>
@@ -105,7 +99,7 @@
               </ol>
 
             <h6>CSS</h6>
-π
+
               <ol class="code-sample">
                 <li>section &gt; aside {...}</li>
               </ol>
@@ -115,15 +109,9 @@
 
           <table>
             <tr>
-<<<<<<< HEAD
-              <td>Example</td>
-              <td>Classification</td>
-              <td>Explanation</td>
-=======
               <th>Example</th>
               <th>Classification</th>
               <th>Explanation</th>
->>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
             </tr>
             <tr>
               <td><code>section aside</code></td>
@@ -296,15 +284,9 @@
         <table>
           <caption>Sibling selectors overview</caption>
           <tr>
-<<<<<<< HEAD
-            <td>Example</td>
-            <td>Classification</td>
-            <td>Explanation</td>
-=======
             <th>Example</th>
             <th>Classification</th>
             <th>Explanation</th>
->>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
           </tr>
           <tr>
             <td><code>h2 ~ p</code></td>
@@ -641,17 +623,12 @@
 
         <table>
           <tr>
-<<<<<<< HEAD
-            <td>Example</td>
-            <td>Attribute Selector<br
-            Classification</td>
-            <td>Explanation</td>
-=======
             <th>Example</th>
-            <th>Attribute Selector<br
-            Classification</th>
+            <th>
+							Attribute Selector<br>
+            	Classification
+						</th>
             <th>Explanation</th>
->>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
           </tr>
           <tr>
             <td><code>a[target]</code></td>
@@ -894,15 +871,9 @@
 					<table>
 						<caption>Possible combinations for selector expressions</caption>
 						<tr>
-<<<<<<< HEAD
-							<td>Expression</td>
-							<td>Example</td>
-							<td>Behaviour</ht>
-=======
 							<th>Expression</th>
 							<th>Example</th>
 							<th>Behaviour</ht>
->>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
 						</tr>
 						<tr>
 							<td>a×n + b</td>
@@ -1072,7 +1043,6 @@
 
 			<h3>Empty pseudo-class</h3>
 
-<<<<<<< HEAD
 				<p>This pseudo-class will target elements that do not contain any child elements or text nodes to be selected. Comments, processing instructions, and empty text nodes are not considered children and are not treated as such. <i class="faq">test if an element with just text will be treated also as an empty element.</i></p>
 
 				<div class="exempli">
@@ -1261,15 +1231,107 @@
 							<ol class="code-sample">
 								<li>.alpha:first-letter,</li>
 								<li>.bravo:first-line {</li>
-								<li>&emsp;color: #ff7b29;</li>
-								<li>&emsp;font-size: 18px;</li>
+									<li>&emsp;color: #ff7b29;</li>
+									<li>&emsp;font-size: 18px;</li>
 								<li>}</li>
 							</ol>
 					</div>
-=======
-				<p></p>
->>>>>>> 34ad6463e1c7457ea5f4a1944a5559d1f18d73a9
 
+				<h3>Generated content pseudo-elements</h3>
+
+					<p>The <code>:before</code> and <code>:after</code> are pseudo-elements that are nested <b>inside</b> the targeted/selected element. Due to their nature, they are usually employed to add optional information that eventually might be ommited from the page. In the below example, the <code>:after</code> pseudo-element is used to display the <code>href</code> attribute value of anchor elements within parentheses after the actual links. Notice, that this information <b>is not</b> stated/included in the actual HTML code. The information here is helpful, but not ultimately necessary should a browser not support these pseudo-elements.</p>
+
+					<div class="code-sample">
+						<h6>HTML</h6>
+
+							<ol class="code-sample">
+								<li>&lt;a href="http://google.com/"&gt;Search the web&lt;/a&gt;</li>
+								<li>&lt;a href="http://learn.shayhowe.com/"&gt;Learn how to build websites&lt;/a&gt;</li>
+							</ol>
+
+						<h6>CSS</h6>
+
+							<ol class="code-sample">
+								<li>a:after {</li>
+								<li>&emsp;color: #9799a7;</li>
+								<li>&emsp;content: " (" attr(href) ")";</li>
+								<li>&emsp;font-size: 11px;</li>
+								<li>}</li>
+							</ol>
+					</div>
+
+				<h3>Fragement pseudo-element</h3>
+
+					<p>It is possible to style a portion of the page that has been selected or highlighted by a user's action by means of the <code>::selection</code> pseudo-element, however, only the <code>color</code>, <code>background</code>, <code>background-color</code>, and the <code>text-shadow</code> properties can be used. When using the shorthand <code>backgroudn</code> property should any image be added, it will be ignored.</p>
+
+				<aside>
+					<h4>Single colons(:) vs. Double colons (::)</h4>
+
+						<p>The reason to introduces double colons '<code>::</code>' is to differenciate pseudo-classes ('<code>:</code>') from pseudo-elements ('<code>::</code>'). Fortunately most browsers will support both values, single or double colons, for pseudo-elements however the <code>::selection</code> pseudo-element must always start with double colones.</p>
+				</aside>	
+
+				<p>The following example illustrates the use of the <code>::selection</code> pseudo-element. When selecting any of the text within the demosntration below the background will turn orange and any text shadows will be removed. Also note, the <code>::-moz-selection</code> Mozilla prefixed fragment pseudo-element has been added to ensure the best support for all browsers.</p>
+
+				<div class="exempli">
+					<h6>HTML</h6>
+
+						<ol class="code-sample">
+							<li>&gt;p&lt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum dignissim leo a interdum. Duis eu orci velit. In urna quam, eleifend in pulvinar vitae, commodo vitae quam. Praesent vel magna nibh. Nullam lectus nibh, pellentesque ac convallis vulputate, ornare vel libero.&lt;/p&gt;</li>
+						</ol>
+
+					<h6>CSS</h6>
+
+						<ol class="code-sample">
+							<li>::-moz-selection {</li>
+							<li>&emsp;background: #ff7b29;</li>
+							<li>}</li>
+							<li>::selection {</li>
+							<li>&emsp;background: #ffb29;</li>
+							<li>}</li>
+						</ol>
+				</div>
+
+				<p class="faq">Insert Shay Howe's example for this section.</p>
+
+			<h3>Pseudo-elements overview</h3>
+
+				<table>
+					<tr>
+						<th>Example</th>
+						<th>Classification</th>
+						<th>Explanation</th>
+					</tr>
+					<tr>
+						<td><code>.alpha:first-letter</code></td>
+						<td>Textual pseudo-elements</td>
+						<td>Selects the first letter of text within an element</td>
+					</tr>
+					<tr>
+						<td><code>.bravo:first-line</code></td>
+						<td>Textual pseudo-elements</td>
+						<td>Selects the first line of text within an element</td>
+					</tr>
+					<tr>
+						<td><code>div:before</code></td>
+						<td>Generated content</td>
+						<td>Creates a pseudo-element inside the selected element at the beginning</td>
+					</tr>
+					<tr>
+						<td><code>div:after</code></td>
+						<td>Generated content</td>
+						<td>Creates a pseudo-element inside the selected element at the end</td>
+					</tr>
+					<tr>
+						<td><code>::selection</code></td>
+						<td>Fragment pseudo-element</td>
+						<td>Selects the part of a document which hass been selected, or highlighted, by a users actions</td>
+					</tr>
+					<tr>
+						<td><code></code></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
 		 <footer>
       <h2 id="summary">Summary</h2>
     </footer>
