@@ -12,13 +12,54 @@
       <h1>Complex Selectors</h1>
 
       <nav>
+				<h2>Table of contents<a href="#top" class="b2t">back to top</a></h2>
+					
+					<a href="#intro">Intro</a><br>
+					<a href="#sel-child">Child selectors</a><br>
+					<a href="#sel-child-desc">&emsp;- Descendent selector</a><br>
+					<a href="#sel-child-dir">&emsp;- Direct child selector</a><br>
+					<a href="#sel-child-overv">&emsp;- Child selectors: summary</a><br>
+					<a href="#sel-sblng">Sibling selectors</a><br>
+					<a href="#sel-sblng-grl">&emsp;- Sibling selector: general</a><br>
+					<a href="#sel-sblng-adj">&emsp;- Sibling selector: adjacent</a><br>
+					<a href="#sel-att">Attribute selectors</a><br>
+					<a href="#sel-att-present">&emsp;- Attribute selector: present</a><br>
+					<a href="#sel-att-eqls">&emsp;- Attribute selector: equals</a><br>
+					<a href="#sel-att-cont">&emsp;- Attribute selector: contains</a><br>
+					<a href="#sel-att-begw">&emsp;- Attribute selector: begins with</a><br>
+					<a href="#sel-att-endw">&emsp;- Attribute selector: ends with</a><br>
+					<a href="#sel-att-spcd">&emsp;- Attribute selector: spaced</a><br>
+					<a href="#sel-att-hyphen">&emsp;- Attribute selector: hyphenated</a><br>
+					<a href="#sel-att-smmry">&emsp;- Attribute selectors summary</a><br>
+					<a href="#sel-psc">Pseudo-classes</a><br>
+					<a href="#sel-psc-link">&emsp;- Pseudo-classes: links</a><br>
+					<a href="#sel-psc-usraxn">&emsp;- Pseudo-classes: user actions</a><br>
+					<a href="#sel-psc-ui">&emsp;- Pseudo-classes: user interface inputs</a><br>
+					<a href="#sel-psc-str&pstn">Pseudo-classes - structure and position</a><br>
+					<a href="#sel-psc-childs">&emsp;- Pseudo-classes: :first-child, :last-child, & :only-child</a><br>
+					<a href="#sel-psc-oftype">:&emsp;- Pseudo-classes: :first-of-type, :last-of-type, & :only-of-type</a><br>
+					<a href="#sel-psc-childnth">&emsp;- Pseudo-classes: :nth-child(n) & :nth-last-child(n)</a><br>
+					<a href="#sel-psc-oftypenth">&emsp;- Pseudo-classes: :nth-of-type(n) & :nth-last-of-type(n)</a><br>
+					<a href="#sel-psc-target">&emsp;- Pseudo-classes: target</a><br>
+					<a href="#sel-psc-empt">&emsp;- Pseudo-classes: empty</a><br>
+					<a href="#sel-psc-not">&emsp;- Pseudo-classes: negation</a><br>
+					<a href="#sel-psc-smmry">&emsp;- Pseudo-classes summary</a><br>
+					<a href="#sel-pse">Pseudo-elements</a><br>
+					<a href="#sel-pse-txt">&emsp;- Pseudo-elements: textual</a><br>
+					<a href="#sel-pse-genctnt">&emsp;- Pseudo-elements: generated content</a><br>
+					<a href="#sel-pse-frag">&emsp;- Pseudo-elements: fragment</a><br>
+					<a href="#sel-pse-smmry">&emsp;- Pseudo-elements summary</a><br>
+					<a href="#"></a><br>
+					<a href="#summary">Summary</a><br>
         
       </nav>
     </header>
 
-    <p class="faq">Put emphasis to the tree model and the headings, grouping them by topics, e.g. Sibling selectors, attribute selectors etc.</p>
+    <p class="faq">Put emphasis to the tree model and the headings, grouping them by topics, e.g. Sibling selectors, attribute selectors etc.<br>
+		- Also, differenciate the parent links in the table of contents in a way that they look bigger than their respective childs<br>
+		- Include a <code>:target</code> format, so when a link in clicked the respective heading recieve a style</p>
 
-    <h2 id="intro">Intro</h2>
+    <h2 id="intro">Intro<a href="#top" class="b2t">back to top</a></h2>
 
       <p>Selectors are fundamental in CSS, besides the basic selectors (type, class, and id) and their combinations, there are additional selectors than provide more power and versatility.</p>
 
@@ -47,11 +88,11 @@
           </tr>
         </table>
 
-      <h2>Child selectors</h2>
+      <h2 id="sel-child">Child selectors<a href="#top" class="b2t">back to top</a></h2>
 
         <p>This type of selectors allow target elements nested within a parent element. These selections can be made two different ways, using either descendant or direct child selectors.</p>
 
-        <h3>Descendant selector</h3>
+        <h3 id="sel-child-desc">Descendant selector<a href="#top" class="b2t">back to top</a></h3>
 
           <p>This is the most common selector, which matches every element that follows an identified ancestor. The selected element doesn't need to fall immediately after the parent element inside the document tree, but may fall anywhere within the ancestor element. Descendant selectors are created by spacing apart elements within a selector, creating a new level of hierarchy for each element list.</p>
 
@@ -79,7 +120,7 @@
               </ol>
           </div>
 
-        <h3>Direct child selector</h3>
+        <h3 id="sel-child-dir">Direct child selector<a href="#top" class="b2t">back to top</a></h3>
 
           <p>To transform a child selector into a direct (child) selector a <code>&gt;</code> is placed between the parent and the child selector. This will target only elements that fall directly within the parent element, that is, excluding any child element that is nested inside another type of element.</p>
 
@@ -105,7 +146,7 @@
               </ol>
           </div>
 
-        <h3>Child selectors overview</h3>
+        <h3 id="sel-child-smmry">Child selectors summary<a href="#top" class="b2t">back to top</a></h3>
 
           <table>
             <tr>
@@ -125,11 +166,11 @@
             </tr>
           </table>
 
-    <h2>Sibling selectors</h2>
+    <h2 id="sel-sblng">Sibling selectors<a href="#top" class="b2t">back to top</a></h2>
 
       <p>In addition to the possibility to target nested elements, there's also the option to target adjacent elements within the parent element, known as sibling selectors. These sibling selections can be made by way of the general sibling and adjacent sibling selectors.</p>
 
-      <h3>General sibling selector</h3>
+      <h3 id="sel-sblng-grl">Sibling selector: general<a href="#top" class="b2t">back to top</a></h3>
 
         <p>This selector allows target elements based on their sibling elements. Siblings elements are those who share the same parent element and are in the same hierarchy level in the document tree, they are created by using the tilde character: <code>~</code> between two elements within a selector. The first element identifies what the second element shall be a sibling with, and both of which must share the same parent element.</p>
 
@@ -160,7 +201,7 @@
             </ol>
         </div>
 
-      <h3>Adjacent sibling selector</h3>
+      <h3 id="sel-sblng-adj">Sibling selector: adjacent<a href="#top" class="b2t">back to top</a></h3>
 
         <p>There are situations in which is necessary select a sibling element that follows another sibling element, which is where the adjacent sibling element comes in. This selector will only target elements that directly follow (i.e. adjacent) the stated sibling element, instead of using the tilde <code>~</code> character between two elements (as in the case of general sibling selectors) the adjacent sibling selector uses a plus <code>+</code> character between the two elements within the selector. Just as before, the first stated element will specify the sibling element at the same tree level of the targeted (second) element.</p>
 
@@ -300,24 +341,25 @@
           </tr>
         </table>
 
-    <h2>Attribute selectors</h2>
+    <h2 id="sel-att">Attribute selectors<a href="#top" class="b2t">back to top</a></h2>
 
       <p>The descendant, child, and sibling selectors are based on element's attributes such class or ID, yet, there are additional attribute selectors based on other parameters an element might have, these are:</p>
 
-      <ol class="faq">
+      <ol>
         <li>Insert links to each of the sections the explanation is found.</li>
-        <li><a href="#att-present">Present</a></li>
-        <li><a href="#att-equals">Equals</a></li>
-        <li><a href="#att-contains">Contains</a></li>
-        <li><a href="#att-begins">Begins with</a></li>
-        <li><a href="#att-ends">Ends with</a></li>
-        <li><a href="#att-space">Spaced</a></li>
-        <li><a href="#att-hyphen">Hyphenated</a></li>
+        <li><a href="#sel-att-present">Present</a></li>
+        <li><a href="#sel-att-eqls">Equals</a></li>
+        <li><a href="#sel-att-cont">Contains</a></li>
+        <li><a href="#sel-att-begw">Begins with</a></li>
+        <li><a href="#sel-att-endw">Ends with</a></li>
+        <li><a href="#sel-att-spcd">Spaced</a></li>
+        <li><a href="#sel-att-hyphen">Hyphenated</a></li>
+				<li><a href="#sel-att-smmry">Summary</a><br></li>
       </ol>
 
       <p>In the following examples, the highlighted line will represent each of the potentially selected elements, should the attribute be applied to the below HTML sample. On the other hand, although all the examples use an anchor <code>&lt;a&gt;</code> element, these selectors can be applied to any element, e.g.: <code>&lt;figure&gt;</code>, <code>&lt;img&gt;</code>, <code>table</code>, etc.</p>
 
-      <h3 id="att-present">Attribute present selector</h3>
+      <h3 id="sel-att--present">Attribute selector: present<a href="#top" class="b2t">back to top</a></h3>
 
         <p>This selector will look if an element have the stated attribute, but won't look at its value, just if the attribute is there. To select an element based on if an attribute is present or not, simply include a square brackets <code>[]</code> with the attribute name to look for in front of the element's name. The square brackets may or may not follow/include any qualifier such as an element type or class, all depending on the level of specificity desired.</p>
 
@@ -360,7 +402,7 @@
             </ol>
         </div>
 
-      <h3 id="att-equals">Attribute equals selector</h3>
+      <h3 id="sel-att-eqls">Attribute selector: equals<a href="#top" class="b2t">back to top</a></h3>
 
         <p>Also it is possible to target elements matching an exact attribute value using the same selector previously used by just adding after the attribute name and equal sign <code>=</code> followed by quotations marks wrapping the desired match.</p>
 
@@ -403,7 +445,7 @@
             </ol>
         </div>
 
-      <h3>Attribute contains selector</h3>
+      <h3 id="sel-att-cont">Attribute selector: contains<a href="#top" class="b2t">back to top</a></h3>
 
         <p>This selector behaves similarly to the equals selector, with the difference that the equal sign "<code>=</code>" is preceded by an asterisk character "<code>*</code>", this will tell the selector in the attribute look for the quoted part without the necessity to be an exact match.</p>
 
@@ -447,7 +489,7 @@
             </ol>
         </div>
 
-      <h3>Attribute begins with selector</h3>
+      <h3 id="sel-att-begw">Attribute selector: begins with<a href="#top" class="b2t">back to top</a></h3>
 
         <p>As seen before, the contains selector will look for a matching result in any part of the specified attribute, however, if only this match is looked for at the beginning of the attribute value, then the begins with attribute selector should be used. Using a circumflex accent, <code>^</code>, within the square brackets of a selector between the attribute name and equals sign denotes that the attribute value should begin with the stated value.</p>
 
@@ -490,7 +532,7 @@
             </ol>
         </div>
 
-      <h3>Attribute ends with selector</h3>
+      <h3 id="sel-att-endw">Attribute selector: ends with<a href="#top" class="b2t">back to top</a></h3>
 
         <p>Alternatively to the begins with attribute selector, it is also available the possibility to target an attribute value located at the end of it. Using the ends with attribute selector, declared with a preceding dollar sign, <code>$</code>, this can be done.</p>
 
@@ -533,7 +575,7 @@
             </ol>
         </div>
 
-      <h3>Attribute spaced selector</h3>
+      <h3 id="sel-att-spcd">Attribute selector: spaced<a href="#top" class="b2t">back to top</a></h3>
 
         <p>In the previous examples it have been seen that the targeted attribute values usually consists on a single string of characters, in this case an URL, however, this is not always the case, existing scenarios in which the attribute value might consists in more than one word. For the cases in which the attribute value may be spaced apart, and only one of the words needs to be matched the tilde character "<code>~</code>" is used preceding the equal sign.</p>
 
@@ -576,7 +618,7 @@
             </ol>
         </div>
 
-      <h3>Attribute hyphenated selector</h3>
+      <h3 id="sel-att-hyphen">Attribute selector: hyphenated<a href="#top" class="b2t">back to top</a></h3>
 
         <p>To consider the cases in which an attribute might contain a hyphen-separated, rather than whitespace-separated value, the hyphenated attribute selector has been created. This selector consists on a vertical line character, "<code>|</code>", whichever value it's been targeted is necessary to take into account that the hyphen-separated words must begin with the stated value.</p>
 
@@ -619,7 +661,7 @@
             </ol>
         </div>
 
-      <h3>Attribute selectors summary</h3>
+      <h3 id="sel-att-smmry">Attribute selectors summary<a href="#top" class="b2t">back to top</a></h3>
 
         <table>
           <tr>
@@ -667,7 +709,7 @@
           </tr>
         </table>
 
-    <h2>Pseudo-classes</h2>
+    <h2>Pseudo-classes<a href="#top" class="b2t">back to top</a></h2>
 
       <p>A pseudo-class, makes reference to a CSS selector that do not target an actual element, instead, is aimed to select dynamic elements as a result of user's actions. As seen in previous examples, one of the commonest pseudo-classes is the <code>:hover</code> pseudo-class, that targets elements whenever the pointer hovers over it. From this example, it also can be seen that this type of selectors begin with a colon "<code>:</code>", as will all other pseudo-classes.</p>
 
@@ -683,7 +725,7 @@
           <li>Negation</li>
         </ol>
 
-      <h3>Link pseudo-classes</h3>
+      <h3>Link pseudo-classes<a href="#top" class="b2t">back to top</a></h3>
 
         <p>There are two basic pseudo-classes that comprehend this classification, namely: <code>:link</code> and <code>:visited</code></p>
 
@@ -706,7 +748,7 @@
             </ol>
         </div>
 
-      <h3>User action pseudo-classes</h3>
+      <h3>User action pseudo-classes<a href="#top" class="b2t">back to top</a></h3>
 
         <p>This type of classes come into play whenever a user has specific types of interaction with different elements. They are:</p>
 
@@ -733,7 +775,7 @@
             </ol>
         </div>
 
-      <h3>User interface pseudo-class</h3>
+      <h3>User interface pseudo-class<a href="#top" class="b2t">back to top</a></h3>
 
         <p>This type of classes targets elements depending on the state of some user interface elements, particularly within <strong>form</strong> elements. These user interface elements include:</p>
 
@@ -764,7 +806,7 @@
             </ol>
         </div>
 
-      <h3>Structural &amp; position pseudo-classes</h3>
+      <h3>Structural &amp; position pseudo-classes<a href="#top" class="b2t">back to top</a></h3>
 
         <p>This type of pseudo-classes are based on where an element resides within the document tree. They are:</p>
 
@@ -775,7 +817,7 @@
           <li>:nth-of-type(n) &amp; :nth-last-of-type(n)</li>
         </ol>
 
-      <h3>:first-child, :last-child, &amp; :only-child</h3>
+      <h3>:first-child, :last-child, &amp; :only-child<a href="#top" class="b2t">back to top</a></h3>
 
         <p>These type of pseudo-class selectors target elements based on where do they reside within a parent element, i.e. at the beginning, at the end, or if an element is the only child element.</p>
 
@@ -834,7 +876,7 @@
             </ul>
         </div>
 
-			<h3>:first-of-type, :last-of-type, &amp; :only-of-type</h3>
+			<h3>:first-of-type, :last-of-type, &amp; :only-of-type<a href="#top" class="b2t">back to top</a></h3>
 			
 				<p>Targeting the first, last, and only children of a parent is helpful. However there are situations where is desired to target a type of child (fist, last, only) <b>of a specific type</b> of element, let's say, target only the last child <b>paragraph</b> even though it might not be the last child element of its respective parent. Fortunately this is where the <code>:first-of-type</code>, <code>:last-of-type</code>, and <code>:only-of-type</code> pseudo-selectos come into place.</p>
 			
@@ -893,7 +935,7 @@
 					</table>
 			</aside>
 
-			<h3>:nth-child(n) &amp; :nth-last-child(n)</h3>
+			<h3>:nth-child(n) &amp; :nth-last-child(n)<a href="#top" class="b2t">back to top</a></h3>
 
 				<p>The <code>:nth-child(n)</code> and the <code>:nth-last-child(n)</code> work in a pretty similar manner to the <code>:first-child</code> and <code>:last-child</code> pseudo-classes in that they look and count, all of the elements within a parent and only select the element specifically stated in the selector (eg. a paragraph, division, article, aside, etc). The <code>:nth-child(n)</code> will start counting and selecting from the beginning of the parent element, whilst the <code>:nth-last-child(n)</code> will start looking from the end of the parent element in the document tree. Considering what has been exposed in the previous table, the selector <code>li:nth-child(3n)</code> will select every third item in a multiple of three position:</p>
 
@@ -929,7 +971,7 @@
 						</ul>
 				</div>
 
-		<h3>:nth-of-type(n) &amp; :nth-last-of-type(n)</h3>
+		<h3>:nth-of-type(n) &amp; :nth-last-of-type(n)<a href="#top" class="b2t">back to top</a></h3>
 		
 			<p>The <code>:nth-of-type</code> and the <code>:nth-last-of-type(n)</code> work pretty similarly to the <code>:nth-first-child(n)</code> and the <code>:nth-last-child(n)</code>, with the difference that the former items when counting into the parent element, will only consider the declared element instead of count every single element inside this parent, that is to say, this elements will only count elements of their own type. For example, when counting paragraphs within an article, the <code>:nth-of-type(n)</code> and the <code>:nth-last-of-type(n)</code> pseudo-classes will skip any headings, divisions, or miscellaneous elements that are not paragraphs, while the <code>:nth-child(n)</code> and <code>:nth-last-child(n)</code> would count every element, no matter it's type, only selecting the ones that match the element within the stated selector. Additionally, all of the same expression possibilities used within the <code>:nth-child(n)</code> and <code>:nth-last-child(n)</code> pseudo-classes are also available within the <code>:nth-of-type(n)</code> pseudo-classes.</p>
 
@@ -990,7 +1032,7 @@
 				<p class==faq">Insert real example with pseudo-class selector styling the above code.</p>
 			</div>
 			
-			<h3>Target pseudo-class</h3>	
+			<h3>Target pseudo-class<a href="#top" class="b2t">back to top</a></h3>	
 
 				<p>This pseudo-class selector usually will come into play when the ID attribute of an element matches the fragment after the <code>#</code> symbol of an URL, this URL can be a navigational link, that with the <code>:target</code> selector once is clicked, will triger the styles attribute specified under the <code>:target</code> element. Let's consider the following example:<p>
 
@@ -1041,7 +1083,7 @@
 						<p id="p2">This is <i>another paragraph</i>, also accessible from the links above. Isn't that delightful?</p>
 				</div>
 
-			<h3>Empty pseudo-class</h3>
+			<h3>Empty pseudo-class<a href="#top" class="b2t">back to top</a></h3>
 
 				<p>This pseudo-class will target elements that do not contain any child elements or text nodes to be selected. Comments, processing instructions, and empty text nodes are not considered children and are not treated as such. <i class="faq">test if an element with just text will be treated also as an empty element.</i></p>
 
@@ -1063,7 +1105,7 @@
 						</ol>
 				</div>
 
-			<h3>Negation pseudo-class</h3>
+			<h3>Negation pseudo-class<a href="#top" class="b2t">back to top</a></h3>
 
 				<p>To understand how this pseudo-class works let's take a look at the following example, here the CSS will style every single element but the ones classified as <code>awesome</code>:<p>
 
@@ -1089,7 +1131,7 @@
 
 				<p class="faq">Insert pseudo-class example with table included in the Shay Howe's course.</p>
 
-			<h3>Pseudo-classes overview</h3>
+			<h3>Pseudo-classes overview<a href="#top" class="b2t">back to top</a></h3>
 
 				<table>
 					<tr>
@@ -1209,12 +1251,12 @@
 					</tr>
 				</table>
 
-			<h2>Pseudo-elements</h2>
+			<h2>Pseudo-elements<a href="#top" class="b2t">back to top</a></h2>
 
 				<p>As its name suggest, this are not actual HTML elements, instead, they are dynamically generated elements that do not exist within the document but target unique parts of it. One important point of note, only one pseudo-element may be used within a selector at a given time.</p>
 
 
-				<h3>Textual pseudo-elements</h3>
+				<h3>Textual pseudo-elements<a href="#top" class="b2t">back to top</a></h3>
 				
 					<p>There are two textual pseudo-elements: <code>:first-letter</code> and <code>:first-line</code> allowing style the first letter and the first line of text within an element. In the demosntration below the first letter of the paragraph with the class of <code>alpha</code> is set in a larger font size and colored orange, as is the first line of the pragrpah with the calss of <code>bravo</code>. These selections are made by use of the <code>:first-letter</code> and <code>:first-line</code> textual pseudo-elements respectively.</p>
 
@@ -1237,7 +1279,7 @@
 							</ol>
 					</div>
 
-				<h3>Generated content pseudo-elements</h3>
+				<h3>Generated content pseudo-elements<a href="#top" class="b2t">back to top</a></h3>
 
 					<p>The <code>:before</code> and <code>:after</code> are pseudo-elements that are nested <b>inside</b> the targeted/selected element. Due to their nature, they are usually employed to add optional information that eventually might be ommited from the page. In the below example, the <code>:after</code> pseudo-element is used to display the <code>href</code> attribute value of anchor elements within parentheses after the actual links. Notice, that this information <b>is not</b> stated/included in the actual HTML code. The information here is helpful, but not ultimately necessary should a browser not support these pseudo-elements.</p>
 
@@ -1260,7 +1302,7 @@
 							</ol>
 					</div>
 
-				<h3>Fragement pseudo-element</h3>
+				<h3>Fragement pseudo-element<a href="#top" class="b2t">back to top</a></h3>
 
 					<p>It is possible to style a portion of the page that has been selected or highlighted by a user's action by means of the <code>::selection</code> pseudo-element, however, only the <code>color</code>, <code>background</code>, <code>background-color</code>, and the <code>text-shadow</code> properties can be used. When using the shorthand <code>backgroudn</code> property should any image be added, it will be ignored.</p>
 
@@ -1293,7 +1335,7 @@
 
 				<p class="faq">Insert Shay Howe's example for this section.</p>
 
-			<h3>Pseudo-elements overview</h3>
+			<h3>Pseudo-elements overview<a href="#top" class="b2t">back to top</a></h3>
 
 				<table>
 					<tr>
@@ -1333,7 +1375,7 @@
 					</tr>
 				</table>
 		 <footer>
-      <h2 id="summary">Summary</h2>
+      <h2 id="summary">Summary<a href="#top" class="b2t">back to top</a></h2>
     </footer>
   </body>
 </html>
