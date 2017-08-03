@@ -118,6 +118,16 @@
               <ol class="code-sample">
                 <li>section aside {...}</li>
               </ol>
+
+						<h6>Result</h6>
+
+						 <aside class="ex-sel-chdsc01">&lt;aside&gt;...&lt;/aside&gt;</aside>
+             <section class="ex-sel-chdsc01">&lt;section&gt;
+          	   <aside class="ex-sel-chdsc01">&emsp;&lt;aside&gt;This section will be selected&lt;/aside&gt;</aside>
+               <figure class="ex-sel-chdsc01">&emsp;&lt;figure&gt;
+           	    <aside class="ex-sel-chdsc01">&emsp;&emsp;&lt;aside&gt;This section will be selected&lt;/aside&gt;</aside>
+               &emsp;&lt;/figure&gt;</figure>
+             &lt;/section&gt;</section>
           </div>
 
         <h3 id="sel-child-dir">Direct child selector<a href="#top" class="b2t">back to top</a></h3>
@@ -144,6 +154,16 @@
               <ol class="code-sample">
                 <li>section &gt; aside {...}</li>
               </ol>
+
+							<h6>Result</h6>
+
+						 <aside class="ex-sel-chdsc02">&lt;aside&gt;...&lt;/aside&gt;</aside>
+             <section class="ex-sel-chdsc02">&lt;section&gt;
+          	   <aside class="ex-sel-chdsc02">&emsp;&lt;aside&gt;This section will be selected, as is the only <b>direct</b> child element of the section.&lt;/aside&gt;</aside>
+               <figure class="ex-sel-chdsc02">&emsp;&lt;figure&gt;
+           	    <aside class="ex-sel-chdsc02">&emsp;&emsp;&lt;aside&gt;Althouh this &lt;aside&gt; element is also a child element of the above &lt;section&gt; is not going to be selected as is not a <b>direct</b> child as is nested inside a &lt;figure&gt; element.&lt;/aside&gt;</aside>
+               &emsp;&lt;/figure&gt;</figure>
+             &lt;/section&gt;</section>
           </div>
 
         <h3 id="sel-child-smmry">Child selectors summary<a href="#top" class="b2t">back to top</a></h3>
@@ -199,6 +219,19 @@
             <ol class="code-sample">
               <li>h2 ~ p {...}</li>
             </ol>
+
+					<h6>Result</h6>
+
+						<p class="ex-sel-sblnggen01">&lt;p&gt;This paragraph would be selected if were below the &lt;h2&gt; element, because is above, is not considered a general sibling element of the &lt;h2&gt; element declared in the selector.&lt;/p&gt;</p>
+						<section class="ex-sel-sblnggen01">&lt;section&gt;
+							<p>&lt;p&gt;Same as the first paragraph of this example, this isn't considered a general sibling of the &lt;h2&gt; element below, because is above it.&lt;/p&gt;</p>
+							<h2 class="ex-sel-sblnggen01">&lt;h2&gt;...&lt;/h2&gt;</h2>
+							<p class="ex-sel-sblnggen01">&lt;p&gt;This paragraph will be selected because is a sibling element of the &lt;h2&gt; header above it.&lt;/p&gt;</p>
+							<div class="ex-sel-sblnggen01">&lt;div&gt; This element is also a sibling of the &lt;h2&gt; element, but it isn't a paragraph as specified by the sibling selector.
+								<p class="ex-sel-sblnggen01">&lt;p&gt;In this case, due to this paragraph is nested inside a &lt;div&gt; element is not treated as a sibling, but as a child element.&lt;/p&gt;</p>
+							</div>
+							<p class="ex-sel-sblnggen01">This paragraph will be selected it is also a sibling of the &lt;h2&gt; header above it..</p>
+						</section>
         </div>
 
       <h3 id="sel-sblng-adj">Sibling selector: adjacent<a href="#top" class="b2t">back to top</a></h3>
@@ -229,78 +262,94 @@
             <ol class="code-sample">
               <li>h2 + p {...}</li>
             </ol>
-        </div>
+
+					<h6>Result</h6>
+
+						<h2 class="ex-sel-sblngadj01">&lt;h2&gt;Taking advantage of the styles applied to this example the &lt;h2&gt; elements in this example where modified to prevent these headers encompass excessive padding space above them, given place to confusion with an actual heading of the document.&lt;/h2&gt;</h2>
+							<p class="ex-sel-sblngadj01">&lt;p&gt;This paragraph is goint to ge select as it falls <b>inmediately</b> after the declared &lt;h2&gt; element in the selector&lt;/p&gt;</p>
+						<section class="ex-sel-sblngadj01">&lt;section&gt;
+							<p class="ex-sel-sblngadj01">&lt;p&gt;Although this paragraph is inmediately above the declared &lt;h2&gt; element declared in the selector, is not going to be selected as isn't considered a sibling element of any element below it.&lt;/p&gt;</p>
+							<h2 class="ex-sel-sblngadj01">&lt;h2&gt;...&lt;/h2&gt;</h2>
+							<p class="ex-sel-sblngadj01">&lt;p&gt;This paragraph is goint to ge select as it falls <b>inmediately</b> after the declared &lt;h2&gt; element in the selector&lt;/p&gt;</p>
+							<div class="ex-sel-sblngadj01">&lt;div&gt;
+								<p class="ex-sel-sblngadj01">&lt;p&gt;This paragraph is a child element of the above &lt;div&gt; element, because of this, the declared selector is not applicable ot it&lt;/p&gt;</p>
+							&lt;/div&gt;</div>
+							<p class="ex-sel-sblngadj01">&lt;p&gt;This paragraph is a <b>general</b> sibling of the &lt;h2&gt; element <b>not</b> a <b>adjacent</b> sibling as indicated by the <code>+</code> sign in the selector&lt;/p&gt;</p>
+							&lt;section&gt;</section>
+					</div>
+
+					<p>The following is an example of the use of general and adjacent sibling selectors</p>
 
         <div class="exempli">
           <h6>HTML</h6>
 
             <ol class="code-sample">
-              <li>input type="checkbox" id="toggle"</li>
-              <li>label for="toggle"&lt;&#9776;</li>
-              <li>nav</li>
-                <li>ul</li>
-                  <li>li a href="#" Home</li>
-                  <li>li a href="#" About</li>
-                  <li>li a href="#" Services</li>
-                  <li>li a href="#" Contact</li>
-                <li>/ul</li>
-              <li>/nav</li>
+              <li>&lt;input type="checkbox" id="toggle"&gt;</li>
+              <li>&lt;label for="toggle"&gt;&#9776;&lt;/label&gt;</li>
+              <li>&lt;nav&gt;</li>
+                <li>&emsp;&lt;ul&gt;</li>
+                  <li>&emsp;&emsp;&lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;</li>
+                  <li>&emsp;&emsp;&lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;</li>
+                  <li>&emsp;&emsp;&lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;</li>
+                  <li>&emsp;&emsp;&lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;</li>
+                <li>&emsp;&lt;/ul&gt;</li>
+              <li>&lt;/nav&gt;</li>
             </ol>
 
           <h6>CSS</h6>
 
             <ol class="code-sample">
               <li>input {</li>
-                <li>display: none;</li>
+                <li>&emsp;display: none;</li>
               <li>}</li>
               <li>label,</li>
               <li>ul {</li>
-                <li>border: 1px solid #cecfd5;</li>
-                <li>border-radius: 6px;</li>
+                <li>&emsp;border: 1px solid #cecfd5;</li>
+                <li>&emsp;border-radius: 6px;</li>
               <li>}</li>
               <li>label {</li>
-                <li>color: #0087cc;</li>
-                <li>cursor: pointer;</li>
-                <li>display: inline-block;</li>
-                <li>font-size: 18px;</li>
-                <li>padding: 5px 9px;</li>
-                <li>transition: all .15s ease;</li>
+                <li>&emsp;color: #0087cc;</li>
+                <li>&emsp;cursor: pointer;</li>
+                <li>&emsp;display: inline-block;</li>
+                <li>&emsp;font-size: 18px;</li>
+                <li>&emsp;padding: 5px 9px;</li>
+                <li>&emsp;transition: all .15s ease;</li>
               <li>}</li>
               <li>label:hover {</li>
-                <li>color: #ff7b29;</li>
+                <li>&emsp;color: #ff7b29;</li>
               <li>}</li>
               <li>input:checked + label {</li>
-                <li>box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15);</li>
-                <li>color: #9799a7;</li>
+                <li>&emsp;box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15);</li>
+                <li>&emsp;color: #9799a7;</li>
               <li>}</li>
               <li>nav {</li>
-                <li>max-height: 0;</li>
-                <li>overflow: hidden;</li>
-                <li>transition: all .15s ease;</li>
+                <li>&emsp;max-height: 0;</li>
+                <li>&emsp;overflow: hidden;</li>
+                <li>&emsp;transition: all .15s ease;</li>
               <li>}</li>
               <li>input:checked ~ nav {</li>
-                <li>max-height: 500px;</li>
+                <li>&emsp;max-height: 500px;</li>
               <li>}</li>
               <li>ul {</li>
-                <li>list-style: none;</li>
-                <li>margin: 8px 0 0 0;</li>
-                <li>padding: 0;</li>
-                <li>width: 100px;</li>
+                <li>&emsp;list-style: none;</li>
+                <li>&emsp;margin: 8px 0 0 0;</li>
+                <li>&emsp;padding: 0;</li>
+                <li>&emsp;width: 100px;</li>
               <li>}</li>
               <li>li {</li>
-                <li>border-bottom: 1px solid #cecfd5;</li>
+                <li>&emsp;border-bottom: 1px solid #cecfd5;</li>
               <li>}</li>
               <li>li:last-child {</li>
-                <li>border-bottom: 0;</li>
+                <li>&emsp;border-bottom: 0;</li>
               <li>}</li>
               <li>a {</li>
-                <li>color: #0087cc;</li>
-                <li>display: block;</li>
-                <li>padding: 6px 12px;</li>
-                <li>text-decoration: none;</li>
+                <li>&emsp;color: #0087cc;</li>
+                <li>&emsp;display: block;</li>
+                <li>&emsp;padding: 6px 12px;</li>
+                <li>&emsp;text-decoration: none;</li>
               <li>}</li>
               <li>a:hover {</li>
-                <li>color: #ff7b29;</li>
+                <li>&emsp;color: #ff7b29;</li>
               <li>}</li>
             </ol>
 
@@ -309,7 +358,7 @@
 
               <input type="checkbox" id="toggle">
               <label for="toggle">&#9776;</label>
-              <nav class="ex-adv-sel-01">
+              <nav>
                 <ul>
                   <li><a href="#">Home</a></li>
                   <li><a href="#">About</a></li>
@@ -319,7 +368,8 @@
               </nav>
           </section>
 
-            <p class="faq">Why this example does not appear exactly as in the Shay Howe's example.</p>
+            <p class="faq">Do a test page dedicated to this example.<br>
+						Why this example does not appear exactly as in the Shay Howe's example.</p>
         </div>
 
         <table>
