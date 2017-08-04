@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>line one | complex selectors</title>
-    <link rel="stylesheet" type="text/css" href="test.HTML201-C03.css">
+    <link rel="stylesheet" type="text/css" href="test-HTML201-C03.css">
   </head>
 	<body>
+	<section class="float-container">
+	<h6>Shay Howe's demo on child & sibling selectors</h6>
+
+		<p>This is a test page in order to find why when using some sibling selectors the page won't be displayed as intended</p>
+
+		<p>What has been found is that with the declared child and sibling selectors, the button is going to be rendered as intended, however, this only happened once the class="float-container" of the parent &lt;section&gt; element was removed, that is to say, that the styles were rendered only when the CSS selector used as prequalifier "section (+/ /~ element)" instead of the original "section.float-container (+/ /~ element)".</p>
+
+		<p>Additionally, another case was tested, namely, when the prequalifier of the declared element was set to: ".float-container (child/adj/sibling element)", it was seen that works as intended, as in the case outlined above, that is, when this prequalifier replaced the original "section.float-container (child/adj/sibling element)".</p>
+
 	 <input type="checkbox" id="toggle">
 	 <label for="toggle">&#9776;</label>
 	 <nav>
@@ -16,5 +25,6 @@
 		 	<li><a href="#">Contact</a></li>
 		</ul>
 	 </nav>	
+	 <section>
 	</body>
 </html>

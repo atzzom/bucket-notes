@@ -1,0 +1,76 @@
+/* ---Shay Howe's demo about sibling selectors--- */
+
+						.float-container li {
+							/* This rule set will define the typefaces to be used in the unordered list */
+              font: 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            }
+						h6 ~ input {
+							display: none; /* This property will hide the checkbox, so only the symbol/label next to it will be visible. On the other hand the used selector (h6 ~ input, automatically targets the input element below the h6 header as a general sibling selector, this has the advantage that the input element can be moved around within the parent section element without break the cascade. */ 
+						}
+						h6 ~ label,
+						nav ul, {
+							/* The first row of this rule set uses an <h6> as a reference sibling element of the <label> in order to select it with a general sibling selector. On the other hand, should we want to target the <ul> element, this <h6> element could no longer be used, because the <ul> is nested into a <nav> element, in this case a direct child selector must be used to target the <ul> */
+							border: 1px solid #cecfd5;
+							border-radius: 6px;
+						}
+						h6 ~ label {
+							/* Same as before, the h* ~ label element is used as a sibling selector of the <label> element. */
+							color: #0087cc;
+							cursor: pointer;
+							display: inline-block; /* Test exactly what this property do in the label. */
+							font-size: 18px;
+							padding: 5px 9px;
+							transition: all 5s ease; /* The values of this transition property works in the following way: the all value will indicate that all the properties stated in the rule set that defines or contain what happen once the transition is triggerted will be activated, that is to say, if there are 20 effects to be used once the transition start, all of them will be used. The 5s value, indicates how long will the transition last, in this case 5 seconds. Lastly, the ease value indicates how this transition is going to occur, in  this case ease, indicates that the transition will start slowly, in the middle of it accelerate, and end with a slow movement again. */ 
+						}
+						h6 ~ label:hover {
+							color: #ff7b29;
+						}
+						input:checked + label {
+							/* Here, an adjacent sibling selector is being triggerd once the input has been selected, kkep in mind that one of the first rules were to hide this input, so basically this selector is triggered once the user clicks on the label. An adjacent selector might be preferred here to a general sibling selector should naother label be used, the styles are still applied to this specific element. */
+							box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+							color: #9799a7;
+						}
+						h6 ~ nav {
+							/* Another general sibling selector */
+							max-height: 0; /* What exactly this rule does. Apparently, it is used to hide the <nav> in its default state, later, the transition property will make this visible and available. */
+							overflow: hidden; /* The overflow: hidden; value hides any content of the <nav> element should it be too small for it, let's say, the content wrapped by this <na> element uses 500px height, but the <nav> is set to a 300px height, then the 200px addtional wll be hidden and won't be displayed outside this <nav> element. */
+							transition: all 5s ease;
+						}
+						 input:checked ~ nav {
+							/* Here, is stated which effects are going to be applied to the <nav> once the <input> changes from its default value to when is checked. Notice: although the general sibling selector involves an <input> in its checked state, it targets and hence, modifies onluy the <nav> element.
+							Also, thanks to the transition property (the one including the overflow: hidden;) stated in the above rule set, it will possible to specify what is going to happen/how this <nav> will be transformed, once it passes from its default state, to another state, in this case indicated by the input:checked state. */
+							max-height: 500px;
+						}
+						nav ul {
+							/* Here, a direct child selector is being used */
+							list-style: none; /* This list-style: none; basically is saying that none of the elements on the list will have a bullet mark of any kind.*/
+							margin: 8px 0 0 0;
+							padding: 0;
+							width: 100px;
+						}
+						.float-container li {
+							/* As in this document (an others in the whole website) has countless <li> to avoid other <li> elements outside this example from being selected, the parent <section class="float-container"> is used, as is the only section with this classification. Notice that this direct children selector will work regardless that the <li> item is nested into a <nav> and at the same time into a <ul> (or even possibly another elements). */
+							border-bottom: 1px solid #cecfd5;
+						}
+						.float-container li:last-child {
+							border-bottom: 0;
+						}
+						.float-container a {
+							color: #0087cc;
+							display: block;
+							padding: 6px 12px;
+							text-decoration: none; /* Setting the text-decoration to none will prevent the links from being underlined or being applied with any color. */
+						}
+						.float-container a:hover {
+							color: #ff7b29;
+						}
+
+            /* .float-container {
+              /* Rule set created to prevent the content of the rest of the document move or being moved by the drop-down list.
+              height: 200px;
+            } */
+
+            .selection {
+              /* This rule set is used to highlight the results of the CSS attribute selectors in the examples. */
+              background-color: navy;
+            }
