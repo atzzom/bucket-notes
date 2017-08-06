@@ -433,11 +433,11 @@
 							
           /* ---Shay Howe's demo about sibling selectors--- */
 
-						section.float-container li {
+						li {
 							/* This rule set will define the typefaces to be used in the unordered list */
-              font: 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+              font: 23px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
             }
-						h6 ~ input {
+						.float-container ~ input {
 							display: none; /* This property will hide the checkbox, so only the symbol/label next to it will be visible. On the other hand the used selector (h6 ~ input, automatically targets the input element below the h6 header as a general sibling selector, this has the advantage that the input element can be moved around within the parent section element without break the cascade. */ 
 						}
 						h6 ~ label,
@@ -481,27 +481,27 @@
 							padding: 0;
 							width: 100px;
 						}
-						section.float-container li {
+						.float-container li {
 							/* As in this document (an others in the whole website) has countless <li> to avoid other <li> elements outside this example from being selected, the parent <section class="float-container"> is used, as is the only section with this classification. Notice that this direct children selector will work regardless that the <li> item is nested into a <nav> and at the same time into a <ul> (or even possibly another elements). */
 							border-bottom: 1px solid #cecfd5;
 						}
-						section.float-container li:last-child {
+						.float-container li:last-child {
 							border-bottom: 0;
 						}
-						section.float-container a {
+						.float-container a {
 							color: #0087cc;
 							display: block;
 							padding: 6px 12px;
 							text-decoration: none; /* Setting the text-decoration to none will prevent the links from being underlined or being applied with any color. */
 						}
-						section.float-container a:hover {
+						.float-container a:hover {
 							color: #ff7b29;
 						}
 
-            /* section.float-container {
-              /* Rule set created to prevent the content of the rest of the document move or being moved by the drop-down list.
+            .float-container {
+              /* Rule set created to prevent the content of the rest of the document move or being moved by the drop-down list. */
               height: 200px;
-            } */
+            } 
 
             .selection {
               /* This rule set is used to highlight the results of the CSS attribute selectors in the examples. */
