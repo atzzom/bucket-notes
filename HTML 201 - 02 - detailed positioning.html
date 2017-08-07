@@ -336,13 +336,31 @@
           <h6>Result</h6>
 
             <div class="box-set-06">
-              <figure class="box box-1">Box 1</figure>
-              <figure class="box box-2">Box 2</figure>
-              <figure class="box box-3">Box 3</figure>
-              <figure class="box box-4">Box 4</figure>
+              <figure class="box-abs box-1">
+								Box 1<br>
+								top: 6%;<br>
+								left: 2%;
+							</figure>
+              <figure class="box-abs box-2">
+								Box 2<br>
+								top: 0;
+								right: -40px;
+							</figure>
+              <figure class="box-abs box-3">
+								Box 3<br>
+								bottom: -10px;
+								right: 20px;
+								all boxes are absolutely positioned
+							</figure>
+              <figure class="box-abs box-4">
+								Box 4<br>
+								bottom: 0;
+							</figure>
             </div>
 
-          <p>Absolute positioned elements, without stated <code>width</code> and <code>height</code> dimensions. All four values: <code>top</code>, <code>bottom</code>, <code>right</code> and <code>left</code> have been stated.</p>
+          <p>In the above example: absolute positioned elements, with stated <code>width</code> and <code>height</code> dimensions. All four offset values: <code>top</code>, <code>bottom</code>, <code>right</code> and <code>left</code> have been stated.</p>
+
+					<p>In the followig example is shown what happens when an element has not stated dimensions <b>and</b> is absolutely positioned, notice that the element will span the entire specified size.</p>
 
           <h6>HTML</h6>
 
@@ -371,12 +389,77 @@
           <h6>Result</h6>
 
             <div class="box-set-07">
-              <figure class="box box-1">Box 1</figure>
-              <!-- <figure class="box box-2">Box 2</figure>
-              <figure class="box box-3">Box 3</figure>
-              <figure class="box box-4">Box 4</figure> -->
+              <figure class="box-nodim box-1">
+								Box 1:<br>
+								The properties:<br>
+								bottom: 0;<br>
+								top: 0;<br>
+								imply that the element<br>
+								will span 0px <b>from</b> the<br>
+								top, till 0px measured<br>
+								<b>from</b> the bottom.<br>
+								As there's no left/right<br>
+								property stated, the box<br>
+								will be displayed from<br>
+								the top left corner.
+							</figure>
+              <figure class="box-nodim box-2">
+								Box 2<br>
+								right: 40px;<br>
+								left: 75%;<br>
+								top: 5%;<br>
+								ie. moved 40px<br>
+								<b>from</b> the right<br>
+								of parent element<br>
+								and until the 75%<br>
+								<b>from</b> the left<br>
+								of parent element.
+							</figure>
+              <figure class="box-nodim box-3">
+								Box 3<br>
+								left: 50%;<br>
+								top: -15px;<br>
+								50% from the left<br>
+								of parent, and 15px<br>
+								from the top in the<br>
+								outer direction of<br>
+								the parent element.
+							</figure>
+              <figure class="box-nodim box-4">
+								Box 4<br>
+								As all four boundaries for this element are stated, top, bottom, left, and right, therefore all the dimensions of this box are specified, even though it has not been done explictly. Should the text be larger than the box it will overflow outside of it.
+							</figure>
             </div>
         </div>
+
+			<h3>Position fixed</h3>
+
+				<div class="exempli">
+					<h6>HTML</h6>
+					<ol class="code-sample">
+						<li>&lt;figure&gt;</li>
+							<li>&emsp;always&lt;br&gt;</li>
+							<li>&emsp;@&lt;br&gt;</li>
+							<li>&emsp;sight&lt;br&gt;</li>
+						<li>&lt;/figure&gt;</li>
+					</ol>
+					<h6>CSS</h6>
+					<ol class="code-sample">
+						<li>.ex-fix {</li>
+							<li>&emsp;position: fixed;</li>
+							<li>&emsp;left: 5px;</li>
+							<li>&emsp;top: 50%</li>
+							<li>&emsp;text-align: center;</li>
+						<li>}</li>
+					</ol>
+					<h6>Result</h6>
+					<p>&lt;-- See left</p>
+					<figure class="ex-fix">
+						always<br>
+						@<br>
+						sight	
+					</figure>
+				</div>
 
     <footer>
       <h2 id="summary">Summary</h2>
