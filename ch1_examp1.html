@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<link rel="stylesheet" href="ch1_examp1.css">
+  <title>Beginning JS - ch1_examp1</title>
+</head>
+<body>
+  <p>This page has a linked script that will change the page's background color from <code>#fff</code> to <code>red</code> using the following script:</p>
+
+	<code>
+		document.bgColor = "RED";
+	</code>
+
+	<p>Is important to note that if the following CSS is added:</p>
+
+	<code>
+		body {<br>
+			background-color: white;<br>
+		}
+	</code>
+
+	<p>The above scropt <b>won't</b> work, because this CSS is targeting the <code>body</code> element, whilst the JS script is targeting the document element.</p>
+</body>
+<script src="ch1_examp1.js"></script>
+</html>
