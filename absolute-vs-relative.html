@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../CSS/absolute-vs-relative.css" media="all">
+	<title>CSS - position: absolute vs relative</title>
+</head>
+<body>
+
+	<p>Sample paragraph outside the &lt;article&gt; element.</p>
+
+	<article>
+		<p>A relatively positioned element is positioned (or offseted) in relation to <b>its original location</b>, that is, the default case of 'position: static;'.</p>
+
+		<p>In this example, the parent &lt;div&gt; element of the boxes <b>and</b> the boxes, are relatively positioned. As shown, the second box has an offset of 15px <b>from</b> the bottom of its original location -that is, from the place should the element be when statically positioned-.</p>
+		
+		 <p>Additionally, it can be observed a characteristic behavior of relatively positioned elements, in which subsequent elements won't fill up the original space left by the offseted element; specifically, the 'Box 3' won't be moved upwards towards 'Box 2', instead, 'Box 3' preserved its original location as if no offset were applied whatsoever to 'Box 2'.</p>
+		 
+		<div class="rel">
+			<code class="rel">Box 1</code>
+			<code class="rel offset">Box 2</code>
+			<code class="rel">Box 3</code>
+		</div>
+	</article>
+
+	<p>Sample paragraph outside the &lt;article&gt; element.</p>
+
+	<article>
+
+		<p>The parent &lt;div&gt; element here is relatively positioned, while the child boxes are absolutely positioned. Notice that although the boxes are set as block elements, their behavior belongs to an inline element as observed from the shrinking in their width.</p>
+
+		<p>Moreover, with the exception of the second box, none of the absolutely positioned boxes has set an offset, because of this, these elements are going to be shown (and stacked as there is more than one) at the top left corner of its parent element. However, is useful to keep in mind that the paragraph above these boxes (which by default is statically positioned) must be taken into account in the flow of the document.</p>
+
+		<p>The reason why the offseted 'Box 2' is shown above the paragraph is because comes later in the flow of the page/document, being the default behavior latter elements stack on top of former ones.</p>
+
+		<div class="rel">
+			<code class="abs widen">Box 1</code>
+			<code class="abs offset">Box 2</code>
+			<code class="abs">Box 3</code>
+		</div>
+
+		<p>Also the absolutely positioned element will start measure the declared offset <b>from the top-left corner of the parent's element</b> (or the equivalent place once the static positioned elements, like the paragraph above, are taken into account. As it can be observed that place in this example is exactly where this paragraph begins because in the <abbr title="Hyper Text Markup Language">HTML</abbr> the boxes are introduced right above this paragraph. Additionally, here, 'Box 2' has a bottom offset of 15px, which will move this element <b>from the bottom</b> that is, upwards, 15px. A negative value will do the same but downwards.</p>
+		
+		<p>In order to make the absolutely positioned boxes fill out the space like the yellow boxes shown in the relatively positioned sample, <strong>NO</strong> width for the box must be specified (This can be done but won't produce any offset, just size the box), instead, this can be achieved using an offset, namely, left and right offset, producing the box span/fill out the space between these two declared values, the same can be done to give a custom height to the element by the use of the top and bottom offset values. More information can be gotten at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#Notes"><abbr title="Mozilla Developer Network">MDN</abbr></a>.</p>
+		
+	</article>
+
+	<p>Sample paragraph outside the &lt;article&gt; element.</p>
+
+	<article>
+
+		<p>This boxes are relatively positioned, but its parent element is absolutely positioned, from the behavior below it can be deduced:</p>
+
+		<ol>
+			<li>The child relatively positioned elements will preserve their layout, however,</li>
+			<li>The absolutely positioned parent will influence/affect their children by inherit them with the observed alteration in the size of this children elements.</li>
+			<li>Trying to apply <b>at the same time</b> top and bottom offsets <b>won't</b> make the element span within the declared values (only happens/applies to absolute positioned elements), instead top will always win. In the case of the left and right offsets, the winner will be determined by the language, for instance for Hebrew or Arabic, right will win, on the other hand, for English, etc. left will win.</li>
+		</ol>
+
+		<div class="abs">
+			<code class="rel">Box 1</code>
+			<code class="rel offset">Box 2</code>
+			<code class="rel">Box 3</code>
+		</div>
+	</article>
+
+	<p>Sample paragraph outside the &lt;article&gt; element.</p>
+
+	<article>
+
+		<p>Here, both elements, parent and child are absolutely positioned. It can be seen that its behavior is pretty similar to the case of a relative parent with a nested absolute, however, there are some difference from this case, namely:</p>
+
+		<ol>
+			<li>Here (absolute inside absolute), the 'shrinking' effect is more dramatic than in the purple boxes, notice that here not only the box is reduced but also the text is <b>wrapped</b> reducing the box size even further.<span class="faq">Why?</span></li>
+			<li>For 'Box 1' the 'widen' class will apply a left and right offset at the same time aiming to get the element span within the stated offset values, filling out the space similarly to the yellow boxes, nevertheless, contrary to the successful case of the purple 'Box 1' those offsets where applied to no avail, specially, when taking into account that this behavior is exclusive of absolutely positioned elements. <span class="faq">Why?</span></li>
+		</ol>
+
+		<p class="faq">Why the 'Box 1' do not span the element like the purple 'Box 1' in the previous sample, even though is also classified as 'widen'?</p>
+		
+		<div class="abs">
+			<code class="abs widen">Box 1</code>
+			<code class="abs offset">Box 2</code>
+			<code class="abs">Box 3</code>
+		</div>
+	</article>
+
+	<ol>
+		<li>If 'Box 2' had not been explicitely declared with position: absolute; the offset would be applied relative to the body element, instead of the container div element.</li>
+		<li>If in the case of the absolutely positioned div element an offset isn't indicated, then all the children element will be positioned on the top-left corner of the parent element. Specifically in this exercise, 'Box 1' and 'Box 2' were stacked on top of each other because they didn't have an assigned offset valueIf in the case of the absolutely positioned div element an offset isn't indicated, then all the children element will be positioned on the top-left corner of the parent element. Specifically in this exercise, 'Box 1' and 'Box 2' were stacked on top of each other because they didn't have an assigned offset value.</li>
+		<li>Also, Be</li>
+	</ol>
+
+</body>
+</html>

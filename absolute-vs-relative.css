@@ -1,0 +1,103 @@
+	/* Document's structure */
+		
+		@import url('https://fonts.googleapis.com/css?family=Overlock');
+		
+		body {
+			background: rgba(44, 45, 50, 1); /* dark brown */
+			color: silver;
+			font-family: Overlock;
+		}
+
+		article { /* Testing an alternative to the clear-float below, this time using an inline-block */
+			display: inline-block;
+			float: left;
+			box-sizing: border-box;
+			overflow: auto;
+			height: 400px;
+			width: 50%;
+			border: 1px dotted silver;
+		}
+		/*
+		article:before,
+		article:after {
+			content: "";
+			display: table;
+		}
+		article:after {
+			clear: both;
+		}
+		article {
+			float: left;
+			box-sizing: border-box;
+			overflow: auto;
+			height: 400px;
+			width: 50%;
+			border: 1px dotted silver;
+			*zoom: 1;
+		}
+		*/
+
+		div {
+			box-sizing: border-box;
+		}
+
+		code {
+			background-color: teal;
+			border-radius: 6px;
+			border: 2px solid green;
+			display: block;
+			font: 14px/18px Courier, "Courier-New", Terminal, monospace, serif;
+			margin: 1% 5%;
+			padding: 1%;
+			text-align: center;
+		}
+
+		.rel {
+			position: relative;
+		}
+
+		.abs {
+			position: absolute;
+		}
+		
+		 .offset {
+			 bottom: 30;
+			 left: 100px;
+		 } 
+
+		 .rel .rel {
+			 background: yellow;
+		 }
+
+		 .rel .abs {
+			 background: purple;
+		 }
+
+		 .abs .rel {
+			 background: olive;
+			 /* Applying to absolute positioned elements the right and left offsets <b>at the same time</b> will produce the element to fill out the space between these two boundaries.
+			 However, when applying the same properties to a <b>relative, fixed, or sticky</b> positioned element <b>at the same time</b> it will NOT produce the aforementioned effect. Instead, depending on the language the left (eg. English will take precedence, or right in the case of Hebrew or Arabic for instance. Top always wins over bottom, and finally, in the case of static (default) positioned elements this values don't exert any effect.
+			 right: -55%;
+			 left: -10%; */
+		 }
+		 
+		 .abs .abs {
+			 background: blue;
+		 }
+
+		 p {
+			 margin: 1em 5%; /* The margin used here is the same as the one used by the 'code' elements */
+		 }
+
+		 .widen { /* This class selector is meant to be applied to an absolutely positioned element, which by default shrinks emulating an inline element, in order to mind the gap and be displayed filling out the parent's element space like occurs with a relatively positioned element, this will be achieved using a left and right offset values, the same could be done for give a custom height to the element, but in this example, that effect is not going to be intended. */
+		 	left: 15%;
+			right: -15%;
+			/* If this properties are enabled, it will modify just the size of the element, but won't produce any offset over it 
+			height: 50px;
+			width: 200px; */
+		 }
+	
+		 .faq {
+			 background: yellow;
+			 color: black;
+		 }
