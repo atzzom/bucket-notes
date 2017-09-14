@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="line-one/ch1_examp2.css" media="all">
+	<title>Chapter 5 - Example 1</title>
+</head>
+
+<body>
+	<h1>Beginning JavaScript</h1>
+
+		<h2>Chapter 5 - Example 1</h2>
+
+			<p>Using the code below, this page counts the number of occurrences of the word "Wrox" (case sensitive), using the <code>indexOf()</code> String method.</p>
+
+			<ol class="code-sample">
+				<li>var myString = "Welcome to the Wrox books. ";</li>
+				<li>myString = myString + "The Wrox website is wwww.wrox.com. ";</li>
+				<li>myString = myString + "Visit the Wrox website today. Thanks for buying Wrox.";</li>
+				<li></li>
+				<li>var foundAtPosition = 0;</li>
+				<li>var wroxCount = 0;</li>
+				<li></li>
+				<li>while (foundAtPosition != -1)</li>
+				<li>{</li>
+				<li>&emsp;foundAtPosition = myString.indexOf("Wrox",foundAtPosition);</li>
+				<li>&emsp;if (foundAtPosition != -1)</li>
+				<li>&emsp;{</li>
+				<li>&emsp;&emsp;wroxCount++;</li>
+				<li>&emsp;&emsp;foundAtPosition++;</li>
+				<li>&emsp;}</li>
+				<li>}</li>
+				<li></li>
+				<li>document.write("There are " + wroxCount + " occurrences of the word Wrox");</li>
+			</ol>
+</body>
+
+<script src="ch5_examp1.js"></script>
+</html>
