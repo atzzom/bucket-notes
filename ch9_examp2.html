@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+ <form action="" id="form1" name="form1" method="post">
+ 	<p>
+		Regular Expression:<br>
+		<label for="">
+			<input type="text" name="txtRegularExpression" id="txtRegularExpression" size="100" value="">
+			<br>
+			Global
+			<input type="checkbox" name="chkGlobal" id="chkGlobal" value="true">
+		</label>
+
+		Case Insensitive
+		<label for="">
+			<input type="checkbox" name="chkCaseInsensitive" id="chkCaseInsensitive" value="true">
+		</label>
+
+		Multi Line
+		<label for="">
+			<input type="checkbox" name="chkMultiLine" id="chkMultiLine" value="true">
+		</label>
+	</p>
+
+	<p>
+		<label for="">
+			Test Text:<br>
+			<textarea id="txtTestString" name="txtTestString" cols="100" rows="8"></textarea>
+		</label>
+	</p>
+
+	<p>
+		Result:<br>
+		<textarea id="txtTestResult" name="txtTestResult" cols="100" rows="8"></textarea>
+	</p>
+
+	<p>
+		<label for="">
+			<input type="button" name="cmdTest" id="cmdTest" value="TEST" onclick="doTest();">
+		</label>
+
+		<label for="">
+			<input type="button" name="cmdMatch" id="cmdMatch" value="MATCH" onclick="findMatches();">
+		</label>
+
+		<label for="">
+			<input type="reset" name="cmdClearForm" id="cmdClearForm" value="Reset Form">
+		</label>
+	</p>
+
+	<p>&nbsp;</p>
+ </form>
+
+</body>
+
+<script src="ch9_examp9.js"></script>
+</html>
